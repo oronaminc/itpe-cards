@@ -8,7 +8,7 @@
        '키워드(암기법)' 의 [정의]/[개념] 블록 중 토픽과 맞는 것만, 80자 이내. 없으면 빈 문자열.
 - exam: 표의 '기출·연관' 칸 + 같은 meta.json '기출문제' 의 종목·회차·교시
 """
-import glob
+import hashlib, glob
 import json
 import os
 import re
@@ -152,7 +152,7 @@ def main():
             if exams:
                 ex = ", ".join(exams[:6]) + (f" 외 {len(exams) - 6}" if len(exams) > 6 else "")
                 exam = (exam + " / " if exam else "") + ex
-            rows.append({"id": f"{prefix}-{n}", "domain": domain, "imp": imp, "group": clean(row.get("대토픽", "")),
+            rows.append({"id": f"{prefix}-" + hashlib.sha1((domain + "|" + clean(row.get("토픽", ""))).encode()).hexdigest()[:8], "domain": domain, "imp": imp, "group": clean(row.get("대토픽", "")),
                          "topic": clean(row.get("토픽", "")), "keys": keys, "def": df, "exam": exam, "itpe": itpe})
         stats[domain] = n
 

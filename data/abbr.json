@@ -1,12 +1,3122 @@
 [
- {"abbr": "SLA", "full": "Service Level Agreement", "ko": "서비스 수준 협약 — 서비스 제공자와 이용자가 측정 가능한 서비스 수준을 정한 계약", "cat": "IT경영"},
- {"abbr": "ITSM", "full": "IT Service Management", "ko": "IT 서비스 관리", "cat": "IT경영"},
- {"abbr": "BCP", "full": "Business Continuity Planning", "ko": "업무 연속성 계획", "cat": "IT경영"},
- {"abbr": "RTO", "full": "Recovery Time Objective", "ko": "목표 복구 시간 — 장애 후 업무를 다시 시작해야 하는 시간 한도", "cat": "IT경영"},
- {"abbr": "WBS", "full": "Work Breakdown Structure", "ko": "작업 분할 구조", "cat": "프로젝트관리"},
- {"abbr": "EVM", "full": "Earned Value Management", "ko": "획득가치관리", "cat": "프로젝트관리"},
- {"abbr": "SBOM", "full": "Software Bill of Materials", "ko": "소프트웨어 자재 명세서", "cat": "SW공학"},
- {"abbr": "MSA", "full": "Microservice Architecture", "ko": "마이크로서비스 아키텍처", "cat": "SW공학"},
- {"abbr": "IaC", "full": "Infrastructure as Code", "ko": "코드형 인프라 — 인프라 구성을 코드로 정의해 자동으로 배포·관리", "cat": "클라우드·인프라"},
- {"abbr": "RAG", "full": "Retrieval-Augmented Generation", "ko": "검색 증강 생성", "cat": "AI"}
+ {
+  "abbr": "IT",
+  "full": "Information Technology",
+  "ko": "정보기술",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ICT",
+  "full": "Information and Communication Technology",
+  "ko": "정보통신기술",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ISP",
+  "full": "Information Strategy Planning",
+  "ko": "정보화전략계획 — 조직 전략에 맞춘 정보화 중장기 계획",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ISMP",
+  "full": "Information System Master Plan",
+  "ko": "정보시스템 마스터플랜 — ISP 다음 단계, 구축 사업의 상세 요건·RFP 수립",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ITSM",
+  "full": "IT Service Management",
+  "ko": "IT 서비스 관리 — 인력·조직·기술·프로세스로 IT 서비스를 관리",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SLA",
+  "full": "Service Level Agreement",
+  "ko": "서비스 수준 협약 — 제공자와 고객이 합의한 서비스 품질 수준",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SLM",
+  "full": "Service Level Management",
+  "ko": "서비스 수준 관리 — SLA를 측정·평가·개선하는 활동",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SLO",
+  "full": "Service Level Objective",
+  "ko": "서비스 수준 목표 — SLA 안의 목표 수치 (예: 가용률 99.9%)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SLI",
+  "full": "Service Level Indicator",
+  "ko": "서비스 수준 지표 — 실제 측정값",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SLR",
+  "full": "Service Level Requirements",
+  "ko": "서비스 수준 요구사항 (ITIL) · 문맥에 따라 Service Level Report(서비스 수준 보고서)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SoW",
+  "full": "Statement of Work",
+  "ko": "과업내용서 — 업무 범위·책임 범위·서비스 프로세스",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "OLA",
+  "full": "Operational Level Agreement",
+  "ko": "운영 수준 협약 — 서비스 제공 조직 내부 부서 간 협약",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SIP",
+  "full": "Service Improvement Plan",
+  "ko": "서비스 개선 계획",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SR",
+  "full": "Service Request",
+  "ko": "서비스 요청 (사용자 요청 건)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ITIL",
+  "full": "IT Infrastructure Library",
+  "ko": "IT 인프라 라이브러리 — ITSM 모범사례 프레임워크",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SVS",
+  "full": "Service Value System",
+  "ko": "서비스 가치 시스템 (ITIL 4) — 거버넌스·실행·가치사슬·지도원칙·지속개선",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SVC",
+  "full": "Service Value Chain",
+  "ko": "서비스 가치 사슬 (ITIL 4) — 계획·개선·참여·설계전환·획득구축·제공지원",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BPR",
+  "full": "Business Process Reengineering",
+  "ko": "업무 프로세스 재설계 — 근본적·급진적으로 다시 설계",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BPM",
+  "full": "Business Process Management",
+  "ko": "업무 프로세스 관리 — 프로세스를 모델링·실행·모니터링하며 지속 개선",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "PI",
+  "full": "Process Innovation",
+  "ko": "프로세스 혁신",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BAM",
+  "full": "Business Activity Monitoring",
+  "ko": "업무 활동 모니터링 — 프로세스 실시간 감시",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "RPA",
+  "full": "Robotic Process Automation",
+  "ko": "로봇 프로세스 자동화 — 반복 업무를 SW 로봇이 처리",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BSC",
+  "full": "Balanced Scorecard",
+  "ko": "균형성과표 — 재무·고객·내부 프로세스·학습과 성장 4관점",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "IT-BSC",
+  "full": "IT Balanced Scorecard",
+  "ko": "IT 균형성과표 — BSC를 IT 조직에 맞춘 것",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "CSF",
+  "full": "Critical Success Factor",
+  "ko": "핵심성공요인",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "KPI",
+  "full": "Key Performance Indicator",
+  "ko": "핵심성과지표",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "OKR",
+  "full": "Objectives and Key Results",
+  "ko": "목표와 핵심결과",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ROI",
+  "full": "Return on Investment",
+  "ko": "투자수익률 — 이익 ÷ 투자비",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "IT-ROI",
+  "full": "IT Return on Investment",
+  "ko": "IT 투자수익률 — 사전·중간·사후 평가",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "TCO",
+  "full": "Total Cost of Ownership",
+  "ko": "총소유비용 — 구매+운영+유지보수 전체 비용",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "NPV",
+  "full": "Net Present Value",
+  "ko": "순현재가치 — 미래 현금흐름의 현재가치 합 − 투자비, 0보다 크면 투자",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "IRR",
+  "full": "Internal Rate of Return",
+  "ko": "내부수익률 — NPV가 0이 되는 할인율",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BCR",
+  "full": "Benefit-Cost Ratio",
+  "ko": "편익비용비 — 편익 현재가치 ÷ 비용 현재가치, 1 이상이면 타당",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "PP",
+  "full": "Payback Period",
+  "ko": "투자회수기간 — 투자비를 회수하는 데 걸리는 기간",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BEP",
+  "full": "Break-Even Point",
+  "ko": "손익분기점",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "EVA",
+  "full": "Economic Value Added",
+  "ko": "경제적 부가가치 — 세후 영업이익 − 자본비용",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "EVS",
+  "full": "Economic Value Sourced",
+  "ko": "경제적 가치 원천 분석 — IT가 만드는 가치의 원천을 금액으로 환산",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "TEI",
+  "full": "Total Economic Impact",
+  "ko": "총경제효과 (Forrester) — 비용·편익·유연성·위험을 함께 평가",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "TVO",
+  "full": "Total Value of Opportunity",
+  "ko": "총기회가치 (Gartner) — IT 투자 기회의 가치 평가",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "IO",
+  "full": "Information Orientation",
+  "ko": "정보 지향성 — 조직의 정보 활용 역량 평가",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "IPM",
+  "full": "IT Portfolio Management",
+  "ko": "IT 포트폴리오 관리 — 투자 과제를 묶어서 우선순위 결정",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "IE",
+  "full": "Information Economics",
+  "ko": "정보경제학 — IT 투자의 정량·정성 효과를 점수화 (방법론 문맥은 Information Engineering·정보공학)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ROV",
+  "full": "Real Option Valuation",
+  "ko": "실물옵션 가치평가 — 연기·확장·포기 같은 선택권의 가치 반영",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BIP",
+  "full": "BCR·IRR·PP",
+  "ko": "정량적 투자평가 두음 앞부분 (B·I·P)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "RTN",
+  "full": "ROI·TCO·NPV",
+  "ko": "정량적 투자평가 두음 뒷부분 (R·T·N)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BIVE",
+  "full": "BSC·IT-BSC·Value Chain·ESG",
+  "ko": "정성적 투자평가 두음 (B·I·V·E)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "AHP",
+  "full": "Analytic Hierarchy Process",
+  "ko": "계층분석법 — 쌍대비교로 대안 가중치 산정",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BCG",
+  "full": "Boston Consulting Group",
+  "ko": "보스턴컨설팅그룹 (BCG 매트릭스: 시장성장률 × 상대점유율)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SWOT",
+  "full": "Strengths, Weaknesses, Opportunities, Threats",
+  "ko": "강점·약점·기회·위협 분석",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BMT",
+  "full": "Benchmarking Test",
+  "ko": "벤치마킹 — 선진 사례·성능 비교 (ISP 현황분석 산출물)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "GAP",
+  "full": "Gap Analysis",
+  "ko": "차이 분석 — 현재 모습과 목표 모습의 차이",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "AS-IS",
+  "full": "As-Is",
+  "ko": "현재 모습",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "TO-BE",
+  "full": "To-Be",
+  "ko": "목표 모습",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "EA",
+  "full": "Enterprise Architecture",
+  "ko": "전사 아키텍처 — 업무·데이터·응용·기술 구조의 청사진",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ITA",
+  "full": "Information Technology Architecture",
+  "ko": "정보기술아키텍처 (공공 EA의 법정 명칭)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BA",
+  "full": "Business Architecture",
+  "ko": "업무 아키텍처",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "DA",
+  "full": "Data Architecture",
+  "ko": "데이터 아키텍처",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "AA",
+  "full": "Application Architecture",
+  "ko": "응용 아키텍처 (역할로 쓰면 Application Architect)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "TA",
+  "full": "Technical Architecture",
+  "ko": "기술 아키텍처 (역할로 쓰면 Technical Architect)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SA",
+  "full": "Security Architecture",
+  "ko": "보안 아키텍처",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BSP",
+  "full": "Business Systems Planning",
+  "ko": "업무 시스템 계획 (IBM, 1970년대 ISP의 기원)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "TOGAF",
+  "full": "The Open Group Architecture Framework",
+  "ko": "오픈그룹 아키텍처 프레임워크 (EA 표준)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "FEAF",
+  "full": "Federal Enterprise Architecture Framework",
+  "ko": "미국 연방 EA 프레임워크",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SEM",
+  "full": "Strategic Enterprise Management",
+  "ko": "전략적 기업경영 — 전략 수립·성과관리 통합",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "EDM",
+  "full": "Evaluate·Direct·Monitor",
+  "ko": "평가·지시·모니터링 (ISO/IEC 38500 IT 거버넌스 모델)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "COBIT",
+  "full": "Control Objectives for Information and Related Technologies",
+  "ko": "정보 및 관련 기술 통제 목표 — IT 거버넌스 프레임워크",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "GRC",
+  "full": "Governance, Risk management, Compliance",
+  "ko": "거버넌스·위험관리·컴플라이언스 통합",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ERM",
+  "full": "Enterprise Risk Management",
+  "ko": "전사적 위험관리",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ITAM",
+  "full": "IT Asset Management",
+  "ko": "IT 자산관리",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ESG",
+  "full": "Environmental, Social, Governance",
+  "ko": "환경·사회·지배구조",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "CSR",
+  "full": "Corporate Social Responsibility",
+  "ko": "기업의 사회적 책임",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "CSRD",
+  "full": "Corporate Sustainability Reporting Directive",
+  "ko": "EU 기업 지속가능성 보고 지침",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "CSDDD",
+  "full": "Corporate Sustainability Due Diligence Directive",
+  "ko": "EU 기업 지속가능성 실사 지침 — 인권·환경 실사 의무",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ISSB",
+  "full": "International Sustainability Standards Board",
+  "ko": "국제지속가능성기준위원회",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "KSSB",
+  "full": "Korea Sustainability Standards Board",
+  "ko": "한국지속가능성기준위원회",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "PUE",
+  "full": "Power Usage Effectiveness",
+  "ko": "전력 사용 효율 — 데이터센터 총 전력 ÷ IT 장비 전력, 1에 가까울수록 좋음",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "FEMS",
+  "full": "Factory Energy Management System",
+  "ko": "공장 에너지 관리 시스템",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "VPP",
+  "full": "Virtual Power Plant",
+  "ko": "가상 발전소 — 분산 전원을 하나의 발전소처럼 운영",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ESS",
+  "full": "Energy Storage System",
+  "ko": "에너지 저장 장치",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BCP",
+  "full": "Business Continuity Planning",
+  "ko": "업무연속성계획 — 재해 때도 핵심 업무를 이어가는 계획",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BCM",
+  "full": "Business Continuity Management",
+  "ko": "업무연속성관리 — BCP를 수립·운영·개선하는 관리 체계",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BCMS",
+  "full": "Business Continuity Management System",
+  "ko": "업무연속성 경영시스템 (ISO 22301)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BIA",
+  "full": "Business Impact Analysis",
+  "ko": "업무영향분석 — 업무 중단 영향도로 복구 우선순위·목표 결정",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "DR",
+  "full": "Disaster Recovery",
+  "ko": "재해복구",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "DRS",
+  "full": "Disaster Recovery System",
+  "ko": "재해복구시스템 — Mirror·Hot·Warm·Cold 사이트",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "DRP",
+  "full": "Disaster Recovery Plan",
+  "ko": "재해복구계획",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "RTO",
+  "full": "Recovery Time Objective",
+  "ko": "목표복구시간 — 서비스를 다시 열기까지 허용 시간",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "RPO",
+  "full": "Recovery Point Objective",
+  "ko": "목표복구시점 — 허용 가능한 데이터 손실 시점",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "RCO",
+  "full": "Recovery Communication Objective",
+  "ko": "목표 복구 통신 수준",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "RSO",
+  "full": "Recovery Scope Objective",
+  "ko": "목표 복구 범위",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BCO",
+  "full": "Backup Center Objective",
+  "ko": "백업센터 목표 (원본 표기)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "MBCO",
+  "full": "Minimum Business Continuity Objective",
+  "ko": "최소 업무연속성 목표 — 중단 중 유지할 최소 서비스 수준",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "MTPD",
+  "full": "Maximum Tolerable Period of Disruption",
+  "ko": "최대 허용 중단 기간 — RTO의 상한",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "MTD",
+  "full": "Maximum Tolerable Downtime",
+  "ko": "최대 허용 중단 시간 (BIA에서 산정)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "GSLB",
+  "full": "Global Server Load Balancing",
+  "ko": "광역 서버 부하분산 — 여러 센터 간 트래픽 분산",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "PITR",
+  "full": "Point-In-Time Recovery",
+  "ko": "특정 시점 복구",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "CDC",
+  "full": "Change Data Capture",
+  "ko": "변경 데이터 캡처 — 바뀐 데이터만 실시간 복제",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "WAL",
+  "full": "Write-Ahead Logging",
+  "ko": "선행 기록 로깅 — 변경을 로그에 먼저 기록",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SPOF",
+  "full": "Single Point of Failure",
+  "ko": "단일 장애 지점",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "HA",
+  "full": "High Availability",
+  "ko": "고가용성",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "FTS",
+  "full": "Fault Tolerant System",
+  "ko": "무장애(내고장성) 시스템 — 장애가 나도 멈추지 않음",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "IDC",
+  "full": "Internet Data Center",
+  "ko": "인터넷 데이터센터",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "AIDC",
+  "full": "AI Data Center",
+  "ko": "AI 데이터센터",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SDDC",
+  "full": "Software Defined Data Center",
+  "ko": "소프트웨어 정의 데이터센터",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SCM",
+  "full": "Supply Chain Management",
+  "ko": "공급망관리",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ERP",
+  "full": "Enterprise Resource Planning",
+  "ko": "전사적 자원관리",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "CRM",
+  "full": "Customer Relationship Management",
+  "ko": "고객관계관리",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SCADA",
+  "full": "Supervisory Control and Data Acquisition",
+  "ko": "원격감시제어 시스템",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "EAI",
+  "full": "Enterprise Application Integration",
+  "ko": "전사 애플리케이션 통합",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "DX",
+  "full": "Digital Transformation",
+  "ko": "디지털 전환",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "AX",
+  "full": "AI Transformation",
+  "ko": "AI 전환",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "IP",
+  "full": "Intellectual Property",
+  "ko": "지식재산(권) (네트워크 문맥은 Internet Protocol)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "PPP",
+  "full": "Public-Private Partnership",
+  "ko": "민관협력 (민간투자형 SW 사업)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "B2B",
+  "full": "Business to Business",
+  "ko": "기업 간 거래",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "FinTech",
+  "full": "Finance + Technology",
+  "ko": "핀테크 — 금융과 기술의 합성어",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "RegTech",
+  "full": "Regulation + Technology",
+  "ko": "레그테크 — 규제 준수를 돕는 기술",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "EduTech",
+  "full": "Education + Technology",
+  "ko": "에듀테크 — 교육과 기술의 합성어",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "DeepTech",
+  "full": "Deep Technology",
+  "ko": "딥테크 — 과학·공학 기반 원천 기술",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "MiliTch",
+  "full": "Military + Technology",
+  "ko": "밀리테크 — 국방 기술 (원문 표기)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "AbleTech",
+  "full": "Able + Technology",
+  "ko": "에이블테크 — 장애인 보조 기술",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "FinOps",
+  "full": "Finance + DevOps",
+  "ko": "클라우드 비용 최적화 운영 — Inform·Optimize·Operate",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "FOCUS",
+  "full": "FinOps Open Cost and Usage Specification",
+  "ko": "FinOps 비용·사용량 공통 명세",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "CXO",
+  "full": "Chief X Officer",
+  "ko": "최고 ○○ 책임자 (CEO·CIO 등 경영진 통칭)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "CAIO",
+  "full": "Chief AI Officer",
+  "ko": "최고 AI 책임자",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "CoE",
+  "full": "Center of Excellence",
+  "ko": "전문 조직 (우수성 센터)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "TF",
+  "full": "Task Force",
+  "ko": "임시 전담 조직",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BC",
+  "full": "Business Case",
+  "ko": "사업 타당성 근거",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BM",
+  "full": "Business Model",
+  "ko": "비즈니스 모델",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SI",
+  "full": "System Integration",
+  "ko": "시스템 통합 (구축 사업)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SM",
+  "full": "System Management",
+  "ko": "시스템 운영·유지관리",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "RFP",
+  "full": "Request for Proposal",
+  "ko": "제안요청서",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "MM",
+  "full": "Man-Month",
+  "ko": "투입공수 — 1명이 1개월 일한 양",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SNS",
+  "full": "Social Networking Service",
+  "ko": "소셜 네트워크 서비스",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "UPS",
+  "full": "Uninterruptible Power Supply",
+  "ko": "무정전 전원장치",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "BT",
+  "full": "Bio Technology",
+  "ko": "생명공학기술 (IT·BT·CT·ST 융합)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "CT",
+  "full": "Culture Technology",
+  "ko": "문화기술",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "ST",
+  "full": "Space Technology",
+  "ko": "우주기술 · SWOT 교차전략에서는 Strength-Threat(강점-위협)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SO/ST/WO/WT",
+  "full": "Strength·Weakness × Opportunity·Threat",
+  "ko": "SWOT 교차전략 — 강점-기회·강점-위협·약점-기회·약점-위협",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "PM",
+  "full": "Project Manager / Project Management",
+  "ko": "프로젝트 관리자 / 프로젝트 관리",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PMO",
+  "full": "Project Management Office",
+  "ko": "프로젝트 관리 조직 — 발주자를 도와 사업 관리 (전자정부법 64조)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PMC",
+  "full": "Project Management Consulting",
+  "ko": "프로젝트 관리 컨설팅 — 외부 전문가의 사업관리 지원",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PMP",
+  "full": "Project Management Professional",
+  "ko": "PMI 프로젝트 관리 전문가 자격",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PMBOK",
+  "full": "Project Management Body of Knowledge",
+  "ko": "프로젝트 관리 지식 체계 (PMI)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "KA",
+  "full": "Knowledge Area",
+  "ko": "지식 영역 (PMBOK 10개)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "RCR",
+  "full": "Resource·Communication·Risk",
+  "ko": "자원·의사소통·위험 (지식영역 묶음 표기)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PS",
+  "full": "Procurement·Stakeholder",
+  "ko": "조달·이해관계자 (지식영역 묶음 표기)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "WBS",
+  "full": "Work Breakdown Structure",
+  "ko": "작업분할구조 — 인도물을 작업 단위로 계층 분해, 범위 기준선",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "CPM",
+  "full": "Critical Path Method",
+  "ko": "임계경로법 — 여유시간 0인 가장 긴 경로를 관리",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "ES",
+  "full": "Early Start",
+  "ko": "가장 빠른 시작일 (CPM 순방향)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "EF",
+  "full": "Early Finish",
+  "ko": "가장 빠른 종료일 (CPM 순방향)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "LS",
+  "full": "Late Start",
+  "ko": "가장 늦은 시작일 (CPM 역방향)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "LF",
+  "full": "Late Finish",
+  "ko": "가장 늦은 종료일 (CPM 역방향)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "EVM",
+  "full": "Earned Value Management",
+  "ko": "획득가치관리 — 일정·원가 성과를 함께 측정",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PV",
+  "full": "Planned Value",
+  "ko": "계획가치 (EVM) · 경제성 분석에서는 Present Value(현재가치)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "EV",
+  "full": "Earned Value",
+  "ko": "획득가치 — 실제 끝낸 작업의 계획 기준 가치",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "AC",
+  "full": "Actual Cost",
+  "ko": "실제 원가",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "EMV",
+  "full": "Expected Monetary Value",
+  "ko": "기대금전가치 — 확률 × 영향 금액",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "WIP",
+  "full": "Work In Progress",
+  "ko": "진행 중 작업 (칸반에서 동시 작업 수 제한)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "TPS",
+  "full": "Toyota Production System",
+  "ko": "도요타 생산 방식 (Lean의 기원)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "MVP",
+  "full": "Minimum Viable Product",
+  "ko": "최소기능제품 — 핵심 기능만 넣어 먼저 검증",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "XP",
+  "full": "eXtreme Programming",
+  "ko": "익스트림 프로그래밍 — 짝 프로그래밍·TDD 중심 애자일",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "SCRUM",
+  "full": "Scrum",
+  "ko": "스크럼 — 스프린트를 반복하는 애자일 프레임워크 (약어 아님, 럭비 용어)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "QA",
+  "full": "Quality Assurance",
+  "ko": "품질 보증",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "QC",
+  "full": "Quality Control",
+  "ko": "품질 통제",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "QM",
+  "full": "Quality Management",
+  "ko": "품질 관리",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "RACI",
+  "full": "Responsible, Accountable, Consulted, Informed",
+  "ko": "실행·책임·자문·통보 (역할 분담표)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "SRS",
+  "full": "Software Requirements Specification",
+  "ko": "소프트웨어 요구사항 명세서",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "RTM",
+  "full": "Requirements Traceability Matrix",
+  "ko": "요구사항 추적 매트릭스",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PPM",
+  "full": "Project Portfolio Management",
+  "ko": "프로젝트 포트폴리오 관리",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "FP",
+  "full": "Function Point",
+  "ko": "기능점수 — 사용자 관점 기능 규모로 SW 크기 측정",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "COCOMO",
+  "full": "Constructive Cost Model",
+  "ko": "구성적 비용 모델 — 코드 라인 수 기반 SW 비용 산정",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "LOC",
+  "full": "Lines of Code",
+  "ko": "코드 라인 수",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "ILF",
+  "full": "Internal Logical File",
+  "ko": "내부 논리 파일 (FP 데이터 기능)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "EIF",
+  "full": "External Interface File",
+  "ko": "외부 연계 파일 (FP 데이터 기능)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "EI",
+  "full": "External Input",
+  "ko": "외부 입력 (FP 트랜잭션 기능)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "EO",
+  "full": "External Output",
+  "ko": "외부 출력 (FP 트랜잭션 기능)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "EQ",
+  "full": "External inQuiry",
+  "ko": "외부 조회 (FP 트랜잭션 기능)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "IFPUG",
+  "full": "International Function Point Users Group",
+  "ko": "국제 기능점수 사용자 그룹",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PoC",
+  "full": "Proof of Concept",
+  "ko": "개념 검증",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "SW",
+  "full": "Software",
+  "ko": "소프트웨어",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "HW",
+  "full": "Hardware",
+  "ko": "하드웨어",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "NW",
+  "full": "Network",
+  "ko": "네트워크",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "SDLC",
+  "full": "Software Development Life Cycle",
+  "ko": "소프트웨어 개발 생명주기",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "UML",
+  "full": "Unified Modeling Language",
+  "ko": "통합 모델링 언어",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "CMMI",
+  "full": "Capability Maturity Model Integration",
+  "ko": "능력 성숙도 모델 통합 — 프로세스 성숙도 1~5단계",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "SPICE",
+  "full": "Software Process Improvement and Capability dEtermination",
+  "ko": "SW 프로세스 개선·능력 결정 (ISO/IEC 15504 → 33000)",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "ASPICE",
+  "full": "Automotive SPICE",
+  "ko": "자동차 SW 프로세스 평가 모델",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "SP",
+  "full": "Software Process",
+  "ko": "SW 프로세스 품질 인증",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "GS",
+  "full": "Good Software",
+  "ko": "GS 인증 — 국산 SW 품질 인증",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "TDD",
+  "full": "Test-Driven Development",
+  "ko": "테스트 주도 개발 — 테스트를 먼저 작성",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "TC",
+  "full": "Test Case",
+  "ko": "테스트 케이스",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "CI",
+  "full": "Continuous Integration",
+  "ko": "지속적 통합",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "CD",
+  "full": "Continuous Delivery / Deployment",
+  "ko": "지속적 전달·배포",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "CI/CD",
+  "full": "Continuous Integration / Continuous Delivery·Deployment",
+  "ko": "지속적 통합·배포",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "DevOps",
+  "full": "Development + Operations",
+  "ko": "개발과 운영을 하나로 묶는 문화·자동화",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "DevSecOps",
+  "full": "Development + Security + Operations",
+  "ko": "개발·보안·운영 통합",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "MSA",
+  "full": "Microservice Architecture",
+  "ko": "마이크로서비스 아키텍처 — 작은 서비스로 쪼개 독립 배포",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "SOA",
+  "full": "Service Oriented Architecture",
+  "ko": "서비스 지향 아키텍처",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "ESB",
+  "full": "Enterprise Service Bus",
+  "ko": "전사 서비스 버스",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "SAGA",
+  "full": "Saga pattern",
+  "ko": "사가 패턴 — 분산 트랜잭션을 로컬 트랜잭션과 보상 작업으로 처리 (약어 아님)",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "ATAM",
+  "full": "Architecture Trade-off Analysis Method",
+  "ko": "아키텍처 트레이드오프 분석 방법",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "CBAM",
+  "full": "Cost Benefit Analysis Method",
+  "ko": "비용편익 분석 방법 (아키텍처 평가)",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "AD",
+  "full": "Architecture Description",
+  "ko": "아키텍처 기술서 (ISO/IEC/IEEE 42010)",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "IEEE1471",
+  "full": "IEEE Std 1471",
+  "ko": "아키텍처 기술 권고 표준 (ISO/IEC/IEEE 42010의 전신)",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "SSPL",
+  "full": "Software and Systems Product Line",
+  "ko": "SW·시스템 제품 계열 공학",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "DDD",
+  "full": "Domain-Driven Design",
+  "ko": "도메인 주도 설계",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "SOLID",
+  "full": "SRP·OCP·LSP·ISP·DIP",
+  "ko": "객체지향 5원칙 — 단일책임·개방폐쇄·리스코프 치환·인터페이스 분리·의존 역전",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "MVC",
+  "full": "Model-View-Controller",
+  "ko": "모델·뷰·컨트롤러 패턴",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "MVVM",
+  "full": "Model-View-ViewModel",
+  "ko": "모델·뷰·뷰모델 패턴",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "MVI",
+  "full": "Model-View-Intent",
+  "ko": "모델·뷰·인텐트 패턴",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "IoC",
+  "full": "Inversion of Control",
+  "ko": "제어의 역전 (보안 문맥은 Indicators of Compromise·침해 지표)",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "NIH",
+  "full": "Not Invented Here",
+  "ko": "NIH 신드롬 — 외부에서 만든 것을 배척하는 성향",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "PBL",
+  "full": "Project Based Learning",
+  "ko": "프로젝트 기반 학습",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "SQuaRE",
+  "full": "Software product Quality Requirements and Evaluation",
+  "ko": "SW 제품 품질 요구·평가 (ISO/IEC 25000 시리즈)",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "ReSelPri",
+  "full": "Retest-all·Selective·Priority",
+  "ko": "회귀 테스트 종류 두음 — 전체·선택·우선순위",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "SPE",
+  "full": "S-type·P-type·E-type",
+  "ko": "리만(Lehman)의 프로그램 분류 — 명세형·문제형·진화형",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "NaCoInA",
+  "full": "Named·Concurrent·…",
+  "ko": "성능 테스트 사용자 유형 두음 (Named User·Concurrent User만 원문 확인, 나머지 원문 풀이 없음)",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "FOSS",
+  "full": "Free and Open Source Software",
+  "ko": "자유·오픈소스 소프트웨어",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "OSS",
+  "full": "Open Source Software",
+  "ko": "오픈소스 소프트웨어",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "REST",
+  "full": "Representational State Transfer",
+  "ko": "REST — HTTP 자원 중심 API 스타일",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "API",
+  "full": "Application Programming Interface",
+  "ko": "응용 프로그램 인터페이스",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "SDK",
+  "full": "Software Development Kit",
+  "ko": "소프트웨어 개발 키트",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "JSON",
+  "full": "JavaScript Object Notation",
+  "ko": "JSON 데이터 형식",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "JSON-RPC",
+  "full": "JSON Remote Procedure Call",
+  "ko": "JSON 원격 프로시저 호출",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "SSE",
+  "full": "Server-Sent Events",
+  "ko": "서버 전송 이벤트 — 서버에서 클라이언트로 단방향 스트림",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "HTML",
+  "full": "HyperText Markup Language",
+  "ko": "웹 문서 언어",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "HTTP",
+  "full": "HyperText Transfer Protocol",
+  "ko": "웹 전송 프로토콜",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "URL",
+  "full": "Uniform Resource Locator",
+  "ko": "웹 주소",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "URI",
+  "full": "Uniform Resource Identifier",
+  "ko": "자원 식별자",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "WEB",
+  "full": "World Wide Web",
+  "ko": "웹",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "WAS",
+  "full": "Web Application Server",
+  "ko": "웹 애플리케이션 서버",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "UI",
+  "full": "User Interface",
+  "ko": "사용자 인터페이스",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "UX",
+  "full": "User Experience",
+  "ko": "사용자 경험",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "SVN",
+  "full": "Subversion",
+  "ko": "중앙집중형 버전관리 도구",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "IaaS",
+  "full": "Infrastructure as a Service",
+  "ko": "서비스형 인프라",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "SaaS",
+  "full": "Software as a Service",
+  "ko": "서비스형 소프트웨어",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "FaaS",
+  "full": "Function as a Service",
+  "ko": "서비스형 함수 (서버리스)",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "BaaS",
+  "full": "Backend as a Service",
+  "ko": "서비스형 백엔드",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "FBE",
+  "full": "FaaS·BaaS·Event Router",
+  "ko": "서버리스 구성요소 두음",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "IaC",
+  "full": "Infrastructure as Code",
+  "ko": "코드형 인프라 — 인프라를 코드로 정의·배포",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "HPA",
+  "full": "Horizontal Pod Autoscaler",
+  "ko": "쿠버네티스 수평 파드 자동 확장",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "NFV",
+  "full": "Network Functions Virtualization",
+  "ko": "네트워크 기능 가상화",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "VM",
+  "full": "Virtual Machine",
+  "ko": "가상 머신",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "AMI",
+  "full": "Amazon Machine Image",
+  "ko": "AWS 서버 이미지",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "AWS",
+  "full": "Amazon Web Services",
+  "ko": "아마존 클라우드",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "SRE",
+  "full": "Site Reliability Engineering",
+  "ko": "사이트 신뢰성 엔지니어링 (구글) — SLO·에러버짓으로 운영",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "DGX",
+  "full": "NVIDIA DGX",
+  "ko": "엔비디아 AI 전용 서버 제품군 (제품명)",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "CA",
+  "full": "Computer Architecture",
+  "ko": "컴퓨터 구조",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "CA/OS",
+  "full": "Computer Architecture / Operating System",
+  "ko": "컴퓨터 구조·운영체제 (ITPE 과목명)",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "OS",
+  "full": "Operating System",
+  "ko": "운영체제",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "CPU",
+  "full": "Central Processing Unit",
+  "ko": "중앙처리장치",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "GPU",
+  "full": "Graphics Processing Unit",
+  "ko": "그래픽 처리 장치 — AI 연산 가속",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "TPU",
+  "full": "Tensor Processing Unit",
+  "ko": "텐서 처리 장치 (구글 AI 칩)",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "MMU",
+  "full": "Memory Management Unit",
+  "ko": "메모리 관리 장치 — 가상주소를 물리주소로 변환",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "IPC",
+  "full": "Inter-Process Communication",
+  "ko": "프로세스 간 통신 — 파이프·메시지큐·공유 메모리·세마포어",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "MESI",
+  "full": "Modified·Exclusive·Shared·Invalid",
+  "ko": "캐시 일관성 프로토콜 4상태 — 수정·배타·공유·무효",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "GC",
+  "full": "Garbage Collection",
+  "ko": "가비지 컬렉션 — 안 쓰는 메모리 자동 회수",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "FIFO",
+  "full": "First In, First Out",
+  "ko": "선입선출",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "WFQ",
+  "full": "Weighted Fair Queuing",
+  "ko": "가중 공정 큐잉 — 흐름별 가중치로 대역 분배",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "ECC",
+  "full": "Error Correcting Code",
+  "ko": "오류 정정 부호 (보안 문맥은 Elliptic Curve Cryptography·타원곡선 암호)",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "BST",
+  "full": "Binary Search Tree",
+  "ko": "이진 탐색 트리",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "CXL",
+  "full": "Compute Express Link",
+  "ko": "CPU·메모리·가속기 고속 연결 표준",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "PCIe",
+  "full": "Peripheral Component Interconnect Express",
+  "ko": "고속 직렬 확장 버스",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "TCP",
+  "full": "Transmission Control Protocol",
+  "ko": "전송 제어 프로토콜",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "FEC",
+  "full": "Forward Error Correction",
+  "ko": "순방향 오류 정정 — 수신 측이 스스로 정정",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "BEC",
+  "full": "Backward Error Correction",
+  "ko": "역방향 오류 정정 — 재전송으로 정정",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "ARQ",
+  "full": "Automatic Repeat reQuest",
+  "ko": "자동 재전송 요청 — Stop&Wait·Go-Back-N·Selective Repeat",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "IGP",
+  "full": "Interior Gateway Protocol",
+  "ko": "내부 라우팅 프로토콜 (AS 안)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "EGP",
+  "full": "Exterior Gateway Protocol",
+  "ko": "외부 라우팅 프로토콜 (AS 간)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "RIP",
+  "full": "Routing Information Protocol",
+  "ko": "거리 벡터 라우팅 프로토콜",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "IGRP",
+  "full": "Interior Gateway Routing Protocol",
+  "ko": "시스코 내부 라우팅 프로토콜",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "OSPF",
+  "full": "Open Shortest Path First",
+  "ko": "링크 상태 라우팅 프로토콜",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "BGP",
+  "full": "Border Gateway Protocol",
+  "ko": "경계 게이트웨이 프로토콜 (AS 간 라우팅)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "CSMA/CA",
+  "full": "Carrier Sense Multiple Access with Collision Avoidance",
+  "ko": "반송파 감지 다중접속/충돌 회피 (무선랜)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "CDMA",
+  "full": "Code Division Multiple Access",
+  "ko": "코드 분할 다중접속",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "TDMA",
+  "full": "Time Division Multiple Access",
+  "ko": "시분할 다중접속",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "OFDMA",
+  "full": "Orthogonal Frequency Division Multiple Access",
+  "ko": "직교 주파수 분할 다중접속",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "MIMO",
+  "full": "Multiple Input Multiple Output",
+  "ko": "다중 안테나 송수신",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "LTE",
+  "full": "Long Term Evolution",
+  "ko": "4세대 이동통신",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "QoS",
+  "full": "Quality of Service",
+  "ko": "서비스 품질 (망 성능 보장)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "QoE",
+  "full": "Quality of Experience",
+  "ko": "체감 품질",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "VPN",
+  "full": "Virtual Private Network",
+  "ko": "가상 사설망",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "DNS",
+  "full": "Domain Name System",
+  "ko": "도메인 이름 시스템",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "DWDM",
+  "full": "Dense Wavelength Division Multiplexing",
+  "ko": "고밀도 파장 분할 다중화",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "VRRP",
+  "full": "Virtual Router Redundancy Protocol",
+  "ko": "가상 라우터 이중화 프로토콜",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "VIP",
+  "full": "Virtual IP",
+  "ko": "가상 IP 주소",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "GW",
+  "full": "Gateway",
+  "ko": "게이트웨이",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "RF",
+  "full": "Radio Frequency",
+  "ko": "무선 주파수",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "GHz",
+  "full": "Gigahertz",
+  "ko": "기가헤르츠 (10⁹ Hz)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "THz",
+  "full": "Terahertz",
+  "ko": "테라헤르츠 (10¹² Hz)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "IoT",
+  "full": "Internet of Things",
+  "ko": "사물인터넷",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "LEO",
+  "full": "Low Earth Orbit",
+  "ko": "저궤도 (약 300~1,500km)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "MEO",
+  "full": "Medium Earth Orbit",
+  "ko": "중궤도 (약 7,000~25,000km)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "GEO",
+  "full": "Geostationary Earth Orbit",
+  "ko": "정지궤도 (35,786km)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "HEO",
+  "full": "Highly Elliptical Orbit",
+  "ko": "고타원 궤도",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "NTN",
+  "full": "Non-Terrestrial Network",
+  "ko": "비지상망 — 위성·HAPS 등",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "TN",
+  "full": "Terrestrial Network",
+  "ko": "지상망",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "ISL",
+  "full": "Inter-Satellite Link",
+  "ko": "위성 간 링크 (레이저·RF)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "D2D",
+  "full": "Direct-to-Device",
+  "ko": "단말 직접 연결 (위성 ↔ 일반 단말)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "D2C",
+  "full": "Direct-to-Cell",
+  "ko": "위성 ↔ 휴대폰 직접 연결",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "HAPS",
+  "full": "High Altitude Platform Station",
+  "ko": "고고도 플랫폼 (성층권 비행체)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "UAS",
+  "full": "Unmanned Aircraft System",
+  "ko": "무인 항공기 시스템",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "UAV",
+  "full": "Unmanned Aerial Vehicle",
+  "ko": "무인 항공기 (드론)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "UAM",
+  "full": "Urban Air Mobility",
+  "ko": "도심 항공 모빌리티",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "SATIN",
+  "full": "Satellite-Aerial-Terrestrial Integrated Network",
+  "ko": "위성-상공-지상 통합형 무선 네트워크 (128회 기출)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "GNSS",
+  "full": "Global Navigation Satellite System",
+  "ko": "위성항법시스템 (GPS 등)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "SBAS",
+  "full": "Satellite Based Augmentation System",
+  "ko": "위성 기반 보정 시스템",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "OBP",
+  "full": "On-Board Processing",
+  "ko": "위성 탑재 처리 (재생형 페이로드)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "ATP",
+  "full": "Acquisition, Tracking, Pointing",
+  "ko": "포착·추적·지향 (레이저 ISL 정렬)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "NMC",
+  "full": "Network Management Center",
+  "ko": "네트워크 관리 센터",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "DVB-S2X",
+  "full": "Digital Video Broadcasting – Satellite – Second Generation Extensions",
+  "ko": "위성 방송·통신 전송 표준",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "RedCap",
+  "full": "Reduced Capability",
+  "ko": "저사양 5G 단말 규격 (3GPP Rel-17)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "FR1",
+  "full": "Frequency Range 1",
+  "ko": "5G 6GHz 이하 주파수 대역",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "NR",
+  "full": "New Radio",
+  "ko": "5G 무선 접속 기술",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "UE",
+  "full": "User Equipment",
+  "ko": "사용자 단말",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "DN",
+  "full": "Data Network",
+  "ko": "데이터 네트워크 (5G 코어 바깥 인터넷 등)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "RAN",
+  "full": "Radio Access Network",
+  "ko": "무선 접속망",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "HO",
+  "full": "Handover",
+  "ko": "핸드오버 — 기지국·위성 전환",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "SAT",
+  "full": "Satellite",
+  "ko": "위성 (KT SAT = KT의 위성 자회사)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "KA-SAT",
+  "full": "Viasat KA-SAT",
+  "ko": "Viasat의 Ka 대역 위성 (2022 사이버공격 대상)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "TR",
+  "full": "Technical Report",
+  "ko": "기술 보고서 (3GPP·ISO TR)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "AI-Native",
+  "full": "AI-Native",
+  "ko": "처음부터 AI를 내장한 (네트워크·시스템)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "IBN",
+  "full": "Intent-Based Networking",
+  "ko": "의도 기반 네트워킹",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "SDN",
+  "full": "Software Defined Networking",
+  "ko": "소프트웨어 정의 네트워킹",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "SON",
+  "full": "Self-Organizing Network",
+  "ko": "자가 구성 네트워크",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "MODBUS",
+  "full": "Modicon Bus",
+  "ko": "산업제어 통신 프로토콜 (Modicon사 개발)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "VLSM",
+  "full": "Variable Length Subnet Mask",
+  "ko": "가변 길이 서브넷 마스크",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "DB",
+  "full": "Database",
+  "ko": "데이터베이스",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "DBMS",
+  "full": "Database Management System",
+  "ko": "데이터베이스 관리 시스템",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "SQL",
+  "full": "Structured Query Language",
+  "ko": "구조적 질의 언어",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "TEXT2SQL",
+  "full": "Text-to-SQL",
+  "ko": "자연어 질문을 SQL로 변환",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "DW",
+  "full": "Data Warehouse",
+  "ko": "데이터 웨어하우스 — 분석용 통합 저장소",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "CRISP-DM",
+  "full": "Cross-Industry Standard Process for Data Mining",
+  "ko": "데이터마이닝 표준 프로세스 — 업무이해·데이터이해·준비·모델링·평가·전개",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "SEMMA",
+  "full": "Sample, Explore, Modify, Model, Assess",
+  "ko": "SAS 데이터마이닝 절차 — 추출·탐색·수정·모델링·평가",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "BCNF",
+  "full": "Boyce-Codd Normal Form",
+  "ko": "보이스·코드 정규형 — 모든 결정자가 후보키",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "DBSCAN",
+  "full": "Density-Based Spatial Clustering of Applications with Noise",
+  "ko": "밀도 기반 군집화",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "MinPts",
+  "full": "Minimum Points",
+  "ko": "DBSCAN 최소 이웃 점 수",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "MAE",
+  "full": "Mean Absolute Error",
+  "ko": "평균 절대 오차",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "VIF",
+  "full": "Variance Inflation Factor",
+  "ko": "분산팽창지수 — 다중공선성 진단",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "HNSW",
+  "full": "Hierarchical Navigable Small World",
+  "ko": "계층형 근접 그래프 벡터 인덱스",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "IVF",
+  "full": "Inverted File Index",
+  "ko": "역파일 벡터 인덱스",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "AS",
+  "full": "Authorization Server",
+  "ko": "인가 서버 (OAuth) · 데이터마이닝 두음에서는 Association·Sequence(연관·순차)",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "DQM",
+  "full": "Data Quality Management",
+  "ko": "데이터 품질관리",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "AI",
+  "full": "Artificial Intelligence",
+  "ko": "인공지능",
+  "cat": "AI"
+ },
+ {
+  "abbr": "ML",
+  "full": "Machine Learning",
+  "ko": "머신러닝",
+  "cat": "AI"
+ },
+ {
+  "abbr": "LLM",
+  "full": "Large Language Model",
+  "ko": "대규모 언어모델",
+  "cat": "AI"
+ },
+ {
+  "abbr": "GenAI",
+  "full": "Generative AI",
+  "ko": "생성형 AI",
+  "cat": "AI"
+ },
+ {
+  "abbr": "ChatGPT",
+  "full": "Chat Generative Pre-trained Transformer",
+  "ko": "OpenAI 대화형 AI 서비스",
+  "cat": "AI"
+ },
+ {
+  "abbr": "RAG",
+  "full": "Retrieval-Augmented Generation",
+  "ko": "검색 증강 생성 — 외부 문서를 찾아 답변에 반영",
+  "cat": "AI"
+ },
+ {
+  "abbr": "RLHF",
+  "full": "Reinforcement Learning from Human Feedback",
+  "ko": "인간 피드백 기반 강화학습",
+  "cat": "AI"
+ },
+ {
+  "abbr": "RAFT",
+  "full": "Retrieval-Augmented Fine-Tuning",
+  "ko": "검색 증강 파인튜닝",
+  "cat": "AI"
+ },
+ {
+  "abbr": "CoT",
+  "full": "Chain of Thought",
+  "ko": "생각의 사슬 — 단계별 추론 프롬프트",
+  "cat": "AI"
+ },
+ {
+  "abbr": "MoE",
+  "full": "Mixture of Experts",
+  "ko": "전문가 혼합 모델 — 입력마다 일부 전문가만 계산",
+  "cat": "AI"
+ },
+ {
+  "abbr": "XAI",
+  "full": "eXplainable AI",
+  "ko": "설명 가능한 AI",
+  "cat": "AI"
+ },
+ {
+  "abbr": "SVM",
+  "full": "Support Vector Machine",
+  "ko": "서포트 벡터 머신 — 마진 최대화 분류기",
+  "cat": "AI"
+ },
+ {
+  "abbr": "TRiSM",
+  "full": "Trust, Risk and Security Management",
+  "ko": "AI 신뢰·위험·보안 관리 (가트너)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "AIMS",
+  "full": "AI Management System",
+  "ko": "AI 경영시스템 (ISO/IEC 42001)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "RMF",
+  "full": "Risk Management Framework",
+  "ko": "위험관리 프레임워크 (NIST AI RMF)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "CAT",
+  "full": "Certification of AI Trustworthiness",
+  "ko": "TTA AI 신뢰성 인증",
+  "cat": "AI"
+ },
+ {
+  "abbr": "MCP",
+  "full": "Model Context Protocol",
+  "ko": "모델 컨텍스트 프로토콜 — 에이전트 ↔ 도구 연결 표준",
+  "cat": "AI"
+ },
+ {
+  "abbr": "A2A",
+  "full": "Agent-to-Agent Protocol",
+  "ko": "에이전트 간 통신 프로토콜",
+  "cat": "AI"
+ },
+ {
+  "abbr": "ADK",
+  "full": "Agent Development Kit",
+  "ko": "에이전트 개발 키트 (Google)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "ADLC",
+  "full": "Agent Development Life Cycle",
+  "ko": "에이전트 개발 생명주기 — 설계·구축·평가·배포·관측·통제",
+  "cat": "AI"
+ },
+ {
+  "abbr": "MAS",
+  "full": "Multi-Agent System",
+  "ko": "다중 에이전트 시스템",
+  "cat": "AI"
+ },
+ {
+  "abbr": "HITL",
+  "full": "Human-in-the-Loop",
+  "ko": "사람이 승인해야 실행 (사전 승인형)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "HOTL",
+  "full": "Human-on-the-Loop",
+  "ko": "AI가 실행하고 사람이 감시·개입 (감독형)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "HOOTL",
+  "full": "Human-out-of-the-Loop",
+  "ko": "사람 개입 없는 완전 자율",
+  "cat": "AI"
+ },
+ {
+  "abbr": "HIC",
+  "full": "Human-in-Command",
+  "ko": "사람이 목적·한계를 지휘",
+  "cat": "AI"
+ },
+ {
+  "abbr": "AgentOps",
+  "full": "Agent + Operations",
+  "ko": "AI 에이전트 운영 체계",
+  "cat": "AI"
+ },
+ {
+  "abbr": "LLMOps",
+  "full": "LLM + Operations",
+  "ko": "LLM 운영 체계",
+  "cat": "AI"
+ },
+ {
+  "abbr": "ModelOps",
+  "full": "Model + Operations",
+  "ko": "AI 모델 운영 체계",
+  "cat": "AI"
+ },
+ {
+  "abbr": "MLOps",
+  "full": "Machine Learning + Operations",
+  "ko": "머신러닝 모델 개발·배포·운영 체계",
+  "cat": "AI"
+ },
+ {
+  "abbr": "DSML",
+  "full": "Data Science and Machine Learning",
+  "ko": "데이터 과학·머신러닝 (플랫폼·수명주기)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "NHI",
+  "full": "Non-Human Identity",
+  "ko": "비인간 신원 — 서비스 계정·API 키·에이전트",
+  "cat": "AI"
+ },
+ {
+  "abbr": "AgBOM",
+  "full": "Agent Bill of Materials",
+  "ko": "에이전트 자재명세서 — 모델·도구·역량·지식·메모리 목록",
+  "cat": "AI"
+ },
+ {
+  "abbr": "AI-BOM",
+  "full": "AI Bill of Materials",
+  "ko": "AI 자재명세서",
+  "cat": "AI"
+ },
+ {
+  "abbr": "ML-BOM",
+  "full": "Machine Learning Bill of Materials",
+  "ko": "ML 자재명세서 (CycloneDX)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "AOS",
+  "full": "Agent Observability Standard",
+  "ko": "에이전트 관측 표준 (OWASP)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "ACS",
+  "full": "Agent Control Standard",
+  "ko": "에이전트 통제 표준 (OWASP, 2026)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "OTel",
+  "full": "OpenTelemetry",
+  "ko": "오픈텔레메트리 — 추적·메트릭·로그 관측 표준",
+  "cat": "AI"
+ },
+ {
+  "abbr": "TTFT",
+  "full": "Time To First Token",
+  "ko": "첫 토큰까지 걸린 시간",
+  "cat": "AI"
+ },
+ {
+  "abbr": "TPOT",
+  "full": "Time Per Output Token",
+  "ko": "출력 토큰 하나당 걸린 시간",
+  "cat": "AI"
+ },
+ {
+  "abbr": "MTok",
+  "full": "Million Tokens",
+  "ko": "백만 토큰 (요금 단위)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "BLEU",
+  "full": "Bilingual Evaluation Understudy",
+  "ko": "기계번역 품질 지표",
+  "cat": "AI"
+ },
+ {
+  "abbr": "ROUGE",
+  "full": "Recall-Oriented Understudy for Gisting Evaluation",
+  "ko": "요약 품질 지표",
+  "cat": "AI"
+ },
+ {
+  "abbr": "BERTScore",
+  "full": "BERT Score",
+  "ko": "BERT 임베딩 유사도 평가 지표 (BERT = Bidirectional Encoder Representations from Transformers)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "AGI",
+  "full": "Artificial General Intelligence",
+  "ko": "범용 인공지능 (강 AI)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "ANI",
+  "full": "Artificial Narrow Intelligence",
+  "ko": "좁은 인공지능 (약 AI)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "GNN",
+  "full": "Graph Neural Network",
+  "ko": "그래프 신경망",
+  "cat": "AI"
+ },
+ {
+  "abbr": "GAN",
+  "full": "Generative Adversarial Network",
+  "ko": "생성적 적대 신경망 — 생성자와 판별자가 경쟁하며 학습",
+  "cat": "AI"
+ },
+ {
+  "abbr": "VAE",
+  "full": "Variational AutoEncoder",
+  "ko": "변분 오토인코더 — 잠재 분포를 학습하는 생성 모델",
+  "cat": "AI"
+ },
+ {
+  "abbr": "PR",
+  "full": "Precision-Recall",
+  "ko": "정밀도-재현율 (PR 곡선)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "ROC",
+  "full": "Receiver Operating Characteristic",
+  "ko": "수신자 조작 특성 (ROC 곡선: 거짓양성률 대비 참양성률)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "QML",
+  "full": "Quantum Machine Learning",
+  "ko": "양자 머신러닝",
+  "cat": "AI"
+ },
+ {
+  "abbr": "AIOps",
+  "full": "AI for IT Operations",
+  "ko": "AI 기반 IT 운영",
+  "cat": "AI"
+ },
+ {
+  "abbr": "OWASP",
+  "full": "Open Worldwide Application Security Project",
+  "ko": "오픈 웹·앱 보안 프로젝트 (구 Open Web Application Security Project)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "BOM",
+  "full": "Bill of Materials",
+  "ko": "자재명세서",
+  "cat": "보안"
+ },
+ {
+  "abbr": "SBOM",
+  "full": "Software Bill of Materials",
+  "ko": "소프트웨어 자재명세서 — SW 구성요소·버전·라이선스 목록",
+  "cat": "보안"
+ },
+ {
+  "abbr": "SPDX",
+  "full": "Software Package Data Exchange",
+  "ko": "SW 패키지 데이터 교환 형식 (SBOM 표준, ISO/IEC 5962)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "CycloneDX",
+  "full": "CycloneDX",
+  "ko": "OWASP의 SBOM 표준 형식 (약어 아님)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "SWID",
+  "full": "Software Identification Tag",
+  "ko": "SW 식별 태그 (ISO/IEC 19770-2)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "SCA",
+  "full": "Software Composition Analysis",
+  "ko": "SW 구성 분석 — 오픈소스 취약점·라이선스 점검",
+  "cat": "보안"
+ },
+ {
+  "abbr": "CVE",
+  "full": "Common Vulnerabilities and Exposures",
+  "ko": "공통 취약점 식별 번호",
+  "cat": "보안"
+ },
+ {
+  "abbr": "CWE",
+  "full": "Common Weakness Enumeration",
+  "ko": "공통 약점 목록",
+  "cat": "보안"
+ },
+ {
+  "abbr": "KEV",
+  "full": "Known Exploited Vulnerabilities",
+  "ko": "실제 악용된 취약점 목록 (CISA)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "NVD",
+  "full": "National Vulnerability Database",
+  "ko": "미국 국가 취약점 DB",
+  "cat": "보안"
+ },
+ {
+  "abbr": "CVD",
+  "full": "Coordinated Vulnerability Disclosure",
+  "ko": "조정된 취약점 공개",
+  "cat": "보안"
+ },
+ {
+  "abbr": "VDP",
+  "full": "Vulnerability Disclosure Program",
+  "ko": "취약점 공개 프로그램",
+  "cat": "보안"
+ },
+ {
+  "abbr": "OAuth",
+  "full": "Open Authorization",
+  "ko": "개방형 인가 표준",
+  "cat": "보안"
+ },
+ {
+  "abbr": "OIDC",
+  "full": "OpenID Connect",
+  "ko": "OAuth 기반 인증 표준",
+  "cat": "보안"
+ },
+ {
+  "abbr": "PKCE",
+  "full": "Proof Key for Code Exchange",
+  "ko": "인가 코드 가로채기 방지 확장",
+  "cat": "보안"
+ },
+ {
+  "abbr": "IdP",
+  "full": "Identity Provider",
+  "ko": "신원 제공자",
+  "cat": "보안"
+ },
+ {
+  "abbr": "RS",
+  "full": "Resource Server",
+  "ko": "자원 서버 (OAuth) · 회귀 테스트 두음에서는 Ripple Effect·Side Effect",
+  "cat": "보안"
+ },
+ {
+  "abbr": "JIT",
+  "full": "Just-In-Time",
+  "ko": "필요한 순간에만 (JIT 권한: 작업 동안만 일시 부여)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "RBAC",
+  "full": "Role-Based Access Control",
+  "ko": "역할 기반 접근통제",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ABAC",
+  "full": "Attribute-Based Access Control",
+  "ko": "속성 기반 접근통제",
+  "cat": "보안"
+ },
+ {
+  "abbr": "IAM",
+  "full": "Identity and Access Management",
+  "ko": "신원·접근 관리",
+  "cat": "보안"
+ },
+ {
+  "abbr": "MFA",
+  "full": "Multi-Factor Authentication",
+  "ko": "다중 요소 인증",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ID",
+  "full": "Identifier",
+  "ko": "식별자 (아이디)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "PW",
+  "full": "Password",
+  "ko": "비밀번호",
+  "cat": "보안"
+ },
+ {
+  "abbr": "TLS",
+  "full": "Transport Layer Security",
+  "ko": "전송 계층 보안",
+  "cat": "보안"
+ },
+ {
+  "abbr": "PKI",
+  "full": "Public Key Infrastructure",
+  "ko": "공개키 기반구조",
+  "cat": "보안"
+ },
+ {
+  "abbr": "PQC",
+  "full": "Post-Quantum Cryptography",
+  "ko": "양자내성암호",
+  "cat": "보안"
+ },
+ {
+  "abbr": "QKD",
+  "full": "Quantum Key Distribution",
+  "ko": "양자 키 분배",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ZT",
+  "full": "Zero Trust",
+  "ko": "제로트러스트 — 항상 검증, 최소 권한",
+  "cat": "보안"
+ },
+ {
+  "abbr": "PDP",
+  "full": "Policy Decision Point",
+  "ko": "정책 결정 지점",
+  "cat": "보안"
+ },
+ {
+  "abbr": "PEP",
+  "full": "Policy Enforcement Point",
+  "ko": "정책 집행 지점",
+  "cat": "보안"
+ },
+ {
+  "abbr": "PE",
+  "full": "Policy Engine",
+  "ko": "정책 엔진 — 접근 허용 여부 판단",
+  "cat": "보안"
+ },
+ {
+  "abbr": "PA",
+  "full": "Policy Administrator",
+  "ko": "정책 관리자 — 세션 허용·토큰 발급·회수",
+  "cat": "보안"
+ },
+ {
+  "abbr": "SDP",
+  "full": "Software Defined Perimeter",
+  "ko": "소프트웨어 정의 경계",
+  "cat": "보안"
+ },
+ {
+  "abbr": "UEBA",
+  "full": "User and Entity Behavior Analytics",
+  "ko": "사용자·개체 행위 분석",
+  "cat": "보안"
+ },
+ {
+  "abbr": "SIEM",
+  "full": "Security Information and Event Management",
+  "ko": "보안 정보·이벤트 관리",
+  "cat": "보안"
+ },
+ {
+  "abbr": "SOAR",
+  "full": "Security Orchestration, Automation and Response",
+  "ko": "보안 오케스트레이션·자동 대응",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ITDR",
+  "full": "Identity Threat Detection and Response",
+  "ko": "신원 위협 탐지·대응",
+  "cat": "보안"
+ },
+ {
+  "abbr": "TTPs",
+  "full": "Tactics, Techniques and Procedures",
+  "ko": "전술·기법·절차 — 공격자 행동 패턴",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ATT&CK",
+  "full": "Adversarial Tactics, Techniques, and Common Knowledge",
+  "ko": "MITRE 공격 전술·기법 지식베이스",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ATLAS",
+  "full": "Adversarial Threat Landscape for Artificial-Intelligence Systems",
+  "ko": "MITRE AI 공격 지식베이스",
+  "cat": "보안"
+ },
+ {
+  "abbr": "MITRE",
+  "full": "MITRE Corporation",
+  "ko": "미국 비영리 연구기관 (약어 아님)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "RoE",
+  "full": "Rules of Engagement",
+  "ko": "교전 규칙 — 레드팀 수행 범위·규칙",
+  "cat": "보안"
+ },
+ {
+  "abbr": "RCE",
+  "full": "Remote Code Execution",
+  "ko": "원격 코드 실행",
+  "cat": "보안"
+ },
+ {
+  "abbr": "XSS",
+  "full": "Cross-Site Scripting",
+  "ko": "교차 사이트 스크립팅",
+  "cat": "보안"
+ },
+ {
+  "abbr": "DoS",
+  "full": "Denial of Service",
+  "ko": "서비스 거부 공격",
+  "cat": "보안"
+ },
+ {
+  "abbr": "RaaS",
+  "full": "Ransomware as a Service",
+  "ko": "서비스형 랜섬웨어",
+  "cat": "보안"
+ },
+ {
+  "abbr": "IoA",
+  "full": "Indicators of Attack",
+  "ko": "공격 지표",
+  "cat": "보안"
+ },
+ {
+  "abbr": "PII",
+  "full": "Personally Identifiable Information",
+  "ko": "개인 식별 정보",
+  "cat": "보안"
+ },
+ {
+  "abbr": "PET",
+  "full": "Privacy Enhancing Technologies",
+  "ko": "개인정보 보호 강화 기술",
+  "cat": "보안"
+ },
+ {
+  "abbr": "PbD",
+  "full": "Privacy by Design",
+  "ko": "설계 단계부터 개인정보 보호",
+  "cat": "보안"
+ },
+ {
+  "abbr": "PIMS",
+  "full": "Privacy Information Management System",
+  "ko": "개인정보 경영시스템 (ISO/IEC 27701)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ISMS",
+  "full": "Information Security Management System",
+  "ko": "정보보호 관리체계",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ISMS-P",
+  "full": "ISMS - Personal information",
+  "ko": "정보보호 및 개인정보보호 관리체계 인증 (국내)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "CC",
+  "full": "Common Criteria",
+  "ko": "공통평가기준 — 보안 제품 인증 (ISO/IEC 15408)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "N2SF",
+  "full": "National Network Security Framework",
+  "ko": "국가 망 보안체계 — 기밀(C)·민감(S)·공개(O) 등급",
+  "cat": "보안"
+ },
+ {
+  "abbr": "OCSF",
+  "full": "Open Cybersecurity Schema Framework",
+  "ko": "개방형 사이버보안 스키마 — 보안 이벤트 공통 형식",
+  "cat": "보안"
+ },
+ {
+  "abbr": "BPFdoor",
+  "full": "BPF + backdoor",
+  "ko": "BPF(Berkeley Packet Filter)를 악용한 리눅스 백도어 (2025 통신사 침해)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "CSA",
+  "full": "Cloud Security Alliance",
+  "ko": "클라우드 보안 연합",
+  "cat": "보안"
+ },
+ {
+  "abbr": "FW",
+  "full": "Framework",
+  "ko": "프레임워크",
+  "cat": "보안"
+ },
+ {
+  "abbr": "NCCoE",
+  "full": "National Cybersecurity Center of Excellence",
+  "ko": "NIST 국가 사이버보안 우수센터",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ESM",
+  "full": "Enterprise Security Management",
+  "ko": "통합 보안 관리",
+  "cat": "보안"
+ },
+ {
+  "abbr": "SSL",
+  "full": "Secure Sockets Layer",
+  "ko": "보안 소켓 계층 (TLS의 전신)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "APT",
+  "full": "Advanced Persistent Threat",
+  "ko": "지능형 지속 위협",
+  "cat": "보안"
+ },
+ {
+  "abbr": "CTEM",
+  "full": "Continuous Threat Exposure Management",
+  "ko": "지속적 위협 노출 관리 (가트너)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ISO",
+  "full": "International Organization for Standardization",
+  "ko": "국제표준화기구",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "IEC",
+  "full": "International Electrotechnical Commission",
+  "ko": "국제전기기술위원회",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "IEEE",
+  "full": "Institute of Electrical and Electronics Engineers",
+  "ko": "전기전자공학자협회",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "ANSI",
+  "full": "American National Standards Institute",
+  "ko": "미국 국가표준협회",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "NIST",
+  "full": "National Institute of Standards and Technology",
+  "ko": "미국 국립표준기술연구소",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "IR",
+  "full": "Interagency / Internal Report",
+  "ko": "NIST 보고서 (NIST IR)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "CAISI",
+  "full": "Center for AI Standards and Innovation",
+  "ko": "NIST AI 표준·혁신 센터",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "NTIA",
+  "full": "National Telecommunications and Information Administration",
+  "ko": "미국 통신정보관리청",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "IETF",
+  "full": "Internet Engineering Task Force",
+  "ko": "인터넷 표준화 기구",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "RFC",
+  "full": "Request for Comments",
+  "ko": "IETF 인터넷 표준 문서",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "W3C",
+  "full": "World Wide Web Consortium",
+  "ko": "웹 표준화 기구",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "PAS",
+  "full": "Publicly Available Specification",
+  "ko": "공개 사양 (ISO/PAS)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "FDIS",
+  "full": "Final Draft International Standard",
+  "ko": "국제표준 최종안",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "SOTIF",
+  "full": "Safety Of The Intended Functionality",
+  "ko": "의도된 기능의 안전 (ISO 21448)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "KS",
+  "full": "Korean Industrial Standards",
+  "ko": "한국산업표준",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "TTA",
+  "full": "Telecommunications Technology Association",
+  "ko": "한국정보통신기술협회",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "NIA",
+  "full": "National Information Society Agency",
+  "ko": "한국지능정보사회진흥원",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "KISA",
+  "full": "Korea Internet & Security Agency",
+  "ko": "한국인터넷진흥원",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "KOSA",
+  "full": "Korea Software Industry Association",
+  "ko": "한국소프트웨어산업협회",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "ETRI",
+  "full": "Electronics and Telecommunications Research Institute",
+  "ko": "한국전자통신연구원",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "IITP",
+  "full": "Institute of Information & Communications Technology Planning & Evaluation",
+  "ko": "정보통신기획평가원",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "KDI",
+  "full": "Korea Development Institute",
+  "ko": "한국개발연구원",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "KPC",
+  "full": "Korea Productivity Center",
+  "ko": "한국생산성본부",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "ETSI",
+  "full": "European Telecommunications Standards Institute",
+  "ko": "유럽전기통신표준협회",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "FCC",
+  "full": "Federal Communications Commission",
+  "ko": "미국 연방통신위원회",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "ComSoc",
+  "full": "IEEE Communications Society",
+  "ko": "IEEE 통신학회",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "EU",
+  "full": "European Union",
+  "ko": "유럽연합",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "ITPE",
+  "full": "Information Technology Professional Engineer",
+  "ko": "정보기술 기술사 (학원 ITPE)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "PDCA",
+  "full": "Plan-Do-Check-Act",
+  "ko": "계획·실행·점검·조치 — 지속 개선 사이클",
+  "cat": "기타"
+ },
+ {
+  "abbr": "LLM01 (2025)",
+  "full": "Prompt Injection",
+  "ko": "프롬프트 인젝션 — OWASP LLM Top 10 2025판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM02 (2025)",
+  "full": "Sensitive Information Disclosure",
+  "ko": "민감정보 노출 — OWASP LLM Top 10 2025판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM03 (2025)",
+  "full": "Supply Chain",
+  "ko": "공급망 취약점 — OWASP LLM Top 10 2025판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM04 (2025)",
+  "full": "Data and Model Poisoning",
+  "ko": "데이터·모델 오염 — OWASP LLM Top 10 2025판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM05 (2025)",
+  "full": "Improper Output Handling",
+  "ko": "부적절한 출력 처리 — OWASP LLM Top 10 2025판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM06 (2025)",
+  "full": "Excessive Agency",
+  "ko": "과도한 대리권(권한·기능·자율성) — OWASP LLM Top 10 2025판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM07 (2025)",
+  "full": "System Prompt Leakage",
+  "ko": "시스템 프롬프트 유출 — OWASP LLM Top 10 2025판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM08 (2025)",
+  "full": "Vector and Embedding Weaknesses",
+  "ko": "벡터·임베딩 취약점 — OWASP LLM Top 10 2025판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM09 (2025)",
+  "full": "Misinformation",
+  "ko": "잘못된 정보(환각) — OWASP LLM Top 10 2025판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM10 (2025)",
+  "full": "Unbounded Consumption",
+  "ko": "무제한 자원 소비 — OWASP LLM Top 10 2025판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM01 (2026)",
+  "full": "Prompt Injection",
+  "ko": "프롬프트 인젝션 — OWASP LLM Top 10 2026판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM02 (2026)",
+  "full": "Sensitive Information Disclosure",
+  "ko": "민감정보 노출 — OWASP LLM Top 10 2026판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM03 (2026)",
+  "full": "Excessive Agency",
+  "ko": "과도한 대리권 — OWASP LLM Top 10 2026판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM04 (2026)",
+  "full": "Supply Chain",
+  "ko": "공급망 취약점 — OWASP LLM Top 10 2026판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM05 (2026)",
+  "full": "Data and Model Poisoning",
+  "ko": "데이터·모델 오염 — OWASP LLM Top 10 2026판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM06 (2026)",
+  "full": "Unbounded Consumption",
+  "ko": "무제한 자원 소비 — OWASP LLM Top 10 2026판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM07 (2026)",
+  "full": "Misinformation",
+  "ko": "잘못된 정보 — OWASP LLM Top 10 2026판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM08 (2026)",
+  "full": "Hidden Context Exposure",
+  "ko": "숨겨진 컨텍스트 노출 — OWASP LLM Top 10 2026판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM09 (2026)",
+  "full": "Vector and Embedding Weaknesses",
+  "ko": "벡터·임베딩 취약점 — OWASP LLM Top 10 2026판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "LLM10 (2026)",
+  "full": "Improper Output Handling",
+  "ko": "부적절한 출력 처리 — OWASP LLM Top 10 2026판",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ASI01",
+  "full": "Agent Goal Hijack",
+  "ko": "에이전트 목표 탈취 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ASI02",
+  "full": "Tool Misuse and Exploitation",
+  "ko": "도구 오용·악용 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ASI03",
+  "full": "Identity and Privilege Abuse",
+  "ko": "신원·권한 남용 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ASI04",
+  "full": "Agentic Supply Chain Compromise",
+  "ko": "에이전트 공급망 침해 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ASI05",
+  "full": "Unexpected Code Execution (RCE)",
+  "ko": "예상치 못한 코드 실행 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ASI06",
+  "full": "Memory and Context Poisoning",
+  "ko": "메모리·컨텍스트 오염 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ASI07",
+  "full": "Insecure Inter-Agent Communication",
+  "ko": "안전하지 않은 에이전트 간 통신 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ASI08",
+  "full": "Cascading Failures",
+  "ko": "연쇄 실패 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ASI09",
+  "full": "Human-Agent Trust Exploitation",
+  "ko": "사람-에이전트 신뢰 악용 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "ASI10",
+  "full": "Rogue Agents",
+  "ko": "통제 이탈 에이전트 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)",
+  "cat": "보안"
+ }
 ]

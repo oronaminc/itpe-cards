@@ -1,6 +1,6 @@
 [
  {
-  "id": "it-1",
+  "id": "it-226116f2",
   "domain": "IT경영",
   "imp": "상",
   "group": "ITSM",
@@ -11,7 +11,7 @@
   "itpe": "75"
  },
  {
-  "id": "it-2",
+  "id": "it-17944486",
   "domain": "IT경영",
   "imp": "상",
   "group": "ITSM",
@@ -22,7 +22,7 @@
   "itpe": "68"
  },
  {
-  "id": "it-3",
+  "id": "it-5c52e551",
   "domain": "IT경영",
   "imp": "상",
   "group": "ITSM",
@@ -33,7 +33,7 @@
   "itpe": "67"
  },
  {
-  "id": "it-4",
+  "id": "it-da11c1f5",
   "domain": "IT경영",
   "imp": "상",
   "group": "(Data) Mining 총론",
@@ -44,7 +44,7 @@
   "itpe": "12"
  },
  {
-  "id": "it-5",
+  "id": "it-b0bb6e38",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "(Data) Mining 총론",
@@ -55,7 +55,7 @@
   "itpe": ""
  },
  {
-  "id": "it-6",
+  "id": "it-f927373f",
   "domain": "IT경영",
   "imp": "상",
   "group": "(Data) Mining 총론",
@@ -66,7 +66,7 @@
   "itpe": "18"
  },
  {
-  "id": "it-7",
+  "id": "it-d45465b0",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "(Data) Mining 총론",
@@ -77,7 +77,7 @@
   "itpe": ""
  },
  {
-  "id": "it-8",
+  "id": "it-a40b7bb0",
   "domain": "IT경영",
   "imp": "상",
   "group": "BCP/BCM",
@@ -88,7 +88,7 @@
   "itpe": "78"
  },
  {
-  "id": "it-9",
+  "id": "it-754c78bd",
   "domain": "IT경영",
   "imp": "상",
   "group": "BCP/BCM",
@@ -99,7 +99,7 @@
   "itpe": "1251"
  },
  {
-  "id": "it-10",
+  "id": "it-333f7867",
   "domain": "IT경영",
   "imp": "상",
   "group": "ITIL 3.0, V4.0",
@@ -110,7 +110,7 @@
   "itpe": ""
  },
  {
-  "id": "it-11",
+  "id": "it-31ab523a",
   "domain": "IT경영",
   "imp": "상",
   "group": "전략 계획",
@@ -121,7 +121,7 @@
   "itpe": "3"
  },
  {
-  "id": "it-12",
+  "id": "it-83524d39",
   "domain": "IT경영",
   "imp": "상",
   "group": "전략 계획",
@@ -132,7 +132,7 @@
   "itpe": "3"
  },
  {
-  "id": "it-13",
+  "id": "it-e632e0c0",
   "domain": "IT경영",
   "imp": "상",
   "group": "IT-Governance",
@@ -143,7 +143,7 @@
   "itpe": "83"
  },
  {
-  "id": "it-14",
+  "id": "it-b5c0fef8",
   "domain": "IT경영",
   "imp": "상",
   "group": "IT-Compliance",
@@ -154,7 +154,7 @@
   "itpe": "87"
  },
  {
-  "id": "it-15",
+  "id": "it-fcb7d30a",
   "domain": "IT경영",
   "imp": "상",
   "group": "디지털 컨버전스",
@@ -165,7 +165,7 @@
   "itpe": ""
  },
  {
-  "id": "it-16",
+  "id": "it-4c0485a2",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "디지털 컨버전스",
@@ -176,7 +176,7 @@
   "itpe": ""
  },
  {
-  "id": "it-17",
+  "id": "it-c1916edd",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "디지털 컨버전스",
@@ -187,7 +187,7 @@
   "itpe": ""
  },
  {
-  "id": "it-18",
+  "id": "it-bfef43da",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "디지털 컨버전스",
@@ -198,7 +198,7 @@
   "itpe": ""
  },
  {
-  "id": "it-19",
+  "id": "it-a9aeb390",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "디지털 컨버전스",
@@ -209,7 +209,7 @@
   "itpe": ""
  },
  {
-  "id": "it-20",
+  "id": "it-5c464f75",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "디지털 컨버전스",
@@ -220,7 +220,7 @@
   "itpe": ""
  },
  {
-  "id": "it-21",
+  "id": "it-d1c5aba0",
   "domain": "IT경영",
   "imp": "상",
   "group": "플랫폼(유형)",
@@ -231,7 +231,7 @@
   "itpe": ""
  },
  {
-  "id": "it-22",
+  "id": "it-7ce2037f",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "CSR",
@@ -242,7 +242,7 @@
   "itpe": "137"
  },
  {
-  "id": "it-23",
+  "id": "it-a3beefff",
   "domain": "IT경영",
   "imp": "상",
   "group": "CSR",
@@ -253,7 +253,7 @@
   "itpe": "86"
  },
  {
-  "id": "it-24",
+  "id": "it-5f8e8d5a",
   "domain": "IT경영",
   "imp": "상",
   "group": "투자 평가 관리",
@@ -264,7 +264,7 @@
   "itpe": ""
  },
  {
-  "id": "it-25",
+  "id": "it-b9fe56a9",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "Xtech / 핀테크(FinTech)",
@@ -275,7 +275,7 @@
   "itpe": "1245"
  },
  {
-  "id": "it-26",
+  "id": "it-b624351c",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "Xtech / 핀테크(FinTech)",
@@ -286,7 +286,7 @@
   "itpe": ""
  },
  {
-  "id": "it-27",
+  "id": "it-a4170bcc",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "Xtech / 핀테크(FinTech)",
@@ -297,7 +297,7 @@
   "itpe": ""
  },
  {
-  "id": "it-28",
+  "id": "it-5577e6a7",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "Xtech / 핀테크(FinTech)",
@@ -308,7 +308,7 @@
   "itpe": ""
  },
  {
-  "id": "it-29",
+  "id": "it-01136a5b",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "Xtech / 핀테크(FinTech)",
@@ -319,7 +319,7 @@
   "itpe": ""
  },
  {
-  "id": "it-30",
+  "id": "it-ce44d56d",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "경제",
@@ -330,7 +330,7 @@
   "itpe": "111"
  },
  {
-  "id": "it-31",
+  "id": "it-54b4fda5",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "경제",
@@ -341,7 +341,7 @@
   "itpe": "118"
  },
  {
-  "id": "it-32",
+  "id": "it-61cdc2ee",
   "domain": "IT경영",
   "imp": "상",
   "group": "경제",
@@ -352,7 +352,7 @@
   "itpe": ""
  },
  {
-  "id": "it-33",
+  "id": "it-56c24944",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "기타",
@@ -363,7 +363,7 @@
   "itpe": ""
  },
  {
-  "id": "it-34",
+  "id": "it-3b65f95f",
   "domain": "IT경영",
   "imp": "출제예상",
   "group": "기타",
@@ -374,7 +374,7 @@
   "itpe": "121"
  },
  {
-  "id": "pm-1",
+  "id": "pm-89e5a9d8",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "비즈니스 가치 경제성 분석 기법 /프로젝트 가치 평가",
@@ -385,7 +385,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-2",
+  "id": "pm-394ef3f9",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "비즈니스 가치 경제성 분석 기법 /프로젝트 가치 평가",
@@ -396,7 +396,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-3",
+  "id": "pm-eed5827f",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "비즈니스 가치 경제성 분석 기법 /프로젝트 가치 평가",
@@ -407,7 +407,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-4",
+  "id": "pm-2a90a275",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "비즈니스 가치 경제성 분석 기법 /프로젝트 가치 평가",
@@ -418,7 +418,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-5",
+  "id": "pm-c5ee791c",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 관리 일반",
@@ -429,7 +429,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-6",
+  "id": "pm-dd61e790",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 관리 일반",
@@ -440,7 +440,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-7",
+  "id": "pm-e6e7026a",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 통합관리 (Integration Management)",
@@ -451,7 +451,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-8",
+  "id": "pm-f4f861b9",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 범위(Scope) 관리",
@@ -462,7 +462,7 @@
   "itpe": "1338"
  },
  {
-  "id": "pm-9",
+  "id": "pm-cd135005",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 범위(Scope) 관리",
@@ -473,7 +473,7 @@
   "itpe": "1339"
  },
  {
-  "id": "pm-10",
+  "id": "pm-2ab60d56",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 범위(Scope) 관리",
@@ -484,7 +484,7 @@
   "itpe": "1340"
  },
  {
-  "id": "pm-11",
+  "id": "pm-29bbcd53",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 범위(Scope) 관리",
@@ -495,7 +495,7 @@
   "itpe": "330"
  },
  {
-  "id": "pm-12",
+  "id": "pm-b04e71cd",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 일정관리 (시간관리)",
@@ -506,7 +506,7 @@
   "itpe": "1345"
  },
  {
-  "id": "pm-13",
+  "id": "pm-821ec85c",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 일정관리 (시간관리)",
@@ -517,7 +517,7 @@
   "itpe": "332"
  },
  {
-  "id": "pm-14",
+  "id": "pm-d632ffe5",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "원가관리(예산관리)",
@@ -528,7 +528,7 @@
   "itpe": "1355"
  },
  {
-  "id": "pm-15",
+  "id": "pm-513d9f30",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 품질(Quality) 관리",
@@ -539,7 +539,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-16",
+  "id": "pm-5082c7a7",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 품질(Quality) 관리",
@@ -550,7 +550,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-17",
+  "id": "pm-41acb0e1",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 위험관리",
@@ -561,7 +561,7 @@
   "itpe": "1366"
  },
  {
-  "id": "pm-18",
+  "id": "pm-02e894fb",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 위험관리",
@@ -572,7 +572,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-19",
+  "id": "pm-da25f939",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 위험관리",
@@ -583,7 +583,7 @@
   "itpe": "1369"
  },
  {
-  "id": "pm-20",
+  "id": "pm-6ce58140",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "프로젝트 위험관리",
@@ -594,7 +594,7 @@
   "itpe": "1371"
  },
  {
-  "id": "pm-21",
+  "id": "pm-09febb48",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "Agile 프로세스",
@@ -605,7 +605,7 @@
   "itpe": "305"
  },
  {
-  "id": "pm-22",
+  "id": "pm-6335b444",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "Agile 프로세스",
@@ -616,7 +616,7 @@
   "itpe": "304"
  },
  {
-  "id": "pm-23",
+  "id": "pm-25285f7a",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "Agile 프로세스",
@@ -627,7 +627,7 @@
   "itpe": "306"
  },
  {
-  "id": "pm-24",
+  "id": "pm-05798b73",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "Agile 프로세스",
@@ -638,7 +638,7 @@
   "itpe": "307"
  },
  {
-  "id": "pm-25",
+  "id": "pm-db57f7c3",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "Agile 프로세스",
@@ -649,7 +649,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-26",
+  "id": "pm-2505ceef",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "PMO/PM",
@@ -660,7 +660,7 @@
   "itpe": "1569"
  },
  {
-  "id": "pm-27",
+  "id": "pm-1e021602",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "PMO/PM",
@@ -671,7 +671,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-28",
+  "id": "pm-ec5d1bdf",
   "domain": "프로젝트관리",
   "imp": "상",
   "group": "PMO/PM",
@@ -682,7 +682,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-29",
+  "id": "pm-025b93f7",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "프로젝트 관리 일반",
@@ -693,7 +693,7 @@
   "itpe": "1331"
  },
  {
-  "id": "pm-30",
+  "id": "pm-4eebabe8",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "프로젝트 관리 일반",
@@ -704,7 +704,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-31",
+  "id": "pm-7072f6cc",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "프로젝트 범위(Scope) 관리",
@@ -715,7 +715,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-32",
+  "id": "pm-18b041b7",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "프로젝트 범위(Scope) 관리",
@@ -726,7 +726,7 @@
   "itpe": "49"
  },
  {
-  "id": "pm-33",
+  "id": "pm-ac4c9344",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "프로젝트 일정관리 (시간관리)",
@@ -737,7 +737,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-34",
+  "id": "pm-8a28aad4",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "프로젝트 일정관리 (시간관리)",
@@ -748,7 +748,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-35",
+  "id": "pm-07ac4be4",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "프로젝트 일정관리 (시간관리)",
@@ -759,7 +759,7 @@
   "itpe": "1351"
  },
  {
-  "id": "pm-36",
+  "id": "pm-a2b4ec34",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "프로젝트 일정관리 (시간관리)",
@@ -770,7 +770,7 @@
   "itpe": "334"
  },
  {
-  "id": "pm-37",
+  "id": "pm-ced3642d",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "프로젝트 일정관리 (시간관리)",
@@ -781,7 +781,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-38",
+  "id": "pm-960f3c41",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "프로젝트 품질(Quality) 관리",
@@ -792,7 +792,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-39",
+  "id": "pm-37b16ac5",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "프로젝트 자원관리",
@@ -803,7 +803,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-40",
+  "id": "pm-6f83a752",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "프로젝트 이해관계자관리",
@@ -814,7 +814,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-41",
+  "id": "pm-c5b665ad",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "Agile 프로세스",
@@ -825,7 +825,7 @@
   "itpe": "1376"
  },
  {
-  "id": "pm-42",
+  "id": "pm-5994ca71",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "Agile 프로세스",
@@ -836,7 +836,7 @@
   "itpe": "1376"
  },
  {
-  "id": "pm-43",
+  "id": "pm-ad27906b",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "Agile 프로세스",
@@ -847,7 +847,7 @@
   "itpe": ""
  },
  {
-  "id": "pm-44",
+  "id": "pm-f7cd3c67",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "Agile 프로세스",
@@ -858,7 +858,7 @@
   "itpe": "308"
  },
  {
-  "id": "pm-45",
+  "id": "pm-234e7683",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "Agile 프로세스",
@@ -869,7 +869,7 @@
   "itpe": "311"
  },
  {
-  "id": "pm-46",
+  "id": "pm-ea516432",
   "domain": "프로젝트관리",
   "imp": "출제예상",
   "group": "Agile 프로세스",
@@ -880,7 +880,7 @@
   "itpe": "1383"
  },
  {
-  "id": "se-1",
+  "id": "sw-3c08ba17",
   "domain": "SW공학",
   "imp": "상",
   "group": "개발방법론",
@@ -891,7 +891,7 @@
   "itpe": "1405"
  },
  {
-  "id": "se-2",
+  "id": "sw-a9cef3aa",
   "domain": "SW공학",
   "imp": "상",
   "group": "개발방법론",
@@ -902,7 +902,7 @@
   "itpe": "299"
  },
  {
-  "id": "se-3",
+  "id": "sw-1f7ddd45",
   "domain": "SW공학",
   "imp": "상",
   "group": "발주 프로세스",
@@ -913,7 +913,7 @@
   "itpe": ""
  },
  {
-  "id": "se-4",
+  "id": "sw-db164723",
   "domain": "SW공학",
   "imp": "상",
   "group": "발주 프로세스",
@@ -924,7 +924,7 @@
   "itpe": ""
  },
  {
-  "id": "se-5",
+  "id": "sw-7d41b42d",
   "domain": "SW공학",
   "imp": "상",
   "group": "발주 프로세스",
@@ -935,7 +935,7 @@
   "itpe": ""
  },
  {
-  "id": "se-6",
+  "id": "sw-f8fcde06",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW Architecture",
@@ -946,7 +946,7 @@
   "itpe": "352"
  },
  {
-  "id": "se-7",
+  "id": "sw-834a85ce",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW Architecture",
@@ -957,7 +957,7 @@
   "itpe": "1423"
  },
  {
-  "id": "se-8",
+  "id": "sw-13b98ecb",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW Architecture",
@@ -968,7 +968,7 @@
   "itpe": "1424"
  },
  {
-  "id": "se-9",
+  "id": "sw-b6d0cefa",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW Architecture",
@@ -979,7 +979,7 @@
   "itpe": "1425"
  },
  {
-  "id": "se-10",
+  "id": "sw-6f145580",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW Architecture",
@@ -990,7 +990,7 @@
   "itpe": "1426"
  },
  {
-  "id": "se-11",
+  "id": "sw-f2b29656",
   "domain": "SW공학",
   "imp": "상",
   "group": "MSA",
@@ -1001,7 +1001,7 @@
   "itpe": "303"
  },
  {
-  "id": "se-12",
+  "id": "sw-0469c596",
   "domain": "SW공학",
   "imp": "상",
   "group": "MSA",
@@ -1012,7 +1012,7 @@
   "itpe": "1435"
  },
  {
-  "id": "se-13",
+  "id": "sw-b57232ba",
   "domain": "SW공학",
   "imp": "상",
   "group": "MSA",
@@ -1023,7 +1023,7 @@
   "itpe": "303"
  },
  {
-  "id": "se-14",
+  "id": "sw-2aefe16b",
   "domain": "SW공학",
   "imp": "상",
   "group": "MSA",
@@ -1034,7 +1034,7 @@
   "itpe": "313"
  },
  {
-  "id": "se-15",
+  "id": "sw-c18252c0",
   "domain": "SW공학",
   "imp": "상",
   "group": "UML",
@@ -1045,7 +1045,7 @@
   "itpe": "1443"
  },
  {
-  "id": "se-16",
+  "id": "sw-56436b1e",
   "domain": "SW공학",
   "imp": "상",
   "group": "UML",
@@ -1056,7 +1056,7 @@
   "itpe": "362"
  },
  {
-  "id": "se-17",
+  "id": "sw-eb10474f",
   "domain": "SW공학",
   "imp": "상",
   "group": "UML",
@@ -1067,7 +1067,7 @@
   "itpe": "357"
  },
  {
-  "id": "se-18",
+  "id": "sw-1913f0b1",
   "domain": "SW공학",
   "imp": "상",
   "group": "디자인 패턴",
@@ -1078,7 +1078,7 @@
   "itpe": ""
  },
  {
-  "id": "se-19",
+  "id": "sw-f22d22ea",
   "domain": "SW공학",
   "imp": "상",
   "group": "디자인 패턴",
@@ -1089,7 +1089,7 @@
   "itpe": ""
  },
  {
-  "id": "se-20",
+  "id": "sw-48208ddd",
   "domain": "SW공학",
   "imp": "상",
   "group": "설계",
@@ -1100,7 +1100,7 @@
   "itpe": "379"
  },
  {
-  "id": "se-21",
+  "id": "sw-0b9faf76",
   "domain": "SW공학",
   "imp": "상",
   "group": "설계",
@@ -1111,7 +1111,7 @@
   "itpe": "322"
  },
  {
-  "id": "se-22",
+  "id": "sw-773a14de",
   "domain": "SW공학",
   "imp": "상",
   "group": "TDD / DevOps",
@@ -1122,7 +1122,7 @@
   "itpe": ""
  },
  {
-  "id": "se-23",
+  "id": "sw-ae922a9e",
   "domain": "SW공학",
   "imp": "상",
   "group": "TDD / DevOps",
@@ -1133,7 +1133,7 @@
   "itpe": "1632"
  },
  {
-  "id": "se-24",
+  "id": "sw-a51be44c",
   "domain": "SW공학",
   "imp": "상",
   "group": "TDD / DevOps",
@@ -1144,7 +1144,7 @@
   "itpe": "1489"
  },
  {
-  "id": "se-25",
+  "id": "sw-d79885bf",
   "domain": "SW공학",
   "imp": "상",
   "group": "TDD / DevOps",
@@ -1155,7 +1155,7 @@
   "itpe": ""
  },
  {
-  "id": "se-26",
+  "id": "sw-63151342",
   "domain": "SW공학",
   "imp": "상",
   "group": "테스트(Test)",
@@ -1166,7 +1166,7 @@
   "itpe": "387"
  },
  {
-  "id": "se-27",
+  "id": "sw-9e838a99",
   "domain": "SW공학",
   "imp": "상",
   "group": "테스트(Test)",
@@ -1177,7 +1177,7 @@
   "itpe": "1493"
  },
  {
-  "id": "se-28",
+  "id": "sw-5f1246f2",
   "domain": "SW공학",
   "imp": "상",
   "group": "테스트(Test)",
@@ -1188,7 +1188,7 @@
   "itpe": ""
  },
  {
-  "id": "se-29",
+  "id": "sw-c6318e28",
   "domain": "SW공학",
   "imp": "상",
   "group": "테스트(Test)",
@@ -1199,7 +1199,7 @@
   "itpe": "1500"
  },
  {
-  "id": "se-30",
+  "id": "sw-06bff2e0",
   "domain": "SW공학",
   "imp": "상",
   "group": "테스트(Test)",
@@ -1210,7 +1210,7 @@
   "itpe": ""
  },
  {
-  "id": "se-31",
+  "id": "sw-b7327fe2",
   "domain": "SW공학",
   "imp": "상",
   "group": "테스트(Test)",
@@ -1221,7 +1221,7 @@
   "itpe": "1502"
  },
  {
-  "id": "se-32",
+  "id": "sw-00e208f0",
   "domain": "SW공학",
   "imp": "상",
   "group": "테스트(Test)",
@@ -1232,7 +1232,7 @@
   "itpe": ""
  },
  {
-  "id": "se-33",
+  "id": "sw-5bddae0b",
   "domain": "SW공학",
   "imp": "상",
   "group": "테스트(Test)",
@@ -1243,7 +1243,7 @@
   "itpe": ""
  },
  {
-  "id": "se-34",
+  "id": "sw-d61c2078",
   "domain": "SW공학",
   "imp": "상",
   "group": "테스트(Test)",
@@ -1254,7 +1254,7 @@
   "itpe": "389"
  },
  {
-  "id": "se-35",
+  "id": "sw-0db8807e",
   "domain": "SW공학",
   "imp": "상",
   "group": "테스트(Test)",
@@ -1265,7 +1265,7 @@
   "itpe": ""
  },
  {
-  "id": "se-36",
+  "id": "sw-5a89f14b",
   "domain": "SW공학",
   "imp": "상",
   "group": "테스트(Test)",
@@ -1276,7 +1276,7 @@
   "itpe": ""
  },
  {
-  "id": "se-37",
+  "id": "sw-6326f6fe",
   "domain": "SW공학",
   "imp": "상",
   "group": "테스트(Test)",
@@ -1287,7 +1287,7 @@
   "itpe": "396"
  },
  {
-  "id": "se-38",
+  "id": "sw-d4f450c3",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW 유지관리 (유지보수 변경)",
@@ -1298,7 +1298,7 @@
   "itpe": ""
  },
  {
-  "id": "se-39",
+  "id": "sw-b27b4f37",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW 유지관리 (유지보수 변경)",
@@ -1309,7 +1309,7 @@
   "itpe": "410"
  },
  {
-  "id": "se-40",
+  "id": "sw-716cc169",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW 유지관리 (유지보수 변경)",
@@ -1320,7 +1320,7 @@
   "itpe": ""
  },
  {
-  "id": "se-41",
+  "id": "sw-02ce4add",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW 품질 표준 및 종합",
@@ -1331,7 +1331,7 @@
   "itpe": "414"
  },
  {
-  "id": "se-42",
+  "id": "sw-4c70409b",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW 품질 표준 및 종합",
@@ -1342,7 +1342,7 @@
   "itpe": "426"
  },
  {
-  "id": "se-43",
+  "id": "sw-62c941dd",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW 품질 표준 및 종합",
@@ -1353,7 +1353,7 @@
   "itpe": ""
  },
  {
-  "id": "se-44",
+  "id": "sw-f631ecb5",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW 품질 표준 및 종합",
@@ -1364,7 +1364,7 @@
   "itpe": "1545"
  },
  {
-  "id": "se-45",
+  "id": "sw-ad7a0110",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW 품질 표준 및 종합",
@@ -1375,7 +1375,7 @@
   "itpe": "421"
  },
  {
-  "id": "se-46",
+  "id": "sw-b08a9612",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW 품질 표준 및 종합",
@@ -1386,7 +1386,7 @@
   "itpe": ""
  },
  {
-  "id": "se-47",
+  "id": "sw-14877787",
   "domain": "SW공학",
   "imp": "상",
   "group": "소프트웨어 안전성 분석기법",
@@ -1397,7 +1397,7 @@
   "itpe": "1552"
  },
  {
-  "id": "se-48",
+  "id": "sw-2e2db1bb",
   "domain": "SW공학",
   "imp": "상",
   "group": "정보시스템 감리",
@@ -1408,7 +1408,7 @@
   "itpe": "1558"
  },
  {
-  "id": "se-49",
+  "id": "sw-8934a841",
   "domain": "SW공학",
   "imp": "상",
   "group": "정보시스템 감리",
@@ -1419,7 +1419,7 @@
   "itpe": "1559"
  },
  {
-  "id": "se-50",
+  "id": "sw-bc673450",
   "domain": "SW공학",
   "imp": "상",
   "group": "정보시스템 감리",
@@ -1430,7 +1430,7 @@
   "itpe": "1558"
  },
  {
-  "id": "se-51",
+  "id": "sw-4b322996",
   "domain": "SW공학",
   "imp": "상",
   "group": "정보시스템 감리",
@@ -1441,7 +1441,7 @@
   "itpe": "1561"
  },
  {
-  "id": "se-52",
+  "id": "sw-f2aafab2",
   "domain": "SW공학",
   "imp": "상",
   "group": "정보시스템 감리",
@@ -1452,7 +1452,7 @@
   "itpe": "433"
  },
  {
-  "id": "se-53",
+  "id": "sw-72afe2e4",
   "domain": "SW공학",
   "imp": "상",
   "group": "정보시스템 감리",
@@ -1463,7 +1463,7 @@
   "itpe": ""
  },
  {
-  "id": "se-54",
+  "id": "sw-45f58fa9",
   "domain": "SW공학",
   "imp": "상",
   "group": "정보시스템 감리",
@@ -1474,7 +1474,7 @@
   "itpe": ""
  },
  {
-  "id": "se-55",
+  "id": "sw-5c067644",
   "domain": "SW공학",
   "imp": "상",
   "group": "정보시스템 감리",
@@ -1485,7 +1485,7 @@
   "itpe": ""
  },
  {
-  "id": "se-56",
+  "id": "sw-547059da",
   "domain": "SW공학",
   "imp": "상",
   "group": "정보시스템 감리",
@@ -1496,7 +1496,7 @@
   "itpe": "1569"
  },
  {
-  "id": "se-57",
+  "id": "sw-0eaf4c2c",
   "domain": "SW공학",
   "imp": "상",
   "group": "OSS / FOSS",
@@ -1507,7 +1507,7 @@
   "itpe": "1297"
  },
  {
-  "id": "se-58",
+  "id": "sw-4fa7e14f",
   "domain": "SW공학",
   "imp": "상",
   "group": "OSS / FOSS",
@@ -1518,7 +1518,7 @@
   "itpe": ""
  },
  {
-  "id": "se-59",
+  "id": "sw-ca1e726a",
   "domain": "SW공학",
   "imp": "상",
   "group": "OSS / FOSS",
@@ -1529,7 +1529,7 @@
   "itpe": ""
  },
  {
-  "id": "se-60",
+  "id": "sw-cd6b6402",
   "domain": "SW공학",
   "imp": "상",
   "group": "OSS / FOSS",
@@ -1540,7 +1540,7 @@
   "itpe": ""
  },
  {
-  "id": "se-61",
+  "id": "sw-821e477d",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW 규모 산정(원가산정)",
@@ -1551,7 +1551,7 @@
   "itpe": ""
  },
  {
-  "id": "se-62",
+  "id": "sw-8e7e7040",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW 규모 산정(원가산정)",
@@ -1562,7 +1562,7 @@
   "itpe": "1583"
  },
  {
-  "id": "se-63",
+  "id": "sw-6686f67d",
   "domain": "SW공학",
   "imp": "상",
   "group": "하드웨어 규모산정",
@@ -1573,7 +1573,7 @@
   "itpe": ""
  },
  {
-  "id": "se-64",
+  "id": "sw-ba80cb53",
   "domain": "SW공학",
   "imp": "상",
   "group": "국내 SW 육성 방안",
@@ -1584,7 +1584,7 @@
   "itpe": ""
  },
  {
-  "id": "se-65",
+  "id": "sw-cd364e29",
   "domain": "SW공학",
   "imp": "상",
   "group": "국내 SW 육성 방안",
@@ -1595,7 +1595,7 @@
   "itpe": ""
  },
  {
-  "id": "se-66",
+  "id": "sw-dfb13256",
   "domain": "SW공학",
   "imp": "상",
   "group": "국내 SW 육성 방안",
@@ -1606,7 +1606,7 @@
   "itpe": ""
  },
  {
-  "id": "se-67",
+  "id": "sw-2994b40c",
   "domain": "SW공학",
   "imp": "상",
   "group": "SW 저작권 보호",
@@ -1617,7 +1617,7 @@
   "itpe": "413"
  },
  {
-  "id": "se-68",
+  "id": "sw-31527cdb",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "SW공학",
@@ -1628,7 +1628,7 @@
   "itpe": ""
  },
  {
-  "id": "se-69",
+  "id": "sw-d558f6e8",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "발주 프로세스",
@@ -1639,7 +1639,7 @@
   "itpe": ""
  },
  {
-  "id": "se-70",
+  "id": "sw-11279589",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "SOA",
@@ -1650,7 +1650,7 @@
   "itpe": ""
  },
  {
-  "id": "se-71",
+  "id": "sw-87c03699",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "SW Architecture",
@@ -1661,7 +1661,7 @@
   "itpe": ""
  },
  {
-  "id": "se-72",
+  "id": "sw-5aba3815",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "SW Architecture",
@@ -1672,7 +1672,7 @@
   "itpe": ""
  },
  {
-  "id": "se-73",
+  "id": "sw-c76e3fd1",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "MSA",
@@ -1683,7 +1683,7 @@
   "itpe": ""
  },
  {
-  "id": "se-74",
+  "id": "sw-efaf8f68",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "전자정부 표준프레임워크 (e-Goverment framework)",
@@ -1694,7 +1694,7 @@
   "itpe": "2517"
  },
  {
-  "id": "se-75",
+  "id": "sw-4fc96342",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "UML",
@@ -1705,7 +1705,7 @@
   "itpe": ""
  },
  {
-  "id": "se-76",
+  "id": "sw-3492fa59",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "UML",
@@ -1716,7 +1716,7 @@
   "itpe": ""
  },
  {
-  "id": "se-77",
+  "id": "sw-6fa1eeaa",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "UML",
@@ -1727,7 +1727,7 @@
   "itpe": ""
  },
  {
-  "id": "se-78",
+  "id": "sw-55f4cc70",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "UML",
@@ -1738,7 +1738,7 @@
   "itpe": ""
  },
  {
-  "id": "se-79",
+  "id": "sw-5e3eec84",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "UML",
@@ -1749,7 +1749,7 @@
   "itpe": ""
  },
  {
-  "id": "se-80",
+  "id": "sw-9ac213af",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "디자인 패턴",
@@ -1760,7 +1760,7 @@
   "itpe": "378"
  },
  {
-  "id": "se-81",
+  "id": "sw-d0337db5",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "디자인 패턴",
@@ -1771,7 +1771,7 @@
   "itpe": ""
  },
  {
-  "id": "se-82",
+  "id": "sw-54832ebd",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "디자인 패턴",
@@ -1782,7 +1782,7 @@
   "itpe": ""
  },
  {
-  "id": "se-83",
+  "id": "sw-da032a10",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "TDD / DevOps",
@@ -1793,7 +1793,7 @@
   "itpe": ""
  },
  {
-  "id": "se-84",
+  "id": "sw-188b20ab",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "TDD / DevOps",
@@ -1804,7 +1804,7 @@
   "itpe": ""
  },
  {
-  "id": "se-85",
+  "id": "sw-a4c5101e",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1815,7 +1815,7 @@
   "itpe": ""
  },
  {
-  "id": "se-86",
+  "id": "sw-514a514e",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1826,7 +1826,7 @@
   "itpe": ""
  },
  {
-  "id": "se-87",
+  "id": "sw-686103f7",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1837,7 +1837,7 @@
   "itpe": ""
  },
  {
-  "id": "se-88",
+  "id": "sw-21984236",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1848,7 +1848,7 @@
   "itpe": ""
  },
  {
-  "id": "se-89",
+  "id": "sw-511a13e4",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1859,7 +1859,7 @@
   "itpe": ""
  },
  {
-  "id": "se-90",
+  "id": "sw-456bd5af",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1870,7 +1870,7 @@
   "itpe": ""
  },
  {
-  "id": "se-91",
+  "id": "sw-c1d05786",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1881,7 +1881,7 @@
   "itpe": ""
  },
  {
-  "id": "se-92",
+  "id": "sw-6f7ef6eb",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1892,7 +1892,7 @@
   "itpe": ""
  },
  {
-  "id": "se-93",
+  "id": "sw-18115b57",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1903,7 +1903,7 @@
   "itpe": ""
  },
  {
-  "id": "se-94",
+  "id": "sw-7ea1f575",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1914,7 +1914,7 @@
   "itpe": ""
  },
  {
-  "id": "se-95",
+  "id": "sw-75f019ce",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1925,7 +1925,7 @@
   "itpe": ""
  },
  {
-  "id": "se-96",
+  "id": "sw-5dd1015a",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1936,7 +1936,7 @@
   "itpe": ""
  },
  {
-  "id": "se-97",
+  "id": "sw-4ce1b344",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1947,7 +1947,7 @@
   "itpe": ""
  },
  {
-  "id": "se-98",
+  "id": "sw-3cdcc612",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1958,7 +1958,7 @@
   "itpe": ""
  },
  {
-  "id": "se-99",
+  "id": "sw-e6a05865",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1969,7 +1969,7 @@
   "itpe": ""
  },
  {
-  "id": "se-100",
+  "id": "sw-ba4b43b5",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1980,7 +1980,7 @@
   "itpe": ""
  },
  {
-  "id": "se-101",
+  "id": "sw-ead05ef5",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "테스트(Test)",
@@ -1991,7 +1991,7 @@
   "itpe": ""
  },
  {
-  "id": "se-102",
+  "id": "sw-f078ca18",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "SW 유지관리 (유지보수 변경)",
@@ -2002,7 +2002,7 @@
   "itpe": ""
  },
  {
-  "id": "se-103",
+  "id": "sw-351a52ea",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "SW 유지관리 (유지보수 변경)",
@@ -2013,7 +2013,7 @@
   "itpe": ""
  },
  {
-  "id": "se-104",
+  "id": "sw-a7750624",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "SW 유지관리 (유지보수 변경)",
@@ -2024,7 +2024,7 @@
   "itpe": "312"
  },
  {
-  "id": "se-105",
+  "id": "sw-e96d09e4",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "SW 품질 표준 및 종합",
@@ -2035,7 +2035,7 @@
   "itpe": ""
  },
  {
-  "id": "se-106",
+  "id": "sw-f9eaaee1",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "SW 품질 표준 및 종합",
@@ -2046,7 +2046,7 @@
   "itpe": "430"
  },
  {
-  "id": "se-107",
+  "id": "sw-5aebca8c",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "SW 품질 표준 및 종합",
@@ -2057,7 +2057,7 @@
   "itpe": ""
  },
  {
-  "id": "se-108",
+  "id": "sw-4663afb1",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "정보시스템 감리",
@@ -2068,7 +2068,7 @@
   "itpe": ""
  },
  {
-  "id": "se-109",
+  "id": "sw-896d204e",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "정보시스템 감리",
@@ -2079,7 +2079,7 @@
   "itpe": ""
  },
  {
-  "id": "se-110",
+  "id": "sw-7f7bb470",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "정보시스템 감리",
@@ -2090,7 +2090,7 @@
   "itpe": ""
  },
  {
-  "id": "se-111",
+  "id": "sw-b01a6079",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "정보시스템 감리",
@@ -2101,7 +2101,7 @@
   "itpe": ""
  },
  {
-  "id": "se-112",
+  "id": "sw-acbb9f65",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "정보시스템 감리",
@@ -2112,7 +2112,7 @@
   "itpe": "1574"
  },
  {
-  "id": "se-113",
+  "id": "sw-4cd56382",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "정보시스템 감리",
@@ -2123,7 +2123,7 @@
   "itpe": ""
  },
  {
-  "id": "se-114",
+  "id": "sw-4bd95626",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "정보시스템 감리",
@@ -2134,7 +2134,7 @@
   "itpe": "1576"
  },
  {
-  "id": "se-115",
+  "id": "sw-2e836aec",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "OSS / FOSS",
@@ -2145,7 +2145,7 @@
   "itpe": "1577"
  },
  {
-  "id": "se-116",
+  "id": "sw-6f56b5cb",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "OSS / FOSS",
@@ -2156,7 +2156,7 @@
   "itpe": ""
  },
  {
-  "id": "se-117",
+  "id": "sw-145cbf49",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "SW 규모 산정(원가산정)",
@@ -2167,7 +2167,7 @@
   "itpe": "1587"
  },
  {
-  "id": "se-118",
+  "id": "sw-415801b0",
   "domain": "SW공학",
   "imp": "출제예상",
   "group": "코딩 / 언어",
