@@ -1,0 +1,987 @@
+<title>정보관리기술사 단어장</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap">
+<style>
+:root{
+  --paper:#f3efe3;
+  --sheet:#fbf9f2;
+  --ink:#141a2e;
+  --ink-2:#3a4262;
+  --ink-3:#6a7190;
+  --rule:#d8dbe3;
+  --rule-2:#a7aec3;
+  --on-ink:#f8f5ec;
+  --ok:#1e6b43;
+  --ok-bg:#e1eee4;
+  --bad:#bd2e27;
+  --bad-bg:#f7e1dd;
+  --mid:#835f17;
+  --mid-bg:#f0e5c9;
+  --focus:#2b59c3;
+  --shade:rgba(20,26,46,.07);
+  --font:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR",system-ui,sans-serif;
+  --pen:"Nanum Pen Script","Nanum Pen","Apple SD Gothic Neo","Noto Sans CJK KR",cursive;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0d1220; --sheet:#151b2d; --ink:#ebe6d7; --ink-2:#c6c2b5; --ink-3:#8f94a8;
+    --rule:#242c45; --rule-2:#454e72; --on-ink:#0d1220;
+    --ok:#6cc792; --ok-bg:#12291c; --bad:#ff8074; --bad-bg:#371815; --mid:#e3b85f; --mid-bg:#2f250e;
+    --focus:#8fb1ff; --shade:rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0d1220; --sheet:#151b2d; --ink:#ebe6d7; --ink-2:#c6c2b5; --ink-3:#8f94a8;
+  --rule:#242c45; --rule-2:#454e72; --on-ink:#0d1220;
+  --ok:#6cc792; --ok-bg:#12291c; --bad:#ff8074; --bad-bg:#371815; --mid:#e3b85f; --mid-bg:#2f250e;
+  --focus:#8fb1ff; --shade:rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.55;
+  padding-top:env(safe-area-inset-top,0px);-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+body::before{content:"";position:fixed;left:0;right:0;top:0;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:30}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;touch-action:manipulation}
+input{font:inherit;color:inherit}
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.pen{font-family:var(--pen);font-weight:400;letter-spacing:.01em}
+
+/* 옆 여백: 한 곳에서만 정의 */
+.gutter{padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.wrap{max-width:560px;margin-inline:auto}
+
+/* 헤더 */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--rule);padding-block:10px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:32px}
+.brand{display:flex;align-items:baseline;gap:6px;min-width:0}
+.brand b{font-size:15px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.brand span{font-size:13px;color:var(--ink-3);white-space:nowrap}
+.store{display:inline-flex;align-items:center;gap:6px;font-size:12px;line-height:1;color:var(--ink-2);border:1px solid var(--rule-2);padding:6px 8px;border-radius:2px;white-space:nowrap}
+.store::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ink-3)}
+.store[data-m="db"]::before{background:var(--ok)}
+.store[data-m="pending"]::before{background:transparent;border:1px solid var(--ink-3)}
+
+main{padding-block:14px calc(92px + env(safe-area-inset-bottom,0px))}
+h2{font-size:20px;line-height:1.3;margin:4px 0 4px;font-weight:700;letter-spacing:-.01em}
+.muted{color:var(--ink-3);font-size:13px;margin:0}
+.lab{display:block;font-size:12px;font-weight:600;color:var(--ink-3);letter-spacing:.04em;margin:18px 0 8px}
+
+/* 덱 탭 */
+.decks{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ink);border-radius:2px;overflow:hidden}
+.deck-tab{display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-height:64px;padding:10px 12px;text-align:left;border-left:1px solid var(--ink)}
+.deck-tab:first-child{border-left:0}
+.deck-tab[aria-pressed="true"]{background:var(--ink);color:var(--on-ink)}
+.dt-name{font-size:17px;font-weight:700}
+.dt-n{font-size:12px;opacity:.75}
+.dt-due{font-size:11px;font-weight:600;margin-top:2px;padding:1px 5px;border:1px solid currentColor;border-radius:2px;opacity:.9}
+
+/* 칩 */
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{min-height:36px;padding:6px 10px;border:1px solid var(--rule-2);border-radius:2px;font-size:14px;line-height:1.2;color:var(--ink-2);background:var(--sheet);position:relative}
+.chip::after{content:"";position:absolute;inset:-4px 0}
+.chip[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--on-ink);font-weight:600}
+.chip small{font-size:11px;opacity:.7;margin-left:3px}
+
+/* 오늘 복습 */
+.today{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;margin-top:18px;min-height:92px;padding:14px 16px;background:var(--ink);color:var(--on-ink);border-radius:2px;text-align:left;box-shadow:4px 4px 0 var(--rule-2)}
+.today:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--rule-2)}
+.today-k{display:block;font-size:20px;font-weight:700}
+.today-s{display:block;font-size:13px;opacity:.75;margin-top:2px}
+.today-n{font-size:46px;font-weight:700;line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.today-n small{font-size:16px;font-weight:500;margin-left:2px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.btn{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:60px;padding:10px 14px;border:1px solid var(--ink);border-radius:2px;background:var(--sheet);text-align:left;font-weight:700;font-size:16px}
+.btn small{font-weight:400;font-size:12px;color:var(--ink-3)}
+.btn:active{background:var(--rule)}
+.btn-ink{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;background:var(--ink);color:var(--on-ink);border-radius:2px;font-weight:700;font-size:16px}
+.btn-line{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;border:1px solid var(--ink);border-radius:2px;font-weight:600;background:var(--sheet)}
+.link{min-height:44px;padding:0 4px;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px;font-size:14px}
+
+/* 설정 줄 */
+.opts{display:grid;gap:10px;margin-top:20px;padding-top:14px;border-top:1px dashed var(--rule-2)}
+.opt-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.opt-row > span{font-size:14px;color:var(--ink-2)}
+.seg{display:inline-flex;border:1px solid var(--rule-2);border-radius:2px;overflow:hidden}
+.seg button{min-height:40px;min-width:44px;padding:0 10px;font-size:14px;border-left:1px solid var(--rule-2);color:var(--ink-2);background:var(--sheet)}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--on-ink);font-weight:600}
+
+/* 진도 */
+.prog-list{display:grid;gap:14px;margin-top:4px}
+.prog-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:14px;margin-bottom:6px}
+.prog-h b{font-size:15px}
+.prog-h span{color:var(--ink-3);font-size:12px}
+.pbar{display:flex;height:10px;background:var(--rule);border-radius:1px;overflow:hidden}
+.pbar i{display:block;height:100%}
+.pbar .k{background:var(--ok)} .pbar .u{background:var(--mid)} .pbar .d{background:var(--bad)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:6px;font-size:12px;color:var(--ink-2)}
+.legend span::before{content:"";display:inline-block;width:8px;height:8px;margin-right:4px;vertical-align:0;background:var(--rule)}
+.legend .k::before{background:var(--ok)} .legend .u::before{background:var(--mid)} .legend .d::before{background:var(--bad)}
+
+.panel{margin-top:14px;padding:14px;border:1px solid var(--rule-2);background:var(--sheet);border-radius:2px}
+.panel p{margin:0 0 10px}
+.panel .row2{margin-top:10px}
+.danger{display:flex;align-items:center;justify-content:center;min-height:48px;border:1px solid var(--bad);color:var(--bad);background:var(--bad-bg);border-radius:2px;font-weight:700}
+.empty{padding:28px 16px;border:1px dashed var(--rule-2);text-align:center;color:var(--ink-3);margin-top:16px}
+
+/* 세션 */
+.sess-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:-6px}
+.sess-n{font-variant-numeric:tabular-nums;font-size:14px;color:var(--ink-2);white-space:nowrap}
+.sess-bar{height:3px;background:var(--rule);margin:2px 0 14px}
+.sess-bar i{display:block;height:100%;background:var(--ink)}
+.tag{display:inline-block;font-size:12px;line-height:1.2;padding:3px 6px;border:1px solid var(--rule-2);border-radius:2px;color:var(--ink-2);white-space:nowrap}
+.tag.imp-hi{border-color:var(--ink);color:var(--ink);font-weight:600}
+
+.card{position:relative;display:flex;flex-direction:column;min-height:min(56svh,460px);padding:16px 16px 18px;background:var(--sheet);border:1px solid var(--rule-2);border-radius:2px;
+  box-shadow:0 1px 0 var(--rule),5px 5px 0 -1px var(--paper),5px 5px 0 0 var(--rule-2);cursor:pointer;overflow-wrap:anywhere;word-break:keep-all}
+.card-meta{display:flex;flex-wrap:wrap;gap:6px}
+.face{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px 4px}
+.hint{margin:0;text-align:center;font-size:12px;color:var(--ink-3)}
+.anim{animation:turn .2s ease-out}
+@keyframes turn{from{opacity:0;transform:perspective(900px) rotateX(-8deg) translateY(6px)}to{opacity:1;transform:none}}
+.f-abbr{font-size:clamp(44px,15vw,76px);font-weight:700;line-height:1.05;letter-spacing:.01em}
+.f-ko{font-size:clamp(26px,7.4vw,34px);font-weight:700;line-height:1.3}
+.f-sub{margin-top:12px;font-size:15px;color:var(--ink-2);max-width:30em}
+.f-dueum{font-size:clamp(46px,14vw,64px);line-height:1.1}
+.f-topic{margin-top:10px;font-size:18px;font-weight:600;color:var(--ink-2)}
+.f-topic-lg{font-size:clamp(24px,7vw,30px);font-weight:700;line-height:1.35}
+.f-group{margin-top:10px;font-size:14px;color:var(--ink-3)}
+
+/* 뒷면: 답안지 점선 괘선 */
+.back{flex:1;display:flex;flex-direction:column;padding-top:12px}
+.b-q{font-size:14px;color:var(--ink-3);padding-bottom:8px;border-bottom:1px solid var(--rule-2)}
+.b-q .pen{font-size:22px;color:var(--ink-2)}
+.ruled{--lh:36px;flex:1;line-height:var(--lh);padding:0 0 0 12px;margin-left:30px;border-left:1px solid var(--rule-2);
+  background-image:radial-gradient(circle at 1px 1px,var(--rule-2) 1px,transparent 1.3px);background-size:6px var(--lh);background-position:0 calc(var(--lh) - 3px)}
+.ruled p{margin:0}
+.b-lab{font-size:12px;font-weight:600;color:var(--ink-3);letter-spacing:.04em}
+.b-main{font-size:19px;font-weight:600}
+.b-main b{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.b-big{font-family:var(--pen);font-size:34px;color:var(--ink)}
+.b-abbr{font-size:34px;font-weight:700}
+.b-pen{font-family:var(--pen);font-size:27px;color:var(--ink)}
+.b-sub{font-size:14px;color:var(--ink-2)}
+.b-mean{font-size:14px;color:var(--ink-2);line-height:1.6;padding-block:6px}
+.b-text{font-size:15px}
+.b-empty{font-size:14px;color:var(--ink-3)}
+.b-foot{font-size:12px;color:var(--ink-3)}
+
+.pairs{list-style:none;padding:0;margin:0 0 0 0;border-left:0;padding-left:0;margin-left:0;background-position:46px calc(var(--lh) - 3px)}
+.pairs li{display:grid;grid-template-columns:44px 1fr;align-items:end;min-height:var(--lh)}
+.p-k{display:flex;align-items:center;justify-content:center;height:var(--lh);font-family:var(--pen);font-size:28px;line-height:1;border-right:1px solid var(--rule-2);color:var(--ink)}
+.p-v{padding-left:12px;font-size:16px}
+.pairs.obo{--lh:46px}
+.pairs.obo .p-k{border:1px solid var(--rule-2);border-right-width:1px;margin:3px 4px 3px 0;height:40px;background:var(--paper);border-radius:2px}
+.pairs.obo .p-k[aria-expanded="true"]{background:var(--sheet);border-color:var(--ink)}
+.pairs.obo .p-v:empty::before{content:"";display:inline-block;width:60%;height:1px}
+.note{font-size:12px;color:var(--ink-3);margin-top:8px}
+.mini-row{display:flex;justify-content:flex-end;margin-top:6px}
+
+/* 하단 고정 바 */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--paper);border-top:1px solid var(--ink);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bar .wrap{padding-block:8px}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.tabs button{min-height:52px;font-size:15px;font-weight:600;color:var(--ink-3);display:flex;align-items:center;justify-content:center;gap:6px;border-top:3px solid transparent;margin-top:-8px}
+.tabs button[aria-current="page"]{color:var(--ink);border-top-color:var(--ink)}
+.badge{font-size:11px;font-weight:700;min-width:20px;padding:1px 5px;border:1px solid var(--bad);color:var(--bad);border-radius:2px;line-height:1.4}
+.grades{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.g{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60px;border:1px solid currentColor;border-radius:2px;font-weight:700;font-size:16px;line-height:1.2}
+.g small{font-weight:400;font-size:11px;opacity:.85;margin-top:3px}
+.g-bad{color:var(--bad);background:var(--bad-bg)}
+.g-mid{color:var(--mid);background:var(--mid-bg)}
+.g-ok{color:var(--ok);background:var(--ok-bg)}
+
+/* 4지선다 */
+.q-card{padding:16px;background:var(--sheet);border:1px solid var(--rule-2);border-radius:2px;box-shadow:0 1px 0 var(--rule),5px 5px 0 -1px var(--paper),5px 5px 0 0 var(--rule-2);overflow-wrap:anywhere;word-break:keep-all}
+.q-ask{font-size:13px;color:var(--ink-3);margin:12px 0 0}
+.q-prompt{font-size:clamp(24px,7vw,30px);font-weight:700;line-height:1.3;margin:8px 0 2px}
+.q-prompt.pen{font-weight:400;font-size:clamp(30px,9vw,40px);line-height:1.25}
+.q-prompt.big{font-size:clamp(40px,13vw,60px)}
+.q-prompt.text{font-size:17px;font-weight:500;line-height:1.6}
+.q-sub{font-size:14px;color:var(--ink-2);margin:6px 0 0}
+.opts-q{display:grid;gap:8px;margin-top:16px}
+.opt{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:8px;min-height:56px;padding:8px 12px;border:1px solid var(--rule-2);border-radius:2px;background:var(--sheet);text-align:left;overflow-wrap:anywhere;word-break:keep-all}
+.opt-n{font-size:13px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.opt-t{font-size:16px;font-weight:600;line-height:1.35}
+.opt-t.pen{font-weight:400;font-size:26px;line-height:1.2}
+.opt-t small{display:block;font-size:12px;font-weight:400;color:var(--ink-3);margin-top:2px}
+.opt-m{font-size:13px;font-weight:700;white-space:nowrap}
+.opt.is-ok{border-color:var(--ok);background:var(--ok-bg)}
+.opt.is-ok .opt-m{color:var(--ok)}
+.opt.is-bad{border-color:var(--bad);background:var(--bad-bg)}
+.opt.is-bad .opt-m{color:var(--bad)}
+.opt:disabled{cursor:default}
+.opt:disabled:not(.is-ok):not(.is-bad){opacity:.6}
+
+/* 결과 */
+.score{display:flex;align-items:baseline;gap:8px;margin:12px 0 4px}
+.score b{font-family:var(--pen);font-weight:400;font-size:84px;line-height:.9}
+.score span{font-size:22px;color:var(--ink-2)}
+.tally{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.t{padding:10px;border:1px solid currentColor;border-radius:2px;font-size:13px}
+.t b{display:block;font-size:28px;line-height:1.1}
+.t.ok{color:var(--ok);background:var(--ok-bg)} .t.mid{color:var(--mid);background:var(--mid-bg)} .t.bad{color:var(--bad);background:var(--bad-bg)}
+.stack{display:grid;gap:10px;margin-top:16px}
+
+/* 목록 (오답·찾기) */
+.list{list-style:none;padding:0;margin:12px 0 0;border-top:1px solid var(--rule-2)}
+.list > li{border-bottom:1px solid var(--rule)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:56px;padding:10px 2px;text-align:left}
+.row-main{min-width:0;flex:1;overflow-wrap:anywhere;word-break:keep-all}
+.row-main b{font-weight:700}
+.row-main .pen{font-size:22px;margin-right:4px}
+.row-main small{display:block;color:var(--ink-3);font-size:12px;margin-top:1px}
+.row-meta{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex:none}
+.box{font-size:11px;padding:1px 5px;border:1px solid var(--rule-2);border-radius:2px;color:var(--ink-2);white-space:nowrap}
+.box.b0{border-color:var(--bad);color:var(--bad)}
+.x{font-size:11px;color:var(--bad);white-space:nowrap}
+.detail{padding:4px 0 14px}
+.detail .ruled{margin-left:0;border-left:0;padding-left:0;background-position:0 calc(var(--lh) - 3px)}
+.search{display:flex;gap:8px;align-items:center}
+.search input{flex:1;min-width:0;min-height:50px;padding:10px 12px;border:1px solid var(--ink);border-radius:2px;background:var(--sheet);font-size:17px}
+.search input::placeholder{color:var(--ink-3)}
+
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;max-width:min(92vw,520px);padding:10px 14px;background:var(--ink);color:var(--on-ink);font-size:14px;border-radius:2px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.on{opacity:1}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  .today:active{transform:none}
+}
+</style>
+
+<header class="top gutter">
+  <div class="wrap">
+    <div class="brand"><b>정보관리기술사</b><span>단어장</span></div>
+    <span id="store" class="store" data-m="pending" title="진도 저장 위치">저장 위치 확인 중</span>
+  </div>
+</header>
+<main id="app" class="gutter" tabindex="-1"></main>
+<nav id="bar" class="bar gutter" aria-label="하단 메뉴"></nav>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script id="cards" type="application/json">{"abbr":[{"abbr":"SLA","full":"Service Level Agreement","ko":"서비스 수준 협약 — 서비스 제공자와 이용자가 측정 가능한 서비스 수준을 정한 계약","cat":"IT경영"},{"abbr":"ITSM","full":"IT Service Management","ko":"IT 서비스 관리","cat":"IT경영"},{"abbr":"BCP","full":"Business Continuity Planning","ko":"업무 연속성 계획","cat":"IT경영"},{"abbr":"RTO","full":"Recovery Time Objective","ko":"목표 복구 시간 — 장애 후 업무를 다시 시작해야 하는 시간 한도","cat":"IT경영"},{"abbr":"WBS","full":"Work Breakdown Structure","ko":"작업 분할 구조","cat":"프로젝트관리"},{"abbr":"EVM","full":"Earned Value Management","ko":"획득가치관리","cat":"프로젝트관리"},{"abbr":"SBOM","full":"Software Bill of Materials","ko":"소프트웨어 자재 명세서","cat":"SW공학"},{"abbr":"MSA","full":"Microservice Architecture","ko":"마이크로서비스 아키텍처","cat":"SW공학"},{"abbr":"IaC","full":"Infrastructure as Code","ko":"코드형 인프라 — 인프라 구성을 코드로 정의해 자동으로 배포·관리","cat":"클라우드·인프라"},{"abbr":"RAG","full":"Retrieval-Augmented Generation","ko":"검색 증강 생성","cat":"AI"}],"dueum":[{"dueum":"기소카메오메보","topic":"SLA","items":["기본계약서","SoW","서비스 카탈로그","Metrics","Objectives","Measurement Criteria","보고·보상체계"],"cat":"IT경영"},{"dueum":"인조기프","topic":"ITSM 구성요소","items":["인력","조직","기술","프로세스"],"cat":"IT경영"},{"dueum":"착계실통종","topic":"프로젝트 프로세스 그룹","items":["착수","계획","실행","감시 및 통제","종료"],"cat":"프로젝트관리"},{"dueum":"계요정W확통","topic":"프로젝트 범위관리","items":["범위관리 계획수립","요구사항 수집","범위 정의","WBS 작성","범위 확인","범위 통제"],"cat":"프로젝트관리"},{"dueum":"회전완수","topic":"부정적 리스크 대응 전략","items":["회피","전가","완화","수용"],"cat":"프로젝트관리"},{"dueum":"SOLID","topic":"객체지향 설계 원리","items":["SRP 단일 책임","OCP 개방-폐쇄","LSP 리스코프 치환","ISP 인터페이스 분리","DIP 의존 역전"],"cat":"SW공학"},{"dueum":"초관정정최","topic":"CMMI 성숙도 단계","items":["초기","관리","정의","정량적 관리","최적화"],"cat":"SW공학"},{"dueum":"기무가","topic":"정보보호 3요소","items":["기밀성","무결성","가용성"],"cat":"보안"},{"dueum":"ACID","topic":"트랜잭션 특성","items":["원자성","일관성","고립성","지속성"],"cat":"DB·데이터"},{"dueum":"물데네전세표응","topic":"OSI 7계층","items":["물리","데이터링크","네트워크","전송","세션","표현","응용"],"cat":"네트워크·통신"}],"concepts":[{"id":"it-1","domain":"IT경영","imp":"상","group":"ITSM","topic":"ITSM (Information Technology Service Management)","keys":"인조기프 (암기법 500개) 작성할 것","def":"고객과의 SLA(Service Level Agreement) 수준에 맞는 품질 유지 위한 프로세스, 조직, 자원, 기술의 종합적 관리 위한…","exam":"관리 133-2","itpe":"75"},{"id":"it-2","domain":"IT경영","imp":"상","group":"ITSM","topic":"SLA(협약서)","keys":"기소카메오메보","def":"서비스 계약자와 서비스 업체간에 서비스 수준을 정한 협약서/계약서, 정량적 측정 지표로 산정","exam":"관리 139-2, 관리 130-3, 관리 123-4, 관리 102-3, 관리 101-4, 컴시응 99-4 외 1","itpe":"68"},{"id":"it-3","domain":"IT경영","imp":"상","group":"ITSM","topic":"SLM","keys":"카스(에)오 플로(리)엔","def":"서비스 수준 협약서에 대한 협약의 성과, 측정/평가 및 향후 개선 방안을 모색하기 위한 관리 체계","exam":"","itpe":"67"},{"id":"it-4","domain":"IT경영","imp":"상","group":"(Data) Mining 총론","topic":"Data Mining","keys":"AS 분데특신의","def":"대량의 데이터에 고급 통계 분석과 모델링 기법을 적용하여 데이터 간의 패턴과 관계를 도출, 의사결정에 활용할 수 있는 의미 있는 정보를 발견…","exam":"관리 137-1, 관리 118-2, 관리 99-1, 관리 98-1, 컴시응 95-4","itpe":"12"},{"id":"it-5","domain":"IT경영","imp":"출제예상","group":"(Data) Mining 총론","topic":"CRISP-DM (Cross Industry Standard Process for Data Mining)","keys":"비데준 모평전","def":"","exam":"","itpe":""},{"id":"it-6","domain":"IT경영","imp":"상","group":"(Data) Mining 총론","topic":"신경망분석","keys":"","def":"인간두뇌 세포를 모방한 개념으로 뉴런들의 상호작용하고 경험을 통해 배우는 생물학적 활동을 반복적인 학습과정으로 모형화하는 분석 기법","exam":"관리 133-3, 관리 102-3","itpe":"18"},{"id":"it-7","domain":"IT경영","imp":"출제예상","group":"(Data) Mining 총론","topic":"SEMMA","keys":"샘탐수모평","def":"","exam":"","itpe":""},{"id":"it-8","domain":"IT경영","imp":"상","group":"BCP/BCM","topic":"BCM (Business Continuity Management)/ 비즈니스 경영 관리","keys":"계분전설모유 유적절품","def":"기업이 위기상황에서도 핵심업무와 기능을 계획된 수준으로 지속할 수 있도록 전사적인 정책 및 절차를 수립하여 이행하는 관리시스템","exam":"관리 114-2, 컴시응 101-2, 관리 80-2","itpe":"78"},{"id":"it-9","domain":"IT경영","imp":"상","group":"BCP/BCM","topic":"DRS (Disaster Recovery System)","keys":"미핫웜콜 상공외독 분재시운","def":"정보시스템에 대한 비상 대비체계 유지와 각 업무 조직 별 비상사태에 대비한 복구계획 수립을 통한 업무 연속성을 유지할 수 있는 체제","exam":"관리 140-3, 관리 133-1, 컴시응 86-2, 컴시응 84-2","itpe":"1251"},{"id":"it-10","domain":"IT경영","imp":"상","group":"ITIL 3.0, V4.0","topic":"ITIL 4.0","keys":"정파조가 거실S 지도 지속 개수계획약설","def":"","exam":"","itpe":""},{"id":"it-11","domain":"IT경영","imp":"상","group":"전략 계획","topic":"ISP (Information Strategy)","keys":"환현정목통 - 경법정 업정벤차이 수 개업정데보 이총효 사실규 필시중 사기","def":"","exam":"관리 138-2, 컴시응 132-2, 관리 131-2, 관리 130-1, 관리 123-2","itpe":"3"},{"id":"it-12","domain":"IT경영","imp":"상","group":"전략 계획","topic":"ISMP (Information System Master Plan)","keys":"착수요정이","def":"","exam":"관리 138-2, 컴시응 132-2, 관리 131-2, 관리 130-1, 관리 123-2","itpe":"3"},{"id":"it-13","domain":"IT경영","imp":"상","group":"IT-Governance","topic":"IT-Governance","keys":"","def":"기업의 전략과 목표에 부합되도록 IT와 관련된 자원와 프로세스를 통제 관리하는 체계","exam":"관리 134-2, 응용 81-1","itpe":"83"},{"id":"it-14","domain":"IT경영","imp":"상","group":"IT-Compliance","topic":"IT-Compliance","keys":"","def":"기업의 투명성 제고 및 리스크 통제를 위해 정부·기관의 법적 규제를 준수하고, 이를 IT 거버넌스 체계 내에서 시스템적으로 정비·이행하는 전…","exam":"관리 116-2","itpe":"87"},{"id":"it-15","domain":"IT경영","imp":"상","group":"디지털 컨버전스","topic":"AI + 금융","keys":"","def":"","exam":"","itpe":""},{"id":"it-16","domain":"IT경영","imp":"출제예상","group":"디지털 컨버전스","topic":"서비타이제이션(Servitization)","keys":"","def":"","exam":"","itpe":""},{"id":"it-17","domain":"IT경영","imp":"출제예상","group":"디지털 컨버전스","topic":"빅블러(Big Blur)","keys":"","def":"","exam":"","itpe":""},{"id":"it-18","domain":"IT경영","imp":"출제예상","group":"디지털 컨버전스","topic":"디지털 디바이드(Digital Divide)","keys":"","def":"","exam":"","itpe":""},{"id":"it-19","domain":"IT경영","imp":"출제예상","group":"디지털 컨버전스","topic":"디지털 리터러시(Digital Literacy)","keys":"","def":"","exam":"","itpe":""},{"id":"it-20","domain":"IT경영","imp":"출제예상","group":"디지털 컨버전스","topic":"디지털 포용(Digital Inclusion)","keys":"","def":"","exam":"","itpe":""},{"id":"it-21","domain":"IT경영","imp":"상","group":"플랫폼(유형)","topic":"오픈 플랫폼","keys":"","def":"오픈API로 제공하는 소프트웨어 플랫폼으로 서비스를 편리하게 개","exam":"","itpe":""},{"id":"it-22","domain":"IT경영","imp":"출제예상","group":"CSR","topic":"ISO 42001","keys":"","def":"","exam":"컴시응 138-1, 관리 138-1","itpe":"137"},{"id":"it-23","domain":"IT경영","imp":"상","group":"CSR","topic":"ESG 경영","keys":"[개념] 환경(Environment), 사회(Social), 지배구조(G","def":"환경(Environment), 사회(Social), 지배구조(Governance)를 뜻하는 말로 기업경영에서 과거에는 재무적 성과만을 평가하…","exam":"관리 134-2, 관리 129-3, 관리 126-2","itpe":"86"},{"id":"it-24","domain":"IT경영","imp":"상","group":"투자 평가 관리","topic":"(프로젝트) 경제성 평가 기법","keys":"","def":"","exam":"","itpe":""},{"id":"it-25","domain":"IT경영","imp":"출제예상","group":"Xtech / 핀테크(FinTech)","topic":"프롭테크","keys":"","def":"부동산(Property)와 기술(Technology)의 합성어로, 부동산 산업에 인공지능(AI), 빅데이터, 블록체인, 사물인터넷(IoT)…","exam":"","itpe":"1245"},{"id":"it-26","domain":"IT경영","imp":"출제예상","group":"Xtech / 핀테크(FinTech)","topic":"밀리테크(MiliTch)","keys":"","def":"","exam":"","itpe":""},{"id":"it-27","domain":"IT경영","imp":"출제예상","group":"Xtech / 핀테크(FinTech)","topic":"에이블테크(AbleTech)","keys":"","def":"","exam":"","itpe":""},{"id":"it-28","domain":"IT경영","imp":"출제예상","group":"Xtech / 핀테크(FinTech)","topic":"딥테크(Deep Tech)","keys":"","def":"","exam":"","itpe":""},{"id":"it-29","domain":"IT경영","imp":"출제예상","group":"Xtech / 핀테크(FinTech)","topic":"기후테크(C-Tech)","keys":"","def":"","exam":"","itpe":""},{"id":"it-30","domain":"IT경영","imp":"출제예상","group":"경제","topic":"공유경제(sharing economy)","keys":"","def":"특정 서비스의 수요자와 해당 서비스를 창출하는 유휴 자산을 보유한 공급자간 해당 유휴 자산을 이용한 시장 거래를 ICT 플랫폼이 중개하는 경제","exam":"","itpe":"111"},{"id":"it-31","domain":"IT경영","imp":"출제예상","group":"경제","topic":"구독경제(subscription economy)","keys":"","def":"","exam":"","itpe":"118"},{"id":"it-32","domain":"IT경영","imp":"상","group":"경제","topic":"디지털 전환(DX)","keys":"","def":"","exam":"","itpe":""},{"id":"it-33","domain":"IT경영","imp":"출제예상","group":"기타","topic":"긱 이코노미 (Gig Economy)","keys":"","def":"","exam":"","itpe":""},{"id":"it-34","domain":"IT경영","imp":"출제예상","group":"기타","topic":"디지털 카르텔","keys":"모병신자 메허프오","def":"","exam":"","itpe":"121"},{"id":"pm-1","domain":"프로젝트관리","imp":"상","group":"비즈니스 가치 경제성 분석 기법 /프로젝트 가치 평가","topic":"비용편익분석 (BCR, Benefit Cost Ratio)","keys":"정량적/재무적 - BIP RTN BCR, IRR, PP, BEP ROI,","def":"","exam":"","itpe":""},{"id":"pm-2","domain":"프로젝트관리","imp":"상","group":"비즈니스 가치 경제성 분석 기법 /프로젝트 가치 평가","topic":"투자회수기간 (PP, Payback Period)","keys":"","def":"","exam":"","itpe":""},{"id":"pm-3","domain":"프로젝트관리","imp":"상","group":"비즈니스 가치 경제성 분석 기법 /프로젝트 가치 평가","topic":"내부수익률 (IRR, Internal Rate of Return)","keys":"","def":"","exam":"","itpe":""},{"id":"pm-4","domain":"프로젝트관리","imp":"상","group":"비즈니스 가치 경제성 분석 기법 /프로젝트 가치 평가","topic":"순현재가치 (NPV, Net Present Value)","keys":"","def":"","exam":"","itpe":""},{"id":"pm-5","domain":"프로젝트관리","imp":"상","group":"프로젝트 관리 일반","topic":"프로세스 그룹(5개)","keys":"착계실통종","def":"","exam":"","itpe":""},{"id":"pm-6","domain":"프로젝트관리","imp":"상","group":"프로젝트 관리 일반","topic":"프로젝트관리 지식 영역 관리(KA)","keys":"통범일원품자의위조이 (1+3+1+RCR+PS)","def":"","exam":"","itpe":""},{"id":"pm-7","domain":"프로젝트관리","imp":"상","group":"프로젝트 통합관리 (Integration Management)","topic":"프로젝트 통합관리","keys":"헌관작지작통종 시예결갱","def":"","exam":"","itpe":""},{"id":"pm-8","domain":"프로젝트관리","imp":"상","group":"프로젝트 범위(Scope) 관리","topic":"프로젝트 범위관리","keys":"계요정W확통","def":"프로젝트를 성공적으로 완료하기 위해 필요한 모든 작업 범위 업무와 산출물을 정의하고 관리하는 지식영역","exam":"컴시응 104-3, 관리 81-3","itpe":"1338"},{"id":"pm-9","domain":"프로젝트관리","imp":"상","group":"프로젝트 범위(Scope) 관리","topic":"요구사항 수집기법","keys":"수분표의데프컨 인포설벤브 문서 마친 다투 명관촉","def":"","exam":"","itpe":"1339"},{"id":"pm-10","domain":"프로젝트관리","imp":"상","group":"프로젝트 범위(Scope) 관리","topic":"요구사항명세서 SRS(Software Requirement Specification)","keys":"정명완일중검수추 이상기제 테품","def":"SW를 분석, 설계, 구현, 유지하는 단계에서 검토, 평가, 승인의 기준이 되는 문서","exam":"관리 130-1","itpe":"1340"},{"id":"pm-11","domain":"프로젝트관리","imp":"상","group":"프로젝트 범위(Scope) 관리","topic":"WBS","keys":"작계사분통 관레워백","def":"프로젝트의 인도물과 전체 업무 범위를 작고 관리 가능한 최소 업무 단위로 분할한 계층도","exam":"139_관리_1.1 / 관리 139-1, 관리 129-3, 관리 128-1, 컴시응 111-3","itpe":"330"},{"id":"pm-12","domain":"프로젝트관리","imp":"상","group":"프로젝트 일정관리 (시간관리)","topic":"프로젝트 일정관리(시간관리)","keys":"계정순기개통","def":"","exam":"","itpe":"1345"},{"id":"pm-13","domain":"프로젝트관리","imp":"상","group":"프로젝트 일정관리 (시간관리)","topic":"CPM(임계경로관리)","keys":"정수네전후여주산정","def":"","exam":"관리 83-4","itpe":"332"},{"id":"pm-14","domain":"프로젝트관리","imp":"상","group":"원가관리(예산관리)","topic":"획득가치관리(EVM)","keys":"측분예","def":"","exam":"관리 125-2, 관리 118-3, 관리 87-4","itpe":"1355"},{"id":"pm-15","domain":"프로젝트관리","imp":"상","group":"프로젝트 품질(Quality) 관리","topic":"프로젝트 품질관리","keys":"계보통 적예평부내외","def":"","exam":"","itpe":""},{"id":"pm-16","domain":"프로젝트관리","imp":"상","group":"프로젝트 품질(Quality) 관리","topic":"프로젝트 형상관리","keys":"식통감기 계요설구시설 기분설시제운","def":"","exam":"140_관리_4_3","itpe":""},{"id":"pm-17","domain":"프로젝트관리","imp":"상","group":"프로젝트 위험관리","topic":"프로젝트 위험관리","keys":"138_관리_1","def":"프로젝트 위험요소를 체계적으로 식별, 평가하고 관리. 조기식별중요","exam":"138_관리_1 / 관리 138-1","itpe":"1366"},{"id":"pm-18","domain":"프로젝트관리","imp":"상","group":"프로젝트 위험관리","topic":"정성적 위험 분석","keys":"수분표대기 - 인 영품기 영계 촉 전유미","def":"","exam":"","itpe":""},{"id":"pm-19","domain":"프로젝트관리","imp":"상","group":"프로젝트 위험관리","topic":"정량적 위험 분석","keys":"수분대기 - 인 시민의영 촉 불전","def":"","exam":"관리 117-2, 관리 80-3","itpe":"1369"},{"id":"pm-20","domain":"프로젝트관리","imp":"상","group":"프로젝트 위험관리","topic":"위험 대응 계획 수립","keys":"에활공증수 에회전완수","def":"","exam":"139_관리_1.4 / 관리 134-4, 컴시응 117-4","itpe":"1371"},{"id":"pm-21","domain":"프로젝트관리","imp":"상","group":"Agile 프로세스","topic":"SCRUM","keys":"","def":"product backlog를 sprint단위로 분할하여 반복적으로 개발하며 daily meeting, review 통해 개선 활동을 수행하…","exam":"관리 129-2, 관리 123-1","itpe":"305"},{"id":"pm-22","domain":"프로젝트관리","imp":"상","group":"Agile 프로세스","topic":"XP","keys":"용단커피존 유구배반인작","def":"","exam":"컴시응 123-3","itpe":"304"},{"id":"pm-23","domain":"프로젝트관리","imp":"상","group":"Agile 프로세스","topic":"Kanban (development) 프로세스","keys":"가워흐정프개현변기리","def":"","exam":"","itpe":"306"},{"id":"pm-24","domain":"프로젝트관리","imp":"상","group":"Agile 프로세스","topic":"Lean(린) / 린 경영 / 린(Lean software development)","keys":"","def":"린 시스템의 품질 기법을 소프트웨어 개발 프로세스에 적용하여 프로세스 낭비요소를 제거 후 결과를 측정, 성과를 분석하여 소프트웨어의 품질을…","exam":"관리 110-1, 관리 87-4","itpe":"307"},{"id":"pm-25","domain":"프로젝트관리","imp":"상","group":"Agile 프로세스","topic":"MSA와 Monolithic Architecture","keys":"","def":"","exam":"","itpe":""},{"id":"pm-26","domain":"프로젝트관리","imp":"상","group":"PMO/PM","topic":"감리/PMO 비교표","keys":"131회 관리 1교시","def":"","exam":"131회 관리 1교시 / 컴시응 114-4","itpe":"1569"},{"id":"pm-27","domain":"프로젝트관리","imp":"상","group":"PMO/PM","topic":"(E)PMO","keys":"132회 컴시응 1교시","def":"","exam":"140_관리_1_4, 132회 컴시응 1교시","itpe":""},{"id":"pm-28","domain":"프로젝트관리","imp":"상","group":"PMO/PM","topic":"공공 PMO","keys":"기집사 통성 통이범자일위 품성조의변보 통변성","def":"","exam":"","itpe":""},{"id":"pm-29","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 관리 일반","topic":"PMBOK 7판","keys":"성테모 가조기환고 스팀이가 생리 테품 보리 적변 이팀접계 프산측불 이팀개","def":"","exam":"","itpe":"1331"},{"id":"pm-30","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 관리 일반","topic":"PMBOK 8판","keys":"","def":"","exam":"","itpe":""},{"id":"pm-31","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 범위(Scope) 관리","topic":"통제되지 않는 범위 추가(Scope Creep)","keys":"초관이정변 개범요공타","def":"","exam":"","itpe":""},{"id":"pm-32","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 범위(Scope) 관리","topic":"Gold-plating","keys":"초현명 워구시","def":"","exam":"관리 128-2, 관리 124-1","itpe":"49"},{"id":"pm-33","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 일정관리 (시간관리)","topic":"Free float","keys":"","def":"","exam":"","itpe":""},{"id":"pm-34","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 일정관리 (시간관리)","topic":"Total float","keys":"","def":"","exam":"","itpe":""},{"id":"pm-35","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 일정관리 (시간관리)","topic":"자원 최적화","keys":"","def":"","exam":"","itpe":"1351"},{"id":"pm-36","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 일정관리 (시간관리)","topic":"프로젝트 일정 단축기법","keys":"파자후학 크자패병","def":"","exam":"","itpe":"334"},{"id":"pm-37","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 일정관리 (시간관리)","topic":"브룩스 법칙","keys":"편측관산","def":"","exam":"","itpe":""},{"id":"pm-38","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 품질(Quality) 관리","topic":"품질통제(QC)","keys":"현원자 체파히 특산흐 관 친연계매해P애","def":"","exam":"","itpe":""},{"id":"pm-39","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 자원관리","topic":"동기부여이론","keys":"내과강 내-매엘허2맥 과-공기목-아브로 강-스","def":"","exam":"","itpe":""},{"id":"pm-40","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 이해관계자관리","topic":"이해관계자 참여 수준 평가 매트릭스","keys":"현희 무저중지도 요밀동정","def":"","exam":"","itpe":""},{"id":"pm-41","domain":"프로젝트관리","imp":"출제예상","group":"Agile 프로세스","topic":"애자일 프로세스 선언문 4개 문장/ 12개 원칙","keys":"개변동고 공계문계","def":"","exam":"","itpe":"1376"},{"id":"pm-42","domain":"프로젝트관리","imp":"출제예상","group":"Agile 프로세스","topic":"12개 원칙","keys":"고요배의동 대SW지좋단자효","def":"","exam":"","itpe":"1376"},{"id":"pm-43","domain":"프로젝트관리","imp":"출제예상","group":"Agile 프로세스","topic":"Pair programming","keys":"","def":"","exam":"","itpe":""},{"id":"pm-44","domain":"프로젝트관리","imp":"출제예상","group":"Agile 프로세스","topic":"CI, CD","keys":"버통빌테인커 앱보스","def":"","exam":"관리 135-2","itpe":"308"},{"id":"pm-45","domain":"프로젝트관리","imp":"출제예상","group":"Agile 프로세스","topic":"MVP","keys":"","def":"고객의 빠른 피드백을 위하여 최소한의 가격으로 핵심기능을 구현하여 즉시 출시하는 핵심가치 제품","exam":"","itpe":"311"},{"id":"pm-46","domain":"프로젝트관리","imp":"출제예상","group":"Agile 프로세스","topic":"번다운차트","keys":"","def":"","exam":"관리 119-2","itpe":"1383"},{"id":"se-1","domain":"SW공학","imp":"상","group":"개발방법론","topic":"객체지향 설계의 원리","keys":"SOLID","def":"","exam":"132회 컴시응 3교시 기출 / 컴시응 132-3, 컴시응 98-2","itpe":"1405"},{"id":"se-2","domain":"SW공학","imp":"상","group":"개발방법론","topic":"요구 공학","keys":"추분명검 협기변확 정명완일이검수추","def":"","exam":"관리 133-3, 관리 124-2, 관리 122-4, 관리 80-3","itpe":"299"},{"id":"se-3","domain":"SW공학","imp":"상","group":"발주 프로세스","topic":"요구사항 상세화 실무 가이드라인","keys":"기요구데품","def":"","exam":"","itpe":""},{"id":"se-4","domain":"SW공학","imp":"상","group":"발주 프로세스","topic":"상용SW직접구매 (SW 분리발주)","keys":"민 통 현비일 비효","def":"","exam":"131회 컴시응 4교시 민 통","itpe":""},{"id":"se-5","domain":"SW공학","imp":"상","group":"발주 프로세스","topic":"소프트웨어 진흥법","keys":"1235 총기융선 용 947257 지창지인연소연 80123 융안교 045","def":"","exam":"132회 관리 4교시 기출 (","itpe":""},{"id":"se-6","domain":"SW공학","imp":"상","group":"SW Architecture","topic":"SW Architecture","keys":"요참모프배 분추단모정","def":"프로그램/시스템 컴포넌트, 컴포넌트 간의 상호관계 구조이며 이들을 설계하기 위한 지침과 원리","exam":"컴시응 87-3, 관리 86-3, 응용 81-2, 관리 81-1","itpe":"352"},{"id":"se-7","domain":"SW공학","imp":"상","group":"SW Architecture","topic":"ISO/IEC/IEEE 42010 (구 버전 IEEE1471)","keys":"식표AD 대이관 모아기 관뷰모근규대","def":"컴포넌트와 컴포넌트들 간의 상호관계 구조, 이들을 설계하고 전개하기 위한 지침과 원리","exam":"","itpe":"1423"},{"id":"se-8","domain":"SW공학","imp":"상","group":"SW Architecture","topic":"SW Architecture 평가","keys":"시몰수경 시설","def":"아키텍처 접근법이 품질속성에 미치는 영향을 판단하고, 아키텍처 적합성을 평가하는 모델","exam":"","itpe":"1424"},{"id":"se-9","domain":"SW공학","imp":"상","group":"SW Architecture","topic":"ATAM (Architecture Trade-off Analysis Method)","keys":"협기상후 시비아 - 오정보상, 적습준비(이), 대변적시 소조테보 - A비","def":"","exam":"131회 컴시응 1교시 140 / 관리 140-1, 컴시응 131-1","itpe":"1425"},{"id":"se-10","domain":"SW공학","imp":"상","group":"SW Architecture","topic":"CBAM (Cost Benefit Analysis Method)","keys":"시효접선","def":"","exam":"131회 컴시응 1교시 시효접","itpe":"1426"},{"id":"se-11","domain":"SW공학","imp":"상","group":"MSA","topic":"MSA","keys":"","def":"대규모 분산 웹 환경에서 응용 소프트웨어를 독립적으로 배치 가능한 서비스 조합으로 설계하는 아키텍쳐","exam":"컴시응 140-3, 관리 127-4","itpe":"303"},{"id":"se-12","domain":"SW공학","imp":"상","group":"MSA","topic":"서비스 매쉬 (Service Mesh)","keys":"컨데 - DRS 싸디서로레","def":"마이크로 서비스 아키텍처(MSA) 구성환경에서 서비스 간의 데이터 공유하는 방식을 제어, 호출제어 및 오버헤드를 최소화하기 위한 네트워킹 기술","exam":"","itpe":"1435"},{"id":"se-13","domain":"SW공학","imp":"상","group":"MSA","topic":"SAGA패턴(사가)","keys":"","def":"","exam":"컴시응 140-3, 관리 127-4","itpe":"303"},{"id":"se-14","domain":"SW공학","imp":"상","group":"MSA","topic":"DDD (Domain Driven Design)","keys":"엔벨어도레서팩","def":"","exam":"","itpe":"313"},{"id":"se-15","domain":"SW공학","imp":"상","group":"UML","topic":"UML / Diagram 전체","keys":"","def":"","exam":"관리 137-4, 컴시응 102-1, 관리 101-1, 관리 87-2","itpe":"1443"},{"id":"se-16","domain":"SW공학","imp":"상","group":"UML","topic":"Class diagram","keys":"","def":"","exam":"관리 126-2, 관리 122-4, 관리 117-4, 관리 86-3","itpe":"362"},{"id":"se-17","domain":"SW공학","imp":"상","group":"UML","topic":"Usecase diagram","keys":"유행시 연포확일그 액유릴 유구","def":"시스템이 제공하고 있는 기능 및 그와 관련된 외부요소를 사용자의 관점에서 표현하는 동적 다이어그램","exam":"관리 121-3","itpe":"357"},{"id":"se-18","domain":"SW공학","imp":"상","group":"디자인 패턴","topic":"Design Pattern (23개 패턴)","keys":"","def":"","exam":"","itpe":""},{"id":"se-19","domain":"SW공학","imp":"상","group":"디자인 패턴","topic":"MVC 패턴","keys":"","def":"","exam":"","itpe":""},{"id":"se-20","domain":"SW공학","imp":"상","group":"설계","topic":"모듈화","keys":"응집도: 우논시절통순기 결합도: 내공외제스자","def":"소프트웨어의 성능을 향상시키거나, 프로그램의 시험, 통합 및 수정을 용이하게 하기 위하여 프로그램을 분해하고 추상화하는 설계 및 구현 기법","exam":"관리 129-1, 관리 128-3","itpe":"379"},{"id":"se-21","domain":"SW공학","imp":"상","group":"설계","topic":"SBOM(Software Bill of Materials)","keys":"","def":"소프트웨어 패키지 및 구성 요소 등 고유하게 식별 가능한 메타데이터, 저작권 및 라이선스 등 소프트웨어 콘텐츠에 대한 정보를 포함하는 공식…","exam":"컴시응 134-1, 관리 134-3, 관리 131-1","itpe":"322"},{"id":"se-22","domain":"SW공학","imp":"상","group":"TDD / DevOps","topic":"TDD","keys":"요테구리 빨초테X디","def":"","exam":"","itpe":""},{"id":"se-23","domain":"SW공학","imp":"상","group":"TDD / DevOps","topic":"DevOps","keys":"소협통 정역지사자 플코빌테 디오모","def":"","exam":"131회 컴시응 3교시 소협통 / 컴시응 138-1, 관리 136-1, 컴시응 131-3, 관리 130-4, 관리 125-1, 관리 120-2 외 2","itpe":"1632"},{"id":"se-24","domain":"SW공학","imp":"상","group":"TDD / DevOps","topic":"무중단 배포 기법의 종류","keys":"롤블카","def":"","exam":"139_관리_1.5 / 컴시응 135-4, 관리 127-2","itpe":"1489"},{"id":"se-25","domain":"SW공학","imp":"상","group":"TDD / DevOps","topic":"카오스 엔지니어링 (Chaos Engineering)","keys":"가장영검개 가수환자최","def":"","exam":"","itpe":""},{"id":"se-26","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"Test 일반","keys":"","def":"","exam":"","itpe":"387"},{"id":"se-27","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"테스트 원리","keys":"결완초집살정오","def":"SW테스트에서 수행되는 각종 방안과 실행계획 수립시 고려되는 기본원칙","exam":"139_관리_3.4 / 관리 98-1","itpe":"1493"},{"id":"se-28","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"테스트베드(Testbed)","keys":"하스드","def":"","exam":"","itpe":""},{"id":"se-29","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"블랙박스 테스트","keys":"블동경의상유분페원오 139_관리_3.4","def":"프로그램 코드를 보지 않고, 매뉴얼이나 상세문서를 기준으로 테스팅하는 기법","exam":"139_관리_3.4 / 관리 122-3","itpe":"1500"},{"id":"se-30","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"명세기반 테스팅 기법","keys":"","def":"","exam":"","itpe":""},{"id":"se-31","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"화이트박스테스트 (White Box Test)","keys":"화제루 139_관리_3.4","def":"개발자가 S/W의 내부 Logic에 대한 Test를 수행위해 설계 단계에서 요구된 사항을 테스트하는 방법 소프트웨어의 내부 구조와 복잡도를…","exam":"139_관리_3.4 / 컴시응 137-3, 관리 134-3, 관리 129-1, 관리 125-2, 관리 114-3, 관리 104-3 외 1","itpe":"1502"},{"id":"se-32","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"구조기반테스트","keys":"","def":"","exam":"","itpe":""},{"id":"se-33","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"탐색적 테스팅","keys":"차박노세요 (차터, 박싱, 노트, 세션 시트, 디브리핑)","def":"","exam":"","itpe":""},{"id":"se-34","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"회귀 테스트 (Regression Test)","keys":"ReSelPri - RS","def":"오류를 제거하거나 수정한 시스템에서 오류제거와 수정에 의해 새로 유입된 오류가 없는지 확인하는 일종의 반복시험","exam":"관리 129-4, 관리 84-3, 응용 81-1","itpe":"389"},{"id":"se-35","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"경험기반 기법","keys":"경탐오체분","def":"","exam":"","itpe":""},{"id":"se-36","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"위험기반 테스트","keys":"식분대전추 펀인스서","def":"","exam":"","itpe":""},{"id":"se-37","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"성능 테스트","keys":"처응자효 단복임 루스티확가 탐NaCoInA","def":"시스템에 요구되는 성능에 대해 시스템의 처리 능력을 검증하는 테스트","exam":"131회 컴시응 4교시 130 / 관리 117-4, 관리 95-2, 관리 81-1","itpe":"396"},{"id":"se-38","domain":"SW공학","imp":"상","group":"SW 유지관리 (유지보수 변경)","topic":"Lehman 소프트웨어 변화(리만) 유지보수/유지관리 전체","keys":"SPE 계복대조친지감피","def":"","exam":"","itpe":""},{"id":"se-39","domain":"SW공학","imp":"상","group":"SW 유지관리 (유지보수 변경)","topic":"3R","keys":"","def":"","exam":"관리 133-1","itpe":"410"},{"id":"se-40","domain":"SW공학","imp":"상","group":"SW 유지관리 (유지보수 변경)","topic":"재사용 (Reuse)","keys":"NIH신드롬, I/F기반 표준화 생산성, 코드신뢰성 컴포넌트 라이브러리","def":"","exam":"","itpe":""},{"id":"se-41","domain":"SW공학","imp":"상","group":"SW 품질 표준 및 종합","topic":"프로젝트 QM(품질관리)","keys":"계보통 적예평부내외","def":"주어진 요구사항을 충족시키는데 필요한 품질정책, 품질목표, 품질 관련 책임사항들을 결정 및 수행하는 회사 차원의 모든 활동","exam":"관리 136-4, 컴시응 117-4, 관리 111-3, 관리 80-2","itpe":"414"},{"id":"se-42","domain":"SW공학","imp":"상","group":"SW 품질 표준 및 종합","topic":"품질보증(QA), 품질관리","keys":"리인웍","def":"","exam":"","itpe":"426"},{"id":"se-43","domain":"SW공학","imp":"상","group":"SW 품질 표준 및 종합","topic":"CMMI 2.0 / 3.0","keys":"두메인임 불수관확예최 불수관정 귱유재자","def":"","exam":"","itpe":""},{"id":"se-44","domain":"SW공학","imp":"상","group":"SW 품질 표준 및 종합","topic":"CMMI V3.0","keys":"","def":"","exam":"컴시응 125-3, 관리 118-1, 관리 87-4, 컴시응 84-1","itpe":"1545"},{"id":"se-45","domain":"SW공학","imp":"상","group":"SW 품질 표준 및 종합","topic":"ASPICE(Automotive SPICE) (ISO/IEC 33020)","keys":"기지조 획공소시지 관재프 불수관확예혁","def":"","exam":"","itpe":"421"},{"id":"se-46","domain":"SW공학","imp":"상","group":"SW 품질 표준 및 종합","topic":"Peer-review(동료검토)","keys":"관작검중발기품 매테인월감 계사개검 재후","def":"","exam":"","itpe":""},{"id":"se-47","domain":"SW공학","imp":"상","group":"소프트웨어 안전성 분석기법","topic":"SW 안정성/분석 개념","keys":"","def":"","exam":"관리 131-3","itpe":"1552"},{"id":"se-48","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"정보시스템 감리","keys":"","def":"이해관계로부터 독립된 자가 정보시스템의 효율성 향상과 안전성 확보를 위하여 제3자적 관점에서 정보시스템의 구축 운영에 관한 사항을 종합적으로…","exam":"관리 137-3, 관리 136-2, 관리 131-1, 관리 129-1, 컴시응 125-2, 관리 123-2 외 8","itpe":"1558"},{"id":"se-49","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"정보시스템 감리수행 가이드 v2.1(한국정보화진흥원, 2013.12)","keys":"","def":"","exam":"","itpe":"1559"},{"id":"se-50","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"정보시스템 감리 발주 관리가이드","keys":"","def":"","exam":"","itpe":"1558"},{"id":"se-51","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"정보시스템 감리 점검 해설서","keys":"","def":"","exam":"","itpe":"1561"},{"id":"se-52","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"지능정보기술 감리 실무 가이드","keys":"","def":"","exam":"컴시응 134-3","itpe":"433"},{"id":"se-53","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"정보시스템 갈리 Framework","keys":"시영관(사업유형/감리시점, 감리영역, 감리관점/점검기준) 성산절(성과,","def":"","exam":"","itpe":""},{"id":"se-54","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"감리 절차","keys":"예현조 준실감 감착감보종보 준시작보","def":"","exam":"","itpe":""},{"id":"se-55","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"감리결과보고서 작성하기","keys":"권시이 - 필협권 장단 적부제","def":"","exam":"123회 기출 권시이 - 필협","itpe":""},{"id":"se-56","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"감리 PMO 비교","keys":"","def":"","exam":"컴시응 114-4","itpe":"1569"},{"id":"se-57","domain":"SW공학","imp":"상","group":"OSS / FOSS","topic":"오픈소스 소프트웨어","keys":"일자동차라포파 자레무반저 낮빠오신안 불빈일지양","def":"","exam":"관리 124-4, 컴시응 122-3","itpe":"1297"},{"id":"se-58","domain":"SW공학","imp":"상","group":"OSS / FOSS","topic":"오픈소스 License 분류","keys":"","def":"","exam":"","itpe":""},{"id":"se-59","domain":"SW공학","imp":"상","group":"OSS / FOSS","topic":"OSS 거버넌스","keys":"[프레임워크] 정획적운관 컨정조 요조분평 계설개패시배 설운유기커 컴교모","def":"","exam":"","itpe":""},{"id":"se-60","domain":"SW공학","imp":"상","group":"OSS / FOSS","topic":"오픈소스 SW 보안","keys":"","def":"","exam":"","itpe":""},{"id":"se-61","domain":"SW공학","imp":"상","group":"SW 규모 산정(원가산정)","topic":"Function Point / ISO/IEC 14143","keys":"유범(이의)데(이)트 미조기 사기전후직개","def":"","exam":"","itpe":""},{"id":"se-62","domain":"SW공학","imp":"상","group":"SW 규모 산정(원가산정)","topic":"간이법 계산","keys":"내외입출조 O공수로 Q단","def":"","exam":"컴시응 126-1, 관리 84-3","itpe":"1583"},{"id":"se-63","domain":"SW공학","imp":"상","group":"하드웨어 규모산정","topic":"하드웨어 규모산정 3가지 방법 (TTAK.KO-10.0292/R3)","keys":"수참시","def":"","exam":"135회 컴시응 1교시 수참시","itpe":""},{"id":"se-64","domain":"SW공학","imp":"상","group":"국내 SW 육성 방안","topic":"Software Platform","keys":"","def":"","exam":"","itpe":""},{"id":"se-65","domain":"SW공학","imp":"상","group":"국내 SW 육성 방안","topic":"SW개발 생산성 향상방안","keys":"원형프자","def":"","exam":"","itpe":""},{"id":"se-66","domain":"SW공학","imp":"상","group":"국내 SW 육성 방안","topic":"민간투자형 SW 사업 PPP((PPP, Public Private Partnership)","keys":"","def":"","exam":"","itpe":""},{"id":"se-67","domain":"SW공학","imp":"상","group":"SW 저작권 보호","topic":"난독화 (Obfuscation)","keys":"소바 구데집제 예인 형주 데변 클자 순데 역암","def":"","exam":"","itpe":"413"},{"id":"se-68","domain":"SW공학","imp":"출제예상","group":"SW공학","topic":"PBL (Project Based Learning)","keys":"","def":"","exam":"","itpe":""},{"id":"se-69","domain":"SW공학","imp":"출제예상","group":"발주 프로세스","topic":"공공 소프트웨어 사업 제안 요청서 작성 가이드라인","keys":"기무근경 사현명 기작체수 계 제작체수 입작체 공 개현추요 작안기","def":"","exam":"","itpe":""},{"id":"se-70","domain":"SW공학","imp":"출제예상","group":"SOA","topic":"ESB (Enterprise Service Bus)","keys":"인소런패","def":"","exam":"","itpe":""},{"id":"se-71","domain":"SW공학","imp":"출제예상","group":"SW Architecture","topic":"Blackboard pattern","keys":"솔지컨","def":"","exam":"","itpe":""},{"id":"se-72","domain":"SW공학","imp":"출제예상","group":"SW Architecture","topic":"clean architecture","keys":"엔유인외","def":"","exam":"","itpe":""},{"id":"se-73","domain":"SW공학","imp":"출제예상","group":"MSA","topic":"API Gateway","keys":"","def":"","exam":"","itpe":""},{"id":"se-74","domain":"SW공학","imp":"출제예상","group":"전자정부 표준프레임워크 (e-Goverment framework)","topic":"IoC (Inversion of Control)","keys":"","def":"","exam":"121회 기출문제","itpe":"2517"},{"id":"se-75","domain":"SW공학","imp":"출제예상","group":"UML","topic":"Interaction diagram","keys":"","def":"","exam":"","itpe":""},{"id":"se-76","domain":"SW공학","imp":"출제예상","group":"UML","topic":"Communication Diagram","keys":"","def":"","exam":"","itpe":""},{"id":"se-77","domain":"SW공학","imp":"출제예상","group":"UML","topic":"Interaction overview Diagram","keys":"","def":"","exam":"","itpe":""},{"id":"se-78","domain":"SW공학","imp":"출제예상","group":"UML","topic":"Timing Diagram","keys":"","def":"","exam":"","itpe":""},{"id":"se-79","domain":"SW공학","imp":"출제예상","group":"UML","topic":"Feature diagram","keys":"필선대또","def":"","exam":"","itpe":""},{"id":"se-80","domain":"SW공학","imp":"출제예상","group":"디자인 패턴","topic":"MVVM","keys":"","def":"모델, 뷰, 뷰 모델로 기능을 분리하고 데이터 바인딩을 통하여 뷰와 뷰모델간의 통신을 자동화 하는 아키텍처 패턴","exam":"관리 111-1","itpe":"378"},{"id":"se-81","domain":"SW공학","imp":"출제예상","group":"디자인 패턴","topic":"MVI 패턴(Model View Intent)","keys":"","def":"","exam":"","itpe":""},{"id":"se-82","domain":"SW공학","imp":"출제예상","group":"디자인 패턴","topic":"서킷 브레이커(Circuit Breaker) 패턴","keys":"","def":"","exam":"","itpe":""},{"id":"se-83","domain":"SW공학","imp":"출제예상","group":"TDD / DevOps","topic":"SRE(Site Reliability Engineering)","keys":"모리변장문 - 사실점자모","def":"","exam":"","itpe":""},{"id":"se-84","domain":"SW공학","imp":"출제예상","group":"TDD / DevOps","topic":"AI옵스","keys":"수분자가","def":"","exam":"","itpe":""},{"id":"se-85","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"모델기반 테스트","keys":"","def":"","exam":"","itpe":""},{"id":"se-86","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"뮤테이션 테스트 (Mutation Test)","keys":"대변삭","def":"","exam":"","itpe":""},{"id":"se-87","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"사용성 테스트","keys":"카페소 계디실보 탐평확비 매피 포수","def":"","exam":"","itpe":""},{"id":"se-88","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"Embedded System Test","keys":"명구경","def":"","exam":"","itpe":""},{"id":"se-89","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"Back-to-back testing","keys":"적용분야: 항공기, 자동차 분야","def":"","exam":"","itpe":""},{"id":"se-90","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"PoC","keys":"","def":"","exam":"123회 컴시응 1교시 기출 , 138_컴시응_2","itpe":""},{"id":"se-91","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"Pilot test","keys":"","def":"","exam":"","itpe":""},{"id":"se-92","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"퍼즈 테스트 (Fuzz Testing) Fuzzing","keys":"[특징] 입무 간신 고자 [분류] 생투변기","def":"","exam":"","itpe":""},{"id":"se-93","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"튜링 테스트 (Turing Test)","keys":"캡구엘패","def":"","exam":"","itpe":""},{"id":"se-94","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"Smoke Test (스모크 테스트)","keys":"","def":"","exam":"","itpe":""},{"id":"se-95","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"커서리 테스트 (Cursory Test)","keys":"","def":"","exam":"","itpe":""},{"id":"se-96","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"예비(Sanity) 테스트","keys":"","def":"","exam":"","itpe":""},{"id":"se-97","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"Canary Test","keys":"","def":"","exam":"132회 컴시응 1교시","itpe":""},{"id":"se-98","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"키워드 기반 테스팅 (Keyword-driven testing)","keys":"라데 편해시룰 실대","def":"","exam":"","itpe":""},{"id":"se-99","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"Pairwise Testing","keys":"그입페","def":"","exam":"","itpe":""},{"id":"se-100","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"상태 전이 테스팅 (State Transition Testing)","keys":"상전이가액션","def":"","exam":"","itpe":""},{"id":"se-101","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"ISO 29119","keys":"개프도테키 조관동 명구경","def":"","exam":"","itpe":""},{"id":"se-102","domain":"SW공학","imp":"출제예상","group":"SW 유지관리 (유지보수 변경)","topic":"Fan-out, Fan-in","keys":"","def":"","exam":"","itpe":""},{"id":"se-103","domain":"SW공학","imp":"출제예상","group":"SW 유지관리 (유지보수 변경)","topic":"데메테르의 법칙(Law of Demeter)","keys":"","def":"","exam":"","itpe":""},{"id":"se-104","domain":"SW공학","imp":"출제예상","group":"SW 유지관리 (유지보수 변경)","topic":"기술부채 (technical debt)","keys":"139_관리_3.3","def":"","exam":"139_관리_3.3","itpe":"312"},{"id":"se-105","domain":"SW공학","imp":"출제예상","group":"SW 품질 표준 및 종합","topic":"품질 속성 시나리오 (quality attribute scenario)","keys":"자자대환응측","def":"","exam":"","itpe":""},{"id":"se-106","domain":"SW공학","imp":"출제예상","group":"SW 품질 표준 및 종합","topic":"SP (Software Process) 인증","keys":"조프개프지","def":"국내SW기업의 SW사업 수행능력을 강화하고 SW사업의 부실방지를 목적으로 기업의 SW 개발단계별 작업절차 및 산출물 관리 역량 등을 분석하여…","exam":"컴시응 134-4, 관리 87-1","itpe":"430"},{"id":"se-107","domain":"SW공학","imp":"출제예상","group":"SW 품질 표준 및 종합","topic":"McCabe의 회전 복잡도","keys":"그폐제","def":"","exam":"","itpe":""},{"id":"se-108","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"감리원 종류","keys":"총상수","def":"","exam":"","itpe":""},{"id":"se-109","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"상주감리원","keys":"총상수","def":"","exam":"","itpe":""},{"id":"se-110","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"클라우드 감리","keys":"","def":"","exam":"","itpe":""},{"id":"se-111","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"AI 감리","keys":"","def":"","exam":"","itpe":""},{"id":"se-112","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"운영감리","keys":"","def":"","exam":"컴시응 83-4","itpe":"1574"},{"id":"se-113","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"유지보수 감리","keys":"","def":"","exam":"","itpe":""},{"id":"se-114","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"빅데이터 감리","keys":"","def":"","exam":"관리 130-3","itpe":"1576"},{"id":"se-115","domain":"SW공학","imp":"출제예상","group":"OSS / FOSS","topic":"오픈소스 라이센스별 의무조항","keys":"소비의배 - 소원, 데이라, 제기, 자이라","def":"","exam":"","itpe":"1577"},{"id":"se-116","domain":"SW공학","imp":"출제예상","group":"OSS / FOSS","topic":"이너소스(Innersource)","keys":"","def":"","exam":"","itpe":""},{"id":"se-117","domain":"SW공학","imp":"출제예상","group":"SW 규모 산정(원가산정)","topic":"AI 개발비 산정","keys":"사이전서","def":"","exam":"관리 137-4","itpe":"1587"},{"id":"se-118","domain":"SW공학","imp":"출제예상","group":"코딩 / 언어","topic":"Vibe Coding(바이브 코딩), AI 코딩","keys":"","def":"","exam":"","itpe":"2763"}]}</script>
+<script>
+(function(){
+'use strict';
+
+/* ---------- 기본 ---------- */
+var $ = function(s){ return document.querySelector(s); };
+var app = $('#app'), bar = $('#bar');
+var RAW = {};
+try { RAW = JSON.parse(document.getElementById('cards').textContent || '{}') || {}; } catch (e) { RAW = {}; }
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function str(v){ return v == null ? '' : String(v).trim(); }
+function shuffle(a){ a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+function sleep(ms){ return new Promise(function(r){ setTimeout(r, ms); }); }
+function norm(s){ return String(s || '').toLowerCase().replace(/\s+/g, ''); }
+
+var CAT_ORDER = ['IT경영','프로젝트관리','SW공학','클라우드·인프라','CA·OS','네트워크·통신','DB·데이터','AI','보안','표준·기관','기타'];
+var DOMAIN_ORDER = ['IT경영','프로젝트관리','SW공학'];
+var DECKS = [{key:'abbr', name:'약어', prefix:'a-'}, {key:'dueum', name:'두음', prefix:'d-'}, {key:'concept', name:'개념', prefix:'c-'}];
+var DECK_NAME = {abbr:'약어', dueum:'두음', concept:'개념'};
+var DAYS = [0, 1, 3, 7, 14];
+
+/* ---------- 카드 id: 영숫자와 - 만 그대로, 나머지는 _xxxx(36진 4자리)로 ---------- */
+function hash(s){ var h = 0x811c9dc5; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; } return h.toString(36); }
+function enc(s){
+  s = String(s); var o = '';
+  for (var ch of s) { o += /[A-Za-z0-9-]/.test(ch) ? ch : '_' + ch.codePointAt(0).toString(36).padStart(4, '0'); }
+  if (o.length > 140) o = o.slice(0, 110) + '-' + hash(s);
+  return o || 'x';
+}
+function koSplit(ko){
+  ko = str(ko); var i = ko.indexOf('—');
+  return i < 0 ? [ko, ''] : [ko.slice(0, i).trim(), ko.slice(i + 1).trim()];
+}
+
+/* ---------- 카드 만들기 ---------- */
+var CARDS = [], BY_ID = new Map();
+(function(){
+  var used = new Set();
+  function take(cands){
+    for (var i = 0; i < cands.length; i++) { if (!used.has(cands[i])) { used.add(cands[i]); return cands[i]; } }
+    var base = cands[cands.length - 1], n = 2; while (used.has(base + '-' + n)) n++;
+    used.add(base + '-' + n); return base + '-' + n;
+  }
+  (Array.isArray(RAW.abbr) ? RAW.abbr : []).forEach(function(a){
+    if (!a) return; var abbr = str(a.abbr); if (!abbr) return;
+    var full = str(a.full), ko = str(a.ko), ks = koSplit(ko);
+    CARDS.push({deck:'abbr', id:take(['a-' + enc(abbr), 'a-' + enc(abbr + ' ' + (full || ko))]), cat:str(a.cat) || '기타',
+      abbr:abbr, full:full, ko:ko, name:ks[0], mean:ks[1]});
+  });
+  (Array.isArray(RAW.dueum) ? RAW.dueum : []).forEach(function(d){
+    if (!d) return; var du = str(d.dueum), topic = str(d.topic); if (!du && !topic) return;
+    var items = Array.isArray(d.items) ? d.items.map(str).filter(Boolean) : [];
+    CARDS.push({deck:'dueum', id:take(['d-' + enc(topic + ' ' + du)]), cat:str(d.cat) || '기타', dueum:du, topic:topic, items:items});
+  });
+  (Array.isArray(RAW.concepts) ? RAW.concepts : []).forEach(function(c){
+    if (!c) return; var topic = str(c.topic); if (!topic) return;
+    CARDS.push({deck:'concept', id:take(['c-' + enc(str(c.id) || topic)]), cat:str(c.domain) || '기타', imp:str(c.imp),
+      group:str(c.group), topic:topic, keys:str(c.keys), def:str(c.def), exam:str(c.exam), itpe:str(c.itpe)});
+  });
+  CARDS.forEach(function(c){ BY_ID.set(c.id, c); });
+})();
+
+/* ---------- 브라우저 저장 (모든 접근 try/catch) ---------- */
+var LS = {
+  get: function(k){ try { return window.localStorage.getItem(k); } catch (e) { return null; } },
+  set: function(k, v){ try { window.localStorage.setItem(k, v); return true; } catch (e) { return false; } }
+};
+var LS_OK = (function(){ try { var t = '__itpe_t'; window.localStorage.setItem(t, '1'); window.localStorage.removeItem(t); return true; } catch (e) { return false; } })();
+function readJSON(k, d){ var v = LS.get(k); if (!v) return d; try { var o = JSON.parse(v); return o && typeof o === 'object' ? o : d; } catch (e) { return d; } }
+var K_PROG = 'itpe-cards.progress.v1', K_UNSYNC = 'itpe-cards.unsynced.v1', K_PREF = 'itpe-cards.prefs.v1';
+
+var pref = Object.assign({deck:'abbr', filt:{}, imp:'전체', dir:'a2m', obo:false, size:20}, readJSON(K_PREF, {}));
+pref.filt = Object.assign({abbr:'전체', dueum:'전체', concept:'전체'}, pref.filt && typeof pref.filt === 'object' ? pref.filt : {});
+if (!DECK_NAME[pref.deck]) pref.deck = 'abbr';
+if ([0, 10, 20, 50].indexOf(+pref.size) < 0) pref.size = 20;
+if (pref.dir !== 'm2a') pref.dir = 'a2m';
+function savePref(){ LS.set(K_PREF, JSON.stringify(pref)); }
+
+function normRec(o){
+  if (!o || typeof o !== 'object') return null;
+  var box = Math.round(+o.box); if (!(box >= 0)) box = 0; if (box > 4) box = 4;
+  return {box:box, right:Math.max(0, +o.right || 0), wrong:Math.max(0, +o.wrong || 0), last:+o.last || 0, due:+o.due || 0};
+}
+var P = {};
+(function(){ var o = readJSON(K_PROG, {}); for (var k in o) { var r = normRec(o[k]); if (r) P[k] = r; } })();
+var UNSYNC = new Set(Object.keys(readJSON(K_UNSYNC, {})));
+function saveLocal(){
+  LS.set(K_PROG, JSON.stringify(P));
+  var u = {}; UNSYNC.forEach(function(k){ u[k] = 1; }); LS.set(K_UNSYNC, JSON.stringify(u));
+}
+
+/* ---------- 진도 저장: db 캡빌리티 우선, 안 되면 이 기기 ---------- */
+var S = {mode:'pending', col:null, unsub:null, inflight:new Set(), again:new Set(), migrated:false};
+function renderChip(){
+  var el = $('#store'); if (!el) return;
+  var t = S.mode === 'db' ? '기기 간 동기화' : S.mode === 'pending' ? '저장 위치 확인 중' : (LS_OK ? '이 기기에만 저장' : '저장 안 됨 · 이번 방문만');
+  el.textContent = t; el.setAttribute('data-m', S.mode);
+  el.title = S.mode === 'db' ? '진도가 계정에 저장되어 다른 기기에서도 이어집니다' : S.mode === 'local' ? '진도가 이 브라우저에만 저장됩니다' : '';
+}
+function setMode(m){ S.mode = m; renderChip(); }
+function fallbackLocal(){
+  if (S.unsub) { try { S.unsub(); } catch (e) {} }
+  S.unsub = null; S.col = null; setMode('local');
+}
+function safeUse(c, name){
+  try { return Promise.resolve(c.use(name)).catch(function(){ return null; }); } catch (e) { return Promise.resolve(null); }
+}
+async function initStore(){
+  var c = window.claude;
+  if (!c || typeof c.use !== 'function') { setMode('local'); return; }
+  var res = await Promise.all([safeUse(c, 'user'), safeUse(c, 'db')]);
+  var user = res[0], db = res[1];
+  if (!db) { setMode('local'); return; }
+  if (user && typeof user.isOwner === 'function') {
+    var own = null; try { own = await user.isOwner(); } catch (e) {}
+    if (own === false) { setMode('local'); return; } /* progress 규칙: owner만 읽고 씀 */
+  }
+  try { S.col = db.collection('progress'); } catch (e) { setMode('local'); return; }
+  setMode('db');
+  try { S.unsub = S.col.onSnapshot(onSnap, function(){ fallbackLocal(); }); }
+  catch (e) { fallbackLocal(); }
+}
+function onSnap(snap){
+  var next = {};
+  snap.docs.forEach(function(d){ if (!d.exists) return; var r = normRec(d.data()); if (r) next[d.id] = r; });
+  UNSYNC.forEach(function(id){
+    var l = P[id];
+    if (!l) delete next[id];
+    else if (!next[id] || l.last >= next[id].last) next[id] = l;
+  });
+  P = next; saveLocal();
+  if (!snap.metadata.fromCache && !S.migrated) { S.migrated = true; migrate(); }
+  softRender();
+}
+async function migrate(){
+  var ids = Array.from(UNSYNC);
+  for (var i = 0; i < ids.length; i++) {
+    if (S.mode !== 'db') return;
+    var ok = await writeDoc(ids[i], P[ids[i]] ? 'set' : 'del');
+    if (ok) UNSYNC.delete(ids[i]);
+  }
+  saveLocal();
+}
+async function writeDoc(id, op, retried){
+  if (!S.col) { UNSYNC.add(id); saveLocal(); return false; }
+  try {
+    var ref = S.col.doc(id), r = P[id];
+    if (op === 'del' || !r) await ref.delete();
+    else await ref.set({box:r.box, right:r.right, wrong:r.wrong, last:r.last, due:r.due});
+    return true;
+  } catch (e) {
+    var code = e && e.code;
+    if ((code === 'unavailable' || code === 'resource_exhausted') && !retried) {
+      await sleep(code === 'unavailable' ? 400 + Math.random() * 800 : 1500);
+      return writeDoc(id, op, true);
+    }
+    UNSYNC.add(id); saveLocal();
+    if (code === 'quota_exceeded') toast('동기화 저장 공간이 가득 찼어요. 이 기기에 먼저 저장해 둡니다.');
+    else if (code !== 'unavailable' && code !== 'resource_exhausted') fallbackLocal();
+    return false;
+  }
+}
+function queueWrite(id){
+  if (S.inflight.has(id)) { S.again.add(id); return; }
+  S.inflight.add(id);
+  writeDoc(id, 'set').finally(function(){
+    S.inflight.delete(id);
+    if (S.again.has(id)) { S.again.delete(id); queueWrite(id); }
+  });
+}
+function persist(id){
+  if (S.mode === 'db') { saveLocal(); queueWrite(id); }
+  else { UNSYNC.add(id); saveLocal(); }
+}
+
+/* ---------- 라이트너 ---------- */
+function dayStart(t, add){ var d = new Date(t); return new Date(d.getFullYear(), d.getMonth(), d.getDate() + (add || 0)).getTime(); }
+function endToday(){ return dayStart(Date.now(), 1); }
+function isDue(id){ var r = P[id]; return !!r && r.due < endToday(); }
+function stat(id){ var r = P[id]; if (!r) return 'new'; return r.box >= 3 ? 'known' : r.box >= 1 ? 'unsure' : 'dont'; }
+function grade(id, g){
+  var now = Date.now(), prev = P[id];
+  var box = prev ? prev.box : 0, right = prev ? prev.right : 0, wrong = prev ? prev.wrong : 0;
+  if (g === 'dont') { box = 0; wrong++; }
+  else if (g === 'know') { box = Math.min(4, box + 1); right++; }
+  var due = box === 0 ? now : dayStart(now, DAYS[box]);
+  P[id] = {box:box, right:right, wrong:wrong, last:now, due:due};
+  persist(id);
+}
+function gapLabel(box){ return box <= 0 ? '곧 다시' : DAYS[box] + '일 뒤'; }
+
+/* ---------- 필터 ---------- */
+function deckCards(deck){ return CARDS.filter(function(c){ return c.deck === deck; }); }
+function catsOf(deck){
+  var set = new Set(deckCards(deck).map(function(c){ return c.cat; }));
+  var order = deck === 'concept' ? DOMAIN_ORDER.concat(CAT_ORDER) : CAT_ORDER;
+  var out = [];
+  order.forEach(function(x){ if (set.has(x) && out.indexOf(x) < 0) out.push(x); });
+  Array.from(set).sort().forEach(function(x){ if (out.indexOf(x) < 0) out.push(x); });
+  return out;
+}
+function filtered(deck){
+  var f = pref.filt[deck] || '전체';
+  if (f !== '전체' && catsOf(deck).indexOf(f) < 0) f = pref.filt[deck] = '전체';
+  return deckCards(deck).filter(function(c){
+    return (f === '전체' || c.cat === f) && (deck !== 'concept' || pref.imp === '전체' || c.imp === pref.imp);
+  });
+}
+function counts(list){
+  var o = {known:0, unsure:0, dont:0, 'new':0, due:0};
+  list.forEach(function(c){ o[stat(c.id)]++; if (isDue(c.id)) o.due++; });
+  return o;
+}
+function dueSorted(list){ return list.filter(function(c){ return isDue(c.id); }).sort(function(a, b){ return P[a.id].due - P[b.id].due; }).map(function(c){ return c.id; }); }
+function scopeLabel(){
+  var d = pref.deck, f = pref.filt[d] || '전체';
+  var s = DECK_NAME[d] + ' · ' + (f === '전체' ? '전체 분야' : f);
+  if (d === 'concept' && pref.imp !== '전체') s += ' · ' + pref.imp;
+  return s;
+}
+
+/* ---------- 화면 상태 ---------- */
+var st = {screen:'home', session:null, quiz:null, reset:null, wrongDeck:'전체', q:'', open:new Set()};
+
+/* ---------- 카드 앞·뒤 ---------- */
+function metaChips(c){
+  var h = '<span class="tag">' + DECK_NAME[c.deck] + '</span><span class="tag">' + esc(c.cat) + '</span>';
+  if (c.deck === 'concept' && c.imp) h += '<span class="tag' + (c.imp === '상' ? ' imp-hi' : '') + '">' + esc(c.imp === '상' ? '중요도 상' : c.imp) + '</span>';
+  return h;
+}
+function frontHTML(c){
+  if (c.deck === 'abbr') {
+    if (pref.dir === 'm2a') return '<div class="f-ko">' + esc(c.name || c.full) + '</div>' + (c.mean ? '<div class="f-sub">' + esc(c.mean) + '</div>' : '');
+    return '<div class="f-abbr">' + esc(c.abbr) + '</div>';
+  }
+  if (c.deck === 'dueum') return '<div class="f-dueum pen">' + esc(c.dueum) + '</div><div class="f-topic">' + esc(c.topic) + '</div>';
+  return '<div class="f-topic-lg">' + esc(c.topic) + '</div>' + (c.group ? '<div class="f-group">' + esc(c.group) + '</div>' : '');
+}
+function markInitials(full, abbr){
+  var letters = Array.from(abbr.toUpperCase()).filter(function(ch){ return /[A-Z0-9]/.test(ch); });
+  var k = 0, out = '', start = true;
+  for (var ch of full) {
+    var w = /[A-Za-z0-9]/.test(ch);
+    if (k < letters.length && w && (start || /[A-Z]/.test(ch)) && ch.toUpperCase() === letters[k]) { out += '<b>' + esc(ch) + '</b>'; k++; }
+    else out += esc(ch);
+    start = !w;
+  }
+  return k >= Math.min(2, letters.length) ? out : esc(full);
+}
+function tokens(du){ return Array.from(du).filter(function(ch){ return !/[\s·,.\-\/()\[\]~+]/.test(ch); }); }
+function backHTML(c, opt){
+  opt = opt || {};
+  var h = '';
+  if (c.deck === 'abbr') {
+    if (!opt.bare) h += '<div class="b-q">' + (pref.dir === 'm2a' ? esc(c.name || c.full) : esc(c.abbr)) + '</div>';
+    h += '<div class="ruled">';
+    if (pref.dir === 'm2a' && !opt.bare) {
+      h += '<p class="b-abbr">' + esc(c.abbr) + '</p>';
+      if (c.full) h += '<p class="b-main">' + markInitials(c.full, c.abbr) + '</p>';
+    } else {
+      if (opt.bare) h += '<p class="b-abbr">' + esc(c.abbr) + '</p>';
+      if (c.full) h += '<p class="b-main">' + markInitials(c.full, c.abbr) + '</p>';
+      if (c.name) h += '<p class="b-big">' + esc(c.name) + '</p>';
+    }
+    if (c.mean) h += '<p class="b-mean">' + esc(c.mean) + '</p>';
+    return h + '</div>';
+  }
+  if (c.deck === 'dueum') {
+    var tk = tokens(c.dueum), n = Math.max(tk.length, c.items.length), obo = !!opt.obo, rv = opt.reveal || new Set();
+    if (!opt.bare) h += '<div class="b-q"><span class="pen">' + esc(c.dueum) + '</span> · ' + esc(c.topic) + '</div>';
+    h += '<ol class="pairs ruled' + (obo ? ' obo' : '') + '">';
+    for (var i = 0; i < n; i++) {
+      var k = tk[i] || '·', v = c.items[i] || '';
+      if (obo) {
+        var open = rv.has(i);
+        h += '<li><button type="button" class="p-k" data-act="reveal" data-i="' + i + '" aria-expanded="' + open + '" aria-label="' + esc(k) + ' 항목 ' + (open ? '보임' : '보기') + '">' + esc(k) + '</button><span class="p-v">' + (open ? esc(v) : '') + '</span></li>';
+      } else {
+        h += '<li><span class="p-k" aria-hidden="true">' + esc(k) + '</span><span class="p-v">' + esc(v) + '</span></li>';
+      }
+    }
+    h += '</ol>';
+    if (tk.length !== c.items.length && c.items.length) h += '<p class="note">두음 ' + tk.length + '글자 · 항목 ' + c.items.length + '개 — 순서대로 짝지었어요.</p>';
+    if (obo && rv.size < n) h += '<div class="mini-row"><button type="button" class="link" data-act="reveal-all">모두 보기</button></div>';
+    return h;
+  }
+  if (!opt.bare) h += '<div class="b-q">' + esc(c.topic) + '</div>';
+  h += '<div class="ruled">';
+  if (c.keys) h += '<p class="b-lab">두음·키워드</p><p class="b-pen">' + esc(c.keys) + '</p>';
+  if (c.def) h += '<p class="b-lab">정의</p><p class="b-text">' + esc(c.def) + '</p>';
+  if (c.exam) h += '<p class="b-lab">기출</p><p class="b-sub">' + esc(c.exam) + '</p>';
+  if (!c.keys && !c.def) h += '<p class="b-empty">아직 두음·정의가 비어 있어요. 답안 노트에서 채워 보세요.</p>';
+  h += '<p class="b-foot">' + esc(c.group) + (c.itpe ? ' · ITPE #' + esc(c.itpe) : '') + '</p>';
+  return h + '</div>';
+}
+function rowLabel(c){
+  if (c.deck === 'abbr') return '<b>' + esc(c.abbr) + '</b> ' + esc(c.name || c.full) + (c.full && c.name ? '<small>' + esc(c.full) + '</small>' : '');
+  if (c.deck === 'dueum') return '<span class="pen">' + esc(c.dueum) + '</span><b>' + esc(c.topic) + '</b>';
+  return '<b>' + esc(c.topic) + '</b><small>' + esc(c.cat) + (c.imp ? ' · ' + esc(c.imp) : '') + (c.keys ? ' · ' + esc(c.keys) : '') + '</small>';
+}
+
+/* ---------- 홈 ---------- */
+function homeHTML(){
+  var d = pref.deck, all = deckCards(d), list = filtered(d), cnt = counts(list);
+  var h = '<section aria-label="덱 선택"><div class="decks">';
+  DECKS.forEach(function(x){
+    var cs = deckCards(x.key), due = cs.filter(function(c){ return isDue(c.id); }).length;
+    h += '<button type="button" class="deck-tab" data-act="deck" data-deck="' + x.key + '" aria-pressed="' + (x.key === d) + '"><span class="dt-name">' + x.name + '</span><span class="dt-n">' + cs.length + '장</span>' + (due ? '<span class="dt-due">복습 ' + due + '</span>' : '') + '</button>';
+  });
+  h += '</div></section>';
+
+  if (!all.length) {
+    h += '<div class="empty">이 덱에 카드가 없어요.<br>data/' + (d === 'concept' ? 'concepts' : d) + '.json을 채우고 다시 빌드하세요.</div>';
+  } else {
+    var f = pref.filt[d] || '전체', cats = catsOf(d);
+    h += '<span class="lab" id="lab-cat">' + (d === 'concept' ? '도메인' : '분야') + '</span><div class="chips" role="group" aria-labelledby="lab-cat">';
+    ['전체'].concat(cats).forEach(function(cat){
+      var n = cat === '전체' ? all.length : all.filter(function(c){ return c.cat === cat; }).length;
+      h += '<button type="button" class="chip" data-act="filt" data-v="' + esc(cat) + '" aria-pressed="' + (cat === f) + '">' + esc(cat) + '<small>' + n + '</small></button>';
+    });
+    h += '</div>';
+    if (d === 'concept') {
+      h += '<span class="lab" id="lab-imp">중요도</span><div class="chips" role="group" aria-labelledby="lab-imp">';
+      ['전체', '상', '출제예상'].forEach(function(v){
+        h += '<button type="button" class="chip" data-act="imp" data-v="' + v + '" aria-pressed="' + (pref.imp === v) + '">' + v + '</button>';
+      });
+      h += '</div>';
+    }
+    var size = +pref.size || 0;
+    if (cnt.due) {
+      h += '<button type="button" class="today" data-act="today"><span><span class="today-k">오늘 복습</span><span class="today-s">' + esc(scopeLabel()) + ' · 새 카드 ' + cnt['new'] + '장 남음</span></span><span class="today-n">' + cnt.due + '<small>장</small></span></button>';
+    } else if (cnt['new']) {
+      h += '<button type="button" class="today" data-act="today"><span><span class="today-k">새 카드 학습</span><span class="today-s">오늘 복습 0장 · ' + esc(scopeLabel()) + ' · 이번에 ' + (size ? Math.min(size, cnt['new']) : cnt['new']) + '장</span></span><span class="today-n">' + cnt['new'] + '<small>장</small></span></button>';
+    } else {
+      h += '<button type="button" class="today" data-act="today"><span><span class="today-k">오늘 복습 0장</span><span class="today-s">' + esc(scopeLabel()) + ' · 모두 봤어요. 섞어서 다시 보기</span></span><span class="today-n">0<small>장</small></span></button>';
+    }
+    h += '<div class="row2"><button type="button" class="btn" data-act="learn">카드 학습<small>복습 먼저 · ' + (size ? size + '장씩' : '전부') + '</small></button>';
+    h += '<button type="button" class="btn" data-act="quiz">4지선다<small>10문제 · 같은 분야 오답</small></button></div>';
+
+    h += '<div class="opts">';
+    if (d === 'abbr') h += '<div class="opt-row"><span id="lab-dir">방향</span><div class="seg" role="group" aria-labelledby="lab-dir"><button type="button" data-act="dir" data-v="a2m" aria-pressed="' + (pref.dir === 'a2m') + '">약어 → 뜻</button><button type="button" data-act="dir" data-v="m2a" aria-pressed="' + (pref.dir === 'm2a') + '">뜻 → 약어</button></div></div>';
+    if (d === 'dueum') h += '<div class="opt-row"><span id="lab-obo">뒷면</span><div class="seg" role="group" aria-labelledby="lab-obo"><button type="button" data-act="obo" data-v="0" aria-pressed="' + !pref.obo + '">한 번에</button><button type="button" data-act="obo" data-v="1" aria-pressed="' + !!pref.obo + '">한 글자씩</button></div></div>';
+    h += '<div class="opt-row"><span id="lab-size">한 번에 볼 장수</span><div class="seg" role="group" aria-labelledby="lab-size">';
+    [10, 20, 50, 0].forEach(function(v){ h += '<button type="button" data-act="size" data-v="' + v + '" aria-pressed="' + (+pref.size === v) + '">' + (v ? v : '전부') + '</button>'; });
+    h += '</div></div></div>';
+  }
+
+  h += '<span class="lab">덱별 진도</span><div class="prog-list">';
+  DECKS.forEach(function(x){
+    var cs = deckCards(x.key), c = counts(cs), n = cs.length || 1;
+    function pct(v){ return (v / n * 100).toFixed(2) + '%'; }
+    h += '<div><div class="prog-h"><b>' + x.name + '</b><span>' + cs.length + '장 · 복습 대기 ' + c.due + '</span></div>';
+    h += '<div class="pbar" role="img" aria-label="' + x.name + ' 외움 ' + c.known + ', 헷갈림 ' + c.unsure + ', 모름 ' + c.dont + ', 안 봄 ' + c['new'] + '"><i class="k" style="width:' + pct(c.known) + '"></i><i class="u" style="width:' + pct(c.unsure) + '"></i><i class="d" style="width:' + pct(c.dont) + '"></i></div>';
+    h += '<div class="legend"><span class="k">외움 ' + c.known + '</span><span class="u">헷갈림 ' + c.unsure + '</span><span class="d">모름 ' + c.dont + '</span><span>안 봄 ' + c['new'] + '</span></div></div>';
+  });
+  h += '</div>';
+  h += resetHTML();
+  return h;
+}
+function resetIds(scope){
+  return Object.keys(P).filter(function(k){
+    if (scope === 'all') return true;
+    var x = DECKS.filter(function(dd){ return dd.key === scope; })[0];
+    return x && k.indexOf(x.prefix) === 0;
+  });
+}
+function resetHTML(){
+  var r = st.reset;
+  if (!r) return '<div class="mini-row" style="justify-content:flex-start;margin-top:18px"><button type="button" class="link" data-act="reset-open">진도 초기화…</button></div>';
+  var h = '<div class="panel" role="region" aria-label="진도 초기화">';
+  if (r.step === 'choose') {
+    h += '<p><b>어떤 진도를 지울까요?</b></p><div class="chips">';
+    DECKS.forEach(function(x){ h += '<button type="button" class="chip" data-act="reset-scope" data-v="' + x.key + '">' + x.name + '<small>' + resetIds(x.key).length + '</small></button>'; });
+    h += '<button type="button" class="chip" data-act="reset-scope" data-v="all">전체<small>' + resetIds('all').length + '</small></button></div>';
+    h += '<div class="row2"><button type="button" class="btn-line" data-act="reset-cancel">취소</button><span></span></div>';
+  } else if (r.step === 'confirm') {
+    var n = resetIds(r.scope).length, nm = r.scope === 'all' ? '전체 덱' : DECK_NAME[r.scope];
+    h += '<p><b>' + nm + ' 진도 기록 ' + n + '장을 지웁니다.</b></p><p class="muted">상자·정답/오답 횟수·복습 일정이 모두 사라지고 되돌릴 수 없어요.</p>';
+    h += '<div class="row2"><button type="button" class="btn-line" data-act="reset-cancel">취소</button><button type="button" class="danger" data-act="reset-go"' + (n ? '' : ' disabled') + '>지우기</button></div>';
+  } else {
+    h += '<p><b>지우는 중… <span id="reset-n">' + r.n + '</span> / ' + r.total + '</b></p>';
+  }
+  return h + '</div>';
+}
+
+/* ---------- 카드 세션 ---------- */
+function startSession(ids, label){
+  ids = ids.filter(function(id){ return BY_ID.has(id); });
+  if (!ids.length) { toast('지금 볼 카드가 없어요'); return; }
+  st.session = {ids:ids.slice(), queue:ids.slice(), pos:0, flipped:false, reveal:new Set(), tally:{know:0, unsure:0, dont:0}, reps:{}, done:new Set(), label:label, graded:0};
+  go('session');
+}
+function learnIds(list){
+  var due = dueSorted(list);
+  var fresh = list.filter(function(c){ return !P[c.id]; }).map(function(c){ return c.id; });
+  var ids = due.concat(fresh);
+  if (!ids.length) ids = shuffle(list.map(function(c){ return c.id; }));
+  var size = +pref.size || 0;
+  return size ? ids.slice(0, size) : ids;
+}
+function sessionHTML(){
+  var s = st.session, id = s.queue[s.pos], c = BY_ID.get(id);
+  var total = s.ids.length, done = s.done.size;
+  var h = '<div class="sess-top"><button type="button" class="link" data-act="end">← 그만하기</button><span class="sess-n">' + done + ' / ' + total + '</span><span class="tag">' + esc(s.label) + '</span></div>';
+  h += '<div class="sess-bar" aria-hidden="true"><i style="width:' + (done / total * 100).toFixed(1) + '%"></i></div>';
+  h += '<div class="card anim" id="card" data-act="flip" role="button" tabindex="0" aria-label="' + (s.flipped ? '카드 앞면 보기' : '카드 뒤집기') + '">';
+  h += '<div class="card-meta">' + metaChips(c) + (P[id] ? '<span class="tag">상자 ' + P[id].box + '</span>' : '<span class="tag">새 카드</span>') + '</div>';
+  if (s.flipped) h += '<div class="back">' + backHTML(c, {obo:c.deck === 'dueum' && pref.obo, reveal:s.reveal}) + '</div>';
+  else h += '<div class="face">' + frontHTML(c) + '</div><p class="hint">탭하면 뒤집혀요</p>';
+  h += '</div>';
+  return h;
+}
+function flip(){ var s = st.session; if (!s) return; s.flipped = !s.flipped; render(true); }
+function gradeCurrent(g){
+  var s = st.session; if (!s || !s.flipped) return;
+  var id = s.queue[s.pos];
+  grade(id, g); s.tally[g]++; s.graded++;
+  s.reps[id] = (s.reps[id] || 0) + 1;
+  if (P[id].box === 0 && s.reps[id] < 3) s.queue.splice(Math.min(s.queue.length, s.pos + 4), 0, id);
+  else s.done.add(id);
+  s.pos++; s.flipped = false; s.reveal = new Set();
+  if (s.pos >= s.queue.length) go('summary'); else render(true);
+}
+function summaryHTML(){
+  var s = st.session, t = s.tally;
+  var again = s.ids.filter(function(id){ return P[id] && P[id].box === 0; });
+  var h = '<h2>' + esc(s.label) + ' 끝</h2><p class="muted">' + s.done.size + '장 마침 · 채점 ' + s.graded + '번 (다시 나온 카드 포함)</p>';
+  h += '<div class="tally"><div class="t ok"><b>' + t.know + '</b>알아요</div><div class="t mid"><b>' + t.unsure + '</b>헷갈려요</div><div class="t bad"><b>' + t.dont + '</b>몰라요</div></div>';
+  h += '<div class="stack">';
+  if (again.length) h += '<button type="button" class="btn-ink" data-act="sum-again">아직 모르는 ' + again.length + '장 다시</button>';
+  h += '<button type="button" class="btn-line" data-act="home">홈으로</button></div>';
+  return h;
+}
+
+/* ---------- 4지선다 ---------- */
+function quizMode(c){ return c.deck === 'abbr' ? pref.dir : c.deck; }
+function optOf(x, mode){
+  if (mode === 'a2m') return {t:x.name || x.full, s:x.name && x.full ? x.full : ''};
+  if (mode === 'm2a') return {t:x.abbr};
+  if (mode === 'dueum') return {t:x.dueum, pen:true};
+  return {t:x.topic};
+}
+function quizOK(c){
+  if (c.deck === 'abbr') return !!(c.abbr && (c.name || c.full));
+  if (c.deck === 'dueum') return !!(c.dueum && c.topic);
+  return !!(c.keys || c.def);
+}
+function makeQ(c){
+  var mode = quizMode(c), q = {id:c.id, mode:mode, pick:null};
+  if (mode === 'a2m') { q.prompt = c.abbr; q.cls = 'big'; q.ask = '뜻은?'; }
+  else if (mode === 'm2a') { q.prompt = c.name || c.full; q.sub = c.mean; q.ask = '약어는?'; }
+  else if (mode === 'dueum') { q.prompt = c.topic; q.ask = '두음은?'; }
+  else if (c.keys) { q.prompt = c.keys; q.cls = 'pen'; q.ask = '어느 토픽의 두음·키워드일까요?'; }
+  else { q.prompt = c.def; q.cls = 'text'; q.ask = '어느 토픽의 정의일까요?'; }
+  var right = optOf(c, mode); right.ok = true;
+  var seen = new Set([norm(right.t)]), opts = [right];
+  var pool = CARDS.filter(function(x){ return x.deck === c.deck && x.id !== c.id && optOf(x, mode).t; });
+  var same = shuffle(pool.filter(function(x){ return x.cat === c.cat; })), other = shuffle(pool.filter(function(x){ return x.cat !== c.cat; }));
+  same.concat(other).forEach(function(x){
+    if (opts.length >= 4) return;
+    var o = optOf(x, mode); if (seen.has(norm(o.t))) return;
+    seen.add(norm(o.t)); opts.push(o);
+  });
+  if (opts.length < 2) return null;
+  q.opts = shuffle(opts);
+  return q;
+}
+function startQuiz(list){
+  var el = list.filter(quizOK);
+  if (el.length < 1 || deckCards(pref.deck).length < 2) { toast('4지선다를 만들 카드가 부족해요'); return; }
+  var due = shuffle(el.filter(function(c){ return isDue(c.id); }));
+  var fresh = shuffle(el.filter(function(c){ return !P[c.id]; }));
+  var rest = shuffle(el.filter(function(c){ return P[c.id] && !isDue(c.id); }));
+  var picks = [], seen = new Set();
+  due.concat(fresh, rest).forEach(function(c){ if (picks.length < 10 && !seen.has(c.id)) { seen.add(c.id); picks.push(c); } });
+  var items = shuffle(picks).map(makeQ).filter(Boolean);
+  if (!items.length) { toast('4지선다를 만들 카드가 부족해요'); return; }
+  st.quiz = {items:items, idx:0, score:0, list:list};
+  go('quiz');
+}
+function quizHTML(){
+  var z = st.quiz, q = z.items[z.idx], c = BY_ID.get(q.id);
+  var h = '<div class="sess-top"><button type="button" class="link" data-act="end">← 그만하기</button><span class="sess-n">' + (z.idx + 1) + ' / ' + z.items.length + ' · 맞힘 ' + z.score + '</span><span class="tag">4지선다</span></div>';
+  h += '<div class="sess-bar" aria-hidden="true"><i style="width:' + (z.idx / z.items.length * 100).toFixed(1) + '%"></i></div>';
+  h += '<div class="q-card anim"><div class="card-meta">' + metaChips(c) + '</div><p class="q-ask">' + esc(q.ask) + '</p><p class="q-prompt ' + (q.cls || '') + '">' + esc(q.prompt) + '</p>' + (q.sub ? '<p class="q-sub">' + esc(q.sub) + '</p>' : '') + '</div>';
+  h += '<div class="opts-q" role="group" aria-label="보기">';
+  q.opts.forEach(function(o, i){
+    var cls = '', mark = '';
+    if (q.pick != null) {
+      if (o.ok) { cls = ' is-ok'; mark = '○ 정답'; }
+      else if (i === q.pick) { cls = ' is-bad'; mark = '✕ 오답'; }
+    }
+    h += '<button type="button" class="opt' + cls + '" data-act="answer" data-i="' + i + '"' + (q.pick != null ? ' disabled' : '') + '><span class="opt-n">' + (i + 1) + '</span><span class="opt-t' + (o.pen ? ' pen' : '') + '">' + esc(o.t) + (o.s ? '<small>' + esc(o.s) + '</small>' : '') + '</span><span class="opt-m">' + mark + '</span></button>';
+  });
+  h += '</div>';
+  if (q.pick != null) {
+    var ok = q.opts[q.pick].ok;
+    h += '<p class="muted" style="margin-top:12px" role="status">' + (ok ? '맞혔어요. 상자 +1 (' + gapLabel(P[q.id].box) + ')' : '틀렸어요. 상자 0으로 — 오답 노트에 담겼어요.') + '</p>';
+  }
+  return h;
+}
+function qresultHTML(){
+  var z = st.quiz, wrong = z.items.filter(function(q){ return q.pick != null && !q.opts[q.pick].ok; });
+  var answered = z.items.filter(function(q){ return q.pick != null; }).length;
+  var h = '<h2>4지선다 결과</h2><div class="score"><b>' + z.score + '</b><span>/ ' + answered + '</span></div>';
+  h += '<p class="muted">' + scopeLabel() + '</p>';
+  if (wrong.length) {
+    h += '<span class="lab">틀린 문제</span><ul class="list">';
+    wrong.forEach(function(q){
+      var r = q.opts.filter(function(o){ return o.ok; })[0];
+      h += '<li><div class="row"><span class="row-main"><b>' + esc(q.prompt) + '</b><small>정답: ' + esc(r.t) + '</small></span><span class="row-meta"><span class="x">✕ ' + esc(q.opts[q.pick].t) + '</span></span></div></li>';
+    });
+    h += '</ul>';
+  }
+  h += '<div class="stack">';
+  if (wrong.length) h += '<button type="button" class="btn-ink" data-act="quiz-wrong">틀린 ' + wrong.length + '문제 카드로 복습</button>';
+  h += '<button type="button" class="' + (wrong.length ? 'btn-line' : 'btn-ink') + '" data-act="quiz-more">10문제 더</button><button type="button" class="btn-line" data-act="home">홈으로</button></div>';
+  return h;
+}
+
+/* ---------- 오답 노트 ---------- */
+function wrongCards(deck){
+  return CARDS.filter(function(c){ var r = P[c.id]; return r && r.box <= 1 && (deck === '전체' || c.deck === deck); })
+    .sort(function(a, b){ var x = P[a.id], y = P[b.id]; return x.box - y.box || y.wrong - x.wrong || y.last - x.last; });
+}
+function itemHTML(c, withDeck){
+  var r = P[c.id], open = st.open.has(c.id);
+  var h = '<li><button type="button" class="row" data-act="toggle" data-id="' + esc(c.id) + '" aria-expanded="' + open + '"><span class="row-main">' + rowLabel(c) + '</span><span class="row-meta">';
+  if (withDeck) h += '<span class="box">' + DECK_NAME[c.deck] + '</span>';
+  if (r) h += '<span class="box' + (r.box === 0 ? ' b0' : '') + '">상자 ' + r.box + '</span>' + (r.wrong ? '<span class="x">✕ ' + r.wrong + '</span>' : '');
+  h += '</span></button>';
+  if (open) h += '<div class="detail">' + backHTML(c, {bare:true}) + '</div>';
+  return h + '</li>';
+}
+function wrongHTML(){
+  var all = wrongCards('전체'), list = wrongCards(st.wrongDeck);
+  var h = '<h2>오답 노트</h2><p class="muted">상자 0~1 카드 — 몰라요·헷갈려요·틀린 문제가 모여요.</p>';
+  h += '<div class="chips" role="group" aria-label="덱" style="margin-top:12px">';
+  ['전체'].concat(DECKS.map(function(x){ return x.key; })).forEach(function(k){
+    var n = k === '전체' ? all.length : all.filter(function(c){ return c.deck === k; }).length;
+    h += '<button type="button" class="chip" data-act="wrong-deck" data-v="' + k + '" aria-pressed="' + (st.wrongDeck === k) + '">' + (k === '전체' ? '전체' : DECK_NAME[k]) + '<small>' + n + '</small></button>';
+  });
+  h += '</div>';
+  if (!list.length) return h + '<div class="empty">비어 있어요. 카드 학습에서 몰라요·헷갈려요를 누른 카드가 여기 모입니다.</div>';
+  h += '<button type="button" class="today" data-act="wrong-review"><span><span class="today-k">바로 복습</span><span class="today-s">' + (st.wrongDeck === '전체' ? '모든 덱' : DECK_NAME[st.wrongDeck]) + ' · 상자 0 먼저</span></span><span class="today-n">' + list.length + '<small>장</small></span></button>';
+  h += '<ul class="list">' + list.slice(0, 300).map(function(c){ return itemHTML(c, st.wrongDeck === '전체'); }).join('') + '</ul>';
+  return h;
+}
+
+/* ---------- 찾기 ---------- */
+var HAY = new Map();
+function hay(c){
+  if (!HAY.has(c.id)) {
+    var t = c.deck === 'abbr' ? [c.abbr, c.full, c.ko] : c.deck === 'dueum' ? [c.dueum, c.topic, c.items.join(' ')] : [c.topic, c.keys, c.def, c.group];
+    var s = t.join(' ').toLowerCase(); HAY.set(c.id, [s, s.replace(/\s+/g, '')]);
+  }
+  return HAY.get(c.id);
+}
+function searchResults(){
+  var q = st.q.trim().toLowerCase();
+  if (!q) return '<p class="muted" style="margin-top:12px">약어 ' + deckCards('abbr').length + ' · 두음 ' + deckCards('dueum').length + ' · 개념 ' + deckCards('concept').length + '장에서 찾아요.</p>';
+  var qn = q.replace(/\s+/g, ''), res = [];
+  CARDS.forEach(function(c){
+    var hs = hay(c); if (!(hs[0].indexOf(q) >= 0 || hs[1].indexOf(qn) >= 0)) return;
+    var head = (c.abbr || c.dueum || c.topic || '').toLowerCase(), score = head === q ? 0 : head.indexOf(q) === 0 ? 1 : 2;
+    res.push([score, c]);
+  });
+  res.sort(function(a, b){ return a[0] - b[0]; });
+  var h = '<p class="muted" style="margin-top:12px" role="status">' + res.length + '건' + (res.length > 80 ? ' · 앞 80건만 보여요' : '') + '</p>';
+  if (!res.length) return h;
+  return h + '<ul class="list">' + res.slice(0, 80).map(function(x){ return itemHTML(x[1], true); }).join('') + '</ul>';
+}
+function searchHTML(){
+  return '<h2>찾기</h2><label class="sr-only" for="search-q">약어·풀네임·해석·두음·토픽 검색</label><div class="search"><input id="search-q" type="search" enterkeyhint="search" autocomplete="off" placeholder="약어, 풀네임, 해석, 두음, 토픽" value="' + esc(st.q) + '"></div><div id="search-res">' + searchResults() + '</div>';
+}
+
+/* ---------- 하단 바 ---------- */
+function barHTML(){
+  var s = st.screen;
+  if (s === 'session') {
+    var ss = st.session;
+    if (!ss.flipped) return '<div class="wrap"><button type="button" class="btn-ink" data-act="flip" style="min-height:60px">뒤집기</button></div>';
+    var r = P[ss.queue[ss.pos]], box = r ? r.box : 0;
+    return '<div class="wrap grades" role="group" aria-label="자가 채점"><button type="button" class="g g-bad" data-act="g" data-g="dont">몰라요<small>곧 다시</small></button><button type="button" class="g g-mid" data-act="g" data-g="unsure">헷갈려요<small>' + (box ? '상자 유지 · ' + gapLabel(box) : '상자 0 · 곧 다시') + '</small></button><button type="button" class="g g-ok" data-act="g" data-g="know">알아요<small>' + gapLabel(Math.min(4, box + 1)) + '</small></button></div>';
+  }
+  if (s === 'quiz') {
+    var z = st.quiz, q = z.items[z.idx];
+    if (q.pick == null) return '<div class="wrap"><p class="muted" style="text-align:center;min-height:52px;display:flex;align-items:center;justify-content:center">보기를 눌러 답하세요</p></div>';
+    return '<div class="wrap"><button type="button" class="btn-ink" data-act="next" style="min-height:60px">' + (z.idx + 1 < z.items.length ? '다음 문제' : '결과 보기') + '</button></div>';
+  }
+  var wn = wrongCards('전체').length, cur = (s === 'wrong' || s === 'search') ? s : 'home';
+  return '<div class="wrap tabs">' +
+    '<button type="button" data-act="tab" data-tab="home"' + (cur === 'home' ? ' aria-current="page"' : '') + '>홈</button>' +
+    '<button type="button" data-act="tab" data-tab="wrong"' + (cur === 'wrong' ? ' aria-current="page"' : '') + '>오답 노트' + (wn ? '<span class="badge">' + wn + '</span>' : '') + '</button>' +
+    '<button type="button" data-act="tab" data-tab="search"' + (cur === 'search' ? ' aria-current="page"' : '') + '>찾기</button></div>';
+}
+
+/* ---------- 렌더 ---------- */
+function render(keepFocus){
+  var s = st.screen, h;
+  if (s === 'session') h = sessionHTML();
+  else if (s === 'summary') h = summaryHTML();
+  else if (s === 'quiz') h = quizHTML();
+  else if (s === 'qresult') h = qresultHTML();
+  else if (s === 'wrong') h = wrongHTML();
+  else if (s === 'search') h = searchHTML();
+  else h = homeHTML();
+  app.innerHTML = h;
+  bar.innerHTML = barHTML();
+  if (keepFocus && s === 'session') { var cd = $('#card'); if (cd) { try { cd.focus({preventScroll:true}); } catch (e) {} } }
+}
+function softRender(){
+  renderChip();
+  if (st.screen === 'home' || st.screen === 'wrong') { var y = window.scrollY; render(); window.scrollTo(0, y); }
+  else if (st.screen === 'search') bar.innerHTML = barHTML();
+}
+function go(screen){
+  st.screen = screen; st.open = new Set();
+  render(screen === 'session');
+  window.scrollTo(0, 0);
+  if (screen !== 'session') { try { app.focus({preventScroll:true}); } catch (e) {} }
+}
+var toastTimer = null;
+function toast(msg){
+  var t = $('#toast'); t.textContent = msg; t.classList.add('on');
+  clearTimeout(toastTimer); toastTimer = setTimeout(function(){ t.classList.remove('on'); }, 2600);
+}
+
+/* ---------- 동작 ---------- */
+var A = {
+  deck: function(t){ pref.deck = t.dataset.deck; st.reset = null; savePref(); render(); },
+  filt: function(t){ pref.filt[pref.deck] = t.dataset.v; savePref(); render(); },
+  imp: function(t){ pref.imp = t.dataset.v; savePref(); render(); },
+  dir: function(t){ pref.dir = t.dataset.v === 'm2a' ? 'm2a' : 'a2m'; savePref(); render(); },
+  obo: function(t){ pref.obo = t.dataset.v === '1'; savePref(); render(); },
+  size: function(t){ pref.size = +t.dataset.v || 0; savePref(); render(); },
+  today: function(){
+    var list = filtered(pref.deck), due = dueSorted(list);
+    if (due.length) startSession(due, '오늘 복습');
+    else startSession(learnIds(list), list.some(function(c){ return !P[c.id]; }) ? '새 카드' : '다시 보기');
+  },
+  learn: function(){ startSession(learnIds(filtered(pref.deck)), '카드 학습'); },
+  quiz: function(){ startQuiz(filtered(pref.deck)); },
+  flip: function(){ flip(); },
+  g: function(t){ gradeCurrent(t.dataset.g); },
+  reveal: function(t){ var s = st.session; if (!s) return; var i = +t.dataset.i; if (s.reveal.has(i)) s.reveal.delete(i); else s.reveal.add(i); render(true); var b = app.querySelector('[data-act="reveal"][data-i="' + i + '"]'); if (b) { try { b.focus({preventScroll:true}); } catch (e) {} } },
+  'reveal-all': function(){ var s = st.session; if (!s) return; var c = BY_ID.get(s.queue[s.pos]); for (var i = 0; i < Math.max(tokens(c.dueum).length, c.items.length); i++) s.reveal.add(i); render(true); },
+  end: function(){
+    if (st.screen === 'session') { if (st.session.graded) go('summary'); else go('home'); }
+    else if (st.screen === 'quiz') { if (st.quiz.items.some(function(q){ return q.pick != null; })) go('qresult'); else go('home'); }
+  },
+  home: function(){ go('home'); },
+  tab: function(t){ go(t.dataset.tab); if (t.dataset.tab === 'search') { var i = $('#search-q'); if (i && !st.q) { try { i.focus({preventScroll:true}); } catch (e) {} } } },
+  'sum-again': function(){ startSession(st.session.ids.filter(function(id){ return P[id] && P[id].box === 0; }), '다시 보기'); },
+  answer: function(t){
+    var z = st.quiz, q = z.items[z.idx]; if (q.pick != null) return;
+    q.pick = +t.dataset.i; var ok = !!q.opts[q.pick].ok; if (ok) z.score++;
+    grade(q.id, ok ? 'know' : 'dont'); render();
+  },
+  next: function(){ var z = st.quiz; if (z.idx + 1 < z.items.length) { z.idx++; render(); window.scrollTo(0, 0); } else go('qresult'); },
+  'quiz-wrong': function(){ startSession(st.quiz.items.filter(function(q){ return q.pick != null && !q.opts[q.pick].ok; }).map(function(q){ return q.id; }), '틀린 문제 복습'); },
+  'quiz-more': function(){ startQuiz(st.quiz.list); },
+  'wrong-deck': function(t){ st.wrongDeck = t.dataset.v; st.open = new Set(); render(); },
+  'wrong-review': function(){ startSession(wrongCards(st.wrongDeck).map(function(c){ return c.id; }), '오답 복습'); },
+  toggle: function(t){
+    var id = t.dataset.id; if (st.open.has(id)) st.open.delete(id); else st.open.add(id);
+    if (st.screen === 'search') $('#search-res').innerHTML = searchResults();
+    else { var y = window.scrollY; render(); window.scrollTo(0, y); }
+    var b = app.querySelector('[data-act="toggle"][data-id="' + (window.CSS && CSS.escape ? CSS.escape(id) : id) + '"]'); if (b) { try { b.focus({preventScroll:true}); } catch (e) {} }
+  },
+  'reset-open': function(){ st.reset = {step:'choose'}; render(); },
+  'reset-scope': function(t){ st.reset = {step:'confirm', scope:t.dataset.v}; render(); },
+  'reset-cancel': function(){ st.reset = null; render(); },
+  'reset-go': async function(){
+    var scope = st.reset.scope, ids = resetIds(scope), nm = scope === 'all' ? '전체 덱' : DECK_NAME[scope];
+    st.reset = {step:'run', scope:scope, n:0, total:ids.length}; render();
+    ids.forEach(function(id){ delete P[id]; });
+    if (S.mode === 'db') {
+      ids.forEach(function(id){ UNSYNC.add(id); }); saveLocal();
+      for (var i = 0; i < ids.length; i++) {
+        var ok = await writeDoc(ids[i], 'del');
+        if (ok) UNSYNC.delete(ids[i]);
+        if (st.reset) { st.reset.n = i + 1; var el = $('#reset-n'); if (el) el.textContent = String(i + 1); }
+        if (S.mode !== 'db') break;
+      }
+    } else ids.forEach(function(id){ UNSYNC.add(id); });
+    ids.forEach(function(id){ delete P[id]; });
+    saveLocal(); st.reset = null;
+    if (st.screen === 'home') render();
+    toast(nm + ' 진도를 지웠어요');
+  }
+};
+
+document.addEventListener('click', function(e){
+  var t = e.target.closest('[data-act]'); if (!t || t.disabled) return;
+  var f = A[t.dataset.act]; if (f) f(t, e);
+});
+document.addEventListener('input', function(e){
+  if (e.target && e.target.id === 'search-q') { st.q = e.target.value; st.open = new Set(); $('#search-res').innerHTML = searchResults(); }
+});
+document.addEventListener('keydown', function(e){
+  if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  var onBtn = e.target && e.target.tagName === 'BUTTON';
+  if (st.screen === 'session') {
+    if ((e.key === ' ' || e.key === 'Enter') && !onBtn) { e.preventDefault(); flip(); }
+    else if (st.session.flipped && (e.key === '1' || e.key === '2' || e.key === '3')) { e.preventDefault(); gradeCurrent({'1':'dont', '2':'unsure', '3':'know'}[e.key]); }
+  } else if (st.screen === 'quiz') {
+    var z = st.quiz, q = z.items[z.idx];
+    if (q.pick == null && /^[1-4]$/.test(e.key) && +e.key <= q.opts.length) { e.preventDefault(); A.answer({dataset:{i:String(+e.key - 1)}}); }
+    else if (q.pick != null && e.key === 'Enter' && !onBtn) { e.preventDefault(); A.next(); }
+  }
+});
+
+/* ---------- 시작: 저장소 없이 먼저 그린다 ---------- */
+renderChip();
+render();
+initStore().catch(function(){ setMode('local'); });
+})();
+</script>

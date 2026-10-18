@@ -1,0 +1,12 @@
+[
+ {"abbr": "SLA", "full": "Service Level Agreement", "ko": "서비스 수준 협약 — 서비스 제공자와 이용자가 측정 가능한 서비스 수준을 정한 계약", "cat": "IT경영"},
+ {"abbr": "ITSM", "full": "IT Service Management", "ko": "IT 서비스 관리", "cat": "IT경영"},
+ {"abbr": "BCP", "full": "Business Continuity Planning", "ko": "업무 연속성 계획", "cat": "IT경영"},
+ {"abbr": "RTO", "full": "Recovery Time Objective", "ko": "목표 복구 시간 — 장애 후 업무를 다시 시작해야 하는 시간 한도", "cat": "IT경영"},
+ {"abbr": "WBS", "full": "Work Breakdown Structure", "ko": "작업 분할 구조", "cat": "프로젝트관리"},
+ {"abbr": "EVM", "full": "Earned Value Management", "ko": "획득가치관리", "cat": "프로젝트관리"},
+ {"abbr": "SBOM", "full": "Software Bill of Materials", "ko": "소프트웨어 자재 명세서", "cat": "SW공학"},
+ {"abbr": "MSA", "full": "Microservice Architecture", "ko": "마이크로서비스 아키텍처", "cat": "SW공학"},
+ {"abbr": "IaC", "full": "Infrastructure as Code", "ko": "코드형 인프라 — 인프라 구성을 코드로 정의해 자동으로 배포·관리", "cat": "클라우드·인프라"},
+ {"abbr": "RAG", "full": "Retrieval-Augmented Generation", "ko": "검색 증강 생성", "cat": "AI"}
+]
