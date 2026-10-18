@@ -3262,5 +3262,125 @@
   "full": "Rogue Agents",
   "ko": "통제 이탈 에이전트 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)",
   "cat": "보안"
+ },
+ {
+  "abbr": "NPU",
+  "full": "Neural Processing Unit",
+  "ko": "신경망 처리 장치 — AI 연산 전용 가속 프로세서",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "ASIC",
+  "full": "Application-Specific Integrated Circuit",
+  "ko": "특정 용도 전용 반도체",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "PIM",
+  "full": "Processing-In-Memory",
+  "ko": "메모리 안에서 연산하는 반도체 (데이터 이동 최소화)",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "SoC",
+  "full": "System on Chip",
+  "ko": "하나의 칩에 CPU·GPU·메모리 제어 등을 통합한 반도체",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "LUT",
+  "full": "Look-Up Table",
+  "ko": "미리 계산한 값을 표로 두고 찾아 쓰는 방식 (예: Sigmoid LUT)",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "MAC",
+  "full": "Mandatory Access Control",
+  "ko": "강제적 접근통제 — 보안 등급 기반 (MAC 연산 문맥은 Multiply-Accumulate)",
+  "cat": "보안"
+ },
+ {
+  "abbr": "TEE",
+  "full": "Trusted Execution Environment",
+  "ko": "신뢰 실행 환경 — 하드웨어로 격리된 안전 영역",
+  "cat": "보안"
+ },
+ {
+  "abbr": "CNN",
+  "full": "Convolutional Neural Network",
+  "ko": "합성곱 신경망 — 이미지 처리",
+  "cat": "AI"
+ },
+ {
+  "abbr": "RNN",
+  "full": "Recurrent Neural Network",
+  "ko": "순환 신경망 — 순서 데이터 처리",
+  "cat": "AI"
+ },
+ {
+  "abbr": "DNN",
+  "full": "Deep Neural Network",
+  "ko": "심층 신경망",
+  "cat": "AI"
+ },
+ {
+  "abbr": "KV",
+  "full": "Key-Value",
+  "ko": "키-값 (KV 캐시: 어텐션의 Key·Value를 저장해 재계산을 줄이는 캐시)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "GraphRAG",
+  "full": "Graph-based Retrieval-Augmented Generation",
+  "ko": "지식 그래프 기반 검색 증강 생성",
+  "cat": "AI"
+ },
+ {
+  "abbr": "DSLM",
+  "full": "Domain-Specific Language Model",
+  "ko": "도메인 특화 언어모델",
+  "cat": "AI"
+ },
+ {
+  "abbr": "OCR",
+  "full": "Optical Character Recognition",
+  "ko": "광학 문자 인식 — 이미지 속 글자 읽기",
+  "cat": "AI"
+ },
+ {
+  "abbr": "IDP",
+  "full": "Internal Developer Platform",
+  "ko": "내부 개발자 플랫폼 — 셀프서비스 개발 환경 (플랫폼 엔지니어링)",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "URLLC",
+  "full": "Ultra-Reliable Low-Latency Communications",
+  "ko": "초고신뢰·저지연 통신 (5G 3대 서비스)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "eMBB",
+  "full": "enhanced Mobile Broadband",
+  "ko": "초고속 대용량 통신 (5G 3대 서비스)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "mMTC",
+  "full": "massive Machine Type Communications",
+  "ko": "대규모 사물 통신 (5G 3대 서비스)",
+  "cat": "네트워크·통신"
+ },
+ {
+  "abbr": "FTS5",
+  "full": "Full-Text Search 5",
+  "ko": "SQLite 전문(全文) 검색 모듈 5판",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "PDF",
+  "full": "Portable Document Format",
+  "ko": "문서 파일 형식",
+  "cat": "기타"
  }
 ]
