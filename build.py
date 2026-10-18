@@ -11,7 +11,8 @@ ROOT = pathlib.Path(__file__).resolve().parent
 PLACEHOLDER = "{{CARDS_JSON}}"
 SOURCES = [("abbr", "abbr.json", ("abbr",)),
            ("dueum", "dueum.json", ("dueum", "topic")),
-           ("concepts", "concepts.json", ("topic",))]
+           ("concepts", "concepts.json", ("topic",)),
+           ("trends", "trends.json", ("topic",))]
 SKELETON = ('<!doctype html><html><head><meta charset=utf-8>'
             '<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">'
             '</head><body>{}</body></html>')
