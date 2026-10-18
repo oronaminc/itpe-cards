@@ -1327,5 +1327,33 @@
   "raw": "Messenger (전달형)·Hub and Spoke (중앙형)·Predictable Agent (예측형)·Autonomous Machine (자율형)",
   "cat": "IT경영",
   "src": "답안_149기2주_1-06_디지털카르텔"
+ },
+ {
+  "dueum": "캡추다정상",
+  "topic": "OOP 특징",
+  "items": [
+   "캡슐화",
+   "추상화",
+   "다형성",
+   "정보은닉",
+   "상속"
+  ],
+  "raw": "캡슐화·추상화·다형성·정보은닉·상속",
+  "cat": "SW공학",
+  "src": "판서_프로젝트관리"
+ },
+ {
+  "dueum": "EATMA",
+  "topic": "위협 대응 전략",
+  "items": [
+   "Escalate",
+   "Avoid",
+   "Transfer",
+   "Mitigate",
+   "Accept"
+  ],
+  "raw": "Escalate·Avoid·Transfer·Mitigate·Accept",
+  "cat": "프로젝트관리",
+  "src": "판서_프로젝트관리"
  }
 ]

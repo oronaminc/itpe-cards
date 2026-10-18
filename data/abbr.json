@@ -212,7 +212,7 @@
  {
   "abbr": "EVA",
   "full": "Economic Value Added",
-  "ko": "경제적 부가가치 — 세후 영업이익 − 자본비용",
+  "ko": "경제적 부가가치 — 세후 영업이익 − 자본비용 · 문맥: Economic Value Added(경제적 부가가치) / 원가 통제에선 Earned Value Analysis(획득가치분석)",
   "cat": "IT경영"
  },
  {
@@ -848,7 +848,7 @@
  {
   "abbr": "PMP",
   "full": "Project Management Professional",
-  "ko": "PMI 프로젝트 관리 전문가 자격",
+  "ko": "PMI 프로젝트 관리 전문가 자격 · 문맥: Project Management Professional · 자격시험 / 문서에선 Project Management Plan(사업관리계획서)",
   "cat": "프로젝트관리"
  },
  {
@@ -920,7 +920,7 @@
  {
   "abbr": "PV",
   "full": "Planned Value",
-  "ko": "계획가치 (EVM) · 경제성 분석에서는 Present Value(현재가치)",
+  "ko": "계획가치 (EVM) · 경제성 분석에서는 Present Value(현재가치) · 문맥: Planned Value(계획가치, EVM) / 경제성 분석에선 Present Value(현재가치)",
   "cat": "프로젝트관리"
  },
  {
@@ -1074,6 +1074,84 @@
   "cat": "프로젝트관리"
  },
  {
+  "abbr": "EEF",
+  "full": "Enterprise Environmental Factors",
+  "ko": "기업 환경 요인 — 외부 규제·시장처럼 프로젝트가 통제 못 하는 환경",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "OPA",
+  "full": "Organizational Process Assets",
+  "ko": "조직 프로세스 자산 — 조직의 절차·템플릿·교훈 사례",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PMI",
+  "full": "Project Management Institute",
+  "ko": "미국 프로젝트관리협회 (PMBOK·PMP 주관)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PMIS",
+  "full": "Project Management Information System",
+  "ko": "프로젝트 관리 정보 시스템",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PLC",
+  "full": "Project Life Cycle",
+  "ko": "프로젝트 생애주기 (판서: SDLC = PLC)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PG",
+  "full": "Process Group",
+  "ko": "프로세스 그룹 — 착수·계획·실행·감시통제·종료",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PO",
+  "full": "Product Owner",
+  "ko": "제품 책임자 — 제품 백로그 우선순위를 정하는 사람 (스크럼)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "PB",
+  "full": "Product Backlog",
+  "ko": "제품 백로그 — User Story로 된 요구사항 목록",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "EATMA",
+  "full": "Escalate·Avoid·Transfer·Mitigate·Accept",
+  "ko": "위협(부정 위험) 대응 전략 — 에스컬레이션·회피·전가·완화·수용 (두음 에회전완수)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "MA",
+  "full": "Maintenance",
+  "ko": "유지보수 — CP(무상 하자보수) 뒤 유상 유지보수",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "RAD",
+  "full": "Rapid Application Development",
+  "ko": "신속 애플리케이션 개발 — 짧은 반복·프로토타입 중심 개발",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "AOP",
+  "full": "Aspect-Oriented Programming",
+  "ko": "관점지향 프로그래밍 — 로깅·보안 같은 공통 관심사를 분리",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "OOP",
+  "full": "Object-Oriented Programming",
+  "ko": "객체지향 프로그래밍 — 캡슐화·추상화·다형성·정보은닉·상속 (두음 캡추다정상)",
+  "cat": "SW공학"
+ },
+ {
   "abbr": "SW",
   "full": "Software",
   "ko": "소프트웨어",
@@ -1124,7 +1202,7 @@
  {
   "abbr": "SP",
   "full": "Software Process",
-  "ko": "SW 프로세스 품질 인증",
+  "ko": "SW 프로세스 품질 인증 · 문맥: Software Process(품질 인증) / 애자일에선 Story Point",
   "cat": "SW공학"
  },
  {
@@ -1404,6 +1482,12 @@
   "cat": "SW공학"
  },
  {
+  "abbr": "BDD",
+  "full": "Behavior-Driven Development",
+  "ko": "행위 주도 개발 — 사용자 행위 시나리오로 테스트 작성",
+  "cat": "SW공학"
+ },
+ {
   "abbr": "IaaS",
   "full": "Infrastructure as a Service",
   "ko": "서비스형 인프라",
@@ -1575,6 +1659,12 @@
   "abbr": "PCIe",
   "full": "Peripheral Component Interconnect Express",
   "ko": "고속 직렬 확장 버스",
+  "cat": "CA·OS"
+ },
+ {
+  "abbr": "HBM",
+  "full": "High Bandwidth Memory",
+  "ko": "고대역폭 메모리 (AI 가속기용)",
   "cat": "CA·OS"
  },
  {
@@ -2367,6 +2457,12 @@
   "abbr": "AIOps",
   "full": "AI for IT Operations",
   "ko": "AI 기반 IT 운영",
+  "cat": "AI"
+ },
+ {
+  "abbr": "sLLM",
+  "full": "small Large Language Model",
+  "ko": "소형 LLM — 특정 업무용 경량 언어모델",
   "cat": "AI"
  },
  {
