@@ -337,10 +337,11 @@ var LS_OK = (function(){ try { var t = '__itpe_t'; window.localStorage.setItem(t
 function readJSON(k, d){ var v = LS.get(k); if (!v) return d; try { var o = JSON.parse(v); return o && typeof o === 'object' ? o : d; } catch (e) { return d; } }
 var K_PROG = 'itpe-cards.progress.v1', K_UNSYNC = 'itpe-cards.unsynced.v1', K_PREF = 'itpe-cards.prefs.v1';
 
-var pref = Object.assign({deck:'abbr', filt:{}, imp:'전체', dir:'a2m', obo:false, size:20}, readJSON(K_PREF, {}));
+var pref = Object.assign({deck:'abbr', filt:{}, imp:'전체', dir:'a2m', obo:false, size:10}, readJSON(K_PREF, {}));
+if (pref.v !== 2) { pref.size = 10; pref.v = 2; }
 pref.filt = Object.assign({abbr:'전체', dueum:'전체', concept:'전체'}, pref.filt && typeof pref.filt === 'object' ? pref.filt : {});
 if (!DECK_NAME[pref.deck]) pref.deck = 'abbr';
-if ([0, 10, 20, 50].indexOf(+pref.size) < 0) pref.size = 20;
+if ([0, 5, 10, 20].indexOf(+pref.size) < 0) pref.size = 10;
 if (pref.dir !== 'm2a') pref.dir = 'a2m';
 function savePref(){ LS.set(K_PREF, JSON.stringify(pref)); }
 
@@ -608,7 +609,7 @@ function homeHTML(){
     if (d === 'abbr') h += '<div class="opt-row"><span id="lab-dir">방향</span><div class="seg" role="group" aria-labelledby="lab-dir"><button type="button" data-act="dir" data-v="a2m" aria-pressed="' + (pref.dir === 'a2m') + '">약어 → 뜻</button><button type="button" data-act="dir" data-v="m2a" aria-pressed="' + (pref.dir === 'm2a') + '">뜻 → 약어</button></div></div>';
     if (d === 'dueum') h += '<div class="opt-row"><span id="lab-obo">뒷면</span><div class="seg" role="group" aria-labelledby="lab-obo"><button type="button" data-act="obo" data-v="0" aria-pressed="' + !pref.obo + '">한 번에</button><button type="button" data-act="obo" data-v="1" aria-pressed="' + !!pref.obo + '">한 글자씩</button></div></div>';
     h += '<div class="opt-row"><span id="lab-size">한 번에 볼 장수</span><div class="seg" role="group" aria-labelledby="lab-size">';
-    [10, 20, 50, 0].forEach(function(v){ h += '<button type="button" data-act="size" data-v="' + v + '" aria-pressed="' + (+pref.size === v) + '">' + (v ? v : '전부') + '</button>'; });
+    [5, 10, 20, 0].forEach(function(v){ h += '<button type="button" data-act="size" data-v="' + v + '" aria-pressed="' + (+pref.size === v) + '">' + (v ? v : '전부') + '</button>'; });
     h += '</div></div></div>';
   }
 

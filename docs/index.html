@@ -1,0 +1,989 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body><title>정보관리기술사 단어장</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap">
+<style>
+:root{
+  --paper:#f3efe3;
+  --sheet:#fbf9f2;
+  --ink:#141a2e;
+  --ink-2:#3a4262;
+  --ink-3:#6a7190;
+  --rule:#d8dbe3;
+  --rule-2:#a7aec3;
+  --on-ink:#f8f5ec;
+  --ok:#1e6b43;
+  --ok-bg:#e1eee4;
+  --bad:#bd2e27;
+  --bad-bg:#f7e1dd;
+  --mid:#835f17;
+  --mid-bg:#f0e5c9;
+  --focus:#2b59c3;
+  --shade:rgba(20,26,46,.07);
+  --font:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR",system-ui,sans-serif;
+  --pen:"Nanum Pen Script","Nanum Pen","Apple SD Gothic Neo","Noto Sans CJK KR",cursive;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0d1220; --sheet:#151b2d; --ink:#ebe6d7; --ink-2:#c6c2b5; --ink-3:#8f94a8;
+    --rule:#242c45; --rule-2:#454e72; --on-ink:#0d1220;
+    --ok:#6cc792; --ok-bg:#12291c; --bad:#ff8074; --bad-bg:#371815; --mid:#e3b85f; --mid-bg:#2f250e;
+    --focus:#8fb1ff; --shade:rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0d1220; --sheet:#151b2d; --ink:#ebe6d7; --ink-2:#c6c2b5; --ink-3:#8f94a8;
+  --rule:#242c45; --rule-2:#454e72; --on-ink:#0d1220;
+  --ok:#6cc792; --ok-bg:#12291c; --bad:#ff8074; --bad-bg:#371815; --mid:#e3b85f; --mid-bg:#2f250e;
+  --focus:#8fb1ff; --shade:rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.55;
+  padding-top:env(safe-area-inset-top,0px);-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+body::before{content:"";position:fixed;left:0;right:0;top:0;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:30}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;touch-action:manipulation}
+input{font:inherit;color:inherit}
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.pen{font-family:var(--pen);font-weight:400;letter-spacing:.01em}
+
+/* 옆 여백: 한 곳에서만 정의 */
+.gutter{padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.wrap{max-width:560px;margin-inline:auto}
+
+/* 헤더 */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--rule);padding-block:10px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:32px}
+.brand{display:flex;align-items:baseline;gap:6px;min-width:0}
+.brand b{font-size:15px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.brand span{font-size:13px;color:var(--ink-3);white-space:nowrap}
+.store{display:inline-flex;align-items:center;gap:6px;font-size:12px;line-height:1;color:var(--ink-2);border:1px solid var(--rule-2);padding:6px 8px;border-radius:2px;white-space:nowrap}
+.store::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ink-3)}
+.store[data-m="db"]::before{background:var(--ok)}
+.store[data-m="pending"]::before{background:transparent;border:1px solid var(--ink-3)}
+
+main{padding-block:14px calc(92px + env(safe-area-inset-bottom,0px))}
+h2{font-size:20px;line-height:1.3;margin:4px 0 4px;font-weight:700;letter-spacing:-.01em}
+.muted{color:var(--ink-3);font-size:13px;margin:0}
+.lab{display:block;font-size:12px;font-weight:600;color:var(--ink-3);letter-spacing:.04em;margin:18px 0 8px}
+
+/* 덱 탭 */
+.decks{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ink);border-radius:2px;overflow:hidden}
+.deck-tab{display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-height:64px;padding:10px 12px;text-align:left;border-left:1px solid var(--ink)}
+.deck-tab:first-child{border-left:0}
+.deck-tab[aria-pressed="true"]{background:var(--ink);color:var(--on-ink)}
+.dt-name{font-size:17px;font-weight:700}
+.dt-n{font-size:12px;opacity:.75}
+.dt-due{font-size:11px;font-weight:600;margin-top:2px;padding:1px 5px;border:1px solid currentColor;border-radius:2px;opacity:.9}
+
+/* 칩 */
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{min-height:36px;padding:6px 10px;border:1px solid var(--rule-2);border-radius:2px;font-size:14px;line-height:1.2;color:var(--ink-2);background:var(--sheet);position:relative}
+.chip::after{content:"";position:absolute;inset:-4px 0}
+.chip[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--on-ink);font-weight:600}
+.chip small{font-size:11px;opacity:.7;margin-left:3px}
+
+/* 오늘 복습 */
+.today{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;margin-top:18px;min-height:92px;padding:14px 16px;background:var(--ink);color:var(--on-ink);border-radius:2px;text-align:left;box-shadow:4px 4px 0 var(--rule-2)}
+.today:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--rule-2)}
+.today-k{display:block;font-size:20px;font-weight:700}
+.today-s{display:block;font-size:13px;opacity:.75;margin-top:2px}
+.today-n{font-size:46px;font-weight:700;line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.today-n small{font-size:16px;font-weight:500;margin-left:2px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.btn{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:60px;padding:10px 14px;border:1px solid var(--ink);border-radius:2px;background:var(--sheet);text-align:left;font-weight:700;font-size:16px}
+.btn small{font-weight:400;font-size:12px;color:var(--ink-3)}
+.btn:active{background:var(--rule)}
+.btn-ink{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;background:var(--ink);color:var(--on-ink);border-radius:2px;font-weight:700;font-size:16px}
+.btn-line{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;border:1px solid var(--ink);border-radius:2px;font-weight:600;background:var(--sheet)}
+.link{min-height:44px;padding:0 4px;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px;font-size:14px}
+
+/* 설정 줄 */
+.opts{display:grid;gap:10px;margin-top:20px;padding-top:14px;border-top:1px dashed var(--rule-2)}
+.opt-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.opt-row > span{font-size:14px;color:var(--ink-2)}
+.seg{display:inline-flex;border:1px solid var(--rule-2);border-radius:2px;overflow:hidden}
+.seg button{min-height:40px;min-width:44px;padding:0 10px;font-size:14px;border-left:1px solid var(--rule-2);color:var(--ink-2);background:var(--sheet)}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--on-ink);font-weight:600}
+
+/* 진도 */
+.prog-list{display:grid;gap:14px;margin-top:4px}
+.prog-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:14px;margin-bottom:6px}
+.prog-h b{font-size:15px}
+.prog-h span{color:var(--ink-3);font-size:12px}
+.pbar{display:flex;height:10px;background:var(--rule);border-radius:1px;overflow:hidden}
+.pbar i{display:block;height:100%}
+.pbar .k{background:var(--ok)} .pbar .u{background:var(--mid)} .pbar .d{background:var(--bad)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:6px;font-size:12px;color:var(--ink-2)}
+.legend span::before{content:"";display:inline-block;width:8px;height:8px;margin-right:4px;vertical-align:0;background:var(--rule)}
+.legend .k::before{background:var(--ok)} .legend .u::before{background:var(--mid)} .legend .d::before{background:var(--bad)}
+
+.panel{margin-top:14px;padding:14px;border:1px solid var(--rule-2);background:var(--sheet);border-radius:2px}
+.panel p{margin:0 0 10px}
+.panel .row2{margin-top:10px}
+.danger{display:flex;align-items:center;justify-content:center;min-height:48px;border:1px solid var(--bad);color:var(--bad);background:var(--bad-bg);border-radius:2px;font-weight:700}
+.empty{padding:28px 16px;border:1px dashed var(--rule-2);text-align:center;color:var(--ink-3);margin-top:16px}
+
+/* 세션 */
+.sess-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:-6px}
+.sess-n{font-variant-numeric:tabular-nums;font-size:14px;color:var(--ink-2);white-space:nowrap}
+.sess-bar{height:3px;background:var(--rule);margin:2px 0 14px}
+.sess-bar i{display:block;height:100%;background:var(--ink)}
+.tag{display:inline-block;font-size:12px;line-height:1.2;padding:3px 6px;border:1px solid var(--rule-2);border-radius:2px;color:var(--ink-2);white-space:nowrap}
+.tag.imp-hi{border-color:var(--ink);color:var(--ink);font-weight:600}
+
+.card{position:relative;display:flex;flex-direction:column;min-height:min(56svh,460px);padding:16px 16px 18px;background:var(--sheet);border:1px solid var(--rule-2);border-radius:2px;
+  box-shadow:0 1px 0 var(--rule),5px 5px 0 -1px var(--paper),5px 5px 0 0 var(--rule-2);cursor:pointer;overflow-wrap:anywhere;word-break:keep-all}
+.card-meta{display:flex;flex-wrap:wrap;gap:6px}
+.face{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px 4px}
+.hint{margin:0;text-align:center;font-size:12px;color:var(--ink-3)}
+.anim{animation:turn .2s ease-out}
+@keyframes turn{from{opacity:0;transform:perspective(900px) rotateX(-8deg) translateY(6px)}to{opacity:1;transform:none}}
+.f-abbr{font-size:clamp(44px,15vw,76px);font-weight:700;line-height:1.05;letter-spacing:.01em}
+.f-ko{font-size:clamp(26px,7.4vw,34px);font-weight:700;line-height:1.3}
+.f-sub{margin-top:12px;font-size:15px;color:var(--ink-2);max-width:30em}
+.f-dueum{font-size:clamp(46px,14vw,64px);line-height:1.1}
+.f-topic{margin-top:10px;font-size:18px;font-weight:600;color:var(--ink-2)}
+.f-topic-lg{font-size:clamp(24px,7vw,30px);font-weight:700;line-height:1.35}
+.f-group{margin-top:10px;font-size:14px;color:var(--ink-3)}
+
+/* 뒷면: 답안지 점선 괘선 */
+.back{flex:1;display:flex;flex-direction:column;padding-top:12px}
+.b-q{font-size:14px;color:var(--ink-3);padding-bottom:8px;border-bottom:1px solid var(--rule-2)}
+.b-q .pen{font-size:22px;color:var(--ink-2)}
+.ruled{--lh:36px;flex:1;line-height:var(--lh);padding:0 0 0 12px;margin-left:30px;border-left:1px solid var(--rule-2);
+  background-image:radial-gradient(circle at 1px 1px,var(--rule-2) 1px,transparent 1.3px);background-size:6px var(--lh);background-position:0 calc(var(--lh) - 3px)}
+.ruled p{margin:0}
+.b-lab{font-size:12px;font-weight:600;color:var(--ink-3);letter-spacing:.04em}
+.b-main{font-size:19px;font-weight:600}
+.b-main b{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.b-big{font-family:var(--pen);font-size:34px;color:var(--ink)}
+.b-abbr{font-size:34px;font-weight:700}
+.b-pen{font-family:var(--pen);font-size:27px;color:var(--ink)}
+.b-sub{font-size:14px;color:var(--ink-2)}
+.b-mean{font-size:14px;color:var(--ink-2);line-height:1.6;padding-block:6px}
+.b-text{font-size:15px}
+.b-empty{font-size:14px;color:var(--ink-3)}
+.b-foot{font-size:12px;color:var(--ink-3)}
+
+.pairs{list-style:none;padding:0;margin:0 0 0 0;border-left:0;padding-left:0;margin-left:0;background-position:46px calc(var(--lh) - 3px)}
+.pairs li{display:grid;grid-template-columns:44px 1fr;align-items:end;min-height:var(--lh)}
+.p-k{display:flex;align-items:center;justify-content:center;height:var(--lh);font-family:var(--pen);font-size:28px;line-height:1;border-right:1px solid var(--rule-2);color:var(--ink)}
+.p-v{padding-left:12px;font-size:16px}
+.pairs.obo{--lh:46px}
+.pairs.obo .p-k{border:1px solid var(--rule-2);border-right-width:1px;margin:3px 4px 3px 0;height:40px;background:var(--paper);border-radius:2px}
+.pairs.obo .p-k[aria-expanded="true"]{background:var(--sheet);border-color:var(--ink)}
+.pairs.obo .p-v:empty::before{content:"";display:inline-block;width:60%;height:1px}
+.note{font-size:12px;color:var(--ink-3);margin-top:8px}
+.mini-row{display:flex;justify-content:flex-end;margin-top:6px}
+
+/* 하단 고정 바 */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--paper);border-top:1px solid var(--ink);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bar .wrap{padding-block:8px}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.tabs button{min-height:52px;font-size:15px;font-weight:600;color:var(--ink-3);display:flex;align-items:center;justify-content:center;gap:6px;border-top:3px solid transparent;margin-top:-8px}
+.tabs button[aria-current="page"]{color:var(--ink);border-top-color:var(--ink)}
+.badge{font-size:11px;font-weight:700;min-width:20px;padding:1px 5px;border:1px solid var(--bad);color:var(--bad);border-radius:2px;line-height:1.4}
+.grades{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.g{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60px;border:1px solid currentColor;border-radius:2px;font-weight:700;font-size:16px;line-height:1.2}
+.g small{font-weight:400;font-size:11px;opacity:.85;margin-top:3px}
+.g-bad{color:var(--bad);background:var(--bad-bg)}
+.g-mid{color:var(--mid);background:var(--mid-bg)}
+.g-ok{color:var(--ok);background:var(--ok-bg)}
+
+/* 4지선다 */
+.q-card{padding:16px;background:var(--sheet);border:1px solid var(--rule-2);border-radius:2px;box-shadow:0 1px 0 var(--rule),5px 5px 0 -1px var(--paper),5px 5px 0 0 var(--rule-2);overflow-wrap:anywhere;word-break:keep-all}
+.q-ask{font-size:13px;color:var(--ink-3);margin:12px 0 0}
+.q-prompt{font-size:clamp(24px,7vw,30px);font-weight:700;line-height:1.3;margin:8px 0 2px}
+.q-prompt.pen{font-weight:400;font-size:clamp(30px,9vw,40px);line-height:1.25}
+.q-prompt.big{font-size:clamp(40px,13vw,60px)}
+.q-prompt.text{font-size:17px;font-weight:500;line-height:1.6}
+.q-sub{font-size:14px;color:var(--ink-2);margin:6px 0 0}
+.opts-q{display:grid;gap:8px;margin-top:16px}
+.opt{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:8px;min-height:56px;padding:8px 12px;border:1px solid var(--rule-2);border-radius:2px;background:var(--sheet);text-align:left;overflow-wrap:anywhere;word-break:keep-all}
+.opt-n{font-size:13px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.opt-t{font-size:16px;font-weight:600;line-height:1.35}
+.opt-t.pen{font-weight:400;font-size:26px;line-height:1.2}
+.opt-t small{display:block;font-size:12px;font-weight:400;color:var(--ink-3);margin-top:2px}
+.opt-m{font-size:13px;font-weight:700;white-space:nowrap}
+.opt.is-ok{border-color:var(--ok);background:var(--ok-bg)}
+.opt.is-ok .opt-m{color:var(--ok)}
+.opt.is-bad{border-color:var(--bad);background:var(--bad-bg)}
+.opt.is-bad .opt-m{color:var(--bad)}
+.opt:disabled{cursor:default}
+.opt:disabled:not(.is-ok):not(.is-bad){opacity:.6}
+
+/* 결과 */
+.score{display:flex;align-items:baseline;gap:8px;margin:12px 0 4px}
+.score b{font-family:var(--pen);font-weight:400;font-size:84px;line-height:.9}
+.score span{font-size:22px;color:var(--ink-2)}
+.tally{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.t{padding:10px;border:1px solid currentColor;border-radius:2px;font-size:13px}
+.t b{display:block;font-size:28px;line-height:1.1}
+.t.ok{color:var(--ok);background:var(--ok-bg)} .t.mid{color:var(--mid);background:var(--mid-bg)} .t.bad{color:var(--bad);background:var(--bad-bg)}
+.stack{display:grid;gap:10px;margin-top:16px}
+
+/* 목록 (오답·찾기) */
+.list{list-style:none;padding:0;margin:12px 0 0;border-top:1px solid var(--rule-2)}
+.list > li{border-bottom:1px solid var(--rule)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:56px;padding:10px 2px;text-align:left}
+.row-main{min-width:0;flex:1;overflow-wrap:anywhere;word-break:keep-all}
+.row-main b{font-weight:700}
+.row-main .pen{font-size:22px;margin-right:4px}
+.row-main small{display:block;color:var(--ink-3);font-size:12px;margin-top:1px}
+.row-meta{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex:none}
+.box{font-size:11px;padding:1px 5px;border:1px solid var(--rule-2);border-radius:2px;color:var(--ink-2);white-space:nowrap}
+.box.b0{border-color:var(--bad);color:var(--bad)}
+.x{font-size:11px;color:var(--bad);white-space:nowrap}
+.detail{padding:4px 0 14px}
+.detail .ruled{margin-left:0;border-left:0;padding-left:0;background-position:0 calc(var(--lh) - 3px)}
+.search{display:flex;gap:8px;align-items:center}
+.search input{flex:1;min-width:0;min-height:50px;padding:10px 12px;border:1px solid var(--ink);border-radius:2px;background:var(--sheet);font-size:17px}
+.search input::placeholder{color:var(--ink-3)}
+
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;max-width:min(92vw,520px);padding:10px 14px;background:var(--ink);color:var(--on-ink);font-size:14px;border-radius:2px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.on{opacity:1}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  .today:active{transform:none}
+}
+</style>
+
+<header class="top gutter">
+  <div class="wrap">
+    <div class="brand"><b>정보관리기술사</b><span>단어장</span></div>
+    <span id="store" class="store" data-m="pending" title="진도 저장 위치">저장 위치 확인 중</span>
+  </div>
+</header>
+<main id="app" class="gutter" tabindex="-1"></main>
+<nav id="bar" class="bar gutter" aria-label="하단 메뉴"></nav>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script id="cards" type="application/json">{"abbr":[{"abbr":"IT","full":"Information Technology","ko":"정보기술","cat":"IT경영"},{"abbr":"ICT","full":"Information and Communication Technology","ko":"정보통신기술","cat":"IT경영"},{"abbr":"ISP","full":"Information Strategy Planning","ko":"정보화전략계획 — 조직 전략에 맞춘 정보화 중장기 계획","cat":"IT경영"},{"abbr":"ISMP","full":"Information System Master Plan","ko":"정보시스템 마스터플랜 — ISP 다음 단계, 구축 사업의 상세 요건·RFP 수립","cat":"IT경영"},{"abbr":"ITSM","full":"IT Service Management","ko":"IT 서비스 관리 — 인력·조직·기술·프로세스로 IT 서비스를 관리","cat":"IT경영"},{"abbr":"SLA","full":"Service Level Agreement","ko":"서비스 수준 협약 — 제공자와 고객이 합의한 서비스 품질 수준","cat":"IT경영"},{"abbr":"SLM","full":"Service Level Management","ko":"서비스 수준 관리 — SLA를 측정·평가·개선하는 활동","cat":"IT경영"},{"abbr":"SLO","full":"Service Level Objective","ko":"서비스 수준 목표 — SLA 안의 목표 수치 (예: 가용률 99.9%)","cat":"IT경영"},{"abbr":"SLI","full":"Service Level Indicator","ko":"서비스 수준 지표 — 실제 측정값","cat":"IT경영"},{"abbr":"SLR","full":"Service Level Requirements","ko":"서비스 수준 요구사항 (ITIL) · 문맥에 따라 Service Level Report(서비스 수준 보고서)","cat":"IT경영"},{"abbr":"SoW","full":"Statement of Work","ko":"과업내용서 — 업무 범위·책임 범위·서비스 프로세스","cat":"IT경영"},{"abbr":"OLA","full":"Operational Level Agreement","ko":"운영 수준 협약 — 서비스 제공 조직 내부 부서 간 협약","cat":"IT경영"},{"abbr":"SIP","full":"Service Improvement Plan","ko":"서비스 개선 계획","cat":"IT경영"},{"abbr":"SR","full":"Service Request","ko":"서비스 요청 (사용자 요청 건)","cat":"IT경영"},{"abbr":"ITIL","full":"IT Infrastructure Library","ko":"IT 인프라 라이브러리 — ITSM 모범사례 프레임워크","cat":"IT경영"},{"abbr":"SVS","full":"Service Value System","ko":"서비스 가치 시스템 (ITIL 4) — 거버넌스·실행·가치사슬·지도원칙·지속개선","cat":"IT경영"},{"abbr":"SVC","full":"Service Value Chain","ko":"서비스 가치 사슬 (ITIL 4) — 계획·개선·참여·설계전환·획득구축·제공지원","cat":"IT경영"},{"abbr":"BPR","full":"Business Process Reengineering","ko":"업무 프로세스 재설계 — 근본적·급진적으로 다시 설계","cat":"IT경영"},{"abbr":"BPM","full":"Business Process Management","ko":"업무 프로세스 관리 — 프로세스를 모델링·실행·모니터링하며 지속 개선","cat":"IT경영"},{"abbr":"PI","full":"Process Innovation","ko":"프로세스 혁신","cat":"IT경영"},{"abbr":"BAM","full":"Business Activity Monitoring","ko":"업무 활동 모니터링 — 프로세스 실시간 감시","cat":"IT경영"},{"abbr":"RPA","full":"Robotic Process Automation","ko":"로봇 프로세스 자동화 — 반복 업무를 SW 로봇이 처리","cat":"IT경영"},{"abbr":"BSC","full":"Balanced Scorecard","ko":"균형성과표 — 재무·고객·내부 프로세스·학습과 성장 4관점","cat":"IT경영"},{"abbr":"IT-BSC","full":"IT Balanced Scorecard","ko":"IT 균형성과표 — BSC를 IT 조직에 맞춘 것","cat":"IT경영"},{"abbr":"CSF","full":"Critical Success Factor","ko":"핵심성공요인","cat":"IT경영"},{"abbr":"KPI","full":"Key Performance Indicator","ko":"핵심성과지표","cat":"IT경영"},{"abbr":"OKR","full":"Objectives and Key Results","ko":"목표와 핵심결과","cat":"IT경영"},{"abbr":"ROI","full":"Return on Investment","ko":"투자수익률 — 이익 ÷ 투자비","cat":"IT경영"},{"abbr":"IT-ROI","full":"IT Return on Investment","ko":"IT 투자수익률 — 사전·중간·사후 평가","cat":"IT경영"},{"abbr":"TCO","full":"Total Cost of Ownership","ko":"총소유비용 — 구매+운영+유지보수 전체 비용","cat":"IT경영"},{"abbr":"NPV","full":"Net Present Value","ko":"순현재가치 — 미래 현금흐름의 현재가치 합 − 투자비, 0보다 크면 투자","cat":"IT경영"},{"abbr":"IRR","full":"Internal Rate of Return","ko":"내부수익률 — NPV가 0이 되는 할인율","cat":"IT경영"},{"abbr":"BCR","full":"Benefit-Cost Ratio","ko":"편익비용비 — 편익 현재가치 ÷ 비용 현재가치, 1 이상이면 타당","cat":"IT경영"},{"abbr":"PP","full":"Payback Period","ko":"투자회수기간 — 투자비를 회수하는 데 걸리는 기간","cat":"IT경영"},{"abbr":"BEP","full":"Break-Even Point","ko":"손익분기점","cat":"IT경영"},{"abbr":"EVA","full":"Economic Value Added","ko":"경제적 부가가치 — 세후 영업이익 − 자본비용 · 문맥: Economic Value Added(경제적 부가가치) / 원가 통제에선 Earned Value Analysis(획득가치분석)","cat":"IT경영"},{"abbr":"EVS","full":"Economic Value Sourced","ko":"경제적 가치 원천 분석 — IT가 만드는 가치의 원천을 금액으로 환산","cat":"IT경영"},{"abbr":"TEI","full":"Total Economic Impact","ko":"총경제효과 (Forrester) — 비용·편익·유연성·위험을 함께 평가","cat":"IT경영"},{"abbr":"TVO","full":"Total Value of Opportunity","ko":"총기회가치 (Gartner) — IT 투자 기회의 가치 평가","cat":"IT경영"},{"abbr":"IO","full":"Information Orientation","ko":"정보 지향성 — 조직의 정보 활용 역량 평가","cat":"IT경영"},{"abbr":"IPM","full":"IT Portfolio Management","ko":"IT 포트폴리오 관리 — 투자 과제를 묶어서 우선순위 결정","cat":"IT경영"},{"abbr":"IE","full":"Information Economics","ko":"정보경제학 — IT 투자의 정량·정성 효과를 점수화 (방법론 문맥은 Information Engineering·정보공학)","cat":"IT경영"},{"abbr":"ROV","full":"Real Option Valuation","ko":"실물옵션 가치평가 — 연기·확장·포기 같은 선택권의 가치 반영","cat":"IT경영"},{"abbr":"BIP","full":"BCR·IRR·PP","ko":"정량적 투자평가 두음 앞부분 (B·I·P)","cat":"IT경영"},{"abbr":"RTN","full":"ROI·TCO·NPV","ko":"정량적 투자평가 두음 뒷부분 (R·T·N)","cat":"IT경영"},{"abbr":"BIVE","full":"BSC·IT-BSC·Value Chain·ESG","ko":"정성적 투자평가 두음 (B·I·V·E)","cat":"IT경영"},{"abbr":"AHP","full":"Analytic Hierarchy Process","ko":"계층분석법 — 쌍대비교로 대안 가중치 산정","cat":"IT경영"},{"abbr":"BCG","full":"Boston Consulting Group","ko":"보스턴컨설팅그룹 (BCG 매트릭스: 시장성장률 × 상대점유율)","cat":"IT경영"},{"abbr":"SWOT","full":"Strengths, Weaknesses, Opportunities, Threats","ko":"강점·약점·기회·위협 분석","cat":"IT경영"},{"abbr":"BMT","full":"Benchmarking Test","ko":"벤치마킹 — 선진 사례·성능 비교 (ISP 현황분석 산출물)","cat":"IT경영"},{"abbr":"GAP","full":"Gap Analysis","ko":"차이 분석 — 현재 모습과 목표 모습의 차이","cat":"IT경영"},{"abbr":"AS-IS","full":"As-Is","ko":"현재 모습","cat":"IT경영"},{"abbr":"TO-BE","full":"To-Be","ko":"목표 모습","cat":"IT경영"},{"abbr":"EA","full":"Enterprise Architecture","ko":"전사 아키텍처 — 업무·데이터·응용·기술 구조의 청사진","cat":"IT경영"},{"abbr":"ITA","full":"Information Technology Architecture","ko":"정보기술아키텍처 (공공 EA의 법정 명칭)","cat":"IT경영"},{"abbr":"BA","full":"Business Architecture","ko":"업무 아키텍처","cat":"IT경영"},{"abbr":"DA","full":"Data Architecture","ko":"데이터 아키텍처","cat":"IT경영"},{"abbr":"AA","full":"Application Architecture","ko":"응용 아키텍처 (역할로 쓰면 Application Architect)","cat":"IT경영"},{"abbr":"TA","full":"Technical Architecture","ko":"기술 아키텍처 (역할로 쓰면 Technical Architect)","cat":"IT경영"},{"abbr":"SA","full":"Security Architecture","ko":"보안 아키텍처","cat":"IT경영"},{"abbr":"BSP","full":"Business Systems Planning","ko":"업무 시스템 계획 (IBM, 1970년대 ISP의 기원)","cat":"IT경영"},{"abbr":"TOGAF","full":"The Open Group Architecture Framework","ko":"오픈그룹 아키텍처 프레임워크 (EA 표준)","cat":"IT경영"},{"abbr":"FEAF","full":"Federal Enterprise Architecture Framework","ko":"미국 연방 EA 프레임워크","cat":"IT경영"},{"abbr":"SEM","full":"Strategic Enterprise Management","ko":"전략적 기업경영 — 전략 수립·성과관리 통합","cat":"IT경영"},{"abbr":"EDM","full":"Evaluate·Direct·Monitor","ko":"평가·지시·모니터링 (ISO/IEC 38500 IT 거버넌스 모델)","cat":"IT경영"},{"abbr":"COBIT","full":"Control Objectives for Information and Related Technologies","ko":"정보 및 관련 기술 통제 목표 — IT 거버넌스 프레임워크","cat":"IT경영"},{"abbr":"GRC","full":"Governance, Risk management, Compliance","ko":"거버넌스·위험관리·컴플라이언스 통합","cat":"IT경영"},{"abbr":"ERM","full":"Enterprise Risk Management","ko":"전사적 위험관리","cat":"IT경영"},{"abbr":"ITAM","full":"IT Asset Management","ko":"IT 자산관리","cat":"IT경영"},{"abbr":"ESG","full":"Environmental, Social, Governance","ko":"환경·사회·지배구조","cat":"IT경영"},{"abbr":"CSR","full":"Corporate Social Responsibility","ko":"기업의 사회적 책임","cat":"IT경영"},{"abbr":"CSRD","full":"Corporate Sustainability Reporting Directive","ko":"EU 기업 지속가능성 보고 지침","cat":"IT경영"},{"abbr":"CSDDD","full":"Corporate Sustainability Due Diligence Directive","ko":"EU 기업 지속가능성 실사 지침 — 인권·환경 실사 의무","cat":"IT경영"},{"abbr":"ISSB","full":"International Sustainability Standards Board","ko":"국제지속가능성기준위원회","cat":"IT경영"},{"abbr":"KSSB","full":"Korea Sustainability Standards Board","ko":"한국지속가능성기준위원회","cat":"IT경영"},{"abbr":"PUE","full":"Power Usage Effectiveness","ko":"전력 사용 효율 — 데이터센터 총 전력 ÷ IT 장비 전력, 1에 가까울수록 좋음","cat":"IT경영"},{"abbr":"FEMS","full":"Factory Energy Management System","ko":"공장 에너지 관리 시스템","cat":"IT경영"},{"abbr":"VPP","full":"Virtual Power Plant","ko":"가상 발전소 — 분산 전원을 하나의 발전소처럼 운영","cat":"IT경영"},{"abbr":"ESS","full":"Energy Storage System","ko":"에너지 저장 장치","cat":"IT경영"},{"abbr":"BCP","full":"Business Continuity Planning","ko":"업무연속성계획 — 재해 때도 핵심 업무를 이어가는 계획","cat":"IT경영"},{"abbr":"BCM","full":"Business Continuity Management","ko":"업무연속성관리 — BCP를 수립·운영·개선하는 관리 체계","cat":"IT경영"},{"abbr":"BCMS","full":"Business Continuity Management System","ko":"업무연속성 경영시스템 (ISO 22301)","cat":"IT경영"},{"abbr":"BIA","full":"Business Impact Analysis","ko":"업무영향분석 — 업무 중단 영향도로 복구 우선순위·목표 결정","cat":"IT경영"},{"abbr":"DR","full":"Disaster Recovery","ko":"재해복구","cat":"IT경영"},{"abbr":"DRS","full":"Disaster Recovery System","ko":"재해복구시스템 — Mirror·Hot·Warm·Cold 사이트","cat":"IT경영"},{"abbr":"DRP","full":"Disaster Recovery Plan","ko":"재해복구계획","cat":"IT경영"},{"abbr":"RTO","full":"Recovery Time Objective","ko":"목표복구시간 — 서비스를 다시 열기까지 허용 시간","cat":"IT경영"},{"abbr":"RPO","full":"Recovery Point Objective","ko":"목표복구시점 — 허용 가능한 데이터 손실 시점","cat":"IT경영"},{"abbr":"RCO","full":"Recovery Communication Objective","ko":"목표 복구 통신 수준","cat":"IT경영"},{"abbr":"RSO","full":"Recovery Scope Objective","ko":"목표 복구 범위","cat":"IT경영"},{"abbr":"BCO","full":"Backup Center Objective","ko":"백업센터 목표 (원본 표기)","cat":"IT경영"},{"abbr":"MBCO","full":"Minimum Business Continuity Objective","ko":"최소 업무연속성 목표 — 중단 중 유지할 최소 서비스 수준","cat":"IT경영"},{"abbr":"MTPD","full":"Maximum Tolerable Period of Disruption","ko":"최대 허용 중단 기간 — RTO의 상한","cat":"IT경영"},{"abbr":"MTD","full":"Maximum Tolerable Downtime","ko":"최대 허용 중단 시간 (BIA에서 산정)","cat":"IT경영"},{"abbr":"GSLB","full":"Global Server Load Balancing","ko":"광역 서버 부하분산 — 여러 센터 간 트래픽 분산","cat":"IT경영"},{"abbr":"PITR","full":"Point-In-Time Recovery","ko":"특정 시점 복구","cat":"IT경영"},{"abbr":"CDC","full":"Change Data Capture","ko":"변경 데이터 캡처 — 바뀐 데이터만 실시간 복제","cat":"IT경영"},{"abbr":"WAL","full":"Write-Ahead Logging","ko":"선행 기록 로깅 — 변경을 로그에 먼저 기록","cat":"IT경영"},{"abbr":"SPOF","full":"Single Point of Failure","ko":"단일 장애 지점","cat":"IT경영"},{"abbr":"HA","full":"High Availability","ko":"고가용성","cat":"IT경영"},{"abbr":"FTS","full":"Fault Tolerant System","ko":"무장애(내고장성) 시스템 — 장애가 나도 멈추지 않음","cat":"IT경영"},{"abbr":"IDC","full":"Internet Data Center","ko":"인터넷 데이터센터","cat":"IT경영"},{"abbr":"AIDC","full":"AI Data Center","ko":"AI 데이터센터","cat":"IT경영"},{"abbr":"SDDC","full":"Software Defined Data Center","ko":"소프트웨어 정의 데이터센터","cat":"IT경영"},{"abbr":"SCM","full":"Supply Chain Management","ko":"공급망관리","cat":"IT경영"},{"abbr":"ERP","full":"Enterprise Resource Planning","ko":"전사적 자원관리","cat":"IT경영"},{"abbr":"CRM","full":"Customer Relationship Management","ko":"고객관계관리","cat":"IT경영"},{"abbr":"SCADA","full":"Supervisory Control and Data Acquisition","ko":"원격감시제어 시스템","cat":"IT경영"},{"abbr":"EAI","full":"Enterprise Application Integration","ko":"전사 애플리케이션 통합","cat":"IT경영"},{"abbr":"DX","full":"Digital Transformation","ko":"디지털 전환","cat":"IT경영"},{"abbr":"AX","full":"AI Transformation","ko":"AI 전환","cat":"IT경영"},{"abbr":"IP","full":"Intellectual Property","ko":"지식재산(권) (네트워크 문맥은 Internet Protocol)","cat":"IT경영"},{"abbr":"PPP","full":"Public-Private Partnership","ko":"민관협력 (민간투자형 SW 사업)","cat":"IT경영"},{"abbr":"B2B","full":"Business to Business","ko":"기업 간 거래","cat":"IT경영"},{"abbr":"FinTech","full":"Finance + Technology","ko":"핀테크 — 금융과 기술의 합성어","cat":"IT경영"},{"abbr":"RegTech","full":"Regulation + Technology","ko":"레그테크 — 규제 준수를 돕는 기술","cat":"IT경영"},{"abbr":"EduTech","full":"Education + Technology","ko":"에듀테크 — 교육과 기술의 합성어","cat":"IT경영"},{"abbr":"DeepTech","full":"Deep Technology","ko":"딥테크 — 과학·공학 기반 원천 기술","cat":"IT경영"},{"abbr":"MiliTch","full":"Military + Technology","ko":"밀리테크 — 국방 기술 (원문 표기)","cat":"IT경영"},{"abbr":"AbleTech","full":"Able + Technology","ko":"에이블테크 — 장애인 보조 기술","cat":"IT경영"},{"abbr":"FinOps","full":"Finance + DevOps","ko":"클라우드 비용 최적화 운영 — Inform·Optimize·Operate","cat":"IT경영"},{"abbr":"FOCUS","full":"FinOps Open Cost and Usage Specification","ko":"FinOps 비용·사용량 공통 명세","cat":"IT경영"},{"abbr":"CXO","full":"Chief X Officer","ko":"최고 ○○ 책임자 (CEO·CIO 등 경영진 통칭)","cat":"IT경영"},{"abbr":"CAIO","full":"Chief AI Officer","ko":"최고 AI 책임자","cat":"IT경영"},{"abbr":"CoE","full":"Center of Excellence","ko":"전문 조직 (우수성 센터)","cat":"IT경영"},{"abbr":"TF","full":"Task Force","ko":"임시 전담 조직","cat":"IT경영"},{"abbr":"BC","full":"Business Case","ko":"사업 타당성 근거","cat":"IT경영"},{"abbr":"BM","full":"Business Model","ko":"비즈니스 모델","cat":"IT경영"},{"abbr":"SI","full":"System Integration","ko":"시스템 통합 (구축 사업)","cat":"IT경영"},{"abbr":"SM","full":"System Management","ko":"시스템 운영·유지관리","cat":"IT경영"},{"abbr":"RFP","full":"Request for Proposal","ko":"제안요청서","cat":"IT경영"},{"abbr":"MM","full":"Man-Month","ko":"투입공수 — 1명이 1개월 일한 양","cat":"IT경영"},{"abbr":"SNS","full":"Social Networking Service","ko":"소셜 네트워크 서비스","cat":"IT경영"},{"abbr":"UPS","full":"Uninterruptible Power Supply","ko":"무정전 전원장치","cat":"IT경영"},{"abbr":"BT","full":"Bio Technology","ko":"생명공학기술 (IT·BT·CT·ST 융합)","cat":"IT경영"},{"abbr":"CT","full":"Culture Technology","ko":"문화기술","cat":"IT경영"},{"abbr":"ST","full":"Space Technology","ko":"우주기술 · SWOT 교차전략에서는 Strength-Threat(강점-위협)","cat":"IT경영"},{"abbr":"SO/ST/WO/WT","full":"Strength·Weakness × Opportunity·Threat","ko":"SWOT 교차전략 — 강점-기회·강점-위협·약점-기회·약점-위협","cat":"IT경영"},{"abbr":"PM","full":"Project Manager / Project Management","ko":"프로젝트 관리자 / 프로젝트 관리","cat":"프로젝트관리"},{"abbr":"PMO","full":"Project Management Office","ko":"프로젝트 관리 조직 — 발주자를 도와 사업 관리 (전자정부법 64조)","cat":"프로젝트관리"},{"abbr":"PMC","full":"Project Management Consulting","ko":"프로젝트 관리 컨설팅 — 외부 전문가의 사업관리 지원","cat":"프로젝트관리"},{"abbr":"PMP","full":"Project Management Professional","ko":"PMI 프로젝트 관리 전문가 자격 · 문맥: Project Management Professional · 자격시험 / 문서에선 Project Management Plan(사업관리계획서)","cat":"프로젝트관리"},{"abbr":"PMBOK","full":"Project Management Body of Knowledge","ko":"프로젝트 관리 지식 체계 (PMI)","cat":"프로젝트관리"},{"abbr":"KA","full":"Knowledge Area","ko":"지식 영역 (PMBOK 10개)","cat":"프로젝트관리"},{"abbr":"RCR","full":"Resource·Communication·Risk","ko":"자원·의사소통·위험 (지식영역 묶음 표기)","cat":"프로젝트관리"},{"abbr":"PS","full":"Procurement·Stakeholder","ko":"조달·이해관계자 (지식영역 묶음 표기)","cat":"프로젝트관리"},{"abbr":"WBS","full":"Work Breakdown Structure","ko":"작업분할구조 — 인도물을 작업 단위로 계층 분해, 범위 기준선","cat":"프로젝트관리"},{"abbr":"CPM","full":"Critical Path Method","ko":"임계경로법 — 여유시간 0인 가장 긴 경로를 관리","cat":"프로젝트관리"},{"abbr":"ES","full":"Early Start","ko":"가장 빠른 시작일 (CPM 순방향)","cat":"프로젝트관리"},{"abbr":"EF","full":"Early Finish","ko":"가장 빠른 종료일 (CPM 순방향)","cat":"프로젝트관리"},{"abbr":"LS","full":"Late Start","ko":"가장 늦은 시작일 (CPM 역방향)","cat":"프로젝트관리"},{"abbr":"LF","full":"Late Finish","ko":"가장 늦은 종료일 (CPM 역방향)","cat":"프로젝트관리"},{"abbr":"EVM","full":"Earned Value Management","ko":"획득가치관리 — 일정·원가 성과를 함께 측정","cat":"프로젝트관리"},{"abbr":"PV","full":"Planned Value","ko":"계획가치 (EVM) · 경제성 분석에서는 Present Value(현재가치) · 문맥: Planned Value(계획가치, EVM) / 경제성 분석에선 Present Value(현재가치)","cat":"프로젝트관리"},{"abbr":"EV","full":"Earned Value","ko":"획득가치 — 실제 끝낸 작업의 계획 기준 가치","cat":"프로젝트관리"},{"abbr":"AC","full":"Actual Cost","ko":"실제 원가","cat":"프로젝트관리"},{"abbr":"EMV","full":"Expected Monetary Value","ko":"기대금전가치 — 확률 × 영향 금액","cat":"프로젝트관리"},{"abbr":"WIP","full":"Work In Progress","ko":"진행 중 작업 (칸반에서 동시 작업 수 제한)","cat":"프로젝트관리"},{"abbr":"TPS","full":"Toyota Production System","ko":"도요타 생산 방식 (Lean의 기원)","cat":"프로젝트관리"},{"abbr":"MVP","full":"Minimum Viable Product","ko":"최소기능제품 — 핵심 기능만 넣어 먼저 검증","cat":"프로젝트관리"},{"abbr":"XP","full":"eXtreme Programming","ko":"익스트림 프로그래밍 — 짝 프로그래밍·TDD 중심 애자일","cat":"프로젝트관리"},{"abbr":"SCRUM","full":"Scrum","ko":"스크럼 — 스프린트를 반복하는 애자일 프레임워크 (약어 아님, 럭비 용어)","cat":"프로젝트관리"},{"abbr":"QA","full":"Quality Assurance","ko":"품질 보증","cat":"프로젝트관리"},{"abbr":"QC","full":"Quality Control","ko":"품질 통제","cat":"프로젝트관리"},{"abbr":"QM","full":"Quality Management","ko":"품질 관리","cat":"프로젝트관리"},{"abbr":"RACI","full":"Responsible, Accountable, Consulted, Informed","ko":"실행·책임·자문·통보 (역할 분담표)","cat":"프로젝트관리"},{"abbr":"SRS","full":"Software Requirements Specification","ko":"소프트웨어 요구사항 명세서","cat":"프로젝트관리"},{"abbr":"RTM","full":"Requirements Traceability Matrix","ko":"요구사항 추적 매트릭스","cat":"프로젝트관리"},{"abbr":"PPM","full":"Project Portfolio Management","ko":"프로젝트 포트폴리오 관리","cat":"프로젝트관리"},{"abbr":"FP","full":"Function Point","ko":"기능점수 — 사용자 관점 기능 규모로 SW 크기 측정","cat":"프로젝트관리"},{"abbr":"COCOMO","full":"Constructive Cost Model","ko":"구성적 비용 모델 — 코드 라인 수 기반 SW 비용 산정","cat":"프로젝트관리"},{"abbr":"LOC","full":"Lines of Code","ko":"코드 라인 수","cat":"프로젝트관리"},{"abbr":"ILF","full":"Internal Logical File","ko":"내부 논리 파일 (FP 데이터 기능)","cat":"프로젝트관리"},{"abbr":"EIF","full":"External Interface File","ko":"외부 연계 파일 (FP 데이터 기능)","cat":"프로젝트관리"},{"abbr":"EI","full":"External Input","ko":"외부 입력 (FP 트랜잭션 기능)","cat":"프로젝트관리"},{"abbr":"EO","full":"External Output","ko":"외부 출력 (FP 트랜잭션 기능)","cat":"프로젝트관리"},{"abbr":"EQ","full":"External inQuiry","ko":"외부 조회 (FP 트랜잭션 기능)","cat":"프로젝트관리"},{"abbr":"IFPUG","full":"International Function Point Users Group","ko":"국제 기능점수 사용자 그룹","cat":"프로젝트관리"},{"abbr":"PoC","full":"Proof of Concept","ko":"개념 검증","cat":"프로젝트관리"},{"abbr":"EEF","full":"Enterprise Environmental Factors","ko":"기업 환경 요인 — 외부 규제·시장처럼 프로젝트가 통제 못 하는 환경","cat":"프로젝트관리"},{"abbr":"OPA","full":"Organizational Process Assets","ko":"조직 프로세스 자산 — 조직의 절차·템플릿·교훈 사례","cat":"프로젝트관리"},{"abbr":"PMI","full":"Project Management Institute","ko":"미국 프로젝트관리협회 (PMBOK·PMP 주관)","cat":"프로젝트관리"},{"abbr":"PMIS","full":"Project Management Information System","ko":"프로젝트 관리 정보 시스템","cat":"프로젝트관리"},{"abbr":"PLC","full":"Project Life Cycle","ko":"프로젝트 생애주기 (판서: SDLC = PLC)","cat":"프로젝트관리"},{"abbr":"PG","full":"Process Group","ko":"프로세스 그룹 — 착수·계획·실행·감시통제·종료","cat":"프로젝트관리"},{"abbr":"PO","full":"Product Owner","ko":"제품 책임자 — 제품 백로그 우선순위를 정하는 사람 (스크럼)","cat":"프로젝트관리"},{"abbr":"PB","full":"Product Backlog","ko":"제품 백로그 — User Story로 된 요구사항 목록","cat":"프로젝트관리"},{"abbr":"EATMA","full":"Escalate·Avoid·Transfer·Mitigate·Accept","ko":"위협(부정 위험) 대응 전략 — 에스컬레이션·회피·전가·완화·수용 (두음 에회전완수)","cat":"프로젝트관리"},{"abbr":"MA","full":"Maintenance","ko":"유지보수 — CP(무상 하자보수) 뒤 유상 유지보수","cat":"프로젝트관리"},{"abbr":"RAD","full":"Rapid Application Development","ko":"신속 애플리케이션 개발 — 짧은 반복·프로토타입 중심 개발","cat":"SW공학"},{"abbr":"AOP","full":"Aspect-Oriented Programming","ko":"관점지향 프로그래밍 — 로깅·보안 같은 공통 관심사를 분리","cat":"SW공학"},{"abbr":"OOP","full":"Object-Oriented Programming","ko":"객체지향 프로그래밍 — 캡슐화·추상화·다형성·정보은닉·상속 (두음 캡추다정상)","cat":"SW공학"},{"abbr":"SW","full":"Software","ko":"소프트웨어","cat":"SW공학"},{"abbr":"HW","full":"Hardware","ko":"하드웨어","cat":"SW공학"},{"abbr":"NW","full":"Network","ko":"네트워크","cat":"SW공학"},{"abbr":"SDLC","full":"Software Development Life Cycle","ko":"소프트웨어 개발 생명주기","cat":"SW공학"},{"abbr":"UML","full":"Unified Modeling Language","ko":"통합 모델링 언어","cat":"SW공학"},{"abbr":"CMMI","full":"Capability Maturity Model Integration","ko":"능력 성숙도 모델 통합 — 프로세스 성숙도 1~5단계","cat":"SW공학"},{"abbr":"SPICE","full":"Software Process Improvement and Capability dEtermination","ko":"SW 프로세스 개선·능력 결정 (ISO/IEC 15504 → 33000)","cat":"SW공학"},{"abbr":"ASPICE","full":"Automotive SPICE","ko":"자동차 SW 프로세스 평가 모델","cat":"SW공학"},{"abbr":"SP","full":"Software Process","ko":"SW 프로세스 품질 인증 · 문맥: Software Process(품질 인증) / 애자일에선 Story Point","cat":"SW공학"},{"abbr":"GS","full":"Good Software","ko":"GS 인증 — 국산 SW 품질 인증","cat":"SW공학"},{"abbr":"TDD","full":"Test-Driven Development","ko":"테스트 주도 개발 — 테스트를 먼저 작성","cat":"SW공학"},{"abbr":"TC","full":"Test Case","ko":"테스트 케이스","cat":"SW공학"},{"abbr":"CI","full":"Continuous Integration","ko":"지속적 통합","cat":"SW공학"},{"abbr":"CD","full":"Continuous Delivery / Deployment","ko":"지속적 전달·배포","cat":"SW공학"},{"abbr":"CI/CD","full":"Continuous Integration / Continuous Delivery·Deployment","ko":"지속적 통합·배포","cat":"SW공학"},{"abbr":"DevOps","full":"Development + Operations","ko":"개발과 운영을 하나로 묶는 문화·자동화","cat":"SW공학"},{"abbr":"DevSecOps","full":"Development + Security + Operations","ko":"개발·보안·운영 통합","cat":"SW공학"},{"abbr":"MSA","full":"Microservice Architecture","ko":"마이크로서비스 아키텍처 — 작은 서비스로 쪼개 독립 배포","cat":"SW공학"},{"abbr":"SOA","full":"Service Oriented Architecture","ko":"서비스 지향 아키텍처","cat":"SW공학"},{"abbr":"ESB","full":"Enterprise Service Bus","ko":"전사 서비스 버스","cat":"SW공학"},{"abbr":"SAGA","full":"Saga pattern","ko":"사가 패턴 — 분산 트랜잭션을 로컬 트랜잭션과 보상 작업으로 처리 (약어 아님)","cat":"SW공학"},{"abbr":"ATAM","full":"Architecture Trade-off Analysis Method","ko":"아키텍처 트레이드오프 분석 방법","cat":"SW공학"},{"abbr":"CBAM","full":"Cost Benefit Analysis Method","ko":"비용편익 분석 방법 (아키텍처 평가)","cat":"SW공학"},{"abbr":"AD","full":"Architecture Description","ko":"아키텍처 기술서 (ISO/IEC/IEEE 42010)","cat":"SW공학"},{"abbr":"IEEE1471","full":"IEEE Std 1471","ko":"아키텍처 기술 권고 표준 (ISO/IEC/IEEE 42010의 전신)","cat":"SW공학"},{"abbr":"SSPL","full":"Software and Systems Product Line","ko":"SW·시스템 제품 계열 공학","cat":"SW공학"},{"abbr":"DDD","full":"Domain-Driven Design","ko":"도메인 주도 설계","cat":"SW공학"},{"abbr":"SOLID","full":"SRP·OCP·LSP·ISP·DIP","ko":"객체지향 5원칙 — 단일책임·개방폐쇄·리스코프 치환·인터페이스 분리·의존 역전","cat":"SW공학"},{"abbr":"MVC","full":"Model-View-Controller","ko":"모델·뷰·컨트롤러 패턴","cat":"SW공학"},{"abbr":"MVVM","full":"Model-View-ViewModel","ko":"모델·뷰·뷰모델 패턴","cat":"SW공학"},{"abbr":"MVI","full":"Model-View-Intent","ko":"모델·뷰·인텐트 패턴","cat":"SW공학"},{"abbr":"IoC","full":"Inversion of Control","ko":"제어의 역전 (보안 문맥은 Indicators of Compromise·침해 지표)","cat":"SW공학"},{"abbr":"NIH","full":"Not Invented Here","ko":"NIH 신드롬 — 외부에서 만든 것을 배척하는 성향","cat":"SW공학"},{"abbr":"PBL","full":"Project Based Learning","ko":"프로젝트 기반 학습","cat":"SW공학"},{"abbr":"SQuaRE","full":"Software product Quality Requirements and Evaluation","ko":"SW 제품 품질 요구·평가 (ISO/IEC 25000 시리즈)","cat":"SW공학"},{"abbr":"ReSelPri","full":"Retest-all·Selective·Priority","ko":"회귀 테스트 종류 두음 — 전체·선택·우선순위","cat":"SW공학"},{"abbr":"SPE","full":"S-type·P-type·E-type","ko":"리만(Lehman)의 프로그램 분류 — 명세형·문제형·진화형","cat":"SW공학"},{"abbr":"NaCoInA","full":"Named·Concurrent·…","ko":"성능 테스트 사용자 유형 두음 (Named User·Concurrent User만 원문 확인, 나머지 원문 풀이 없음)","cat":"SW공학"},{"abbr":"FOSS","full":"Free and Open Source Software","ko":"자유·오픈소스 소프트웨어","cat":"SW공학"},{"abbr":"OSS","full":"Open Source Software","ko":"오픈소스 소프트웨어","cat":"SW공학"},{"abbr":"REST","full":"Representational State Transfer","ko":"REST — HTTP 자원 중심 API 스타일","cat":"SW공학"},{"abbr":"API","full":"Application Programming Interface","ko":"응용 프로그램 인터페이스","cat":"SW공학"},{"abbr":"SDK","full":"Software Development Kit","ko":"소프트웨어 개발 키트","cat":"SW공학"},{"abbr":"JSON","full":"JavaScript Object Notation","ko":"JSON 데이터 형식","cat":"SW공학"},{"abbr":"JSON-RPC","full":"JSON Remote Procedure Call","ko":"JSON 원격 프로시저 호출","cat":"SW공학"},{"abbr":"SSE","full":"Server-Sent Events","ko":"서버 전송 이벤트 — 서버에서 클라이언트로 단방향 스트림","cat":"SW공학"},{"abbr":"HTML","full":"HyperText Markup Language","ko":"웹 문서 언어","cat":"SW공학"},{"abbr":"HTTP","full":"HyperText Transfer Protocol","ko":"웹 전송 프로토콜","cat":"SW공학"},{"abbr":"URL","full":"Uniform Resource Locator","ko":"웹 주소","cat":"SW공학"},{"abbr":"URI","full":"Uniform Resource Identifier","ko":"자원 식별자","cat":"SW공학"},{"abbr":"WEB","full":"World Wide Web","ko":"웹","cat":"SW공학"},{"abbr":"WAS","full":"Web Application Server","ko":"웹 애플리케이션 서버","cat":"SW공학"},{"abbr":"UI","full":"User Interface","ko":"사용자 인터페이스","cat":"SW공학"},{"abbr":"UX","full":"User Experience","ko":"사용자 경험","cat":"SW공학"},{"abbr":"SVN","full":"Subversion","ko":"중앙집중형 버전관리 도구","cat":"SW공학"},{"abbr":"BDD","full":"Behavior-Driven Development","ko":"행위 주도 개발 — 사용자 행위 시나리오로 테스트 작성","cat":"SW공학"},{"abbr":"IaaS","full":"Infrastructure as a Service","ko":"서비스형 인프라","cat":"클라우드·인프라"},{"abbr":"SaaS","full":"Software as a Service","ko":"서비스형 소프트웨어","cat":"클라우드·인프라"},{"abbr":"FaaS","full":"Function as a Service","ko":"서비스형 함수 (서버리스)","cat":"클라우드·인프라"},{"abbr":"BaaS","full":"Backend as a Service","ko":"서비스형 백엔드","cat":"클라우드·인프라"},{"abbr":"FBE","full":"FaaS·BaaS·Event Router","ko":"서버리스 구성요소 두음","cat":"클라우드·인프라"},{"abbr":"IaC","full":"Infrastructure as Code","ko":"코드형 인프라 — 인프라를 코드로 정의·배포","cat":"클라우드·인프라"},{"abbr":"HPA","full":"Horizontal Pod Autoscaler","ko":"쿠버네티스 수평 파드 자동 확장","cat":"클라우드·인프라"},{"abbr":"NFV","full":"Network Functions Virtualization","ko":"네트워크 기능 가상화","cat":"클라우드·인프라"},{"abbr":"VM","full":"Virtual Machine","ko":"가상 머신","cat":"클라우드·인프라"},{"abbr":"AMI","full":"Amazon Machine Image","ko":"AWS 서버 이미지","cat":"클라우드·인프라"},{"abbr":"AWS","full":"Amazon Web Services","ko":"아마존 클라우드","cat":"클라우드·인프라"},{"abbr":"SRE","full":"Site Reliability Engineering","ko":"사이트 신뢰성 엔지니어링 (구글) — SLO·에러버짓으로 운영","cat":"클라우드·인프라"},{"abbr":"DGX","full":"NVIDIA DGX","ko":"엔비디아 AI 전용 서버 제품군 (제품명)","cat":"클라우드·인프라"},{"abbr":"CA","full":"Computer Architecture","ko":"컴퓨터 구조","cat":"CA·OS"},{"abbr":"CA/OS","full":"Computer Architecture / Operating System","ko":"컴퓨터 구조·운영체제 (ITPE 과목명)","cat":"CA·OS"},{"abbr":"OS","full":"Operating System","ko":"운영체제","cat":"CA·OS"},{"abbr":"CPU","full":"Central Processing Unit","ko":"중앙처리장치","cat":"CA·OS"},{"abbr":"GPU","full":"Graphics Processing Unit","ko":"그래픽 처리 장치 — AI 연산 가속","cat":"CA·OS"},{"abbr":"TPU","full":"Tensor Processing Unit","ko":"텐서 처리 장치 (구글 AI 칩)","cat":"CA·OS"},{"abbr":"MMU","full":"Memory Management Unit","ko":"메모리 관리 장치 — 가상주소를 물리주소로 변환","cat":"CA·OS"},{"abbr":"IPC","full":"Inter-Process Communication","ko":"프로세스 간 통신 — 파이프·메시지큐·공유 메모리·세마포어","cat":"CA·OS"},{"abbr":"MESI","full":"Modified·Exclusive·Shared·Invalid","ko":"캐시 일관성 프로토콜 4상태 — 수정·배타·공유·무효","cat":"CA·OS"},{"abbr":"GC","full":"Garbage Collection","ko":"가비지 컬렉션 — 안 쓰는 메모리 자동 회수","cat":"CA·OS"},{"abbr":"FIFO","full":"First In, First Out","ko":"선입선출","cat":"CA·OS"},{"abbr":"WFQ","full":"Weighted Fair Queuing","ko":"가중 공정 큐잉 — 흐름별 가중치로 대역 분배","cat":"CA·OS"},{"abbr":"ECC","full":"Error Correcting Code","ko":"오류 정정 부호 (보안 문맥은 Elliptic Curve Cryptography·타원곡선 암호)","cat":"CA·OS"},{"abbr":"BST","full":"Binary Search Tree","ko":"이진 탐색 트리","cat":"CA·OS"},{"abbr":"CXL","full":"Compute Express Link","ko":"CPU·메모리·가속기 고속 연결 표준","cat":"CA·OS"},{"abbr":"PCIe","full":"Peripheral Component Interconnect Express","ko":"고속 직렬 확장 버스","cat":"CA·OS"},{"abbr":"HBM","full":"High Bandwidth Memory","ko":"고대역폭 메모리 (AI 가속기용)","cat":"CA·OS"},{"abbr":"TCP","full":"Transmission Control Protocol","ko":"전송 제어 프로토콜","cat":"네트워크·통신"},{"abbr":"FEC","full":"Forward Error Correction","ko":"순방향 오류 정정 — 수신 측이 스스로 정정","cat":"네트워크·통신"},{"abbr":"BEC","full":"Backward Error Correction","ko":"역방향 오류 정정 — 재전송으로 정정","cat":"네트워크·통신"},{"abbr":"ARQ","full":"Automatic Repeat reQuest","ko":"자동 재전송 요청 — Stop&Wait·Go-Back-N·Selective Repeat","cat":"네트워크·통신"},{"abbr":"IGP","full":"Interior Gateway Protocol","ko":"내부 라우팅 프로토콜 (AS 안)","cat":"네트워크·통신"},{"abbr":"EGP","full":"Exterior Gateway Protocol","ko":"외부 라우팅 프로토콜 (AS 간)","cat":"네트워크·통신"},{"abbr":"RIP","full":"Routing Information Protocol","ko":"거리 벡터 라우팅 프로토콜","cat":"네트워크·통신"},{"abbr":"IGRP","full":"Interior Gateway Routing Protocol","ko":"시스코 내부 라우팅 프로토콜","cat":"네트워크·통신"},{"abbr":"OSPF","full":"Open Shortest Path First","ko":"링크 상태 라우팅 프로토콜","cat":"네트워크·통신"},{"abbr":"BGP","full":"Border Gateway Protocol","ko":"경계 게이트웨이 프로토콜 (AS 간 라우팅)","cat":"네트워크·통신"},{"abbr":"CSMA/CA","full":"Carrier Sense Multiple Access with Collision Avoidance","ko":"반송파 감지 다중접속/충돌 회피 (무선랜)","cat":"네트워크·통신"},{"abbr":"CDMA","full":"Code Division Multiple Access","ko":"코드 분할 다중접속","cat":"네트워크·통신"},{"abbr":"TDMA","full":"Time Division Multiple Access","ko":"시분할 다중접속","cat":"네트워크·통신"},{"abbr":"OFDMA","full":"Orthogonal Frequency Division Multiple Access","ko":"직교 주파수 분할 다중접속","cat":"네트워크·통신"},{"abbr":"MIMO","full":"Multiple Input Multiple Output","ko":"다중 안테나 송수신","cat":"네트워크·통신"},{"abbr":"LTE","full":"Long Term Evolution","ko":"4세대 이동통신","cat":"네트워크·통신"},{"abbr":"QoS","full":"Quality of Service","ko":"서비스 품질 (망 성능 보장)","cat":"네트워크·통신"},{"abbr":"QoE","full":"Quality of Experience","ko":"체감 품질","cat":"네트워크·통신"},{"abbr":"VPN","full":"Virtual Private Network","ko":"가상 사설망","cat":"네트워크·통신"},{"abbr":"DNS","full":"Domain Name System","ko":"도메인 이름 시스템","cat":"네트워크·통신"},{"abbr":"DWDM","full":"Dense Wavelength Division Multiplexing","ko":"고밀도 파장 분할 다중화","cat":"네트워크·통신"},{"abbr":"VRRP","full":"Virtual Router Redundancy Protocol","ko":"가상 라우터 이중화 프로토콜","cat":"네트워크·통신"},{"abbr":"VIP","full":"Virtual IP","ko":"가상 IP 주소","cat":"네트워크·통신"},{"abbr":"GW","full":"Gateway","ko":"게이트웨이","cat":"네트워크·통신"},{"abbr":"RF","full":"Radio Frequency","ko":"무선 주파수","cat":"네트워크·통신"},{"abbr":"GHz","full":"Gigahertz","ko":"기가헤르츠 (10⁹ Hz)","cat":"네트워크·통신"},{"abbr":"THz","full":"Terahertz","ko":"테라헤르츠 (10¹² Hz)","cat":"네트워크·통신"},{"abbr":"IoT","full":"Internet of Things","ko":"사물인터넷","cat":"네트워크·통신"},{"abbr":"LEO","full":"Low Earth Orbit","ko":"저궤도 (약 300~1,500km)","cat":"네트워크·통신"},{"abbr":"MEO","full":"Medium Earth Orbit","ko":"중궤도 (약 7,000~25,000km)","cat":"네트워크·통신"},{"abbr":"GEO","full":"Geostationary Earth Orbit","ko":"정지궤도 (35,786km)","cat":"네트워크·통신"},{"abbr":"HEO","full":"Highly Elliptical Orbit","ko":"고타원 궤도","cat":"네트워크·통신"},{"abbr":"NTN","full":"Non-Terrestrial Network","ko":"비지상망 — 위성·HAPS 등","cat":"네트워크·통신"},{"abbr":"TN","full":"Terrestrial Network","ko":"지상망","cat":"네트워크·통신"},{"abbr":"ISL","full":"Inter-Satellite Link","ko":"위성 간 링크 (레이저·RF)","cat":"네트워크·통신"},{"abbr":"D2D","full":"Direct-to-Device","ko":"단말 직접 연결 (위성 ↔ 일반 단말)","cat":"네트워크·통신"},{"abbr":"D2C","full":"Direct-to-Cell","ko":"위성 ↔ 휴대폰 직접 연결","cat":"네트워크·통신"},{"abbr":"HAPS","full":"High Altitude Platform Station","ko":"고고도 플랫폼 (성층권 비행체)","cat":"네트워크·통신"},{"abbr":"UAS","full":"Unmanned Aircraft System","ko":"무인 항공기 시스템","cat":"네트워크·통신"},{"abbr":"UAV","full":"Unmanned Aerial Vehicle","ko":"무인 항공기 (드론)","cat":"네트워크·통신"},{"abbr":"UAM","full":"Urban Air Mobility","ko":"도심 항공 모빌리티","cat":"네트워크·통신"},{"abbr":"SATIN","full":"Satellite-Aerial-Terrestrial Integrated Network","ko":"위성-상공-지상 통합형 무선 네트워크 (128회 기출)","cat":"네트워크·통신"},{"abbr":"GNSS","full":"Global Navigation Satellite System","ko":"위성항법시스템 (GPS 등)","cat":"네트워크·통신"},{"abbr":"SBAS","full":"Satellite Based Augmentation System","ko":"위성 기반 보정 시스템","cat":"네트워크·통신"},{"abbr":"OBP","full":"On-Board Processing","ko":"위성 탑재 처리 (재생형 페이로드)","cat":"네트워크·통신"},{"abbr":"ATP","full":"Acquisition, Tracking, Pointing","ko":"포착·추적·지향 (레이저 ISL 정렬)","cat":"네트워크·통신"},{"abbr":"NMC","full":"Network Management Center","ko":"네트워크 관리 센터","cat":"네트워크·통신"},{"abbr":"DVB-S2X","full":"Digital Video Broadcasting – Satellite – Second Generation Extensions","ko":"위성 방송·통신 전송 표준","cat":"네트워크·통신"},{"abbr":"RedCap","full":"Reduced Capability","ko":"저사양 5G 단말 규격 (3GPP Rel-17)","cat":"네트워크·통신"},{"abbr":"FR1","full":"Frequency Range 1","ko":"5G 6GHz 이하 주파수 대역","cat":"네트워크·통신"},{"abbr":"NR","full":"New Radio","ko":"5G 무선 접속 기술","cat":"네트워크·통신"},{"abbr":"UE","full":"User Equipment","ko":"사용자 단말","cat":"네트워크·통신"},{"abbr":"DN","full":"Data Network","ko":"데이터 네트워크 (5G 코어 바깥 인터넷 등)","cat":"네트워크·통신"},{"abbr":"RAN","full":"Radio Access Network","ko":"무선 접속망","cat":"네트워크·통신"},{"abbr":"HO","full":"Handover","ko":"핸드오버 — 기지국·위성 전환","cat":"네트워크·통신"},{"abbr":"SAT","full":"Satellite","ko":"위성 (KT SAT = KT의 위성 자회사)","cat":"네트워크·통신"},{"abbr":"KA-SAT","full":"Viasat KA-SAT","ko":"Viasat의 Ka 대역 위성 (2022 사이버공격 대상)","cat":"네트워크·통신"},{"abbr":"TR","full":"Technical Report","ko":"기술 보고서 (3GPP·ISO TR)","cat":"네트워크·통신"},{"abbr":"AI-Native","full":"AI-Native","ko":"처음부터 AI를 내장한 (네트워크·시스템)","cat":"네트워크·통신"},{"abbr":"IBN","full":"Intent-Based Networking","ko":"의도 기반 네트워킹","cat":"네트워크·통신"},{"abbr":"SDN","full":"Software Defined Networking","ko":"소프트웨어 정의 네트워킹","cat":"네트워크·통신"},{"abbr":"SON","full":"Self-Organizing Network","ko":"자가 구성 네트워크","cat":"네트워크·통신"},{"abbr":"MODBUS","full":"Modicon Bus","ko":"산업제어 통신 프로토콜 (Modicon사 개발)","cat":"네트워크·통신"},{"abbr":"VLSM","full":"Variable Length Subnet Mask","ko":"가변 길이 서브넷 마스크","cat":"네트워크·통신"},{"abbr":"DB","full":"Database","ko":"데이터베이스","cat":"DB·데이터"},{"abbr":"DBMS","full":"Database Management System","ko":"데이터베이스 관리 시스템","cat":"DB·데이터"},{"abbr":"SQL","full":"Structured Query Language","ko":"구조적 질의 언어","cat":"DB·데이터"},{"abbr":"TEXT2SQL","full":"Text-to-SQL","ko":"자연어 질문을 SQL로 변환","cat":"DB·데이터"},{"abbr":"DW","full":"Data Warehouse","ko":"데이터 웨어하우스 — 분석용 통합 저장소","cat":"DB·데이터"},{"abbr":"CRISP-DM","full":"Cross-Industry Standard Process for Data Mining","ko":"데이터마이닝 표준 프로세스 — 업무이해·데이터이해·준비·모델링·평가·전개","cat":"DB·데이터"},{"abbr":"SEMMA","full":"Sample, Explore, Modify, Model, Assess","ko":"SAS 데이터마이닝 절차 — 추출·탐색·수정·모델링·평가","cat":"DB·데이터"},{"abbr":"BCNF","full":"Boyce-Codd Normal Form","ko":"보이스·코드 정규형 — 모든 결정자가 후보키","cat":"DB·데이터"},{"abbr":"DBSCAN","full":"Density-Based Spatial Clustering of Applications with Noise","ko":"밀도 기반 군집화","cat":"DB·데이터"},{"abbr":"MinPts","full":"Minimum Points","ko":"DBSCAN 최소 이웃 점 수","cat":"DB·데이터"},{"abbr":"MAE","full":"Mean Absolute Error","ko":"평균 절대 오차","cat":"DB·데이터"},{"abbr":"VIF","full":"Variance Inflation Factor","ko":"분산팽창지수 — 다중공선성 진단","cat":"DB·데이터"},{"abbr":"HNSW","full":"Hierarchical Navigable Small World","ko":"계층형 근접 그래프 벡터 인덱스","cat":"DB·데이터"},{"abbr":"IVF","full":"Inverted File Index","ko":"역파일 벡터 인덱스","cat":"DB·데이터"},{"abbr":"AS","full":"Authorization Server","ko":"인가 서버 (OAuth) · 데이터마이닝 두음에서는 Association·Sequence(연관·순차)","cat":"DB·데이터"},{"abbr":"DQM","full":"Data Quality Management","ko":"데이터 품질관리","cat":"DB·데이터"},{"abbr":"AI","full":"Artificial Intelligence","ko":"인공지능","cat":"AI"},{"abbr":"ML","full":"Machine Learning","ko":"머신러닝","cat":"AI"},{"abbr":"LLM","full":"Large Language Model","ko":"대규모 언어모델","cat":"AI"},{"abbr":"GenAI","full":"Generative AI","ko":"생성형 AI","cat":"AI"},{"abbr":"ChatGPT","full":"Chat Generative Pre-trained Transformer","ko":"OpenAI 대화형 AI 서비스","cat":"AI"},{"abbr":"RAG","full":"Retrieval-Augmented Generation","ko":"검색 증강 생성 — 외부 문서를 찾아 답변에 반영","cat":"AI"},{"abbr":"RLHF","full":"Reinforcement Learning from Human Feedback","ko":"인간 피드백 기반 강화학습","cat":"AI"},{"abbr":"RAFT","full":"Retrieval-Augmented Fine-Tuning","ko":"검색 증강 파인튜닝","cat":"AI"},{"abbr":"CoT","full":"Chain of Thought","ko":"생각의 사슬 — 단계별 추론 프롬프트","cat":"AI"},{"abbr":"MoE","full":"Mixture of Experts","ko":"전문가 혼합 모델 — 입력마다 일부 전문가만 계산","cat":"AI"},{"abbr":"XAI","full":"eXplainable AI","ko":"설명 가능한 AI","cat":"AI"},{"abbr":"SVM","full":"Support Vector Machine","ko":"서포트 벡터 머신 — 마진 최대화 분류기","cat":"AI"},{"abbr":"TRiSM","full":"Trust, Risk and Security Management","ko":"AI 신뢰·위험·보안 관리 (가트너)","cat":"AI"},{"abbr":"AIMS","full":"AI Management System","ko":"AI 경영시스템 (ISO/IEC 42001)","cat":"AI"},{"abbr":"RMF","full":"Risk Management Framework","ko":"위험관리 프레임워크 (NIST AI RMF)","cat":"AI"},{"abbr":"CAT","full":"Certification of AI Trustworthiness","ko":"TTA AI 신뢰성 인증","cat":"AI"},{"abbr":"MCP","full":"Model Context Protocol","ko":"모델 컨텍스트 프로토콜 — 에이전트 ↔ 도구 연결 표준","cat":"AI"},{"abbr":"A2A","full":"Agent-to-Agent Protocol","ko":"에이전트 간 통신 프로토콜","cat":"AI"},{"abbr":"ADK","full":"Agent Development Kit","ko":"에이전트 개발 키트 (Google)","cat":"AI"},{"abbr":"ADLC","full":"Agent Development Life Cycle","ko":"에이전트 개발 생명주기 — 설계·구축·평가·배포·관측·통제","cat":"AI"},{"abbr":"MAS","full":"Multi-Agent System","ko":"다중 에이전트 시스템","cat":"AI"},{"abbr":"HITL","full":"Human-in-the-Loop","ko":"사람이 승인해야 실행 (사전 승인형)","cat":"AI"},{"abbr":"HOTL","full":"Human-on-the-Loop","ko":"AI가 실행하고 사람이 감시·개입 (감독형)","cat":"AI"},{"abbr":"HOOTL","full":"Human-out-of-the-Loop","ko":"사람 개입 없는 완전 자율","cat":"AI"},{"abbr":"HIC","full":"Human-in-Command","ko":"사람이 목적·한계를 지휘","cat":"AI"},{"abbr":"AgentOps","full":"Agent + Operations","ko":"AI 에이전트 운영 체계","cat":"AI"},{"abbr":"LLMOps","full":"LLM + Operations","ko":"LLM 운영 체계","cat":"AI"},{"abbr":"ModelOps","full":"Model + Operations","ko":"AI 모델 운영 체계","cat":"AI"},{"abbr":"MLOps","full":"Machine Learning + Operations","ko":"머신러닝 모델 개발·배포·운영 체계","cat":"AI"},{"abbr":"DSML","full":"Data Science and Machine Learning","ko":"데이터 과학·머신러닝 (플랫폼·수명주기)","cat":"AI"},{"abbr":"NHI","full":"Non-Human Identity","ko":"비인간 신원 — 서비스 계정·API 키·에이전트","cat":"AI"},{"abbr":"AgBOM","full":"Agent Bill of Materials","ko":"에이전트 자재명세서 — 모델·도구·역량·지식·메모리 목록","cat":"AI"},{"abbr":"AI-BOM","full":"AI Bill of Materials","ko":"AI 자재명세서","cat":"AI"},{"abbr":"ML-BOM","full":"Machine Learning Bill of Materials","ko":"ML 자재명세서 (CycloneDX)","cat":"AI"},{"abbr":"AOS","full":"Agent Observability Standard","ko":"에이전트 관측 표준 (OWASP)","cat":"AI"},{"abbr":"ACS","full":"Agent Control Standard","ko":"에이전트 통제 표준 (OWASP, 2026)","cat":"AI"},{"abbr":"OTel","full":"OpenTelemetry","ko":"오픈텔레메트리 — 추적·메트릭·로그 관측 표준","cat":"AI"},{"abbr":"TTFT","full":"Time To First Token","ko":"첫 토큰까지 걸린 시간","cat":"AI"},{"abbr":"TPOT","full":"Time Per Output Token","ko":"출력 토큰 하나당 걸린 시간","cat":"AI"},{"abbr":"MTok","full":"Million Tokens","ko":"백만 토큰 (요금 단위)","cat":"AI"},{"abbr":"BLEU","full":"Bilingual Evaluation Understudy","ko":"기계번역 품질 지표","cat":"AI"},{"abbr":"ROUGE","full":"Recall-Oriented Understudy for Gisting Evaluation","ko":"요약 품질 지표","cat":"AI"},{"abbr":"BERTScore","full":"BERT Score","ko":"BERT 임베딩 유사도 평가 지표 (BERT = Bidirectional Encoder Representations from Transformers)","cat":"AI"},{"abbr":"AGI","full":"Artificial General Intelligence","ko":"범용 인공지능 (강 AI)","cat":"AI"},{"abbr":"ANI","full":"Artificial Narrow Intelligence","ko":"좁은 인공지능 (약 AI)","cat":"AI"},{"abbr":"GNN","full":"Graph Neural Network","ko":"그래프 신경망","cat":"AI"},{"abbr":"GAN","full":"Generative Adversarial Network","ko":"생성적 적대 신경망 — 생성자와 판별자가 경쟁하며 학습","cat":"AI"},{"abbr":"VAE","full":"Variational AutoEncoder","ko":"변분 오토인코더 — 잠재 분포를 학습하는 생성 모델","cat":"AI"},{"abbr":"PR","full":"Precision-Recall","ko":"정밀도-재현율 (PR 곡선)","cat":"AI"},{"abbr":"ROC","full":"Receiver Operating Characteristic","ko":"수신자 조작 특성 (ROC 곡선: 거짓양성률 대비 참양성률)","cat":"AI"},{"abbr":"QML","full":"Quantum Machine Learning","ko":"양자 머신러닝","cat":"AI"},{"abbr":"AIOps","full":"AI for IT Operations","ko":"AI 기반 IT 운영","cat":"AI"},{"abbr":"sLLM","full":"small Large Language Model","ko":"소형 LLM — 특정 업무용 경량 언어모델","cat":"AI"},{"abbr":"OWASP","full":"Open Worldwide Application Security Project","ko":"오픈 웹·앱 보안 프로젝트 (구 Open Web Application Security Project)","cat":"보안"},{"abbr":"BOM","full":"Bill of Materials","ko":"자재명세서","cat":"보안"},{"abbr":"SBOM","full":"Software Bill of Materials","ko":"소프트웨어 자재명세서 — SW 구성요소·버전·라이선스 목록","cat":"보안"},{"abbr":"SPDX","full":"Software Package Data Exchange","ko":"SW 패키지 데이터 교환 형식 (SBOM 표준, ISO/IEC 5962)","cat":"보안"},{"abbr":"CycloneDX","full":"CycloneDX","ko":"OWASP의 SBOM 표준 형식 (약어 아님)","cat":"보안"},{"abbr":"SWID","full":"Software Identification Tag","ko":"SW 식별 태그 (ISO/IEC 19770-2)","cat":"보안"},{"abbr":"SCA","full":"Software Composition Analysis","ko":"SW 구성 분석 — 오픈소스 취약점·라이선스 점검","cat":"보안"},{"abbr":"CVE","full":"Common Vulnerabilities and Exposures","ko":"공통 취약점 식별 번호","cat":"보안"},{"abbr":"CWE","full":"Common Weakness Enumeration","ko":"공통 약점 목록","cat":"보안"},{"abbr":"KEV","full":"Known Exploited Vulnerabilities","ko":"실제 악용된 취약점 목록 (CISA)","cat":"보안"},{"abbr":"NVD","full":"National Vulnerability Database","ko":"미국 국가 취약점 DB","cat":"보안"},{"abbr":"CVD","full":"Coordinated Vulnerability Disclosure","ko":"조정된 취약점 공개","cat":"보안"},{"abbr":"VDP","full":"Vulnerability Disclosure Program","ko":"취약점 공개 프로그램","cat":"보안"},{"abbr":"OAuth","full":"Open Authorization","ko":"개방형 인가 표준","cat":"보안"},{"abbr":"OIDC","full":"OpenID Connect","ko":"OAuth 기반 인증 표준","cat":"보안"},{"abbr":"PKCE","full":"Proof Key for Code Exchange","ko":"인가 코드 가로채기 방지 확장","cat":"보안"},{"abbr":"IdP","full":"Identity Provider","ko":"신원 제공자","cat":"보안"},{"abbr":"RS","full":"Resource Server","ko":"자원 서버 (OAuth) · 회귀 테스트 두음에서는 Ripple Effect·Side Effect","cat":"보안"},{"abbr":"JIT","full":"Just-In-Time","ko":"필요한 순간에만 (JIT 권한: 작업 동안만 일시 부여)","cat":"보안"},{"abbr":"RBAC","full":"Role-Based Access Control","ko":"역할 기반 접근통제","cat":"보안"},{"abbr":"ABAC","full":"Attribute-Based Access Control","ko":"속성 기반 접근통제","cat":"보안"},{"abbr":"IAM","full":"Identity and Access Management","ko":"신원·접근 관리","cat":"보안"},{"abbr":"MFA","full":"Multi-Factor Authentication","ko":"다중 요소 인증","cat":"보안"},{"abbr":"ID","full":"Identifier","ko":"식별자 (아이디)","cat":"보안"},{"abbr":"PW","full":"Password","ko":"비밀번호","cat":"보안"},{"abbr":"TLS","full":"Transport Layer Security","ko":"전송 계층 보안","cat":"보안"},{"abbr":"PKI","full":"Public Key Infrastructure","ko":"공개키 기반구조","cat":"보안"},{"abbr":"PQC","full":"Post-Quantum Cryptography","ko":"양자내성암호","cat":"보안"},{"abbr":"QKD","full":"Quantum Key Distribution","ko":"양자 키 분배","cat":"보안"},{"abbr":"ZT","full":"Zero Trust","ko":"제로트러스트 — 항상 검증, 최소 권한","cat":"보안"},{"abbr":"PDP","full":"Policy Decision Point","ko":"정책 결정 지점","cat":"보안"},{"abbr":"PEP","full":"Policy Enforcement Point","ko":"정책 집행 지점","cat":"보안"},{"abbr":"PE","full":"Policy Engine","ko":"정책 엔진 — 접근 허용 여부 판단","cat":"보안"},{"abbr":"PA","full":"Policy Administrator","ko":"정책 관리자 — 세션 허용·토큰 발급·회수","cat":"보안"},{"abbr":"SDP","full":"Software Defined Perimeter","ko":"소프트웨어 정의 경계","cat":"보안"},{"abbr":"UEBA","full":"User and Entity Behavior Analytics","ko":"사용자·개체 행위 분석","cat":"보안"},{"abbr":"SIEM","full":"Security Information and Event Management","ko":"보안 정보·이벤트 관리","cat":"보안"},{"abbr":"SOAR","full":"Security Orchestration, Automation and Response","ko":"보안 오케스트레이션·자동 대응","cat":"보안"},{"abbr":"ITDR","full":"Identity Threat Detection and Response","ko":"신원 위협 탐지·대응","cat":"보안"},{"abbr":"TTPs","full":"Tactics, Techniques and Procedures","ko":"전술·기법·절차 — 공격자 행동 패턴","cat":"보안"},{"abbr":"ATT&CK","full":"Adversarial Tactics, Techniques, and Common Knowledge","ko":"MITRE 공격 전술·기법 지식베이스","cat":"보안"},{"abbr":"ATLAS","full":"Adversarial Threat Landscape for Artificial-Intelligence Systems","ko":"MITRE AI 공격 지식베이스","cat":"보안"},{"abbr":"MITRE","full":"MITRE Corporation","ko":"미국 비영리 연구기관 (약어 아님)","cat":"보안"},{"abbr":"RoE","full":"Rules of Engagement","ko":"교전 규칙 — 레드팀 수행 범위·규칙","cat":"보안"},{"abbr":"RCE","full":"Remote Code Execution","ko":"원격 코드 실행","cat":"보안"},{"abbr":"XSS","full":"Cross-Site Scripting","ko":"교차 사이트 스크립팅","cat":"보안"},{"abbr":"DoS","full":"Denial of Service","ko":"서비스 거부 공격","cat":"보안"},{"abbr":"RaaS","full":"Ransomware as a Service","ko":"서비스형 랜섬웨어","cat":"보안"},{"abbr":"IoA","full":"Indicators of Attack","ko":"공격 지표","cat":"보안"},{"abbr":"PII","full":"Personally Identifiable Information","ko":"개인 식별 정보","cat":"보안"},{"abbr":"PET","full":"Privacy Enhancing Technologies","ko":"개인정보 보호 강화 기술","cat":"보안"},{"abbr":"PbD","full":"Privacy by Design","ko":"설계 단계부터 개인정보 보호","cat":"보안"},{"abbr":"PIMS","full":"Privacy Information Management System","ko":"개인정보 경영시스템 (ISO/IEC 27701)","cat":"보안"},{"abbr":"ISMS","full":"Information Security Management System","ko":"정보보호 관리체계","cat":"보안"},{"abbr":"ISMS-P","full":"ISMS - Personal information","ko":"정보보호 및 개인정보보호 관리체계 인증 (국내)","cat":"보안"},{"abbr":"CC","full":"Common Criteria","ko":"공통평가기준 — 보안 제품 인증 (ISO/IEC 15408)","cat":"보안"},{"abbr":"N2SF","full":"National Network Security Framework","ko":"국가 망 보안체계 — 기밀(C)·민감(S)·공개(O) 등급","cat":"보안"},{"abbr":"OCSF","full":"Open Cybersecurity Schema Framework","ko":"개방형 사이버보안 스키마 — 보안 이벤트 공통 형식","cat":"보안"},{"abbr":"BPFdoor","full":"BPF + backdoor","ko":"BPF(Berkeley Packet Filter)를 악용한 리눅스 백도어 (2025 통신사 침해)","cat":"보안"},{"abbr":"CSA","full":"Cloud Security Alliance","ko":"클라우드 보안 연합","cat":"보안"},{"abbr":"FW","full":"Framework","ko":"프레임워크","cat":"보안"},{"abbr":"NCCoE","full":"National Cybersecurity Center of Excellence","ko":"NIST 국가 사이버보안 우수센터","cat":"보안"},{"abbr":"ESM","full":"Enterprise Security Management","ko":"통합 보안 관리","cat":"보안"},{"abbr":"SSL","full":"Secure Sockets Layer","ko":"보안 소켓 계층 (TLS의 전신)","cat":"보안"},{"abbr":"APT","full":"Advanced Persistent Threat","ko":"지능형 지속 위협","cat":"보안"},{"abbr":"CTEM","full":"Continuous Threat Exposure Management","ko":"지속적 위협 노출 관리 (가트너)","cat":"보안"},{"abbr":"ISO","full":"International Organization for Standardization","ko":"국제표준화기구","cat":"표준·기관"},{"abbr":"IEC","full":"International Electrotechnical Commission","ko":"국제전기기술위원회","cat":"표준·기관"},{"abbr":"IEEE","full":"Institute of Electrical and Electronics Engineers","ko":"전기전자공학자협회","cat":"표준·기관"},{"abbr":"ANSI","full":"American National Standards Institute","ko":"미국 국가표준협회","cat":"표준·기관"},{"abbr":"NIST","full":"National Institute of Standards and Technology","ko":"미국 국립표준기술연구소","cat":"표준·기관"},{"abbr":"IR","full":"Interagency / Internal Report","ko":"NIST 보고서 (NIST IR)","cat":"표준·기관"},{"abbr":"CAISI","full":"Center for AI Standards and Innovation","ko":"NIST AI 표준·혁신 센터","cat":"표준·기관"},{"abbr":"NTIA","full":"National Telecommunications and Information Administration","ko":"미국 통신정보관리청","cat":"표준·기관"},{"abbr":"IETF","full":"Internet Engineering Task Force","ko":"인터넷 표준화 기구","cat":"표준·기관"},{"abbr":"RFC","full":"Request for Comments","ko":"IETF 인터넷 표준 문서","cat":"표준·기관"},{"abbr":"W3C","full":"World Wide Web Consortium","ko":"웹 표준화 기구","cat":"표준·기관"},{"abbr":"PAS","full":"Publicly Available Specification","ko":"공개 사양 (ISO/PAS)","cat":"표준·기관"},{"abbr":"FDIS","full":"Final Draft International Standard","ko":"국제표준 최종안","cat":"표준·기관"},{"abbr":"SOTIF","full":"Safety Of The Intended Functionality","ko":"의도된 기능의 안전 (ISO 21448)","cat":"표준·기관"},{"abbr":"KS","full":"Korean Industrial Standards","ko":"한국산업표준","cat":"표준·기관"},{"abbr":"TTA","full":"Telecommunications Technology Association","ko":"한국정보통신기술협회","cat":"표준·기관"},{"abbr":"NIA","full":"National Information Society Agency","ko":"한국지능정보사회진흥원","cat":"표준·기관"},{"abbr":"KISA","full":"Korea Internet & Security Agency","ko":"한국인터넷진흥원","cat":"표준·기관"},{"abbr":"KOSA","full":"Korea Software Industry Association","ko":"한국소프트웨어산업협회","cat":"표준·기관"},{"abbr":"ETRI","full":"Electronics and Telecommunications Research Institute","ko":"한국전자통신연구원","cat":"표준·기관"},{"abbr":"IITP","full":"Institute of Information & Communications Technology Planning & Evaluation","ko":"정보통신기획평가원","cat":"표준·기관"},{"abbr":"KDI","full":"Korea Development Institute","ko":"한국개발연구원","cat":"표준·기관"},{"abbr":"KPC","full":"Korea Productivity Center","ko":"한국생산성본부","cat":"표준·기관"},{"abbr":"ETSI","full":"European Telecommunications Standards Institute","ko":"유럽전기통신표준협회","cat":"표준·기관"},{"abbr":"FCC","full":"Federal Communications Commission","ko":"미국 연방통신위원회","cat":"표준·기관"},{"abbr":"ComSoc","full":"IEEE Communications Society","ko":"IEEE 통신학회","cat":"표준·기관"},{"abbr":"EU","full":"European Union","ko":"유럽연합","cat":"표준·기관"},{"abbr":"ITPE","full":"Information Technology Professional Engineer","ko":"정보기술 기술사 (학원 ITPE)","cat":"표준·기관"},{"abbr":"PDCA","full":"Plan-Do-Check-Act","ko":"계획·실행·점검·조치 — 지속 개선 사이클","cat":"기타"},{"abbr":"LLM01 (2025)","full":"Prompt Injection","ko":"프롬프트 인젝션 — OWASP LLM Top 10 2025판","cat":"보안"},{"abbr":"LLM02 (2025)","full":"Sensitive Information Disclosure","ko":"민감정보 노출 — OWASP LLM Top 10 2025판","cat":"보안"},{"abbr":"LLM03 (2025)","full":"Supply Chain","ko":"공급망 취약점 — OWASP LLM Top 10 2025판","cat":"보안"},{"abbr":"LLM04 (2025)","full":"Data and Model Poisoning","ko":"데이터·모델 오염 — OWASP LLM Top 10 2025판","cat":"보안"},{"abbr":"LLM05 (2025)","full":"Improper Output Handling","ko":"부적절한 출력 처리 — OWASP LLM Top 10 2025판","cat":"보안"},{"abbr":"LLM06 (2025)","full":"Excessive Agency","ko":"과도한 대리권(권한·기능·자율성) — OWASP LLM Top 10 2025판","cat":"보안"},{"abbr":"LLM07 (2025)","full":"System Prompt Leakage","ko":"시스템 프롬프트 유출 — OWASP LLM Top 10 2025판","cat":"보안"},{"abbr":"LLM08 (2025)","full":"Vector and Embedding Weaknesses","ko":"벡터·임베딩 취약점 — OWASP LLM Top 10 2025판","cat":"보안"},{"abbr":"LLM09 (2025)","full":"Misinformation","ko":"잘못된 정보(환각) — OWASP LLM Top 10 2025판","cat":"보안"},{"abbr":"LLM10 (2025)","full":"Unbounded Consumption","ko":"무제한 자원 소비 — OWASP LLM Top 10 2025판","cat":"보안"},{"abbr":"LLM01 (2026)","full":"Prompt Injection","ko":"프롬프트 인젝션 — OWASP LLM Top 10 2026판","cat":"보안"},{"abbr":"LLM02 (2026)","full":"Sensitive Information Disclosure","ko":"민감정보 노출 — OWASP LLM Top 10 2026판","cat":"보안"},{"abbr":"LLM03 (2026)","full":"Excessive Agency","ko":"과도한 대리권 — OWASP LLM Top 10 2026판","cat":"보안"},{"abbr":"LLM04 (2026)","full":"Supply Chain","ko":"공급망 취약점 — OWASP LLM Top 10 2026판","cat":"보안"},{"abbr":"LLM05 (2026)","full":"Data and Model Poisoning","ko":"데이터·모델 오염 — OWASP LLM Top 10 2026판","cat":"보안"},{"abbr":"LLM06 (2026)","full":"Unbounded Consumption","ko":"무제한 자원 소비 — OWASP LLM Top 10 2026판","cat":"보안"},{"abbr":"LLM07 (2026)","full":"Misinformation","ko":"잘못된 정보 — OWASP LLM Top 10 2026판","cat":"보안"},{"abbr":"LLM08 (2026)","full":"Hidden Context Exposure","ko":"숨겨진 컨텍스트 노출 — OWASP LLM Top 10 2026판","cat":"보안"},{"abbr":"LLM09 (2026)","full":"Vector and Embedding Weaknesses","ko":"벡터·임베딩 취약점 — OWASP LLM Top 10 2026판","cat":"보안"},{"abbr":"LLM10 (2026)","full":"Improper Output Handling","ko":"부적절한 출력 처리 — OWASP LLM Top 10 2026판","cat":"보안"},{"abbr":"ASI01","full":"Agent Goal Hijack","ko":"에이전트 목표 탈취 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)","cat":"보안"},{"abbr":"ASI02","full":"Tool Misuse and Exploitation","ko":"도구 오용·악용 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)","cat":"보안"},{"abbr":"ASI03","full":"Identity and Privilege Abuse","ko":"신원·권한 남용 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)","cat":"보안"},{"abbr":"ASI04","full":"Agentic Supply Chain Compromise","ko":"에이전트 공급망 침해 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)","cat":"보안"},{"abbr":"ASI05","full":"Unexpected Code Execution (RCE)","ko":"예상치 못한 코드 실행 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)","cat":"보안"},{"abbr":"ASI06","full":"Memory and Context Poisoning","ko":"메모리·컨텍스트 오염 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)","cat":"보안"},{"abbr":"ASI07","full":"Insecure Inter-Agent Communication","ko":"안전하지 않은 에이전트 간 통신 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)","cat":"보안"},{"abbr":"ASI08","full":"Cascading Failures","ko":"연쇄 실패 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)","cat":"보안"},{"abbr":"ASI09","full":"Human-Agent Trust Exploitation","ko":"사람-에이전트 신뢰 악용 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)","cat":"보안"},{"abbr":"ASI10","full":"Rogue Agents","ko":"통제 이탈 에이전트 — OWASP Agentic Top 10 (ASI = Agentic Security Initiative)","cat":"보안"}],"dueum":[{"dueum":"인조기프","topic":"ITSM","items":["인력","조직","기술","프로세스"],"raw":"인력·조직·기술·프로세스","cat":"IT경영","src":"엑셀 V7.5"},{"dueum":"업책서","topic":"SoW","items":["업무범위","책임범위","서비스 프로세스"],"raw":"업무범위·책임범위·서비스 프로세스","cat":"IT경영","src":"서브노트 V10.12"},{"dueum":"기소카메오메보","topic":"SLA","items":["기본계약서","SoW","서비스 카탈로그","Metrics","Objectives","Measurement Criteria","보고(","보상체계)"],"raw":"기본계약서·SoW·서비스 카탈로그·Metrics·Objectives·Measurement Criteria·보고(·보상체계)","cat":"IT경영","src":"엑셀 V7.5"},{"dueum":"카스에오플로리엔","topic":"SLM","items":["서비스 카탈로그","SLA","OLA","Service Quality Plan","Service Report","SLM 엔진"],"raw":"서비스 카탈로그·SLA·OLA·Service Quality Plan·Service Report·SLM 엔진","cat":"IT경영","src":"엑셀 V7.5"},{"dueum":"AS 분데특신의","topic":"Data Mining","items":["Association(연관)","Sequence(순차)","분류","데이터 군집화","특성화","신경망","의사결정트리"],"raw":"Association(연관)·Sequence(순차)·분류·데이터 군집화·특성화·신경망·의사결정트리","cat":"IT경영","src":"엑셀 V7.5 · 풀이: ITPE 12 · 149기 1-14 답안"},{"dueum":"계분전설모유 유적절품","topic":"BCM/BCP","items":["프로젝트 계획","업무영향분석 및 위험평가","전략 수립","BCP 설계","개발","모의훈련","유지관리","검사 측정: 유효성","적합성","적절성","품질"],"raw":"프로젝트 계획·업무영향분석 및 위험평가·전략 수립·BCP 설계·개발·모의훈련·유지관리 / 검사 측정: 유효성·적합성·적절성·품질","cat":"IT경영","src":"엑셀 V7.5 · 풀이: ITPE 78 원문"},{"dueum":"미핫웜콜 상공외독 분재시운","topic":"DRS","items":["Mirror","Hot","Warm","Cold","상호계약형","공동계약형","외주위탁형","독립구축형","업무영향분석","재해복구 전략 수립","시스템 구축 및 복구계획 수립","운영 및 모의훈련"],"raw":"Mirror·Hot·Warm·Cold / 상호계약형·공동계약형·외주위탁형·독립구축형 / 업무영향분석·재해복구 전략 수립·시스템 구축 및 복구계획 수립·운영 및 모의훈련","cat":"IT경영","src":"엑셀 V7.5 · 풀이: 엑셀 V7.5 원문"},{"dueum":"정파조가 거실S 지도 지속 개수계획약설","topic":"ITIL 4.0","items":["정보","기술","파트너","공급자","조직","사람","가치흐름","프로세스 (4차원)","거버넌스","실행","서비스 가치 사슬(S)","지도원칙","지속적 개선 (SVS)","개선","수행","지원","계획","획득","구축","약속된 참여","설계","전환 (SVC)"],"raw":"정보·기술·파트너·공급자·조직·사람·가치흐름·프로세스 (4차원) / 거버넌스·실행·서비스 가치 사슬(S)·지도원칙·지속적 개선 (SVS) / 개선·수행·지원·계획·획득·구축·약속된 참여·설계·전환 (SVC)","cat":"IT경영","src":"엑셀 V7.5 · 풀이: ITPE 72 · 149기 1-12·1-20 답안"},{"dueum":"환현정목통","topic":"ISP 절차","items":["환경분석→현황분석→정보화전략→목표모델→통합이행계획"],"raw":"환경분석→현황분석→정보화전략→목표모델→통합이행계획","cat":"IT경영","src":"엑셀 V7.5"},{"dueum":"착수요정이","topic":"ISMP","items":["프로젝트 착수","방향성 수립","요건 분석","요건 정의","이행방안 수립"],"raw":"프로젝트 착수·방향성 수립·요건 분석·요건 정의·이행방안 수립","cat":"IT경영","src":"엑셀 V7.5 · 풀이: ITPE 3 · 149기 1-19 답안"},{"dueum":"조프리 / 전가위자성","topic":"IT-Governance","items":["조직구조","프로세스","리더십","전략적 연계","가치 제공","위험관리","자원관리","성과측정"],"raw":"조직구조·프로세스·리더십 / 전략적 연계·가치 제공·위험관리·자원관리·성과측정","cat":"IT경영","src":"엑셀 V7.5 · 풀이: ITPE 83 원문"},{"dueum":"온에 근정공 경평이","topic":"ESG 경영","items":["온실가스","폐기물 배출","에너지 사용 (E)","근로조건","정보보안","공정 (S)","경영진의 역할","ESG 평가 체계","이해관계자 참여 (G)"],"raw":"온실가스·폐기물 배출·에너지 사용 (E) / 근로조건·정보보안·공정 (S) / 경영진의 역할·ESG 평가 체계·이해관계자 참여 (G)","cat":"IT경영","src":"엑셀 V7.5 · 풀이: ITPE 86 원문"},{"dueum":"사실규","topic":"ISP 사업계획 타당성","items":["사업타당성","실현가능성","규모적정성"],"raw":"사업타당성·실현가능성·규모적정성","cat":"IT경영","src":"ISP 9판"},{"dueum":"필시중 / 사기클","topic":"소규모 정보시스템 사업계획","items":["필요성","시급성","중복성 (사업 타당성)","사업추진여건","기술적 적성","클라우드 우선 적용 (실현 가능성)"],"raw":"필요성·시급성·중복성 (사업 타당성) / 사업추진여건·기술적 적성·클라우드 우선 적용 (실현 가능성)","cat":"IT경영","src":"ISP 9판 · 풀이: ITPE 3 원문 (\"기술적 적성\"은 원문 표기)"},{"dueum":"자자오데휴","topic":"AI 기반 BPR","items":["업무 자동화","자원 최적화","오류 최소화","데이터 기반 의사결정","Human-AI 협업"],"raw":"업무 자동화·자원 최적화·오류 최소화·데이터 기반 의사결정·Human-AI 협업","cat":"IT경영","src":"엑셀 V7.5"},{"dueum":"준이결","topic":"AI 레드티밍 절차","items":["준비→이행→결과 보고"],"raw":"준비→이행→결과 보고","cat":"IT경영","src":"보안 V8.5"},{"dueum":"위지통","topic":"LEO 핵심기술","items":["위성통신탑재체","지상국통신장비","통신표준기술"],"raw":"위성통신탑재체·지상국통신장비·통신표준기술","cat":"네트워크·통신","src":"김병권 서브노트 v1.1"},{"dueum":"지신향레컨","topic":"연관규칙 지표 (137-1-13)","items":["지지도","신뢰도","향상도","레버리지","컨빅션"],"raw":"지지도·신뢰도·향상도·레버리지·컨빅션","cat":"DB·데이터","src":"137회 해설집"},{"dueum":"클필이","topic":"클러스터링·필터링·이상치 탐지 (139-4-1)","items":["Clustering","Filtering","이상치(Outlier) 탐지"],"raw":"Clustering·Filtering·이상치(Outlier) 탐지","cat":"DB·데이터","src":"139회 해설집"},{"dueum":"초마서슬커","topic":"SVM (130-2)","items":["초평면","마진","서포트벡터","슬랙","커널트릭"],"raw":"초평면·마진·서포트벡터·슬랙·커널트릭","cat":"DB·데이터","src":"130회 해설집"},{"dueum":"케초할갱반","topic":"K-means 절차","items":["K 설정","초기 중심","할당","중심 갱신","반복"],"raw":"K 설정·초기 중심·할당·중심 갱신·반복","cat":"DB·데이터","src":"표준 절차"},{"dueum":"엡민 코보노","topic":"DBSCAN","items":["Eps","MinPts","Core","Border","Noise"],"raw":"Eps·MinPts / Core·Border·Noise","cat":"DB·데이터","src":"표준 구성"},{"dueum":"지엔분","topic":"의사결정나무 불순도 (130-3)","items":["지니 지수","엔트로피","분산(MAE, 회귀)"],"raw":"지니 지수·엔트로피·분산(MAE, 회귀)","cat":"DB·데이터","src":"130회 해설집"},{"dueum":"업데데모평전","topic":"CRISP-DM","items":["업무 이해","데이터 이해","데이터 준비","모델링","평가","전개"],"raw":"업무 이해·데이터 이해·데이터 준비·모델링·평가·전개","cat":"DB·데이터","src":"표준 절차"},{"dueum":"SEMMA","topic":"SEMMA","items":["Sample","Explore","Modify","Model","Assess"],"raw":"Sample·Explore·Modify·Model·Assess","cat":"DB·데이터","src":"표준 절차"},{"dueum":"배부스보","topic":"앙상블","items":["배깅","부스팅","스태킹","보팅"],"raw":"배깅·부스팅·스태킹·보팅","cat":"DB·데이터","src":"표준 구성"},{"dueum":"V결상변주","topic":"회귀모형 진단 (135-2-3)","items":["VIF","결정계수","상관관계","변수제거","주성분 분석"],"raw":"VIF·결정계수·상관관계·변수제거·주성분 분석","cat":"DB·데이터","src":"135회 해설집"},{"dueum":"사우사","topic":"베이즈 정리 (138-1-4)","items":["사전확률","우도","사후확률"],"raw":"사전확률·우도·사후확률","cat":"DB·데이터","src":"138회 해설집"},{"dueum":"시분관비공","topic":"빅데이터 시각화 (135-4-4)","items":["시간","분포","관계","비교","공간"],"raw":"시간·분포·관계·비교·공간","cat":"DB·데이터","src":"135회 해설집"},{"dueum":"엑낮메신거","topic":"데이터 늪 (137-1-10)","items":["엑세스 불가","낮은 품질","메타데이터 부재","신뢰성 저하","거버넌스 부재"],"raw":"엑세스 불가·낮은 품질·메타데이터 부재·신뢰성 저하·거버넌스 부재","cat":"DB·데이터","src":"137회 해설집"},{"dueum":"데법시사 / 수원시","topic":"데이터 가치평가 요인 / 방법 (140-4-1)","items":["데이터 특성","법적 특성","시장성","사업성","수익","원가","시장 접근법"],"raw":"데이터 특성·법적 특성·시장성·사업성 / 수익·원가·시장 접근법","cat":"DB·데이터","src":"140회 해설집"},{"dueum":"정재신연무","topic":"디지털 포렌식 원칙 (140-1-12)","items":["정당성","재현","신속성","연계 보관성","무결성"],"raw":"정당성·재현·신속성·연계 보관성·무결성","cat":"보안","src":"140회 해설집"},{"dueum":"준수보이분보","topic":"디지털 포렌식 절차","items":["수사 준비","증거 수집","보관","이송","증거 분석","보고서 제출"],"raw":"수사 준비·증거 수집·보관·이송·증거 분석·보고서 제출","cat":"보안","src":"140회 해설집"},{"dueum":"시응파","topic":"포렌식 아티팩트 (137-1-2)","items":["시스템","응용 프로그램","파일"],"raw":"시스템·응용 프로그램·파일","cat":"보안","src":"137회 해설집"},{"dueum":"삭통일","topic":"가명처리 기법 (139-1-13)","items":["삭제(삭제","마스킹)","통계(총계)","일반화(랜덤","제어","일반 라운딩","범주화)"],"raw":"삭제(삭제·마스킹)·통계(총계)·일반화(랜덤·제어·일반 라운딩·범주화)","cat":"보안","src":"139회 해설집"},{"dueum":"레솔키","topic":"해시 공격·대응 (138-4-2)","items":["레인보우 테이블 ↔ 솔트","키 스트레칭"],"raw":"레인보우 테이블 ↔ 솔트·키 스트레칭","cat":"보안","src":"138회 해설집"},{"dueum":"전기절","topic":"TTPs (138-1-10)","items":["전략(Tactics)","기법(Techniques)","절차(Procedures)"],"raw":"전략(Tactics)·기법(Techniques)·절차(Procedures)","cat":"보안","src":"138회 해설집"},{"dueum":"거위통","topic":"정보보호 컴플라이언스 (140-4-5)","items":["거버넌스","위험","통제(GRC)"],"raw":"거버넌스·위험·통제(GRC)","cat":"보안","src":"140회 해설집"},{"dueum":"기권자","topic":"과도한 대리권 3요소","items":["기능","권한","자율성"],"raw":"기능·권한·자율성","cat":"보안","src":"답안지 A06"},{"dueum":"입대검실출","topic":"AI 가드레일 레일","items":["입력","대화","검색","실행","출력 레일"],"raw":"입력·대화·검색·실행·출력 레일","cat":"보안","src":"답안지 A07"},{"dueum":"개상인 배장보성","topic":"운영·유지보수 감리 점검분야 (137-3-2)","items":["개발SW","상용SW","인프라","배포관리","장애관리","보안","성능"],"raw":"개발SW·상용SW·인프라·배포관리·장애관리·보안·성능","cat":"프로젝트관리","src":"137회 해설집"},{"dueum":"계식정정대실감","topic":"프로젝트 위험관리 (138-1-2)","items":["계획수립","위험 식별","정성 분석","정량 분석","대응 계획","실행","감시"],"raw":"계획수립·위험 식별·정성 분석·정량 분석·대응 계획·실행·감시","cat":"프로젝트관리","src":"138회 해설집"},{"dueum":"회완전수","topic":"부정적 위험 대응 (139-1-4)","items":["회피","완화","전가","수용"],"raw":"회피·완화·전가·수용","cat":"프로젝트관리","src":"139회 해설집"},{"dueum":"철완타강문","topic":"갈등관리 기법 (136-3-1)","items":["철회(Withdrawal)","완화(Smoothing)","타협(Compromising)","강요(Forcing)","문제해결"],"raw":"철회(Withdrawal)·완화(Smoothing)·타협(Compromising)·강요(Forcing)·문제해결","cat":"프로젝트관리","src":"136회 해설집"},{"dueum":"형격규성해","topic":"터크만 5단계","items":["형성","격동","규범","성과","해산"],"raw":"형성·격동·규범·성과·해산","cat":"프로젝트관리","src":"표준 모델"},{"dueum":"수조생유","topic":"SCM (136-2-1)","items":["수요예측","조달","생산","유통"],"raw":"수요예측·조달·생산·유통","cat":"프로젝트관리","src":"136회 해설집"},{"dueum":"중분초대컨","topic":"엣지 vs 클라우드 (139-1-6)","items":["중앙집중처리","분산처리","초저지연","대역폭 최적화","컴퓨팅 컨티뉴엄"],"raw":"중앙집중처리·분산처리·초저지연·대역폭 최적화·컴퓨팅 컨티뉴엄","cat":"프로젝트관리","src":"139회 해설집"},{"dueum":"인옵오","topic":"FinOps 단계","items":["Inform","Optimize","Operate"],"raw":"Inform·Optimize·Operate","cat":"프로젝트관리","src":"답안지 A12"},{"dueum":"기성호상 신보유 (+유안)","topic":"ISO/IEC 25010 (140-1-5)","items":["기능 적합성","성능 효율성","호환성","상호작용 역량","신뢰성","보안성","유지보수성 (+유연성","안전성)"],"raw":"기능 적합성·성능 효율성·호환성·상호작용 역량·신뢰성·보안성·유지보수성 (+유연성·안전성)","cat":"SW공학","src":"140회 해설집 (+2023판)"},{"dueum":"기신유변재확","topic":"리팩토링 품질 목표 (139-3-3)","items":["기능 적합성","신뢰성","유지보수성","변경 용이성","재사용성","확장성"],"raw":"기능 적합성·신뢰성·유지보수성·변경 용이성·재사용성·확장성","cat":"SW공학","src":"139회 해설집"},{"dueum":"유활상 시통상타","topic":"UML 행위 다이어그램 (137-4-4)","items":["유스케이스","활동","상태머신","시퀀스","통신","상호작용 개요","타이밍"],"raw":"유스케이스·활동·상태머신 / 시퀀스·통신·상호작용 개요·타이밍","cat":"SW공학","src":"표준 (키워드 칸 깨짐)"},{"dueum":"CI CD 프협생민장","topic":"DevOps (136-1-6)","items":["CI","CD","프로비저닝","협업","생산성","민첩성","장애추적"],"raw":"CI·CD·프로비저닝·협업·생산성·민첩성·장애추적","cat":"SW공학","src":"136회 해설집"},{"dueum":"롤블카","topic":"무중단 배포 (139-1-5)","items":["롤링","블루-그린","카나리"],"raw":"롤링·블루-그린·카나리","cat":"SW공학","src":"139회 해설집"},{"dueum":"표조테보","topic":"ATAM 단계","items":["표현","조사 및 분석","테스팅","보고"],"raw":"표현·조사 및 분석·테스팅·보고","cat":"SW공학","src":"표준 절차"},{"dueum":"식통감기","topic":"형상관리 절차 (140-4-3)","items":["식별","통제","감사","기록"],"raw":"식별·통제·감사·기록","cat":"SW공학","src":"표준 절차"},{"dueum":"아설유우 연모설","topic":"RTM 항목 (135-1-3)","items":["ID","설명","유형","우선순위","연관 시스템","모듈","설계 참조"],"raw":"ID·설명·유형·우선순위·연관 시스템·모듈·설계 참조","cat":"SW공학","src":"135회 해설집"},{"dueum":"역재재","topic":"재공학 3R","items":["Reverse Engineering","Reengineering","Reuse"],"raw":"Reverse Engineering·Reengineering·Reuse","cat":"SW공학","src":"138회 해설집"},{"dueum":"설구평배관통","topic":"ADLC","items":["설계","구축","평가","배포","관측","통제"],"raw":"설계·구축·평가·배포·관측·통제","cat":"SW공학","src":"답안지 A10"},{"dueum":"모툴캐날메","topic":"AgBOM 구성","items":["Models","Tools","Capabilities","Knowledge","Memory"],"raw":"Models·Tools·Capabilities·Knowledge·Memory","cat":"SW공학","src":"답안지 A03"},{"dueum":"툴리프","topic":"MCP 프리미티브","items":["Tools","Resources","Prompts"],"raw":"Tools·Resources·Prompts","cat":"SW공학","src":"답안지 A09"},{"dueum":"도부이결다조","topic":"정규화 1~5NF","items":["도메인 원자값","부분함수종속","이행종속","결정자(BCNF)","다치종속","조인종속 제거"],"raw":"도메인 원자값·부분함수종속·이행종속·결정자(BCNF)·다치종속·조인종속 제거","cat":"DB·데이터","src":"표준"},{"dueum":"상과집튜즉지","topic":"릴레이션 무결성 제약 (135-4-2)","items":["상태","과도","집합","튜플","즉시","지연 제약"],"raw":"상태·과도·집합·튜플·즉시·지연 제약","cat":"DB·데이터","src":"135회 해설집"},{"dueum":"삭입수 / 캐리","topic":"참조 무결성 (138-1-9)","items":["삭제","입력","수정 규칙","Cascade","Restrict"],"raw":"삭제·입력·수정 규칙 / Cascade·Restrict","cat":"DB·데이터","src":"138회 해설집"},{"dueum":"위복병분장","topic":"분산 DB 투명성 (139-1-7)","items":["위치","복제","병행","분할","장애 투명성"],"raw":"위치·복제·병행·분할·장애 투명성","cat":"DB·데이터","src":"139회 해설집"},{"dueum":"언커리시 / 더논팬","topic":"격리수준 / 이상현상 (137-3-4)","items":["Read Uncommitted","Committed","Repeatable Read","Serializable","Dirty","Non-Repeatable","Phantom"],"raw":"Read Uncommitted·Committed·Repeatable Read·Serializable / Dirty·Non-Repeatable·Phantom","cat":"DB·데이터","src":"137회 해설집"},{"dueum":"코데힙스","topic":"메모리 4영역 (138-2-6)","items":["코드","데이터","힙","스택"],"raw":"코드·데이터·힙·스택","cat":"IT경영","src":"표준 (키워드 칸 깨짐)"},{"dueum":"뮤세모","topic":"동기화 기법 (139-4-2)","items":["뮤텍스","세마포어","모니터"],"raw":"뮤텍스·세마포어·모니터","cat":"IT경영","src":"139회 해설집"},{"dueum":"할배인교","topic":"가상메모리 관리 정책 (139-4-4)","items":["할당","배치","인출","교환"],"raw":"할당·배치·인출·교환","cat":"IT경영","src":"139회 해설집"},{"dueum":"수배공무","topic":"캐시 일관성 MESI (137-2-1)","items":["Modified(수정)","Exclusive(배타)","Shared(공유)","Invalid(무효)"],"raw":"Modified(수정)·Exclusive(배타)·Shared(공유)·Invalid(무효)","cat":"IT경영","src":"137회 해설집"},{"dueum":"파메공세","topic":"IPC 기법 (136-4-2)","items":["파이프","메시지큐","공유 메모리","세마포어"],"raw":"파이프·메시지큐·공유 메모리·세마포어","cat":"IT경영","src":"136회 해설집"},{"dueum":"참약컨스G","topic":"메모리 누수 해결 (136-3-6)","items":["참조 해제","약한 참조","컨텍스트 매니저","스마트 포인터","GC 수동 호출"],"raw":"참조 해제·약한 참조·컨텍스트 매니저·스마트 포인터·GC 수동 호출","cat":"IT경영","src":"136회 해설집"},{"dueum":"슬혼빠빠","topic":"TCP 혼잡 제어 (130-3)","items":["Slow Start","Congestion Avoidance","Fast Retransmit","Fast Recovery"],"raw":"Slow Start·Congestion Avoidance·Fast Retransmit·Fast Recovery","cat":"IT경영","src":"130회 해설집"},{"dueum":"정고선적","topic":"ARQ","items":["Stop&Wait(정지대기)","Go-Back-N","Selective Repeat","Adaptive"],"raw":"Stop&Wait(정지대기)·Go-Back-N·Selective Repeat·Adaptive","cat":"IT경영","src":"표준"},{"dueum":"아스컨엣","topic":"쿠버네티스 컨트롤 플레인 (137-4-3)","items":["API Server","Scheduler","Controller Manager","etcd"],"raw":"API Server·Scheduler·Controller Manager·etcd","cat":"IT경영","src":"137회 해설집"},{"dueum":"FBE","topic":"서버리스 (140-2-1)","items":["FaaS","BaaS","Event Router"],"raw":"FaaS·BaaS·Event Router","cat":"IT경영","src":"136·140회 해설집"},{"dueum":"착계실통종","topic":"프로세스 그룹 5","items":["착수","계획","실행","감시","통제","종료"],"raw":"착수·계획·실행·감시·통제·종료","cat":"프로젝트관리","src":"마인드맵_프로젝트관리_핵심16"},{"dueum":"통범일원품자의위조이","topic":"지식영역 10","items":["통합","범위","일정","원가","품질","자원","의사소통","위험","조달","이해관계자"],"raw":"통합·범위·일정·원가·품질·자원·의사소통·위험·조달·이해관계자","cat":"프로젝트관리","src":"마인드맵_프로젝트관리_핵심16"},{"dueum":"헌관작지작통종","topic":"통합관리","items":["헌장 개발","관리계획 수립","작업 지시","관리","지식 관리","작업 감시","통제","통합 변경통제","종료"],"raw":"헌장 개발·관리계획 수립·작업 지시·관리·지식 관리·작업 감시·통제·통합 변경통제·종료","cat":"프로젝트관리","src":"마인드맵_프로젝트관리_핵심16"},{"dueum":"계요정W확통","topic":"범위관리","items":["계획","요구사항 수집","범위 정의","WBS 작성","범위 확인","범위 통제"],"raw":"계획·요구사항 수집·범위 정의·WBS 작성·범위 확인·범위 통제","cat":"프로젝트관리","src":"마인드맵_프로젝트관리_핵심16"},{"dueum":"수분표의데프컨","topic":"요구사항 수집기법","items":["데이터 수집 (인터뷰","설문","브레인스토밍)","데이터 분석 (문서 분석)","데이터 표현 (마인드매핑","친화도)","의사결정 (다기준","투표)","대인관계 (명목집단","관찰","촉진)","프로토타입","컨텍스트 다이어그램"],"raw":"데이터 수집 (인터뷰·설문·브레인스토밍)·데이터 분석 (문서 분석)·데이터 표현 (마인드매핑·친화도)·의사결정 (다기준·투표)·대인관계 (명목집단·관찰·촉진)·프로토타입·컨텍스트 다이어그램","cat":"프로젝트관리","src":"마인드맵_프로젝트관리_핵심16"},{"dueum":"정명완일중검수추","topic":"SRS","items":["정확성","명확성","완전성","일관성","중요도 순위","검증 가능","수정 가능","추적 가능"],"raw":"정확성·명확성·완전성·일관성·중요도 순위·검증 가능·수정 가능·추적 가능","cat":"프로젝트관리","src":"마인드맵_프로젝트관리_핵심16"},{"dueum":"계정순기개통","topic":"일정관리","items":["계획","활동 정의","활동 순서","기간 산정","일정 개발","일정 통제"],"raw":"계획·활동 정의·활동 순서·기간 산정·일정 개발·일정 통제","cat":"프로젝트관리","src":"마인드맵_프로젝트관리_핵심16"},{"dueum":"측분예","topic":"EVM 획득가치","items":["측정 (PV","EV","AC)","분석 (편차","지수)","예측 (완료 시점","비용)"],"raw":"측정 (PV·EV·AC)·분석 (편차·지수)·예측 (완료 시점·비용)","cat":"프로젝트관리","src":"마인드맵_프로젝트관리_핵심16"},{"dueum":"계보통","topic":"품질관리","items":["품질 계획","품질 보증","품질 통제"],"raw":"품질 계획·품질 보증·품질 통제","cat":"프로젝트관리","src":"마인드맵_프로젝트관리_핵심16"},{"dueum":"에활공증수","topic":"위험 대응 · 긍정","items":["에스컬레이션","활용","공유","증대","수용"],"raw":"에스컬레이션·활용·공유·증대·수용","cat":"프로젝트관리","src":"마인드맵_프로젝트관리_핵심16"},{"dueum":"에회전완수","topic":"위험 대응 · 부정","items":["에스컬레이션","회피","전가","완화","수용"],"raw":"에스컬레이션·회피·전가·완화·수용","cat":"프로젝트관리","src":"마인드맵_프로젝트관리_핵심16"},{"dueum":"유대공이","topic":"공유경제 · 구성도","items":["유휴 자원 (등록","제공)","대여자 (대여 수익)","공유 플랫폼 (수수료)","이용자 (대여료","피드백)"],"raw":"유휴 자원 (등록·제공)·대여자 (대여 수익)·공유 플랫폼 (수수료)·이용자 (대여료·피드백)","cat":"IT경영","src":"답안_149기2주_1-21_공유경제"},{"dueum":"물컴센융","topic":"딥테크 · 핵심 분야","items":["물질","에너지 (나노","합성재료)","컴퓨팅","인지 (AI","양자","클라우드)","센싱","모션 (드론","가상현실)","융합 (바이오파운드리)"],"raw":"물질·에너지 (나노·합성재료)·컴퓨팅·인지 (AI·양자·클라우드)·센싱·모션 (드론·가상현실)·융합 (바이오파운드리)","cat":"IT경영","src":"답안_149기2주_1-10_딥테크"},{"dueum":"발순확","topic":"프로세스마이닝과DataMining비교 · 프로세스 마이닝","items":["발견","순응도 검사","확장"],"raw":"발견·순응도 검사·확장","cat":"IT경영","src":"답안_149기2주_1-13_프로세스마이닝과DataMining비교"},{"dueum":"선전변모평가","topic":"프로세스마이닝과DataMining비교 · Data Mining","items":["선택","전처리","변환","모델링","평가","가시화"],"raw":"선택·전처리·변환·모델링·평가·가시화","cat":"IT경영","src":"답안_149기2주_1-13_프로세스마이닝과DataMining비교"},{"dueum":"모병신자","topic":"디지털카르텔 · 메커니즘","items":["모니터링 (가격 감시","추적)","병행 (상호 데이터 송수신)","신호 (가격 변동 Signal)","자가학습 (AI 자가 판단)"],"raw":"모니터링 (가격 감시·추적)·병행 (상호 데이터 송수신)·신호 (가격 변동 Signal)·자가학습 (AI 자가 판단)","cat":"IT경영","src":"답안_149기2주_1-06_디지털카르텔"},{"dueum":"메허프오","topic":"디지털카르텔 · 유형","items":["Messenger (전달형)","Hub and Spoke (중앙형)","Predictable Agent (예측형)","Autonomous Machine (자율형)"],"raw":"Messenger (전달형)·Hub and Spoke (중앙형)·Predictable Agent (예측형)·Autonomous Machine (자율형)","cat":"IT경영","src":"답안_149기2주_1-06_디지털카르텔"},{"dueum":"캡추다정상","topic":"OOP 특징","items":["캡슐화","추상화","다형성","정보은닉","상속"],"raw":"캡슐화·추상화·다형성·정보은닉·상속","cat":"SW공학","src":"판서_프로젝트관리"},{"dueum":"EATMA","topic":"위협 대응 전략","items":["Escalate","Avoid","Transfer","Mitigate","Accept"],"raw":"Escalate·Avoid·Transfer·Mitigate·Accept","cat":"프로젝트관리","src":"판서_프로젝트관리"}],"concepts":[{"id":"it-226116f2","domain":"IT경영","imp":"상","group":"ITSM","topic":"ITSM (Information Technology Service Management)","keys":"인조기프 (암기법 500개) 작성할 것","def":"고객과의 SLA(Service Level Agreement) 수준에 맞는 품질 유지 위한 프로세스, 조직, 자원, 기술의 종합적 관리 위한…","exam":"관리 133-2","itpe":"75"},{"id":"it-17944486","domain":"IT경영","imp":"상","group":"ITSM","topic":"SLA(협약서)","keys":"기소카메오메보","def":"서비스 계약자와 서비스 업체간에 서비스 수준을 정한 협약서/계약서, 정량적 측정 지표로 산정","exam":"관리 139-2, 관리 130-3, 관리 123-4, 관리 102-3, 관리 101-4, 컴시응 99-4 외 1","itpe":"68"},{"id":"it-5c52e551","domain":"IT경영","imp":"상","group":"ITSM","topic":"SLM","keys":"카스(에)오 플로(리)엔","def":"서비스 수준 협약서에 대한 협약의 성과, 측정/평가 및 향후 개선 방안을 모색하기 위한 관리 체계","exam":"","itpe":"67"},{"id":"it-da11c1f5","domain":"IT경영","imp":"상","group":"(Data) Mining 총론","topic":"Data Mining","keys":"AS 분데특신의","def":"대량의 데이터에 고급 통계 분석과 모델링 기법을 적용하여 데이터 간의 패턴과 관계를 도출, 의사결정에 활용할 수 있는 의미 있는 정보를 발견…","exam":"관리 137-1, 관리 118-2, 관리 99-1, 관리 98-1, 컴시응 95-4","itpe":"12"},{"id":"it-b0bb6e38","domain":"IT경영","imp":"출제예상","group":"(Data) Mining 총론","topic":"CRISP-DM (Cross Industry Standard Process for Data Mining)","keys":"비데준 모평전","def":"","exam":"","itpe":""},{"id":"it-f927373f","domain":"IT경영","imp":"상","group":"(Data) Mining 총론","topic":"신경망분석","keys":"","def":"인간두뇌 세포를 모방한 개념으로 뉴런들의 상호작용하고 경험을 통해 배우는 생물학적 활동을 반복적인 학습과정으로 모형화하는 분석 기법","exam":"관리 133-3, 관리 102-3","itpe":"18"},{"id":"it-d45465b0","domain":"IT경영","imp":"출제예상","group":"(Data) Mining 총론","topic":"SEMMA","keys":"샘탐수모평","def":"","exam":"","itpe":""},{"id":"it-a40b7bb0","domain":"IT경영","imp":"상","group":"BCP/BCM","topic":"BCM (Business Continuity Management)/ 비즈니스 경영 관리","keys":"계분전설모유 유적절품","def":"기업이 위기상황에서도 핵심업무와 기능을 계획된 수준으로 지속할 수 있도록 전사적인 정책 및 절차를 수립하여 이행하는 관리시스템","exam":"관리 114-2, 컴시응 101-2, 관리 80-2","itpe":"78"},{"id":"it-754c78bd","domain":"IT경영","imp":"상","group":"BCP/BCM","topic":"DRS (Disaster Recovery System)","keys":"미핫웜콜 상공외독 분재시운","def":"정보시스템에 대한 비상 대비체계 유지와 각 업무 조직 별 비상사태에 대비한 복구계획 수립을 통한 업무 연속성을 유지할 수 있는 체제","exam":"관리 140-3, 관리 133-1, 컴시응 86-2, 컴시응 84-2","itpe":"1251"},{"id":"it-333f7867","domain":"IT경영","imp":"상","group":"ITIL 3.0, V4.0","topic":"ITIL 4.0","keys":"정파조가 거실S 지도 지속 개수계획약설","def":"","exam":"","itpe":""},{"id":"it-31ab523a","domain":"IT경영","imp":"상","group":"전략 계획","topic":"ISP (Information Strategy)","keys":"환현정목통 - 경법정 업정벤차이 수 개업정데보 이총효 사실규 필시중 사기","def":"","exam":"관리 138-2, 컴시응 132-2, 관리 131-2, 관리 130-1, 관리 123-2","itpe":"3"},{"id":"it-83524d39","domain":"IT경영","imp":"상","group":"전략 계획","topic":"ISMP (Information System Master Plan)","keys":"착수요정이","def":"","exam":"관리 138-2, 컴시응 132-2, 관리 131-2, 관리 130-1, 관리 123-2","itpe":"3"},{"id":"it-e632e0c0","domain":"IT경영","imp":"상","group":"IT-Governance","topic":"IT-Governance","keys":"","def":"기업의 전략과 목표에 부합되도록 IT와 관련된 자원와 프로세스를 통제 관리하는 체계","exam":"관리 134-2, 응용 81-1","itpe":"83"},{"id":"it-b5c0fef8","domain":"IT경영","imp":"상","group":"IT-Compliance","topic":"IT-Compliance","keys":"","def":"기업의 투명성 제고 및 리스크 통제를 위해 정부·기관의 법적 규제를 준수하고, 이를 IT 거버넌스 체계 내에서 시스템적으로 정비·이행하는 전…","exam":"관리 116-2","itpe":"87"},{"id":"it-fcb7d30a","domain":"IT경영","imp":"상","group":"디지털 컨버전스","topic":"AI + 금융","keys":"","def":"","exam":"","itpe":""},{"id":"it-4c0485a2","domain":"IT경영","imp":"출제예상","group":"디지털 컨버전스","topic":"서비타이제이션(Servitization)","keys":"","def":"","exam":"","itpe":""},{"id":"it-c1916edd","domain":"IT경영","imp":"출제예상","group":"디지털 컨버전스","topic":"빅블러(Big Blur)","keys":"","def":"","exam":"","itpe":""},{"id":"it-bfef43da","domain":"IT경영","imp":"출제예상","group":"디지털 컨버전스","topic":"디지털 디바이드(Digital Divide)","keys":"","def":"","exam":"","itpe":""},{"id":"it-a9aeb390","domain":"IT경영","imp":"출제예상","group":"디지털 컨버전스","topic":"디지털 리터러시(Digital Literacy)","keys":"","def":"","exam":"","itpe":""},{"id":"it-5c464f75","domain":"IT경영","imp":"출제예상","group":"디지털 컨버전스","topic":"디지털 포용(Digital Inclusion)","keys":"","def":"","exam":"","itpe":""},{"id":"it-d1c5aba0","domain":"IT경영","imp":"상","group":"플랫폼(유형)","topic":"오픈 플랫폼","keys":"","def":"오픈API로 제공하는 소프트웨어 플랫폼으로 서비스를 편리하게 개","exam":"","itpe":""},{"id":"it-7ce2037f","domain":"IT경영","imp":"출제예상","group":"CSR","topic":"ISO 42001","keys":"","def":"","exam":"컴시응 138-1, 관리 138-1","itpe":"137"},{"id":"it-a3beefff","domain":"IT경영","imp":"상","group":"CSR","topic":"ESG 경영","keys":"[개념] 환경(Environment), 사회(Social), 지배구조(G","def":"환경(Environment), 사회(Social), 지배구조(Governance)를 뜻하는 말로 기업경영에서 과거에는 재무적 성과만을 평가하…","exam":"관리 134-2, 관리 129-3, 관리 126-2","itpe":"86"},{"id":"it-5f8e8d5a","domain":"IT경영","imp":"상","group":"투자 평가 관리","topic":"(프로젝트) 경제성 평가 기법","keys":"","def":"","exam":"","itpe":""},{"id":"it-b9fe56a9","domain":"IT경영","imp":"출제예상","group":"Xtech / 핀테크(FinTech)","topic":"프롭테크","keys":"","def":"부동산(Property)와 기술(Technology)의 합성어로, 부동산 산업에 인공지능(AI), 빅데이터, 블록체인, 사물인터넷(IoT)…","exam":"","itpe":"1245"},{"id":"it-b624351c","domain":"IT경영","imp":"출제예상","group":"Xtech / 핀테크(FinTech)","topic":"밀리테크(MiliTch)","keys":"","def":"","exam":"","itpe":""},{"id":"it-a4170bcc","domain":"IT경영","imp":"출제예상","group":"Xtech / 핀테크(FinTech)","topic":"에이블테크(AbleTech)","keys":"","def":"","exam":"","itpe":""},{"id":"it-5577e6a7","domain":"IT경영","imp":"출제예상","group":"Xtech / 핀테크(FinTech)","topic":"딥테크(Deep Tech)","keys":"","def":"","exam":"","itpe":""},{"id":"it-01136a5b","domain":"IT경영","imp":"출제예상","group":"Xtech / 핀테크(FinTech)","topic":"기후테크(C-Tech)","keys":"","def":"","exam":"","itpe":""},{"id":"it-ce44d56d","domain":"IT경영","imp":"출제예상","group":"경제","topic":"공유경제(sharing economy)","keys":"","def":"특정 서비스의 수요자와 해당 서비스를 창출하는 유휴 자산을 보유한 공급자간 해당 유휴 자산을 이용한 시장 거래를 ICT 플랫폼이 중개하는 경제","exam":"","itpe":"111"},{"id":"it-54b4fda5","domain":"IT경영","imp":"출제예상","group":"경제","topic":"구독경제(subscription economy)","keys":"","def":"","exam":"","itpe":"118"},{"id":"it-61cdc2ee","domain":"IT경영","imp":"상","group":"경제","topic":"디지털 전환(DX)","keys":"","def":"","exam":"","itpe":""},{"id":"it-56c24944","domain":"IT경영","imp":"출제예상","group":"기타","topic":"긱 이코노미 (Gig Economy)","keys":"","def":"","exam":"","itpe":""},{"id":"it-3b65f95f","domain":"IT경영","imp":"출제예상","group":"기타","topic":"디지털 카르텔","keys":"모병신자 메허프오","def":"","exam":"","itpe":"121"},{"id":"pm-89e5a9d8","domain":"프로젝트관리","imp":"상","group":"비즈니스 가치 경제성 분석 기법 /프로젝트 가치 평가","topic":"비용편익분석 (BCR, Benefit Cost Ratio)","keys":"정량적/재무적 - BIP RTN BCR, IRR, PP, BEP ROI,","def":"","exam":"","itpe":""},{"id":"pm-394ef3f9","domain":"프로젝트관리","imp":"상","group":"비즈니스 가치 경제성 분석 기법 /프로젝트 가치 평가","topic":"투자회수기간 (PP, Payback Period)","keys":"","def":"","exam":"","itpe":""},{"id":"pm-eed5827f","domain":"프로젝트관리","imp":"상","group":"비즈니스 가치 경제성 분석 기법 /프로젝트 가치 평가","topic":"내부수익률 (IRR, Internal Rate of Return)","keys":"","def":"","exam":"","itpe":""},{"id":"pm-2a90a275","domain":"프로젝트관리","imp":"상","group":"비즈니스 가치 경제성 분석 기법 /프로젝트 가치 평가","topic":"순현재가치 (NPV, Net Present Value)","keys":"","def":"","exam":"","itpe":""},{"id":"pm-c5ee791c","domain":"프로젝트관리","imp":"상","group":"프로젝트 관리 일반","topic":"프로세스 그룹(5개)","keys":"착계실통종","def":"","exam":"","itpe":""},{"id":"pm-dd61e790","domain":"프로젝트관리","imp":"상","group":"프로젝트 관리 일반","topic":"프로젝트관리 지식 영역 관리(KA)","keys":"통범일원품자의위조이 (1+3+1+RCR+PS)","def":"","exam":"","itpe":""},{"id":"pm-e6e7026a","domain":"프로젝트관리","imp":"상","group":"프로젝트 통합관리 (Integration Management)","topic":"프로젝트 통합관리","keys":"헌관작지작통종 시예결갱","def":"","exam":"","itpe":""},{"id":"pm-f4f861b9","domain":"프로젝트관리","imp":"상","group":"프로젝트 범위(Scope) 관리","topic":"프로젝트 범위관리","keys":"계요정W확통","def":"프로젝트를 성공적으로 완료하기 위해 필요한 모든 작업 범위 업무와 산출물을 정의하고 관리하는 지식영역","exam":"컴시응 104-3, 관리 81-3","itpe":"1338"},{"id":"pm-cd135005","domain":"프로젝트관리","imp":"상","group":"프로젝트 범위(Scope) 관리","topic":"요구사항 수집기법","keys":"수분표의데프컨 인포설벤브 문서 마친 다투 명관촉","def":"","exam":"","itpe":"1339"},{"id":"pm-2ab60d56","domain":"프로젝트관리","imp":"상","group":"프로젝트 범위(Scope) 관리","topic":"요구사항명세서 SRS(Software Requirement Specification)","keys":"정명완일중검수추 이상기제 테품","def":"SW를 분석, 설계, 구현, 유지하는 단계에서 검토, 평가, 승인의 기준이 되는 문서","exam":"관리 130-1","itpe":"1340"},{"id":"pm-29bbcd53","domain":"프로젝트관리","imp":"상","group":"프로젝트 범위(Scope) 관리","topic":"WBS","keys":"작계사분통 관레워백","def":"프로젝트의 인도물과 전체 업무 범위를 작고 관리 가능한 최소 업무 단위로 분할한 계층도","exam":"139_관리_1.1 / 관리 139-1, 관리 129-3, 관리 128-1, 컴시응 111-3","itpe":"330"},{"id":"pm-b04e71cd","domain":"프로젝트관리","imp":"상","group":"프로젝트 일정관리 (시간관리)","topic":"프로젝트 일정관리(시간관리)","keys":"계정순기개통","def":"","exam":"","itpe":"1345"},{"id":"pm-821ec85c","domain":"프로젝트관리","imp":"상","group":"프로젝트 일정관리 (시간관리)","topic":"CPM(임계경로관리)","keys":"정수네전후여주산정","def":"","exam":"관리 83-4","itpe":"332"},{"id":"pm-d632ffe5","domain":"프로젝트관리","imp":"상","group":"원가관리(예산관리)","topic":"획득가치관리(EVM)","keys":"측분예","def":"","exam":"관리 125-2, 관리 118-3, 관리 87-4","itpe":"1355"},{"id":"pm-513d9f30","domain":"프로젝트관리","imp":"상","group":"프로젝트 품질(Quality) 관리","topic":"프로젝트 품질관리","keys":"계보통 적예평부내외","def":"","exam":"","itpe":""},{"id":"pm-5082c7a7","domain":"프로젝트관리","imp":"상","group":"프로젝트 품질(Quality) 관리","topic":"프로젝트 형상관리","keys":"식통감기 계요설구시설 기분설시제운","def":"","exam":"140_관리_4_3","itpe":""},{"id":"pm-41acb0e1","domain":"프로젝트관리","imp":"상","group":"프로젝트 위험관리","topic":"프로젝트 위험관리","keys":"138_관리_1","def":"프로젝트 위험요소를 체계적으로 식별, 평가하고 관리. 조기식별중요","exam":"138_관리_1 / 관리 138-1","itpe":"1366"},{"id":"pm-02e894fb","domain":"프로젝트관리","imp":"상","group":"프로젝트 위험관리","topic":"정성적 위험 분석","keys":"수분표대기 - 인 영품기 영계 촉 전유미","def":"","exam":"","itpe":""},{"id":"pm-da25f939","domain":"프로젝트관리","imp":"상","group":"프로젝트 위험관리","topic":"정량적 위험 분석","keys":"수분대기 - 인 시민의영 촉 불전","def":"","exam":"관리 117-2, 관리 80-3","itpe":"1369"},{"id":"pm-6ce58140","domain":"프로젝트관리","imp":"상","group":"프로젝트 위험관리","topic":"위험 대응 계획 수립","keys":"에활공증수 에회전완수","def":"","exam":"139_관리_1.4 / 관리 134-4, 컴시응 117-4","itpe":"1371"},{"id":"pm-09febb48","domain":"프로젝트관리","imp":"상","group":"Agile 프로세스","topic":"SCRUM","keys":"","def":"product backlog를 sprint단위로 분할하여 반복적으로 개발하며 daily meeting, review 통해 개선 활동을 수행하…","exam":"관리 129-2, 관리 123-1","itpe":"305"},{"id":"pm-6335b444","domain":"프로젝트관리","imp":"상","group":"Agile 프로세스","topic":"XP","keys":"용단커피존 유구배반인작","def":"","exam":"컴시응 123-3","itpe":"304"},{"id":"pm-25285f7a","domain":"프로젝트관리","imp":"상","group":"Agile 프로세스","topic":"Kanban (development) 프로세스","keys":"가워흐정프개현변기리","def":"","exam":"","itpe":"306"},{"id":"pm-05798b73","domain":"프로젝트관리","imp":"상","group":"Agile 프로세스","topic":"Lean(린) / 린 경영 / 린(Lean software development)","keys":"","def":"린 시스템의 품질 기법을 소프트웨어 개발 프로세스에 적용하여 프로세스 낭비요소를 제거 후 결과를 측정, 성과를 분석하여 소프트웨어의 품질을…","exam":"관리 110-1, 관리 87-4","itpe":"307"},{"id":"pm-db57f7c3","domain":"프로젝트관리","imp":"상","group":"Agile 프로세스","topic":"MSA와 Monolithic Architecture","keys":"","def":"","exam":"","itpe":""},{"id":"pm-2505ceef","domain":"프로젝트관리","imp":"상","group":"PMO/PM","topic":"감리/PMO 비교표","keys":"131회 관리 1교시","def":"","exam":"131회 관리 1교시 / 컴시응 114-4","itpe":"1569"},{"id":"pm-1e021602","domain":"프로젝트관리","imp":"상","group":"PMO/PM","topic":"(E)PMO","keys":"132회 컴시응 1교시","def":"","exam":"140_관리_1_4, 132회 컴시응 1교시","itpe":""},{"id":"pm-ec5d1bdf","domain":"프로젝트관리","imp":"상","group":"PMO/PM","topic":"공공 PMO","keys":"기집사 통성 통이범자일위 품성조의변보 통변성","def":"","exam":"","itpe":""},{"id":"pm-025b93f7","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 관리 일반","topic":"PMBOK 7판","keys":"성테모 가조기환고 스팀이가 생리 테품 보리 적변 이팀접계 프산측불 이팀개","def":"","exam":"","itpe":"1331"},{"id":"pm-4eebabe8","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 관리 일반","topic":"PMBOK 8판","keys":"","def":"","exam":"","itpe":""},{"id":"pm-7072f6cc","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 범위(Scope) 관리","topic":"통제되지 않는 범위 추가(Scope Creep)","keys":"초관이정변 개범요공타","def":"","exam":"","itpe":""},{"id":"pm-18b041b7","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 범위(Scope) 관리","topic":"Gold-plating","keys":"초현명 워구시","def":"","exam":"관리 128-2, 관리 124-1","itpe":"49"},{"id":"pm-ac4c9344","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 일정관리 (시간관리)","topic":"Free float","keys":"","def":"","exam":"","itpe":""},{"id":"pm-8a28aad4","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 일정관리 (시간관리)","topic":"Total float","keys":"","def":"","exam":"","itpe":""},{"id":"pm-07ac4be4","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 일정관리 (시간관리)","topic":"자원 최적화","keys":"","def":"","exam":"","itpe":"1351"},{"id":"pm-a2b4ec34","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 일정관리 (시간관리)","topic":"프로젝트 일정 단축기법","keys":"파자후학 크자패병","def":"","exam":"","itpe":"334"},{"id":"pm-ced3642d","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 일정관리 (시간관리)","topic":"브룩스 법칙","keys":"편측관산","def":"","exam":"","itpe":""},{"id":"pm-960f3c41","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 품질(Quality) 관리","topic":"품질통제(QC)","keys":"현원자 체파히 특산흐 관 친연계매해P애","def":"","exam":"","itpe":""},{"id":"pm-37b16ac5","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 자원관리","topic":"동기부여이론","keys":"내과강 내-매엘허2맥 과-공기목-아브로 강-스","def":"","exam":"","itpe":""},{"id":"pm-6f83a752","domain":"프로젝트관리","imp":"출제예상","group":"프로젝트 이해관계자관리","topic":"이해관계자 참여 수준 평가 매트릭스","keys":"현희 무저중지도 요밀동정","def":"","exam":"","itpe":""},{"id":"pm-c5b665ad","domain":"프로젝트관리","imp":"출제예상","group":"Agile 프로세스","topic":"애자일 프로세스 선언문 4개 문장/ 12개 원칙","keys":"개변동고 공계문계","def":"","exam":"","itpe":"1376"},{"id":"pm-5994ca71","domain":"프로젝트관리","imp":"출제예상","group":"Agile 프로세스","topic":"12개 원칙","keys":"고요배의동 대SW지좋단자효","def":"","exam":"","itpe":"1376"},{"id":"pm-ad27906b","domain":"프로젝트관리","imp":"출제예상","group":"Agile 프로세스","topic":"Pair programming","keys":"","def":"","exam":"","itpe":""},{"id":"pm-f7cd3c67","domain":"프로젝트관리","imp":"출제예상","group":"Agile 프로세스","topic":"CI, CD","keys":"버통빌테인커 앱보스","def":"","exam":"관리 135-2","itpe":"308"},{"id":"pm-234e7683","domain":"프로젝트관리","imp":"출제예상","group":"Agile 프로세스","topic":"MVP","keys":"","def":"고객의 빠른 피드백을 위하여 최소한의 가격으로 핵심기능을 구현하여 즉시 출시하는 핵심가치 제품","exam":"","itpe":"311"},{"id":"pm-ea516432","domain":"프로젝트관리","imp":"출제예상","group":"Agile 프로세스","topic":"번다운차트","keys":"","def":"","exam":"관리 119-2","itpe":"1383"},{"id":"sw-3c08ba17","domain":"SW공학","imp":"상","group":"개발방법론","topic":"객체지향 설계의 원리","keys":"SOLID","def":"","exam":"132회 컴시응 3교시 기출 / 컴시응 132-3, 컴시응 98-2","itpe":"1405"},{"id":"sw-a9cef3aa","domain":"SW공학","imp":"상","group":"개발방법론","topic":"요구 공학","keys":"추분명검 협기변확 정명완일이검수추","def":"","exam":"관리 133-3, 관리 124-2, 관리 122-4, 관리 80-3","itpe":"299"},{"id":"sw-1f7ddd45","domain":"SW공학","imp":"상","group":"발주 프로세스","topic":"요구사항 상세화 실무 가이드라인","keys":"기요구데품","def":"","exam":"","itpe":""},{"id":"sw-db164723","domain":"SW공학","imp":"상","group":"발주 프로세스","topic":"상용SW직접구매 (SW 분리발주)","keys":"민 통 현비일 비효","def":"","exam":"131회 컴시응 4교시 민 통","itpe":""},{"id":"sw-7d41b42d","domain":"SW공학","imp":"상","group":"발주 프로세스","topic":"소프트웨어 진흥법","keys":"1235 총기융선 용 947257 지창지인연소연 80123 융안교 045","def":"","exam":"132회 관리 4교시 기출 (","itpe":""},{"id":"sw-f8fcde06","domain":"SW공학","imp":"상","group":"SW Architecture","topic":"SW Architecture","keys":"요참모프배 분추단모정","def":"프로그램/시스템 컴포넌트, 컴포넌트 간의 상호관계 구조이며 이들을 설계하기 위한 지침과 원리","exam":"컴시응 87-3, 관리 86-3, 응용 81-2, 관리 81-1","itpe":"352"},{"id":"sw-834a85ce","domain":"SW공학","imp":"상","group":"SW Architecture","topic":"ISO/IEC/IEEE 42010 (구 버전 IEEE1471)","keys":"식표AD 대이관 모아기 관뷰모근규대","def":"컴포넌트와 컴포넌트들 간의 상호관계 구조, 이들을 설계하고 전개하기 위한 지침과 원리","exam":"","itpe":"1423"},{"id":"sw-13b98ecb","domain":"SW공학","imp":"상","group":"SW Architecture","topic":"SW Architecture 평가","keys":"시몰수경 시설","def":"아키텍처 접근법이 품질속성에 미치는 영향을 판단하고, 아키텍처 적합성을 평가하는 모델","exam":"","itpe":"1424"},{"id":"sw-b6d0cefa","domain":"SW공학","imp":"상","group":"SW Architecture","topic":"ATAM (Architecture Trade-off Analysis Method)","keys":"협기상후 시비아 - 오정보상, 적습준비(이), 대변적시 소조테보 - A비","def":"","exam":"131회 컴시응 1교시 140 / 관리 140-1, 컴시응 131-1","itpe":"1425"},{"id":"sw-6f145580","domain":"SW공학","imp":"상","group":"SW Architecture","topic":"CBAM (Cost Benefit Analysis Method)","keys":"시효접선","def":"","exam":"131회 컴시응 1교시 시효접","itpe":"1426"},{"id":"sw-f2b29656","domain":"SW공학","imp":"상","group":"MSA","topic":"MSA","keys":"","def":"대규모 분산 웹 환경에서 응용 소프트웨어를 독립적으로 배치 가능한 서비스 조합으로 설계하는 아키텍쳐","exam":"컴시응 140-3, 관리 127-4","itpe":"303"},{"id":"sw-0469c596","domain":"SW공학","imp":"상","group":"MSA","topic":"서비스 매쉬 (Service Mesh)","keys":"컨데 - DRS 싸디서로레","def":"마이크로 서비스 아키텍처(MSA) 구성환경에서 서비스 간의 데이터 공유하는 방식을 제어, 호출제어 및 오버헤드를 최소화하기 위한 네트워킹 기술","exam":"","itpe":"1435"},{"id":"sw-b57232ba","domain":"SW공학","imp":"상","group":"MSA","topic":"SAGA패턴(사가)","keys":"","def":"","exam":"컴시응 140-3, 관리 127-4","itpe":"303"},{"id":"sw-2aefe16b","domain":"SW공학","imp":"상","group":"MSA","topic":"DDD (Domain Driven Design)","keys":"엔벨어도레서팩","def":"","exam":"","itpe":"313"},{"id":"sw-c18252c0","domain":"SW공학","imp":"상","group":"UML","topic":"UML / Diagram 전체","keys":"","def":"","exam":"관리 137-4, 컴시응 102-1, 관리 101-1, 관리 87-2","itpe":"1443"},{"id":"sw-56436b1e","domain":"SW공학","imp":"상","group":"UML","topic":"Class diagram","keys":"","def":"","exam":"관리 126-2, 관리 122-4, 관리 117-4, 관리 86-3","itpe":"362"},{"id":"sw-eb10474f","domain":"SW공학","imp":"상","group":"UML","topic":"Usecase diagram","keys":"유행시 연포확일그 액유릴 유구","def":"시스템이 제공하고 있는 기능 및 그와 관련된 외부요소를 사용자의 관점에서 표현하는 동적 다이어그램","exam":"관리 121-3","itpe":"357"},{"id":"sw-1913f0b1","domain":"SW공학","imp":"상","group":"디자인 패턴","topic":"Design Pattern (23개 패턴)","keys":"","def":"","exam":"","itpe":""},{"id":"sw-f22d22ea","domain":"SW공학","imp":"상","group":"디자인 패턴","topic":"MVC 패턴","keys":"","def":"","exam":"","itpe":""},{"id":"sw-48208ddd","domain":"SW공학","imp":"상","group":"설계","topic":"모듈화","keys":"응집도: 우논시절통순기 결합도: 내공외제스자","def":"소프트웨어의 성능을 향상시키거나, 프로그램의 시험, 통합 및 수정을 용이하게 하기 위하여 프로그램을 분해하고 추상화하는 설계 및 구현 기법","exam":"관리 129-1, 관리 128-3","itpe":"379"},{"id":"sw-0b9faf76","domain":"SW공학","imp":"상","group":"설계","topic":"SBOM(Software Bill of Materials)","keys":"","def":"소프트웨어 패키지 및 구성 요소 등 고유하게 식별 가능한 메타데이터, 저작권 및 라이선스 등 소프트웨어 콘텐츠에 대한 정보를 포함하는 공식…","exam":"컴시응 134-1, 관리 134-3, 관리 131-1","itpe":"322"},{"id":"sw-773a14de","domain":"SW공학","imp":"상","group":"TDD / DevOps","topic":"TDD","keys":"요테구리 빨초테X디","def":"","exam":"","itpe":""},{"id":"sw-ae922a9e","domain":"SW공학","imp":"상","group":"TDD / DevOps","topic":"DevOps","keys":"소협통 정역지사자 플코빌테 디오모","def":"","exam":"131회 컴시응 3교시 소협통 / 컴시응 138-1, 관리 136-1, 컴시응 131-3, 관리 130-4, 관리 125-1, 관리 120-2 외 2","itpe":"1632"},{"id":"sw-a51be44c","domain":"SW공학","imp":"상","group":"TDD / DevOps","topic":"무중단 배포 기법의 종류","keys":"롤블카","def":"","exam":"139_관리_1.5 / 컴시응 135-4, 관리 127-2","itpe":"1489"},{"id":"sw-d79885bf","domain":"SW공학","imp":"상","group":"TDD / DevOps","topic":"카오스 엔지니어링 (Chaos Engineering)","keys":"가장영검개 가수환자최","def":"","exam":"","itpe":""},{"id":"sw-63151342","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"Test 일반","keys":"","def":"","exam":"","itpe":"387"},{"id":"sw-9e838a99","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"테스트 원리","keys":"결완초집살정오","def":"SW테스트에서 수행되는 각종 방안과 실행계획 수립시 고려되는 기본원칙","exam":"139_관리_3.4 / 관리 98-1","itpe":"1493"},{"id":"sw-5f1246f2","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"테스트베드(Testbed)","keys":"하스드","def":"","exam":"","itpe":""},{"id":"sw-c6318e28","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"블랙박스 테스트","keys":"블동경의상유분페원오 139_관리_3.4","def":"프로그램 코드를 보지 않고, 매뉴얼이나 상세문서를 기준으로 테스팅하는 기법","exam":"139_관리_3.4 / 관리 122-3","itpe":"1500"},{"id":"sw-06bff2e0","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"명세기반 테스팅 기법","keys":"","def":"","exam":"","itpe":""},{"id":"sw-b7327fe2","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"화이트박스테스트 (White Box Test)","keys":"화제루 139_관리_3.4","def":"개발자가 S/W의 내부 Logic에 대한 Test를 수행위해 설계 단계에서 요구된 사항을 테스트하는 방법 소프트웨어의 내부 구조와 복잡도를…","exam":"139_관리_3.4 / 컴시응 137-3, 관리 134-3, 관리 129-1, 관리 125-2, 관리 114-3, 관리 104-3 외 1","itpe":"1502"},{"id":"sw-00e208f0","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"구조기반테스트","keys":"","def":"","exam":"","itpe":""},{"id":"sw-5bddae0b","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"탐색적 테스팅","keys":"차박노세요 (차터, 박싱, 노트, 세션 시트, 디브리핑)","def":"","exam":"","itpe":""},{"id":"sw-d61c2078","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"회귀 테스트 (Regression Test)","keys":"ReSelPri - RS","def":"오류를 제거하거나 수정한 시스템에서 오류제거와 수정에 의해 새로 유입된 오류가 없는지 확인하는 일종의 반복시험","exam":"관리 129-4, 관리 84-3, 응용 81-1","itpe":"389"},{"id":"sw-0db8807e","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"경험기반 기법","keys":"경탐오체분","def":"","exam":"","itpe":""},{"id":"sw-5a89f14b","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"위험기반 테스트","keys":"식분대전추 펀인스서","def":"","exam":"","itpe":""},{"id":"sw-6326f6fe","domain":"SW공학","imp":"상","group":"테스트(Test)","topic":"성능 테스트","keys":"처응자효 단복임 루스티확가 탐NaCoInA","def":"시스템에 요구되는 성능에 대해 시스템의 처리 능력을 검증하는 테스트","exam":"131회 컴시응 4교시 130 / 관리 117-4, 관리 95-2, 관리 81-1","itpe":"396"},{"id":"sw-d4f450c3","domain":"SW공학","imp":"상","group":"SW 유지관리 (유지보수 변경)","topic":"Lehman 소프트웨어 변화(리만) 유지보수/유지관리 전체","keys":"SPE 계복대조친지감피","def":"","exam":"","itpe":""},{"id":"sw-b27b4f37","domain":"SW공학","imp":"상","group":"SW 유지관리 (유지보수 변경)","topic":"3R","keys":"","def":"","exam":"관리 133-1","itpe":"410"},{"id":"sw-716cc169","domain":"SW공학","imp":"상","group":"SW 유지관리 (유지보수 변경)","topic":"재사용 (Reuse)","keys":"NIH신드롬, I/F기반 표준화 생산성, 코드신뢰성 컴포넌트 라이브러리","def":"","exam":"","itpe":""},{"id":"sw-02ce4add","domain":"SW공학","imp":"상","group":"SW 품질 표준 및 종합","topic":"프로젝트 QM(품질관리)","keys":"계보통 적예평부내외","def":"주어진 요구사항을 충족시키는데 필요한 품질정책, 품질목표, 품질 관련 책임사항들을 결정 및 수행하는 회사 차원의 모든 활동","exam":"관리 136-4, 컴시응 117-4, 관리 111-3, 관리 80-2","itpe":"414"},{"id":"sw-4c70409b","domain":"SW공학","imp":"상","group":"SW 품질 표준 및 종합","topic":"품질보증(QA), 품질관리","keys":"리인웍","def":"","exam":"","itpe":"426"},{"id":"sw-62c941dd","domain":"SW공학","imp":"상","group":"SW 품질 표준 및 종합","topic":"CMMI 2.0 / 3.0","keys":"두메인임 불수관확예최 불수관정 귱유재자","def":"","exam":"","itpe":""},{"id":"sw-f631ecb5","domain":"SW공학","imp":"상","group":"SW 품질 표준 및 종합","topic":"CMMI V3.0","keys":"","def":"","exam":"컴시응 125-3, 관리 118-1, 관리 87-4, 컴시응 84-1","itpe":"1545"},{"id":"sw-ad7a0110","domain":"SW공학","imp":"상","group":"SW 품질 표준 및 종합","topic":"ASPICE(Automotive SPICE) (ISO/IEC 33020)","keys":"기지조 획공소시지 관재프 불수관확예혁","def":"","exam":"","itpe":"421"},{"id":"sw-b08a9612","domain":"SW공학","imp":"상","group":"SW 품질 표준 및 종합","topic":"Peer-review(동료검토)","keys":"관작검중발기품 매테인월감 계사개검 재후","def":"","exam":"","itpe":""},{"id":"sw-14877787","domain":"SW공학","imp":"상","group":"소프트웨어 안전성 분석기법","topic":"SW 안정성/분석 개념","keys":"","def":"","exam":"관리 131-3","itpe":"1552"},{"id":"sw-2e2db1bb","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"정보시스템 감리","keys":"","def":"이해관계로부터 독립된 자가 정보시스템의 효율성 향상과 안전성 확보를 위하여 제3자적 관점에서 정보시스템의 구축 운영에 관한 사항을 종합적으로…","exam":"관리 137-3, 관리 136-2, 관리 131-1, 관리 129-1, 컴시응 125-2, 관리 123-2 외 8","itpe":"1558"},{"id":"sw-8934a841","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"정보시스템 감리수행 가이드 v2.1(한국정보화진흥원, 2013.12)","keys":"","def":"","exam":"","itpe":"1559"},{"id":"sw-bc673450","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"정보시스템 감리 발주 관리가이드","keys":"","def":"","exam":"","itpe":"1558"},{"id":"sw-4b322996","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"정보시스템 감리 점검 해설서","keys":"","def":"","exam":"","itpe":"1561"},{"id":"sw-f2aafab2","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"지능정보기술 감리 실무 가이드","keys":"","def":"","exam":"컴시응 134-3","itpe":"433"},{"id":"sw-72afe2e4","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"정보시스템 갈리 Framework","keys":"시영관(사업유형/감리시점, 감리영역, 감리관점/점검기준) 성산절(성과,","def":"","exam":"","itpe":""},{"id":"sw-45f58fa9","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"감리 절차","keys":"예현조 준실감 감착감보종보 준시작보","def":"","exam":"","itpe":""},{"id":"sw-5c067644","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"감리결과보고서 작성하기","keys":"권시이 - 필협권 장단 적부제","def":"","exam":"123회 기출 권시이 - 필협","itpe":""},{"id":"sw-547059da","domain":"SW공학","imp":"상","group":"정보시스템 감리","topic":"감리 PMO 비교","keys":"","def":"","exam":"컴시응 114-4","itpe":"1569"},{"id":"sw-0eaf4c2c","domain":"SW공학","imp":"상","group":"OSS / FOSS","topic":"오픈소스 소프트웨어","keys":"일자동차라포파 자레무반저 낮빠오신안 불빈일지양","def":"","exam":"관리 124-4, 컴시응 122-3","itpe":"1297"},{"id":"sw-4fa7e14f","domain":"SW공학","imp":"상","group":"OSS / FOSS","topic":"오픈소스 License 분류","keys":"","def":"","exam":"","itpe":""},{"id":"sw-ca1e726a","domain":"SW공학","imp":"상","group":"OSS / FOSS","topic":"OSS 거버넌스","keys":"[프레임워크] 정획적운관 컨정조 요조분평 계설개패시배 설운유기커 컴교모","def":"","exam":"","itpe":""},{"id":"sw-cd6b6402","domain":"SW공학","imp":"상","group":"OSS / FOSS","topic":"오픈소스 SW 보안","keys":"","def":"","exam":"","itpe":""},{"id":"sw-821e477d","domain":"SW공학","imp":"상","group":"SW 규모 산정(원가산정)","topic":"Function Point / ISO/IEC 14143","keys":"유범(이의)데(이)트 미조기 사기전후직개","def":"","exam":"","itpe":""},{"id":"sw-8e7e7040","domain":"SW공학","imp":"상","group":"SW 규모 산정(원가산정)","topic":"간이법 계산","keys":"내외입출조 O공수로 Q단","def":"","exam":"컴시응 126-1, 관리 84-3","itpe":"1583"},{"id":"sw-6686f67d","domain":"SW공학","imp":"상","group":"하드웨어 규모산정","topic":"하드웨어 규모산정 3가지 방법 (TTAK.KO-10.0292/R3)","keys":"수참시","def":"","exam":"135회 컴시응 1교시 수참시","itpe":""},{"id":"sw-ba80cb53","domain":"SW공학","imp":"상","group":"국내 SW 육성 방안","topic":"Software Platform","keys":"","def":"","exam":"","itpe":""},{"id":"sw-cd364e29","domain":"SW공학","imp":"상","group":"국내 SW 육성 방안","topic":"SW개발 생산성 향상방안","keys":"원형프자","def":"","exam":"","itpe":""},{"id":"sw-dfb13256","domain":"SW공학","imp":"상","group":"국내 SW 육성 방안","topic":"민간투자형 SW 사업 PPP((PPP, Public Private Partnership)","keys":"","def":"","exam":"","itpe":""},{"id":"sw-2994b40c","domain":"SW공학","imp":"상","group":"SW 저작권 보호","topic":"난독화 (Obfuscation)","keys":"소바 구데집제 예인 형주 데변 클자 순데 역암","def":"","exam":"","itpe":"413"},{"id":"sw-31527cdb","domain":"SW공학","imp":"출제예상","group":"SW공학","topic":"PBL (Project Based Learning)","keys":"","def":"","exam":"","itpe":""},{"id":"sw-d558f6e8","domain":"SW공학","imp":"출제예상","group":"발주 프로세스","topic":"공공 소프트웨어 사업 제안 요청서 작성 가이드라인","keys":"기무근경 사현명 기작체수 계 제작체수 입작체 공 개현추요 작안기","def":"","exam":"","itpe":""},{"id":"sw-11279589","domain":"SW공학","imp":"출제예상","group":"SOA","topic":"ESB (Enterprise Service Bus)","keys":"인소런패","def":"","exam":"","itpe":""},{"id":"sw-87c03699","domain":"SW공학","imp":"출제예상","group":"SW Architecture","topic":"Blackboard pattern","keys":"솔지컨","def":"","exam":"","itpe":""},{"id":"sw-5aba3815","domain":"SW공학","imp":"출제예상","group":"SW Architecture","topic":"clean architecture","keys":"엔유인외","def":"","exam":"","itpe":""},{"id":"sw-c76e3fd1","domain":"SW공학","imp":"출제예상","group":"MSA","topic":"API Gateway","keys":"","def":"","exam":"","itpe":""},{"id":"sw-efaf8f68","domain":"SW공학","imp":"출제예상","group":"전자정부 표준프레임워크 (e-Goverment framework)","topic":"IoC (Inversion of Control)","keys":"","def":"","exam":"121회 기출문제","itpe":"2517"},{"id":"sw-4fc96342","domain":"SW공학","imp":"출제예상","group":"UML","topic":"Interaction diagram","keys":"","def":"","exam":"","itpe":""},{"id":"sw-3492fa59","domain":"SW공학","imp":"출제예상","group":"UML","topic":"Communication Diagram","keys":"","def":"","exam":"","itpe":""},{"id":"sw-6fa1eeaa","domain":"SW공학","imp":"출제예상","group":"UML","topic":"Interaction overview Diagram","keys":"","def":"","exam":"","itpe":""},{"id":"sw-55f4cc70","domain":"SW공학","imp":"출제예상","group":"UML","topic":"Timing Diagram","keys":"","def":"","exam":"","itpe":""},{"id":"sw-5e3eec84","domain":"SW공학","imp":"출제예상","group":"UML","topic":"Feature diagram","keys":"필선대또","def":"","exam":"","itpe":""},{"id":"sw-9ac213af","domain":"SW공학","imp":"출제예상","group":"디자인 패턴","topic":"MVVM","keys":"","def":"모델, 뷰, 뷰 모델로 기능을 분리하고 데이터 바인딩을 통하여 뷰와 뷰모델간의 통신을 자동화 하는 아키텍처 패턴","exam":"관리 111-1","itpe":"378"},{"id":"sw-d0337db5","domain":"SW공학","imp":"출제예상","group":"디자인 패턴","topic":"MVI 패턴(Model View Intent)","keys":"","def":"","exam":"","itpe":""},{"id":"sw-54832ebd","domain":"SW공학","imp":"출제예상","group":"디자인 패턴","topic":"서킷 브레이커(Circuit Breaker) 패턴","keys":"","def":"","exam":"","itpe":""},{"id":"sw-da032a10","domain":"SW공학","imp":"출제예상","group":"TDD / DevOps","topic":"SRE(Site Reliability Engineering)","keys":"모리변장문 - 사실점자모","def":"","exam":"","itpe":""},{"id":"sw-188b20ab","domain":"SW공학","imp":"출제예상","group":"TDD / DevOps","topic":"AI옵스","keys":"수분자가","def":"","exam":"","itpe":""},{"id":"sw-a4c5101e","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"모델기반 테스트","keys":"","def":"","exam":"","itpe":""},{"id":"sw-514a514e","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"뮤테이션 테스트 (Mutation Test)","keys":"대변삭","def":"","exam":"","itpe":""},{"id":"sw-686103f7","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"사용성 테스트","keys":"카페소 계디실보 탐평확비 매피 포수","def":"","exam":"","itpe":""},{"id":"sw-21984236","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"Embedded System Test","keys":"명구경","def":"","exam":"","itpe":""},{"id":"sw-511a13e4","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"Back-to-back testing","keys":"적용분야: 항공기, 자동차 분야","def":"","exam":"","itpe":""},{"id":"sw-456bd5af","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"PoC","keys":"","def":"","exam":"123회 컴시응 1교시 기출 , 138_컴시응_2","itpe":""},{"id":"sw-c1d05786","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"Pilot test","keys":"","def":"","exam":"","itpe":""},{"id":"sw-6f7ef6eb","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"퍼즈 테스트 (Fuzz Testing) Fuzzing","keys":"[특징] 입무 간신 고자 [분류] 생투변기","def":"","exam":"","itpe":""},{"id":"sw-18115b57","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"튜링 테스트 (Turing Test)","keys":"캡구엘패","def":"","exam":"","itpe":""},{"id":"sw-7ea1f575","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"Smoke Test (스모크 테스트)","keys":"","def":"","exam":"","itpe":""},{"id":"sw-75f019ce","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"커서리 테스트 (Cursory Test)","keys":"","def":"","exam":"","itpe":""},{"id":"sw-5dd1015a","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"예비(Sanity) 테스트","keys":"","def":"","exam":"","itpe":""},{"id":"sw-4ce1b344","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"Canary Test","keys":"","def":"","exam":"132회 컴시응 1교시","itpe":""},{"id":"sw-3cdcc612","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"키워드 기반 테스팅 (Keyword-driven testing)","keys":"라데 편해시룰 실대","def":"","exam":"","itpe":""},{"id":"sw-e6a05865","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"Pairwise Testing","keys":"그입페","def":"","exam":"","itpe":""},{"id":"sw-ba4b43b5","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"상태 전이 테스팅 (State Transition Testing)","keys":"상전이가액션","def":"","exam":"","itpe":""},{"id":"sw-ead05ef5","domain":"SW공학","imp":"출제예상","group":"테스트(Test)","topic":"ISO 29119","keys":"개프도테키 조관동 명구경","def":"","exam":"","itpe":""},{"id":"sw-f078ca18","domain":"SW공학","imp":"출제예상","group":"SW 유지관리 (유지보수 변경)","topic":"Fan-out, Fan-in","keys":"","def":"","exam":"","itpe":""},{"id":"sw-351a52ea","domain":"SW공학","imp":"출제예상","group":"SW 유지관리 (유지보수 변경)","topic":"데메테르의 법칙(Law of Demeter)","keys":"","def":"","exam":"","itpe":""},{"id":"sw-a7750624","domain":"SW공학","imp":"출제예상","group":"SW 유지관리 (유지보수 변경)","topic":"기술부채 (technical debt)","keys":"139_관리_3.3","def":"","exam":"139_관리_3.3","itpe":"312"},{"id":"sw-e96d09e4","domain":"SW공학","imp":"출제예상","group":"SW 품질 표준 및 종합","topic":"품질 속성 시나리오 (quality attribute scenario)","keys":"자자대환응측","def":"","exam":"","itpe":""},{"id":"sw-f9eaaee1","domain":"SW공학","imp":"출제예상","group":"SW 품질 표준 및 종합","topic":"SP (Software Process) 인증","keys":"조프개프지","def":"국내SW기업의 SW사업 수행능력을 강화하고 SW사업의 부실방지를 목적으로 기업의 SW 개발단계별 작업절차 및 산출물 관리 역량 등을 분석하여…","exam":"컴시응 134-4, 관리 87-1","itpe":"430"},{"id":"sw-5aebca8c","domain":"SW공학","imp":"출제예상","group":"SW 품질 표준 및 종합","topic":"McCabe의 회전 복잡도","keys":"그폐제","def":"","exam":"","itpe":""},{"id":"sw-4663afb1","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"감리원 종류","keys":"총상수","def":"","exam":"","itpe":""},{"id":"sw-896d204e","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"상주감리원","keys":"총상수","def":"","exam":"","itpe":""},{"id":"sw-7f7bb470","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"클라우드 감리","keys":"","def":"","exam":"","itpe":""},{"id":"sw-b01a6079","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"AI 감리","keys":"","def":"","exam":"","itpe":""},{"id":"sw-acbb9f65","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"운영감리","keys":"","def":"","exam":"컴시응 83-4","itpe":"1574"},{"id":"sw-4cd56382","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"유지보수 감리","keys":"","def":"","exam":"","itpe":""},{"id":"sw-4bd95626","domain":"SW공학","imp":"출제예상","group":"정보시스템 감리","topic":"빅데이터 감리","keys":"","def":"","exam":"관리 130-3","itpe":"1576"},{"id":"sw-2e836aec","domain":"SW공학","imp":"출제예상","group":"OSS / FOSS","topic":"오픈소스 라이센스별 의무조항","keys":"소비의배 - 소원, 데이라, 제기, 자이라","def":"","exam":"","itpe":"1577"},{"id":"sw-6f56b5cb","domain":"SW공학","imp":"출제예상","group":"OSS / FOSS","topic":"이너소스(Innersource)","keys":"","def":"","exam":"","itpe":""},{"id":"sw-145cbf49","domain":"SW공학","imp":"출제예상","group":"SW 규모 산정(원가산정)","topic":"AI 개발비 산정","keys":"사이전서","def":"","exam":"관리 137-4","itpe":"1587"},{"id":"sw-415801b0","domain":"SW공학","imp":"출제예상","group":"코딩 / 언어","topic":"Vibe Coding(바이브 코딩), AI 코딩","keys":"","def":"","exam":"","itpe":"2763"}]}</script>
+<script>
+(function(){
+'use strict';
+
+/* ---------- 기본 ---------- */
+var $ = function(s){ return document.querySelector(s); };
+var app = $('#app'), bar = $('#bar');
+var RAW = {};
+try { RAW = JSON.parse(document.getElementById('cards').textContent || '{}') || {}; } catch (e) { RAW = {}; }
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function str(v){ return v == null ? '' : String(v).trim(); }
+function shuffle(a){ a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+function sleep(ms){ return new Promise(function(r){ setTimeout(r, ms); }); }
+function norm(s){ return String(s || '').toLowerCase().replace(/\s+/g, ''); }
+
+var CAT_ORDER = ['IT경영','프로젝트관리','SW공학','클라우드·인프라','CA·OS','네트워크·통신','DB·데이터','AI','보안','표준·기관','기타'];
+var DOMAIN_ORDER = ['IT경영','프로젝트관리','SW공학'];
+var DECKS = [{key:'abbr', name:'약어', prefix:'a-'}, {key:'dueum', name:'두음', prefix:'d-'}, {key:'concept', name:'개념', prefix:'c-'}];
+var DECK_NAME = {abbr:'약어', dueum:'두음', concept:'개념'};
+var DAYS = [0, 1, 3, 7, 14];
+
+/* ---------- 카드 id: 영숫자와 - 만 그대로, 나머지는 _xxxx(36진 4자리)로 ---------- */
+function hash(s){ var h = 0x811c9dc5; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; } return h.toString(36); }
+function enc(s){
+  s = String(s); var o = '';
+  for (var ch of s) { o += /[A-Za-z0-9-]/.test(ch) ? ch : '_' + ch.codePointAt(0).toString(36).padStart(4, '0'); }
+  if (o.length > 140) o = o.slice(0, 110) + '-' + hash(s);
+  return o || 'x';
+}
+function koSplit(ko){
+  ko = str(ko); var i = ko.indexOf('—');
+  return i < 0 ? [ko, ''] : [ko.slice(0, i).trim(), ko.slice(i + 1).trim()];
+}
+
+/* ---------- 카드 만들기 ---------- */
+var CARDS = [], BY_ID = new Map();
+(function(){
+  var used = new Set();
+  function take(cands){
+    for (var i = 0; i < cands.length; i++) { if (!used.has(cands[i])) { used.add(cands[i]); return cands[i]; } }
+    var base = cands[cands.length - 1], n = 2; while (used.has(base + '-' + n)) n++;
+    used.add(base + '-' + n); return base + '-' + n;
+  }
+  (Array.isArray(RAW.abbr) ? RAW.abbr : []).forEach(function(a){
+    if (!a) return; var abbr = str(a.abbr); if (!abbr) return;
+    var full = str(a.full), ko = str(a.ko), ks = koSplit(ko);
+    CARDS.push({deck:'abbr', id:take(['a-' + enc(abbr), 'a-' + enc(abbr + ' ' + (full || ko))]), cat:str(a.cat) || '기타',
+      abbr:abbr, full:full, ko:ko, name:ks[0], mean:ks[1]});
+  });
+  (Array.isArray(RAW.dueum) ? RAW.dueum : []).forEach(function(d){
+    if (!d) return; var du = str(d.dueum), topic = str(d.topic); if (!du && !topic) return;
+    var items = Array.isArray(d.items) ? d.items.map(str).filter(Boolean) : [];
+    CARDS.push({deck:'dueum', id:take(['d-' + enc(topic + ' ' + du)]), cat:str(d.cat) || '기타', dueum:du, topic:topic, items:items});
+  });
+  (Array.isArray(RAW.concepts) ? RAW.concepts : []).forEach(function(c){
+    if (!c) return; var topic = str(c.topic); if (!topic) return;
+    CARDS.push({deck:'concept', id:take(['c-' + enc(str(c.id) || topic)]), cat:str(c.domain) || '기타', imp:str(c.imp),
+      group:str(c.group), topic:topic, keys:str(c.keys), def:str(c.def), exam:str(c.exam), itpe:str(c.itpe)});
+  });
+  CARDS.forEach(function(c){ BY_ID.set(c.id, c); });
+})();
+
+/* ---------- 브라우저 저장 (모든 접근 try/catch) ---------- */
+var LS = {
+  get: function(k){ try { return window.localStorage.getItem(k); } catch (e) { return null; } },
+  set: function(k, v){ try { window.localStorage.setItem(k, v); return true; } catch (e) { return false; } }
+};
+var LS_OK = (function(){ try { var t = '__itpe_t'; window.localStorage.setItem(t, '1'); window.localStorage.removeItem(t); return true; } catch (e) { return false; } })();
+function readJSON(k, d){ var v = LS.get(k); if (!v) return d; try { var o = JSON.parse(v); return o && typeof o === 'object' ? o : d; } catch (e) { return d; } }
+var K_PROG = 'itpe-cards.progress.v1', K_UNSYNC = 'itpe-cards.unsynced.v1', K_PREF = 'itpe-cards.prefs.v1';
+
+var pref = Object.assign({deck:'abbr', filt:{}, imp:'전체', dir:'a2m', obo:false, size:10}, readJSON(K_PREF, {}));
+if (pref.v !== 2) { pref.size = 10; pref.v = 2; }
+pref.filt = Object.assign({abbr:'전체', dueum:'전체', concept:'전체'}, pref.filt && typeof pref.filt === 'object' ? pref.filt : {});
+if (!DECK_NAME[pref.deck]) pref.deck = 'abbr';
+if ([0, 5, 10, 20].indexOf(+pref.size) < 0) pref.size = 10;
+if (pref.dir !== 'm2a') pref.dir = 'a2m';
+function savePref(){ LS.set(K_PREF, JSON.stringify(pref)); }
+
+function normRec(o){
+  if (!o || typeof o !== 'object') return null;
+  var box = Math.round(+o.box); if (!(box >= 0)) box = 0; if (box > 4) box = 4;
+  return {box:box, right:Math.max(0, +o.right || 0), wrong:Math.max(0, +o.wrong || 0), last:+o.last || 0, due:+o.due || 0};
+}
+var P = {};
+(function(){ var o = readJSON(K_PROG, {}); for (var k in o) { var r = normRec(o[k]); if (r) P[k] = r; } })();
+var UNSYNC = new Set(Object.keys(readJSON(K_UNSYNC, {})));
+function saveLocal(){
+  LS.set(K_PROG, JSON.stringify(P));
+  var u = {}; UNSYNC.forEach(function(k){ u[k] = 1; }); LS.set(K_UNSYNC, JSON.stringify(u));
+}
+
+/* ---------- 진도 저장: db 캡빌리티 우선, 안 되면 이 기기 ---------- */
+var S = {mode:'pending', col:null, unsub:null, inflight:new Set(), again:new Set(), migrated:false};
+function renderChip(){
+  var el = $('#store'); if (!el) return;
+  var t = S.mode === 'db' ? '기기 간 동기화' : S.mode === 'pending' ? '저장 위치 확인 중' : (LS_OK ? '이 기기에만 저장' : '저장 안 됨 · 이번 방문만');
+  el.textContent = t; el.setAttribute('data-m', S.mode);
+  el.title = S.mode === 'db' ? '진도가 계정에 저장되어 다른 기기에서도 이어집니다' : S.mode === 'local' ? '진도가 이 브라우저에만 저장됩니다' : '';
+}
+function setMode(m){ S.mode = m; renderChip(); }
+function fallbackLocal(){
+  if (S.unsub) { try { S.unsub(); } catch (e) {} }
+  S.unsub = null; S.col = null; setMode('local');
+}
+function safeUse(c, name){
+  try { return Promise.resolve(c.use(name)).catch(function(){ return null; }); } catch (e) { return Promise.resolve(null); }
+}
+async function initStore(){
+  var c = window.claude;
+  if (!c || typeof c.use !== 'function') { setMode('local'); return; }
+  var res = await Promise.all([safeUse(c, 'user'), safeUse(c, 'db')]);
+  var user = res[0], db = res[1];
+  if (!db) { setMode('local'); return; }
+  if (user && typeof user.isOwner === 'function') {
+    var own = null; try { own = await user.isOwner(); } catch (e) {}
+    if (own === false) { setMode('local'); return; } /* progress 규칙: owner만 읽고 씀 */
+  }
+  try { S.col = db.collection('progress'); } catch (e) { setMode('local'); return; }
+  setMode('db');
+  try { S.unsub = S.col.onSnapshot(onSnap, function(){ fallbackLocal(); }); }
+  catch (e) { fallbackLocal(); }
+}
+function onSnap(snap){
+  var next = {};
+  snap.docs.forEach(function(d){ if (!d.exists) return; var r = normRec(d.data()); if (r) next[d.id] = r; });
+  UNSYNC.forEach(function(id){
+    var l = P[id];
+    if (!l) delete next[id];
+    else if (!next[id] || l.last >= next[id].last) next[id] = l;
+  });
+  P = next; saveLocal();
+  if (!snap.metadata.fromCache && !S.migrated) { S.migrated = true; migrate(); }
+  softRender();
+}
+async function migrate(){
+  var ids = Array.from(UNSYNC);
+  for (var i = 0; i < ids.length; i++) {
+    if (S.mode !== 'db') return;
+    var ok = await writeDoc(ids[i], P[ids[i]] ? 'set' : 'del');
+    if (ok) UNSYNC.delete(ids[i]);
+  }
+  saveLocal();
+}
+async function writeDoc(id, op, retried){
+  if (!S.col) { UNSYNC.add(id); saveLocal(); return false; }
+  try {
+    var ref = S.col.doc(id), r = P[id];
+    if (op === 'del' || !r) await ref.delete();
+    else await ref.set({box:r.box, right:r.right, wrong:r.wrong, last:r.last, due:r.due});
+    return true;
+  } catch (e) {
+    var code = e && e.code;
+    if ((code === 'unavailable' || code === 'resource_exhausted') && !retried) {
+      await sleep(code === 'unavailable' ? 400 + Math.random() * 800 : 1500);
+      return writeDoc(id, op, true);
+    }
+    UNSYNC.add(id); saveLocal();
+    if (code === 'quota_exceeded') toast('동기화 저장 공간이 가득 찼어요. 이 기기에 먼저 저장해 둡니다.');
+    else if (code !== 'unavailable' && code !== 'resource_exhausted') fallbackLocal();
+    return false;
+  }
+}
+function queueWrite(id){
+  if (S.inflight.has(id)) { S.again.add(id); return; }
+  S.inflight.add(id);
+  writeDoc(id, 'set').finally(function(){
+    S.inflight.delete(id);
+    if (S.again.has(id)) { S.again.delete(id); queueWrite(id); }
+  });
+}
+function persist(id){
+  if (S.mode === 'db') { saveLocal(); queueWrite(id); }
+  else { UNSYNC.add(id); saveLocal(); }
+}
+
+/* ---------- 라이트너 ---------- */
+function dayStart(t, add){ var d = new Date(t); return new Date(d.getFullYear(), d.getMonth(), d.getDate() + (add || 0)).getTime(); }
+function endToday(){ return dayStart(Date.now(), 1); }
+function isDue(id){ var r = P[id]; return !!r && r.due < endToday(); }
+function stat(id){ var r = P[id]; if (!r) return 'new'; return r.box >= 3 ? 'known' : r.box >= 1 ? 'unsure' : 'dont'; }
+function grade(id, g){
+  var now = Date.now(), prev = P[id];
+  var box = prev ? prev.box : 0, right = prev ? prev.right : 0, wrong = prev ? prev.wrong : 0;
+  if (g === 'dont') { box = 0; wrong++; }
+  else if (g === 'know') { box = Math.min(4, box + 1); right++; }
+  var due = box === 0 ? now : dayStart(now, DAYS[box]);
+  P[id] = {box:box, right:right, wrong:wrong, last:now, due:due};
+  persist(id);
+}
+function gapLabel(box){ return box <= 0 ? '곧 다시' : DAYS[box] + '일 뒤'; }
+
+/* ---------- 필터 ---------- */
+function deckCards(deck){ return CARDS.filter(function(c){ return c.deck === deck; }); }
+function catsOf(deck){
+  var set = new Set(deckCards(deck).map(function(c){ return c.cat; }));
+  var order = deck === 'concept' ? DOMAIN_ORDER.concat(CAT_ORDER) : CAT_ORDER;
+  var out = [];
+  order.forEach(function(x){ if (set.has(x) && out.indexOf(x) < 0) out.push(x); });
+  Array.from(set).sort().forEach(function(x){ if (out.indexOf(x) < 0) out.push(x); });
+  return out;
+}
+function filtered(deck){
+  var f = pref.filt[deck] || '전체';
+  if (f !== '전체' && catsOf(deck).indexOf(f) < 0) f = pref.filt[deck] = '전체';
+  return deckCards(deck).filter(function(c){
+    return (f === '전체' || c.cat === f) && (deck !== 'concept' || pref.imp === '전체' || c.imp === pref.imp);
+  });
+}
+function counts(list){
+  var o = {known:0, unsure:0, dont:0, 'new':0, due:0};
+  list.forEach(function(c){ o[stat(c.id)]++; if (isDue(c.id)) o.due++; });
+  return o;
+}
+function dueSorted(list){ return list.filter(function(c){ return isDue(c.id); }).sort(function(a, b){ return P[a.id].due - P[b.id].due; }).map(function(c){ return c.id; }); }
+function scopeLabel(){
+  var d = pref.deck, f = pref.filt[d] || '전체';
+  var s = DECK_NAME[d] + ' · ' + (f === '전체' ? '전체 분야' : f);
+  if (d === 'concept' && pref.imp !== '전체') s += ' · ' + pref.imp;
+  return s;
+}
+
+/* ---------- 화면 상태 ---------- */
+var st = {screen:'home', session:null, quiz:null, reset:null, wrongDeck:'전체', q:'', open:new Set()};
+
+/* ---------- 카드 앞·뒤 ---------- */
+function metaChips(c){
+  var h = '<span class="tag">' + DECK_NAME[c.deck] + '</span><span class="tag">' + esc(c.cat) + '</span>';
+  if (c.deck === 'concept' && c.imp) h += '<span class="tag' + (c.imp === '상' ? ' imp-hi' : '') + '">' + esc(c.imp === '상' ? '중요도 상' : c.imp) + '</span>';
+  return h;
+}
+function frontHTML(c){
+  if (c.deck === 'abbr') {
+    if (pref.dir === 'm2a') return '<div class="f-ko">' + esc(c.name || c.full) + '</div>' + (c.mean ? '<div class="f-sub">' + esc(c.mean) + '</div>' : '');
+    return '<div class="f-abbr">' + esc(c.abbr) + '</div>';
+  }
+  if (c.deck === 'dueum') return '<div class="f-dueum pen">' + esc(c.dueum) + '</div><div class="f-topic">' + esc(c.topic) + '</div>';
+  return '<div class="f-topic-lg">' + esc(c.topic) + '</div>' + (c.group ? '<div class="f-group">' + esc(c.group) + '</div>' : '');
+}
+function markInitials(full, abbr){
+  var letters = Array.from(abbr.toUpperCase()).filter(function(ch){ return /[A-Z0-9]/.test(ch); });
+  var k = 0, out = '', start = true;
+  for (var ch of full) {
+    var w = /[A-Za-z0-9]/.test(ch);
+    if (k < letters.length && w && (start || /[A-Z]/.test(ch)) && ch.toUpperCase() === letters[k]) { out += '<b>' + esc(ch) + '</b>'; k++; }
+    else out += esc(ch);
+    start = !w;
+  }
+  return k >= Math.min(2, letters.length) ? out : esc(full);
+}
+function tokens(du){ return Array.from(du).filter(function(ch){ return !/[\s·,.\-\/()\[\]~+]/.test(ch); }); }
+function backHTML(c, opt){
+  opt = opt || {};
+  var h = '';
+  if (c.deck === 'abbr') {
+    if (!opt.bare) h += '<div class="b-q">' + (pref.dir === 'm2a' ? esc(c.name || c.full) : esc(c.abbr)) + '</div>';
+    h += '<div class="ruled">';
+    if (pref.dir === 'm2a' && !opt.bare) {
+      h += '<p class="b-abbr">' + esc(c.abbr) + '</p>';
+      if (c.full) h += '<p class="b-main">' + markInitials(c.full, c.abbr) + '</p>';
+    } else {
+      if (opt.bare) h += '<p class="b-abbr">' + esc(c.abbr) + '</p>';
+      if (c.full) h += '<p class="b-main">' + markInitials(c.full, c.abbr) + '</p>';
+      if (c.name) h += '<p class="b-big">' + esc(c.name) + '</p>';
+    }
+    if (c.mean) h += '<p class="b-mean">' + esc(c.mean) + '</p>';
+    return h + '</div>';
+  }
+  if (c.deck === 'dueum') {
+    var tk = tokens(c.dueum), n = Math.max(tk.length, c.items.length), obo = !!opt.obo, rv = opt.reveal || new Set();
+    if (!opt.bare) h += '<div class="b-q"><span class="pen">' + esc(c.dueum) + '</span> · ' + esc(c.topic) + '</div>';
+    h += '<ol class="pairs ruled' + (obo ? ' obo' : '') + '">';
+    for (var i = 0; i < n; i++) {
+      var k = tk[i] || '·', v = c.items[i] || '';
+      if (obo) {
+        var open = rv.has(i);
+        h += '<li><button type="button" class="p-k" data-act="reveal" data-i="' + i + '" aria-expanded="' + open + '" aria-label="' + esc(k) + ' 항목 ' + (open ? '보임' : '보기') + '">' + esc(k) + '</button><span class="p-v">' + (open ? esc(v) : '') + '</span></li>';
+      } else {
+        h += '<li><span class="p-k" aria-hidden="true">' + esc(k) + '</span><span class="p-v">' + esc(v) + '</span></li>';
+      }
+    }
+    h += '</ol>';
+    if (tk.length !== c.items.length && c.items.length) h += '<p class="note">두음 ' + tk.length + '글자 · 항목 ' + c.items.length + '개 — 순서대로 짝지었어요.</p>';
+    if (obo && rv.size < n) h += '<div class="mini-row"><button type="button" class="link" data-act="reveal-all">모두 보기</button></div>';
+    return h;
+  }
+  if (!opt.bare) h += '<div class="b-q">' + esc(c.topic) + '</div>';
+  h += '<div class="ruled">';
+  if (c.keys) h += '<p class="b-lab">두음·키워드</p><p class="b-pen">' + esc(c.keys) + '</p>';
+  if (c.def) h += '<p class="b-lab">정의</p><p class="b-text">' + esc(c.def) + '</p>';
+  if (c.exam) h += '<p class="b-lab">기출</p><p class="b-sub">' + esc(c.exam) + '</p>';
+  if (!c.keys && !c.def) h += '<p class="b-empty">아직 두음·정의가 비어 있어요. 답안 노트에서 채워 보세요.</p>';
+  h += '<p class="b-foot">' + esc(c.group) + (c.itpe ? ' · ITPE #' + esc(c.itpe) : '') + '</p>';
+  return h + '</div>';
+}
+function rowLabel(c){
+  if (c.deck === 'abbr') return '<b>' + esc(c.abbr) + '</b> ' + esc(c.name || c.full) + (c.full && c.name ? '<small>' + esc(c.full) + '</small>' : '');
+  if (c.deck === 'dueum') return '<span class="pen">' + esc(c.dueum) + '</span><b>' + esc(c.topic) + '</b>';
+  return '<b>' + esc(c.topic) + '</b><small>' + esc(c.cat) + (c.imp ? ' · ' + esc(c.imp) : '') + (c.keys ? ' · ' + esc(c.keys) : '') + '</small>';
+}
+
+/* ---------- 홈 ---------- */
+function homeHTML(){
+  var d = pref.deck, all = deckCards(d), list = filtered(d), cnt = counts(list);
+  var h = '<section aria-label="덱 선택"><div class="decks">';
+  DECKS.forEach(function(x){
+    var cs = deckCards(x.key), due = cs.filter(function(c){ return isDue(c.id); }).length;
+    h += '<button type="button" class="deck-tab" data-act="deck" data-deck="' + x.key + '" aria-pressed="' + (x.key === d) + '"><span class="dt-name">' + x.name + '</span><span class="dt-n">' + cs.length + '장</span>' + (due ? '<span class="dt-due">복습 ' + due + '</span>' : '') + '</button>';
+  });
+  h += '</div></section>';
+
+  if (!all.length) {
+    h += '<div class="empty">이 덱에 카드가 없어요.<br>data/' + (d === 'concept' ? 'concepts' : d) + '.json을 채우고 다시 빌드하세요.</div>';
+  } else {
+    var f = pref.filt[d] || '전체', cats = catsOf(d);
+    h += '<span class="lab" id="lab-cat">' + (d === 'concept' ? '도메인' : '분야') + '</span><div class="chips" role="group" aria-labelledby="lab-cat">';
+    ['전체'].concat(cats).forEach(function(cat){
+      var n = cat === '전체' ? all.length : all.filter(function(c){ return c.cat === cat; }).length;
+      h += '<button type="button" class="chip" data-act="filt" data-v="' + esc(cat) + '" aria-pressed="' + (cat === f) + '">' + esc(cat) + '<small>' + n + '</small></button>';
+    });
+    h += '</div>';
+    if (d === 'concept') {
+      h += '<span class="lab" id="lab-imp">중요도</span><div class="chips" role="group" aria-labelledby="lab-imp">';
+      ['전체', '상', '출제예상'].forEach(function(v){
+        h += '<button type="button" class="chip" data-act="imp" data-v="' + v + '" aria-pressed="' + (pref.imp === v) + '">' + v + '</button>';
+      });
+      h += '</div>';
+    }
+    var size = +pref.size || 0;
+    if (cnt.due) {
+      h += '<button type="button" class="today" data-act="today"><span><span class="today-k">오늘 복습</span><span class="today-s">' + esc(scopeLabel()) + ' · 새 카드 ' + cnt['new'] + '장 남음</span></span><span class="today-n">' + cnt.due + '<small>장</small></span></button>';
+    } else if (cnt['new']) {
+      h += '<button type="button" class="today" data-act="today"><span><span class="today-k">새 카드 학습</span><span class="today-s">오늘 복습 0장 · ' + esc(scopeLabel()) + ' · 이번에 ' + (size ? Math.min(size, cnt['new']) : cnt['new']) + '장</span></span><span class="today-n">' + cnt['new'] + '<small>장</small></span></button>';
+    } else {
+      h += '<button type="button" class="today" data-act="today"><span><span class="today-k">오늘 복습 0장</span><span class="today-s">' + esc(scopeLabel()) + ' · 모두 봤어요. 섞어서 다시 보기</span></span><span class="today-n">0<small>장</small></span></button>';
+    }
+    h += '<div class="row2"><button type="button" class="btn" data-act="learn">카드 학습<small>복습 먼저 · ' + (size ? size + '장씩' : '전부') + '</small></button>';
+    h += '<button type="button" class="btn" data-act="quiz">4지선다<small>10문제 · 같은 분야 오답</small></button></div>';
+
+    h += '<div class="opts">';
+    if (d === 'abbr') h += '<div class="opt-row"><span id="lab-dir">방향</span><div class="seg" role="group" aria-labelledby="lab-dir"><button type="button" data-act="dir" data-v="a2m" aria-pressed="' + (pref.dir === 'a2m') + '">약어 → 뜻</button><button type="button" data-act="dir" data-v="m2a" aria-pressed="' + (pref.dir === 'm2a') + '">뜻 → 약어</button></div></div>';
+    if (d === 'dueum') h += '<div class="opt-row"><span id="lab-obo">뒷면</span><div class="seg" role="group" aria-labelledby="lab-obo"><button type="button" data-act="obo" data-v="0" aria-pressed="' + !pref.obo + '">한 번에</button><button type="button" data-act="obo" data-v="1" aria-pressed="' + !!pref.obo + '">한 글자씩</button></div></div>';
+    h += '<div class="opt-row"><span id="lab-size">한 번에 볼 장수</span><div class="seg" role="group" aria-labelledby="lab-size">';
+    [5, 10, 20, 0].forEach(function(v){ h += '<button type="button" data-act="size" data-v="' + v + '" aria-pressed="' + (+pref.size === v) + '">' + (v ? v : '전부') + '</button>'; });
+    h += '</div></div></div>';
+  }
+
+  h += '<span class="lab">덱별 진도</span><div class="prog-list">';
+  DECKS.forEach(function(x){
+    var cs = deckCards(x.key), c = counts(cs), n = cs.length || 1;
+    function pct(v){ return (v / n * 100).toFixed(2) + '%'; }
+    h += '<div><div class="prog-h"><b>' + x.name + '</b><span>' + cs.length + '장 · 복습 대기 ' + c.due + '</span></div>';
+    h += '<div class="pbar" role="img" aria-label="' + x.name + ' 외움 ' + c.known + ', 헷갈림 ' + c.unsure + ', 모름 ' + c.dont + ', 안 봄 ' + c['new'] + '"><i class="k" style="width:' + pct(c.known) + '"></i><i class="u" style="width:' + pct(c.unsure) + '"></i><i class="d" style="width:' + pct(c.dont) + '"></i></div>';
+    h += '<div class="legend"><span class="k">외움 ' + c.known + '</span><span class="u">헷갈림 ' + c.unsure + '</span><span class="d">모름 ' + c.dont + '</span><span>안 봄 ' + c['new'] + '</span></div></div>';
+  });
+  h += '</div>';
+  h += resetHTML();
+  return h;
+}
+function resetIds(scope){
+  return Object.keys(P).filter(function(k){
+    if (scope === 'all') return true;
+    var x = DECKS.filter(function(dd){ return dd.key === scope; })[0];
+    return x && k.indexOf(x.prefix) === 0;
+  });
+}
+function resetHTML(){
+  var r = st.reset;
+  if (!r) return '<div class="mini-row" style="justify-content:flex-start;margin-top:18px"><button type="button" class="link" data-act="reset-open">진도 초기화…</button></div>';
+  var h = '<div class="panel" role="region" aria-label="진도 초기화">';
+  if (r.step === 'choose') {
+    h += '<p><b>어떤 진도를 지울까요?</b></p><div class="chips">';
+    DECKS.forEach(function(x){ h += '<button type="button" class="chip" data-act="reset-scope" data-v="' + x.key + '">' + x.name + '<small>' + resetIds(x.key).length + '</small></button>'; });
+    h += '<button type="button" class="chip" data-act="reset-scope" data-v="all">전체<small>' + resetIds('all').length + '</small></button></div>';
+    h += '<div class="row2"><button type="button" class="btn-line" data-act="reset-cancel">취소</button><span></span></div>';
+  } else if (r.step === 'confirm') {
+    var n = resetIds(r.scope).length, nm = r.scope === 'all' ? '전체 덱' : DECK_NAME[r.scope];
+    h += '<p><b>' + nm + ' 진도 기록 ' + n + '장을 지웁니다.</b></p><p class="muted">상자·정답/오답 횟수·복습 일정이 모두 사라지고 되돌릴 수 없어요.</p>';
+    h += '<div class="row2"><button type="button" class="btn-line" data-act="reset-cancel">취소</button><button type="button" class="danger" data-act="reset-go"' + (n ? '' : ' disabled') + '>지우기</button></div>';
+  } else {
+    h += '<p><b>지우는 중… <span id="reset-n">' + r.n + '</span> / ' + r.total + '</b></p>';
+  }
+  return h + '</div>';
+}
+
+/* ---------- 카드 세션 ---------- */
+function startSession(ids, label){
+  ids = ids.filter(function(id){ return BY_ID.has(id); });
+  if (!ids.length) { toast('지금 볼 카드가 없어요'); return; }
+  st.session = {ids:ids.slice(), queue:ids.slice(), pos:0, flipped:false, reveal:new Set(), tally:{know:0, unsure:0, dont:0}, reps:{}, done:new Set(), label:label, graded:0};
+  go('session');
+}
+function learnIds(list){
+  var due = dueSorted(list);
+  var fresh = list.filter(function(c){ return !P[c.id]; }).map(function(c){ return c.id; });
+  var ids = due.concat(fresh);
+  if (!ids.length) ids = shuffle(list.map(function(c){ return c.id; }));
+  var size = +pref.size || 0;
+  return size ? ids.slice(0, size) : ids;
+}
+function sessionHTML(){
+  var s = st.session, id = s.queue[s.pos], c = BY_ID.get(id);
+  var total = s.ids.length, done = s.done.size;
+  var h = '<div class="sess-top"><button type="button" class="link" data-act="end">← 그만하기</button><span class="sess-n">' + done + ' / ' + total + '</span><span class="tag">' + esc(s.label) + '</span></div>';
+  h += '<div class="sess-bar" aria-hidden="true"><i style="width:' + (done / total * 100).toFixed(1) + '%"></i></div>';
+  h += '<div class="card anim" id="card" data-act="flip" role="button" tabindex="0" aria-label="' + (s.flipped ? '카드 앞면 보기' : '카드 뒤집기') + '">';
+  h += '<div class="card-meta">' + metaChips(c) + (P[id] ? '<span class="tag">상자 ' + P[id].box + '</span>' : '<span class="tag">새 카드</span>') + '</div>';
+  if (s.flipped) h += '<div class="back">' + backHTML(c, {obo:c.deck === 'dueum' && pref.obo, reveal:s.reveal}) + '</div>';
+  else h += '<div class="face">' + frontHTML(c) + '</div><p class="hint">탭하면 뒤집혀요</p>';
+  h += '</div>';
+  return h;
+}
+function flip(){ var s = st.session; if (!s) return; s.flipped = !s.flipped; render(true); }
+function gradeCurrent(g){
+  var s = st.session; if (!s || !s.flipped) return;
+  var id = s.queue[s.pos];
+  grade(id, g); s.tally[g]++; s.graded++;
+  s.reps[id] = (s.reps[id] || 0) + 1;
+  if (P[id].box === 0 && s.reps[id] < 3) s.queue.splice(Math.min(s.queue.length, s.pos + 4), 0, id);
+  else s.done.add(id);
+  s.pos++; s.flipped = false; s.reveal = new Set();
+  if (s.pos >= s.queue.length) go('summary'); else render(true);
+}
+function summaryHTML(){
+  var s = st.session, t = s.tally;
+  var again = s.ids.filter(function(id){ return P[id] && P[id].box === 0; });
+  var h = '<h2>' + esc(s.label) + ' 끝</h2><p class="muted">' + s.done.size + '장 마침 · 채점 ' + s.graded + '번 (다시 나온 카드 포함)</p>';
+  h += '<div class="tally"><div class="t ok"><b>' + t.know + '</b>알아요</div><div class="t mid"><b>' + t.unsure + '</b>헷갈려요</div><div class="t bad"><b>' + t.dont + '</b>몰라요</div></div>';
+  h += '<div class="stack">';
+  if (again.length) h += '<button type="button" class="btn-ink" data-act="sum-again">아직 모르는 ' + again.length + '장 다시</button>';
+  h += '<button type="button" class="btn-line" data-act="home">홈으로</button></div>';
+  return h;
+}
+
+/* ---------- 4지선다 ---------- */
+function quizMode(c){ return c.deck === 'abbr' ? pref.dir : c.deck; }
+function optOf(x, mode){
+  if (mode === 'a2m') return {t:x.name || x.full, s:x.name && x.full ? x.full : ''};
+  if (mode === 'm2a') return {t:x.abbr};
+  if (mode === 'dueum') return {t:x.dueum, pen:true};
+  return {t:x.topic};
+}
+function quizOK(c){
+  if (c.deck === 'abbr') return !!(c.abbr && (c.name || c.full));
+  if (c.deck === 'dueum') return !!(c.dueum && c.topic);
+  return !!(c.keys || c.def);
+}
+function makeQ(c){
+  var mode = quizMode(c), q = {id:c.id, mode:mode, pick:null};
+  if (mode === 'a2m') { q.prompt = c.abbr; q.cls = 'big'; q.ask = '뜻은?'; }
+  else if (mode === 'm2a') { q.prompt = c.name || c.full; q.sub = c.mean; q.ask = '약어는?'; }
+  else if (mode === 'dueum') { q.prompt = c.topic; q.ask = '두음은?'; }
+  else if (c.keys) { q.prompt = c.keys; q.cls = 'pen'; q.ask = '어느 토픽의 두음·키워드일까요?'; }
+  else { q.prompt = c.def; q.cls = 'text'; q.ask = '어느 토픽의 정의일까요?'; }
+  var right = optOf(c, mode); right.ok = true;
+  var seen = new Set([norm(right.t)]), opts = [right];
+  var pool = CARDS.filter(function(x){ return x.deck === c.deck && x.id !== c.id && optOf(x, mode).t; });
+  var same = shuffle(pool.filter(function(x){ return x.cat === c.cat; })), other = shuffle(pool.filter(function(x){ return x.cat !== c.cat; }));
+  same.concat(other).forEach(function(x){
+    if (opts.length >= 4) return;
+    var o = optOf(x, mode); if (seen.has(norm(o.t))) return;
+    seen.add(norm(o.t)); opts.push(o);
+  });
+  if (opts.length < 2) return null;
+  q.opts = shuffle(opts);
+  return q;
+}
+function startQuiz(list){
+  var el = list.filter(quizOK);
+  if (el.length < 1 || deckCards(pref.deck).length < 2) { toast('4지선다를 만들 카드가 부족해요'); return; }
+  var due = shuffle(el.filter(function(c){ return isDue(c.id); }));
+  var fresh = shuffle(el.filter(function(c){ return !P[c.id]; }));
+  var rest = shuffle(el.filter(function(c){ return P[c.id] && !isDue(c.id); }));
+  var picks = [], seen = new Set();
+  due.concat(fresh, rest).forEach(function(c){ if (picks.length < 10 && !seen.has(c.id)) { seen.add(c.id); picks.push(c); } });
+  var items = shuffle(picks).map(makeQ).filter(Boolean);
+  if (!items.length) { toast('4지선다를 만들 카드가 부족해요'); return; }
+  st.quiz = {items:items, idx:0, score:0, list:list};
+  go('quiz');
+}
+function quizHTML(){
+  var z = st.quiz, q = z.items[z.idx], c = BY_ID.get(q.id);
+  var h = '<div class="sess-top"><button type="button" class="link" data-act="end">← 그만하기</button><span class="sess-n">' + (z.idx + 1) + ' / ' + z.items.length + ' · 맞힘 ' + z.score + '</span><span class="tag">4지선다</span></div>';
+  h += '<div class="sess-bar" aria-hidden="true"><i style="width:' + (z.idx / z.items.length * 100).toFixed(1) + '%"></i></div>';
+  h += '<div class="q-card anim"><div class="card-meta">' + metaChips(c) + '</div><p class="q-ask">' + esc(q.ask) + '</p><p class="q-prompt ' + (q.cls || '') + '">' + esc(q.prompt) + '</p>' + (q.sub ? '<p class="q-sub">' + esc(q.sub) + '</p>' : '') + '</div>';
+  h += '<div class="opts-q" role="group" aria-label="보기">';
+  q.opts.forEach(function(o, i){
+    var cls = '', mark = '';
+    if (q.pick != null) {
+      if (o.ok) { cls = ' is-ok'; mark = '○ 정답'; }
+      else if (i === q.pick) { cls = ' is-bad'; mark = '✕ 오답'; }
+    }
+    h += '<button type="button" class="opt' + cls + '" data-act="answer" data-i="' + i + '"' + (q.pick != null ? ' disabled' : '') + '><span class="opt-n">' + (i + 1) + '</span><span class="opt-t' + (o.pen ? ' pen' : '') + '">' + esc(o.t) + (o.s ? '<small>' + esc(o.s) + '</small>' : '') + '</span><span class="opt-m">' + mark + '</span></button>';
+  });
+  h += '</div>';
+  if (q.pick != null) {
+    var ok = q.opts[q.pick].ok;
+    h += '<p class="muted" style="margin-top:12px" role="status">' + (ok ? '맞혔어요. 상자 +1 (' + gapLabel(P[q.id].box) + ')' : '틀렸어요. 상자 0으로 — 오답 노트에 담겼어요.') + '</p>';
+  }
+  return h;
+}
+function qresultHTML(){
+  var z = st.quiz, wrong = z.items.filter(function(q){ return q.pick != null && !q.opts[q.pick].ok; });
+  var answered = z.items.filter(function(q){ return q.pick != null; }).length;
+  var h = '<h2>4지선다 결과</h2><div class="score"><b>' + z.score + '</b><span>/ ' + answered + '</span></div>';
+  h += '<p class="muted">' + scopeLabel() + '</p>';
+  if (wrong.length) {
+    h += '<span class="lab">틀린 문제</span><ul class="list">';
+    wrong.forEach(function(q){
+      var r = q.opts.filter(function(o){ return o.ok; })[0];
+      h += '<li><div class="row"><span class="row-main"><b>' + esc(q.prompt) + '</b><small>정답: ' + esc(r.t) + '</small></span><span class="row-meta"><span class="x">✕ ' + esc(q.opts[q.pick].t) + '</span></span></div></li>';
+    });
+    h += '</ul>';
+  }
+  h += '<div class="stack">';
+  if (wrong.length) h += '<button type="button" class="btn-ink" data-act="quiz-wrong">틀린 ' + wrong.length + '문제 카드로 복습</button>';
+  h += '<button type="button" class="' + (wrong.length ? 'btn-line' : 'btn-ink') + '" data-act="quiz-more">10문제 더</button><button type="button" class="btn-line" data-act="home">홈으로</button></div>';
+  return h;
+}
+
+/* ---------- 오답 노트 ---------- */
+function wrongCards(deck){
+  return CARDS.filter(function(c){ var r = P[c.id]; return r && r.box <= 1 && (deck === '전체' || c.deck === deck); })
+    .sort(function(a, b){ var x = P[a.id], y = P[b.id]; return x.box - y.box || y.wrong - x.wrong || y.last - x.last; });
+}
+function itemHTML(c, withDeck){
+  var r = P[c.id], open = st.open.has(c.id);
+  var h = '<li><button type="button" class="row" data-act="toggle" data-id="' + esc(c.id) + '" aria-expanded="' + open + '"><span class="row-main">' + rowLabel(c) + '</span><span class="row-meta">';
+  if (withDeck) h += '<span class="box">' + DECK_NAME[c.deck] + '</span>';
+  if (r) h += '<span class="box' + (r.box === 0 ? ' b0' : '') + '">상자 ' + r.box + '</span>' + (r.wrong ? '<span class="x">✕ ' + r.wrong + '</span>' : '');
+  h += '</span></button>';
+  if (open) h += '<div class="detail">' + backHTML(c, {bare:true}) + '</div>';
+  return h + '</li>';
+}
+function wrongHTML(){
+  var all = wrongCards('전체'), list = wrongCards(st.wrongDeck);
+  var h = '<h2>오답 노트</h2><p class="muted">상자 0~1 카드 — 몰라요·헷갈려요·틀린 문제가 모여요.</p>';
+  h += '<div class="chips" role="group" aria-label="덱" style="margin-top:12px">';
+  ['전체'].concat(DECKS.map(function(x){ return x.key; })).forEach(function(k){
+    var n = k === '전체' ? all.length : all.filter(function(c){ return c.deck === k; }).length;
+    h += '<button type="button" class="chip" data-act="wrong-deck" data-v="' + k + '" aria-pressed="' + (st.wrongDeck === k) + '">' + (k === '전체' ? '전체' : DECK_NAME[k]) + '<small>' + n + '</small></button>';
+  });
+  h += '</div>';
+  if (!list.length) return h + '<div class="empty">비어 있어요. 카드 학습에서 몰라요·헷갈려요를 누른 카드가 여기 모입니다.</div>';
+  h += '<button type="button" class="today" data-act="wrong-review"><span><span class="today-k">바로 복습</span><span class="today-s">' + (st.wrongDeck === '전체' ? '모든 덱' : DECK_NAME[st.wrongDeck]) + ' · 상자 0 먼저</span></span><span class="today-n">' + list.length + '<small>장</small></span></button>';
+  h += '<ul class="list">' + list.slice(0, 300).map(function(c){ return itemHTML(c, st.wrongDeck === '전체'); }).join('') + '</ul>';
+  return h;
+}
+
+/* ---------- 찾기 ---------- */
+var HAY = new Map();
+function hay(c){
+  if (!HAY.has(c.id)) {
+    var t = c.deck === 'abbr' ? [c.abbr, c.full, c.ko] : c.deck === 'dueum' ? [c.dueum, c.topic, c.items.join(' ')] : [c.topic, c.keys, c.def, c.group];
+    var s = t.join(' ').toLowerCase(); HAY.set(c.id, [s, s.replace(/\s+/g, '')]);
+  }
+  return HAY.get(c.id);
+}
+function searchResults(){
+  var q = st.q.trim().toLowerCase();
+  if (!q) return '<p class="muted" style="margin-top:12px">약어 ' + deckCards('abbr').length + ' · 두음 ' + deckCards('dueum').length + ' · 개념 ' + deckCards('concept').length + '장에서 찾아요.</p>';
+  var qn = q.replace(/\s+/g, ''), res = [];
+  CARDS.forEach(function(c){
+    var hs = hay(c); if (!(hs[0].indexOf(q) >= 0 || hs[1].indexOf(qn) >= 0)) return;
+    var head = (c.abbr || c.dueum || c.topic || '').toLowerCase(), score = head === q ? 0 : head.indexOf(q) === 0 ? 1 : 2;
+    res.push([score, c]);
+  });
+  res.sort(function(a, b){ return a[0] - b[0]; });
+  var h = '<p class="muted" style="margin-top:12px" role="status">' + res.length + '건' + (res.length > 80 ? ' · 앞 80건만 보여요' : '') + '</p>';
+  if (!res.length) return h;
+  return h + '<ul class="list">' + res.slice(0, 80).map(function(x){ return itemHTML(x[1], true); }).join('') + '</ul>';
+}
+function searchHTML(){
+  return '<h2>찾기</h2><label class="sr-only" for="search-q">약어·풀네임·해석·두음·토픽 검색</label><div class="search"><input id="search-q" type="search" enterkeyhint="search" autocomplete="off" placeholder="약어, 풀네임, 해석, 두음, 토픽" value="' + esc(st.q) + '"></div><div id="search-res">' + searchResults() + '</div>';
+}
+
+/* ---------- 하단 바 ---------- */
+function barHTML(){
+  var s = st.screen;
+  if (s === 'session') {
+    var ss = st.session;
+    if (!ss.flipped) return '<div class="wrap"><button type="button" class="btn-ink" data-act="flip" style="min-height:60px">뒤집기</button></div>';
+    var r = P[ss.queue[ss.pos]], box = r ? r.box : 0;
+    return '<div class="wrap grades" role="group" aria-label="자가 채점"><button type="button" class="g g-bad" data-act="g" data-g="dont">몰라요<small>곧 다시</small></button><button type="button" class="g g-mid" data-act="g" data-g="unsure">헷갈려요<small>' + (box ? '상자 유지 · ' + gapLabel(box) : '상자 0 · 곧 다시') + '</small></button><button type="button" class="g g-ok" data-act="g" data-g="know">알아요<small>' + gapLabel(Math.min(4, box + 1)) + '</small></button></div>';
+  }
+  if (s === 'quiz') {
+    var z = st.quiz, q = z.items[z.idx];
+    if (q.pick == null) return '<div class="wrap"><p class="muted" style="text-align:center;min-height:52px;display:flex;align-items:center;justify-content:center">보기를 눌러 답하세요</p></div>';
+    return '<div class="wrap"><button type="button" class="btn-ink" data-act="next" style="min-height:60px">' + (z.idx + 1 < z.items.length ? '다음 문제' : '결과 보기') + '</button></div>';
+  }
+  var wn = wrongCards('전체').length, cur = (s === 'wrong' || s === 'search') ? s : 'home';
+  return '<div class="wrap tabs">' +
+    '<button type="button" data-act="tab" data-tab="home"' + (cur === 'home' ? ' aria-current="page"' : '') + '>홈</button>' +
+    '<button type="button" data-act="tab" data-tab="wrong"' + (cur === 'wrong' ? ' aria-current="page"' : '') + '>오답 노트' + (wn ? '<span class="badge">' + wn + '</span>' : '') + '</button>' +
+    '<button type="button" data-act="tab" data-tab="search"' + (cur === 'search' ? ' aria-current="page"' : '') + '>찾기</button></div>';
+}
+
+/* ---------- 렌더 ---------- */
+function render(keepFocus){
+  var s = st.screen, h;
+  if (s === 'session') h = sessionHTML();
+  else if (s === 'summary') h = summaryHTML();
+  else if (s === 'quiz') h = quizHTML();
+  else if (s === 'qresult') h = qresultHTML();
+  else if (s === 'wrong') h = wrongHTML();
+  else if (s === 'search') h = searchHTML();
+  else h = homeHTML();
+  app.innerHTML = h;
+  bar.innerHTML = barHTML();
+  if (keepFocus && s === 'session') { var cd = $('#card'); if (cd) { try { cd.focus({preventScroll:true}); } catch (e) {} } }
+}
+function softRender(){
+  renderChip();
+  if (st.screen === 'home' || st.screen === 'wrong') { var y = window.scrollY; render(); window.scrollTo(0, y); }
+  else if (st.screen === 'search') bar.innerHTML = barHTML();
+}
+function go(screen){
+  st.screen = screen; st.open = new Set();
+  render(screen === 'session');
+  window.scrollTo(0, 0);
+  if (screen !== 'session') { try { app.focus({preventScroll:true}); } catch (e) {} }
+}
+var toastTimer = null;
+function toast(msg){
+  var t = $('#toast'); t.textContent = msg; t.classList.add('on');
+  clearTimeout(toastTimer); toastTimer = setTimeout(function(){ t.classList.remove('on'); }, 2600);
+}
+
+/* ---------- 동작 ---------- */
+var A = {
+  deck: function(t){ pref.deck = t.dataset.deck; st.reset = null; savePref(); render(); },
+  filt: function(t){ pref.filt[pref.deck] = t.dataset.v; savePref(); render(); },
+  imp: function(t){ pref.imp = t.dataset.v; savePref(); render(); },
+  dir: function(t){ pref.dir = t.dataset.v === 'm2a' ? 'm2a' : 'a2m'; savePref(); render(); },
+  obo: function(t){ pref.obo = t.dataset.v === '1'; savePref(); render(); },
+  size: function(t){ pref.size = +t.dataset.v || 0; savePref(); render(); },
+  today: function(){
+    var list = filtered(pref.deck), due = dueSorted(list);
+    if (due.length) startSession(due, '오늘 복습');
+    else startSession(learnIds(list), list.some(function(c){ return !P[c.id]; }) ? '새 카드' : '다시 보기');
+  },
+  learn: function(){ startSession(learnIds(filtered(pref.deck)), '카드 학습'); },
+  quiz: function(){ startQuiz(filtered(pref.deck)); },
+  flip: function(){ flip(); },
+  g: function(t){ gradeCurrent(t.dataset.g); },
+  reveal: function(t){ var s = st.session; if (!s) return; var i = +t.dataset.i; if (s.reveal.has(i)) s.reveal.delete(i); else s.reveal.add(i); render(true); var b = app.querySelector('[data-act="reveal"][data-i="' + i + '"]'); if (b) { try { b.focus({preventScroll:true}); } catch (e) {} } },
+  'reveal-all': function(){ var s = st.session; if (!s) return; var c = BY_ID.get(s.queue[s.pos]); for (var i = 0; i < Math.max(tokens(c.dueum).length, c.items.length); i++) s.reveal.add(i); render(true); },
+  end: function(){
+    if (st.screen === 'session') { if (st.session.graded) go('summary'); else go('home'); }
+    else if (st.screen === 'quiz') { if (st.quiz.items.some(function(q){ return q.pick != null; })) go('qresult'); else go('home'); }
+  },
+  home: function(){ go('home'); },
+  tab: function(t){ go(t.dataset.tab); if (t.dataset.tab === 'search') { var i = $('#search-q'); if (i && !st.q) { try { i.focus({preventScroll:true}); } catch (e) {} } } },
+  'sum-again': function(){ startSession(st.session.ids.filter(function(id){ return P[id] && P[id].box === 0; }), '다시 보기'); },
+  answer: function(t){
+    var z = st.quiz, q = z.items[z.idx]; if (q.pick != null) return;
+    q.pick = +t.dataset.i; var ok = !!q.opts[q.pick].ok; if (ok) z.score++;
+    grade(q.id, ok ? 'know' : 'dont'); render();
+  },
+  next: function(){ var z = st.quiz; if (z.idx + 1 < z.items.length) { z.idx++; render(); window.scrollTo(0, 0); } else go('qresult'); },
+  'quiz-wrong': function(){ startSession(st.quiz.items.filter(function(q){ return q.pick != null && !q.opts[q.pick].ok; }).map(function(q){ return q.id; }), '틀린 문제 복습'); },
+  'quiz-more': function(){ startQuiz(st.quiz.list); },
+  'wrong-deck': function(t){ st.wrongDeck = t.dataset.v; st.open = new Set(); render(); },
+  'wrong-review': function(){ startSession(wrongCards(st.wrongDeck).map(function(c){ return c.id; }), '오답 복습'); },
+  toggle: function(t){
+    var id = t.dataset.id; if (st.open.has(id)) st.open.delete(id); else st.open.add(id);
+    if (st.screen === 'search') $('#search-res').innerHTML = searchResults();
+    else { var y = window.scrollY; render(); window.scrollTo(0, y); }
+    var b = app.querySelector('[data-act="toggle"][data-id="' + (window.CSS && CSS.escape ? CSS.escape(id) : id) + '"]'); if (b) { try { b.focus({preventScroll:true}); } catch (e) {} }
+  },
+  'reset-open': function(){ st.reset = {step:'choose'}; render(); },
+  'reset-scope': function(t){ st.reset = {step:'confirm', scope:t.dataset.v}; render(); },
+  'reset-cancel': function(){ st.reset = null; render(); },
+  'reset-go': async function(){
+    var scope = st.reset.scope, ids = resetIds(scope), nm = scope === 'all' ? '전체 덱' : DECK_NAME[scope];
+    st.reset = {step:'run', scope:scope, n:0, total:ids.length}; render();
+    ids.forEach(function(id){ delete P[id]; });
+    if (S.mode === 'db') {
+      ids.forEach(function(id){ UNSYNC.add(id); }); saveLocal();
+      for (var i = 0; i < ids.length; i++) {
+        var ok = await writeDoc(ids[i], 'del');
+        if (ok) UNSYNC.delete(ids[i]);
+        if (st.reset) { st.reset.n = i + 1; var el = $('#reset-n'); if (el) el.textContent = String(i + 1); }
+        if (S.mode !== 'db') break;
+      }
+    } else ids.forEach(function(id){ UNSYNC.add(id); });
+    ids.forEach(function(id){ delete P[id]; });
+    saveLocal(); st.reset = null;
+    if (st.screen === 'home') render();
+    toast(nm + ' 진도를 지웠어요');
+  }
+};
+
+document.addEventListener('click', function(e){
+  var t = e.target.closest('[data-act]'); if (!t || t.disabled) return;
+  var f = A[t.dataset.act]; if (f) f(t, e);
+});
+document.addEventListener('input', function(e){
+  if (e.target && e.target.id === 'search-q') { st.q = e.target.value; st.open = new Set(); $('#search-res').innerHTML = searchResults(); }
+});
+document.addEventListener('keydown', function(e){
+  if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  var onBtn = e.target && e.target.tagName === 'BUTTON';
+  if (st.screen === 'session') {
+    if ((e.key === ' ' || e.key === 'Enter') && !onBtn) { e.preventDefault(); flip(); }
+    else if (st.session.flipped && (e.key === '1' || e.key === '2' || e.key === '3')) { e.preventDefault(); gradeCurrent({'1':'dont', '2':'unsure', '3':'know'}[e.key]); }
+  } else if (st.screen === 'quiz') {
+    var z = st.quiz, q = z.items[z.idx];
+    if (q.pick == null && /^[1-4]$/.test(e.key) && +e.key <= q.opts.length) { e.preventDefault(); A.answer({dataset:{i:String(+e.key - 1)}}); }
+    else if (q.pick != null && e.key === 'Enter' && !onBtn) { e.preventDefault(); A.next(); }
+  }
+});
+
+/* ---------- 시작: 저장소 없이 먼저 그린다 ---------- */
+renderChip();
+render();
+initStore().catch(function(){ setMode('local'); });
+})();
+</script>
+</body></html>

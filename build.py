@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """data/*.json 을 src/template.html 에 주입해 dist/index.html 을 만든다.
 
-  python3 build.py            # dist/index.html + dist/preview.html
+  python3 build.py            # dist/index.html(아티팩트) + dist/preview.html + docs/index.html(GitHub Pages)
 """
 import json
 import pathlib
@@ -47,6 +47,10 @@ def main():
     out.mkdir(exist_ok=True)
     (out / "index.html").write_text(page, encoding="utf-8")
     (out / "preview.html").write_text(SKELETON.format(page), encoding="utf-8")
+    # GitHub Pages: 완결 문서 (docs/index.html)
+    docs = ROOT / "docs"; docs.mkdir(exist_ok=True)
+    (docs / "index.html").write_text(SKELETON.format(page), encoding="utf-8")
+    (docs / ".nojekyll").write_text("", encoding="utf-8")
 
     counts = ", ".join(f"{k} {len(v)}" for k, v in cards.items())
     size = (out / "index.html").stat().st_size
