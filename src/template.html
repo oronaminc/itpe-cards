@@ -283,8 +283,9 @@ function norm(s){ return String(s || '').toLowerCase().replace(/\s+/g, ''); }
 
 var CAT_ORDER = ['IT경영','프로젝트관리','SW공학','클라우드·인프라','CA·OS','네트워크·통신','DB·데이터','AI','보안','표준·기관','기타'];
 var DOMAIN_ORDER = ['IT경영','프로젝트관리','SW공학'];
-var DECKS = [{key:'abbr', name:'약어', prefix:'a-'}, {key:'dueum', name:'두음', prefix:'d-'}, {key:'concept', name:'개념', prefix:'c-'}, {key:'trend', name:'신기술', prefix:'t-'}];
-var DECK_NAME = {abbr:'약어', dueum:'두음', concept:'개념', trend:'신기술'};
+var DECKS = [{key:'abbr', name:'약어', prefix:'a-'}, {key:'dueum', name:'두음', prefix:'d-'}, {key:'concept', name:'개념', prefix:'c-'}, {key:'trend', name:'신기술', prefix:'t-'}, {key:'word', name:'용어', prefix:'w-'}];
+var DECK_NAME = {abbr:'약어', dueum:'두음', concept:'개념', trend:'신기술', word:'용어'};
+var WORD_ORDER = ['표준·제도','프로젝트관리','애자일','리스크·변경','답안 서술어'];
 var TREND_ORDER = ['컴시응 선행','정관 다음 칸','최근 발표','재출제'];
 var DAYS = [0, 1, 3, 7, 14];
 
@@ -331,6 +332,13 @@ var CARDS = [], BY_ID = new Map();
     CARDS.push({deck:'trend', id:take(['t-' + enc(str(c.id) || topic)]), cat:str(c.basis) || '기타', imp:str(c.tier),
       group:'', topic:topic, base:str(c.base), keys:str(c.kw), def:str(c.def), exam:str(c.src), itpe:''});
   });
+  (Array.isArray(RAW.terms) ? RAW.terms : []).forEach(function(c){
+    if (!c) return; var term = str(c.term); if (!term) return;
+    var ng = +c.ng || 0;
+    CARDS.push({deck:'word', id:take(['w-' + enc(str(c.id) || term)]), cat:str(c.cat) || '기타', imp:ng >= 10 ? '자주' : '',
+      group:'', topic:term, ko:str(c.ko), short:str(c.short), def:str(c.def), pair:str(c.pair), ex:str(c.ex), key:str(c.key) || term,
+      src:str(c.src), ng:ng, keys:'', exam:''});
+  });
   CARDS.forEach(function(c){ BY_ID.set(c.id, c); });
 })();
 
@@ -345,7 +353,7 @@ var K_PROG = 'itpe-cards.progress.v1', K_UNSYNC = 'itpe-cards.unsynced.v1', K_PR
 
 var pref = Object.assign({deck:'abbr', filt:{}, imp:'전체', dir:'a2m', obo:false, size:10}, readJSON(K_PREF, {}));
 if (pref.v !== 2) { pref.size = 10; pref.v = 2; }
-pref.filt = Object.assign({abbr:'전체', dueum:'전체', concept:'전체', trend:'전체'}, pref.filt && typeof pref.filt === 'object' ? pref.filt : {});
+pref.filt = Object.assign({abbr:'전체', dueum:'전체', concept:'전체', trend:'전체', word:'전체'}, pref.filt && typeof pref.filt === 'object' ? pref.filt : {});
 if (!DECK_NAME[pref.deck]) pref.deck = 'abbr';
 if ([0, 5, 10, 20].indexOf(+pref.size) < 0) pref.size = 10;
 if (pref.dir !== 'm2a') pref.dir = 'a2m';
@@ -468,7 +476,7 @@ function gapLabel(box){ return box <= 0 ? '곧 다시' : DAYS[box] + '일 뒤'; 
 function deckCards(deck){ return CARDS.filter(function(c){ return c.deck === deck; }); }
 function catsOf(deck){
   var set = new Set(deckCards(deck).map(function(c){ return c.cat; }));
-  var order = deck === 'concept' ? DOMAIN_ORDER.concat(CAT_ORDER) : deck === 'trend' ? TREND_ORDER : CAT_ORDER;
+  var order = deck === 'concept' ? DOMAIN_ORDER.concat(CAT_ORDER) : deck === 'trend' ? TREND_ORDER : deck === 'word' ? WORD_ORDER : CAT_ORDER;
   var out = [];
   order.forEach(function(x){ if (set.has(x) && out.indexOf(x) < 0) out.push(x); });
   Array.from(set).sort().forEach(function(x){ if (out.indexOf(x) < 0) out.push(x); });
@@ -502,6 +510,7 @@ function metaChips(c){
   var h = '<span class="tag">' + DECK_NAME[c.deck] + '</span><span class="tag">' + esc(c.cat) + '</span>';
   if (c.deck === 'concept' && c.imp) h += '<span class="tag' + (c.imp === '상' ? ' imp-hi' : '') + '">' + esc(c.imp === '상' ? '중요도 상' : c.imp) + '</span>';
   if (c.deck === 'trend' && c.imp) h += '<span class="tag' + (c.imp === '1순위' ? ' imp-hi' : '') + '">' + esc(c.imp) + '</span>';
+  if (c.deck === 'word' && c.ng) h += '<span class="tag' + (c.ng >= 10 ? ' imp-hi' : '') + '">해설 ' + c.ng + '쪽</span>';
   return h;
 }
 function frontHTML(c){
@@ -523,6 +532,8 @@ function markInitials(full, abbr){
   }
   return k >= Math.min(2, letters.length) ? out : esc(full);
 }
+function markKey(ex, key){ var i = ex.indexOf(key); return i < 0 ? esc(ex) : esc(ex.slice(0, i)) + '<b>' + esc(key) + '</b>' + esc(ex.slice(i + key.length)); }
+function blankKey(ex, key){ return ex.split(key).join('＿＿＿＿'); }
 function tokens(du){ return Array.from(du).filter(function(ch){ return !/[\s·,.\-\/()\[\]~+]/.test(ch); }); }
 function backHTML(c, opt){
   opt = opt || {};
@@ -561,6 +572,16 @@ function backHTML(c, opt){
   }
   if (!opt.bare) h += '<div class="b-q">' + esc(c.topic) + '</div>';
   h += '<div class="ruled">';
+  if (c.deck === 'word') {
+    if (c.ko) h += '<p class="b-big">' + esc(c.ko) + '</p>';
+    if (c.short) h += '<p class="b-lab">표 8글자</p><p class="b-pen">' + esc(c.short) + '</p>';
+    if (c.def) h += '<p class="b-lab">뜻</p><p class="b-text">' + esc(c.def) + '</p>';
+    if (c.pair) h += '<p class="b-lab">짝·반대</p><p class="b-sub">' + esc(c.pair) + '</p>';
+    if (c.ex) h += '<p class="b-lab">예문</p><p class="b-text">' + markKey(c.ex, c.key) + '</p>';
+    if (c.src) h += '<p class="b-lab">해설에 나온 곳</p><p class="b-sub">' + esc(c.src) + '</p>';
+    h += '</div>';
+    return h;
+  }
   if (c.deck === 'trend') {
     if (c.base) h += '<p class="b-lab">기본 개념 → 새 이름</p><p class="b-pen">' + esc(c.base) + '</p>';
     if (c.def) h += '<p class="b-lab">정의</p><p class="b-text">' + esc(c.def) + '</p>';
@@ -579,6 +600,7 @@ function backHTML(c, opt){
 function rowLabel(c){
   if (c.deck === 'abbr') return '<b>' + esc(c.abbr) + '</b> ' + esc(c.name || c.full) + (c.full && c.name ? '<small>' + esc(c.full) + '</small>' : '');
   if (c.deck === 'dueum') return '<span class="pen">' + esc(c.dueum) + '</span><b>' + esc(c.topic) + '</b>';
+  if (c.deck === 'word') return '<b>' + esc(c.topic) + '</b> ' + esc(c.ko) + '<small>' + esc(c.cat) + ' · ' + esc(c.short) + '</small>';
   return '<b>' + esc(c.topic) + '</b><small>' + esc(c.cat) + (c.imp ? ' · ' + esc(c.imp) : '') + (c.keys ? ' · ' + esc(c.keys) : '') + '</small>';
 }
 
@@ -593,7 +615,7 @@ function homeHTML(){
   h += '</div></section>';
 
   if (!all.length) {
-    h += '<div class="empty">이 덱에 카드가 없어요.<br>data/' + (d === 'concept' ? 'concepts' : d) + '.json을 채우고 다시 빌드하세요.</div>';
+    h += '<div class="empty">이 덱에 카드가 없어요.<br>data/' + ({concept:'concepts', trend:'trends', word:'terms'}[d] || d) + '.json을 채우고 다시 빌드하세요.</div>';
   } else {
     var f = pref.filt[d] || '전체', cats = catsOf(d);
     h += '<span class="lab" id="lab-cat">' + (d === 'concept' ? '도메인' : d === 'trend' ? '근거' : '분야') + '</span><div class="chips" role="group" aria-labelledby="lab-cat">';
@@ -726,6 +748,7 @@ function optOf(x, mode){
 function quizOK(c){
   if (c.deck === 'abbr') return !!(c.abbr && (c.name || c.full));
   if (c.deck === 'dueum') return !!(c.dueum && c.topic);
+  if (c.deck === 'word') return !!(c.ex && c.key && c.ex.indexOf(c.key) >= 0);
   return !!(c.keys || c.def);
 }
 function makeQ(c){
@@ -734,6 +757,7 @@ function makeQ(c){
   else if (mode === 'm2a') { q.prompt = c.name || c.full; q.sub = c.mean; q.ask = '약어는?'; }
   else if (mode === 'dueum') { q.prompt = c.topic; q.ask = '두음은?'; }
   else if (c.deck === 'trend') { q.prompt = c.def; q.cls = 'text'; q.ask = '어느 신기술의 정의일까요?'; }
+  else if (c.deck === 'word') { q.prompt = blankKey(c.ex, c.key); q.cls = 'text'; q.ask = '빈칸에 들어갈 용어는?'; }
   else if (c.keys) { q.prompt = c.keys; q.cls = 'pen'; q.ask = '어느 토픽의 두음·키워드일까요?'; }
   else { q.prompt = c.def; q.cls = 'text'; q.ask = '어느 토픽의 정의일까요?'; }
   var right = optOf(c, mode); right.ok = true;
@@ -835,14 +859,14 @@ function wrongHTML(){
 var HAY = new Map();
 function hay(c){
   if (!HAY.has(c.id)) {
-    var t = c.deck === 'abbr' ? [c.abbr, c.full, c.ko] : c.deck === 'dueum' ? [c.dueum, c.topic, c.items.join(' ')] : [c.topic, c.keys, c.def, c.group];
+    var t = c.deck === 'abbr' ? [c.abbr, c.full, c.ko] : c.deck === 'dueum' ? [c.dueum, c.topic, c.items.join(' ')] : c.deck === 'word' ? [c.topic, c.ko, c.def, c.pair, c.short] : [c.topic, c.keys, c.def, c.group];
     var s = t.join(' ').toLowerCase(); HAY.set(c.id, [s, s.replace(/\s+/g, '')]);
   }
   return HAY.get(c.id);
 }
 function searchResults(){
   var q = st.q.trim().toLowerCase();
-  if (!q) return '<p class="muted" style="margin-top:12px">약어 ' + deckCards('abbr').length + ' · 두음 ' + deckCards('dueum').length + ' · 개념 ' + deckCards('concept').length + ' · 신기술 ' + deckCards('trend').length + '장에서 찾아요.</p>';
+  if (!q) return '<p class="muted" style="margin-top:12px">약어 ' + deckCards('abbr').length + ' · 두음 ' + deckCards('dueum').length + ' · 개념 ' + deckCards('concept').length + ' · 신기술 ' + deckCards('trend').length + ' · 용어 ' + deckCards('word').length + '장에서 찾아요.</p>';
   var qn = q.replace(/\s+/g, ''), res = [];
   CARDS.forEach(function(c){
     var hs = hay(c); if (!(hs[0].indexOf(q) >= 0 || hs[1].indexOf(qn) >= 0)) return;
@@ -855,7 +879,7 @@ function searchResults(){
   return h + '<ul class="list">' + res.slice(0, 80).map(function(x){ return itemHTML(x[1], true); }).join('') + '</ul>';
 }
 function searchHTML(){
-  return '<h2>찾기</h2><label class="sr-only" for="search-q">약어·풀네임·해석·두음·토픽 검색</label><div class="search"><input id="search-q" type="search" enterkeyhint="search" autocomplete="off" placeholder="약어, 풀네임, 해석, 두음, 토픽" value="' + esc(st.q) + '"></div><div id="search-res">' + searchResults() + '</div>';
+  return '<h2>찾기</h2><label class="sr-only" for="search-q">약어·풀네임·해석·두음·토픽 검색</label><div class="search"><input id="search-q" type="search" enterkeyhint="search" autocomplete="off" placeholder="약어, 풀네임, 해석, 두음, 토픽, 용어" value="' + esc(st.q) + '"></div><div id="search-res">' + searchResults() + '</div>';
 }
 
 /* ---------- 하단 바 ---------- */
