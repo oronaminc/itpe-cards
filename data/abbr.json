@@ -3382,5 +3382,23 @@
   "full": "Portable Document Format",
   "ko": "문서 파일 형식",
   "cat": "기타"
+ },
+ {
+  "abbr": "ITTO",
+  "full": "Inputs, Tools & Techniques, Outputs",
+  "ko": "입력물·도구 및 기법·산출물 (PMBOK 프로세스 구성)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "ITU",
+  "full": "International Telecommunication Union",
+  "ko": "국제전기통신연합 (공식 표준화 기구)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "PRINCE2",
+  "full": "PRojects IN Controlled Environments 2",
+  "ko": "통제된 환경의 프로젝트 관리 방법론 (영국 정부 개발)",
+  "cat": "프로젝트관리"
  }
 ]
