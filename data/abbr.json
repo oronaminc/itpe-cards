@@ -828,6 +828,36 @@
   "cat": "IT경영"
  },
  {
+  "abbr": "RAM",
+  "full": "Responsibility Assignment Matrix",
+  "ko": "책임 배정 매트릭스 (PM) · 컴퓨터 구조에서는 Random Access Memory",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "SPI",
+  "full": "Schedule Performance Index",
+  "ko": "일정 성과 지수 = EV ÷ PV (EVM)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "CPI",
+  "full": "Cost Performance Index",
+  "ko": "원가 성과 지수 = EV ÷ AC (EVM)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "SV",
+  "full": "Schedule Variance",
+  "ko": "일정 편차 = EV − PV (EVM)",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "CV",
+  "full": "Cost Variance",
+  "ko": "원가 편차 = EV − AC (EVM)",
+  "cat": "프로젝트관리"
+ },
+ {
   "abbr": "PM",
   "full": "Project Manager / Project Management",
   "ko": "프로젝트 관리자 / 프로젝트 관리",
@@ -841,8 +871,8 @@
  },
  {
   "abbr": "PMC",
-  "full": "Project Management Consulting",
-  "ko": "프로젝트 관리 컨설팅 — 외부 전문가의 사업관리 지원",
+  "full": "Project Management Consultancy",
+  "ko": "프로젝트 관리 컨설팅 — 외부 전문가가 발주자의 사업관리를 지원 (140-1-4 원문 표기)",
   "cat": "프로젝트관리"
  },
  {
@@ -1132,6 +1162,24 @@
   "full": "Maintenance",
   "ko": "유지보수 — CP(무상 하자보수) 뒤 유상 유지보수",
   "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "JAD",
+  "full": "Joint Application Development",
+  "ko": "공동 애플리케이션 설계 — RAD 2단계",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "JRP",
+  "full": "Joint Requirement Planning",
+  "ko": "공동 요구 계획 — RAD 1단계",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "CBD",
+  "full": "Component Based Development",
+  "ko": "컴포넌트 기반 개발",
+  "cat": "SW공학"
  },
  {
   "abbr": "RAD",
