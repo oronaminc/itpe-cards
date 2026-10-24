@@ -3400,5 +3400,335 @@
   "full": "PRojects IN Controlled Environments 2",
   "ko": "통제된 환경의 프로젝트 관리 방법론 (영국 정부 개발)",
   "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "OOO",
+  "full": "(자리표시)",
+  "ko": "○○○ — 아무 토픽 이름이 들어갈 자리",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "CP",
+  "full": "(판서 표기 · 원문 풀네임 없음)",
+  "ko": "오픈 후 안정화·무상 하자보수 구간 (판서 해석)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SD/DB",
+  "full": "(판서 표기 · 원문 풀네임 없음)",
+  "ko": "분할발주의 분석·설계 단계 사업",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "TTAK",
+  "full": "TTA Korean standard",
+  "ko": "TTA 단체표준 번호 접두어 (TTAK.KO)",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "KO-10",
+  "full": "TTAK.KO-10.0292",
+  "ko": "TTA 정보시스템 하드웨어 규모산정 지침 표준번호",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "Agent2Agent",
+  "full": "Agent-to-Agent Protocol",
+  "ko": "에이전트 간 통신 프로토콜 (A2A)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "AutoEncoder",
+  "full": "AutoEncoder",
+  "ko": "오토인코더 — 입력을 압축했다 복원하며 특징 학습 (약어 아님)",
+  "cat": "AI"
+ },
+ {
+  "abbr": "LRQA",
+  "full": "Lloyd's Register Quality Assurance",
+  "ko": "영국 인증기관 (출처)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "DEKRA",
+  "full": "DEKRA",
+  "ko": "독일 검사·인증기관 (출처)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "CMS",
+  "full": "CMS",
+  "ko": "출처 사이트 이름",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "BKL",
+  "full": "Bae, Kim & Lee",
+  "ko": "법무법인 태평양 (출처)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "MTN",
+  "full": "Money Today Network",
+  "ko": "머니투데이방송 (출처)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "CASRAI",
+  "full": "Consortia Advancing Standards in Research Administration Information",
+  "ko": "연구행정 정보 표준 컨소시엄 (출처)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "MG",
+  "full": "Management",
+  "ko": "ITPE 경영 영역 토픽 번호 접두어 (MG_054 등)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "SE",
+  "full": "Software Engineering",
+  "ko": "소프트웨어공학 (SE_082 = ITPE SW공학 토픽 번호)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "IBM",
+  "full": "International Business Machines",
+  "ko": "IBM",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "KT",
+  "full": "Korea Telecom",
+  "ko": "KT (옛 한국통신)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "SK",
+  "full": "Sunkyong",
+  "ko": "SK 그룹 (옛 선경)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "LG",
+  "full": "Lucky-GoldStar",
+  "ko": "LG 그룹 (옛 럭키금성)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "SpaceX",
+  "full": "Space Exploration Technologies",
+  "ko": "스페이스X",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "KR",
+  "full": "Korea",
+  "ko": "한국 (PyTorch KR = 파이토치 한국 사용자 모임)",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "YYMMDD",
+  "full": "Year·Month·Day",
+  "ko": "연월일 6자리 날짜 형식",
+  "cat": "기타"
+ },
+ {
+  "abbr": "NN",
+  "full": "Number",
+  "ko": "두 자리 번호 자리표시 (01, 02 …)",
+  "cat": "기타"
+ },
+ {
+  "abbr": "BI",
+  "full": "Business Intelligence",
+  "ko": "비즈니스 인텔리전스 — 데이터 분석으로 의사결정 지원",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "CPND",
+  "full": "Contents·Platform·Network·Device",
+  "ko": "콘텐츠·플랫폼·네트워크·단말 — ICT 생태계 가치사슬",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "CSB",
+  "full": "Cloud Service Broker",
+  "ko": "클라우드 서비스 중개 — 여러 CSP 서비스 중개·통합",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "CSP",
+  "full": "Cloud Service Provider",
+  "ko": "클라우드 서비스 제공자 (AWS 등)",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "MSP",
+  "full": "Managed Service Provider",
+  "ko": "클라우드 운영 관리 대행 사업자",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "DBA",
+  "full": "DataBase Administrator",
+  "ko": "데이터베이스 관리자",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "DCS",
+  "full": "Distributed Control System",
+  "ko": "분산 제어 시스템 — 공장·플랜트 자동 제어",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "DPG",
+  "full": "Digital Platform Government",
+  "ko": "디지털플랫폼정부",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "DRaaS",
+  "full": "Disaster Recovery as a Service",
+  "ko": "서비스형 재해복구 (클라우드 DR)",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "DT",
+  "full": "Digital Transformation",
+  "ko": "디지털 전환 (= DX)",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "IRM",
+  "full": "Information Resource Management",
+  "ko": "정보자원관리 — HW·SW·데이터·인력 자원 관리",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "LMS",
+  "full": "Learning Management System",
+  "ko": "학습 관리 시스템",
+  "cat": "기타"
+ },
+ {
+  "abbr": "MECE",
+  "full": "Mutually Exclusive Collectively Exhaustive",
+  "ko": "중복 없이 빠짐없이 — 분류 원칙",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "LISS",
+  "full": "Linearly Independent Spanning Set",
+  "ko": "선형 독립 생성 집합 — MECE와 같은 뜻의 분류 원칙",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "MES",
+  "full": "Manufacturing Execution System",
+  "ko": "제조 실행 시스템",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "POP",
+  "full": "Point of Production",
+  "ko": "생산 시점 관리 — 현장 실적 수집",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "OLAP",
+  "full": "Online Analytical Processing",
+  "ko": "온라인 분석 처리 — 다차원 분석 (ROLAP·MOLAP·HOLAP)",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "RFI",
+  "full": "Request for Information",
+  "ko": "정보 요청서 — 발주 전 업체 정보 수집",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "RFQ",
+  "full": "Request for Quotation",
+  "ko": "견적 요청서",
+  "cat": "프로젝트관리"
+ },
+ {
+  "abbr": "SDS",
+  "full": "Software Defined Storage",
+  "ko": "소프트웨어 정의 스토리지",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "TAM",
+  "full": "Total Addressable Market",
+  "ko": "전체 시장 — 이론상 최대 시장 규모",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SAM",
+  "full": "Serviceable Available Market",
+  "ko": "유효 시장 — 제품으로 공략 가능한 시장",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "SOM",
+  "full": "Serviceable Obtainable Market",
+  "ko": "수익 시장 — 실제 점유 가능한 시장",
+  "cat": "IT경영"
+ },
+ {
+  "abbr": "LTS",
+  "full": "Long Term Support",
+  "ko": "장기 지원 버전",
+  "cat": "기타"
+ },
+ {
+  "abbr": "FR",
+  "full": "Final Round",
+  "ko": "파이널 라운드 — ITPE 합숙·최종 모의고사",
+  "cat": "표준·기관"
+ },
+ {
+  "abbr": "DataOps",
+  "full": "Data + Operations",
+  "ko": "데이터옵스 — 데이터 파이프라인 자동화·협업 운영",
+  "cat": "DB·데이터"
+ },
+ {
+  "abbr": "GitOps",
+  "full": "Git + Operations",
+  "ko": "깃옵스 — Git 저장소를 기준으로 인프라·배포를 선언적으로 자동화",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "PaaS",
+  "full": "Platform as a Service",
+  "ko": "서비스형 플랫폼",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "PaaS-TA",
+  "full": "PaaS-TA",
+  "ko": "한국형 오픈소스 PaaS 플랫폼 (NIA) (약어 아님)",
+  "cat": "클라우드·인프라"
+ },
+ {
+  "abbr": "CNAPP",
+  "full": "Cloud-Native Application Protection Platform",
+  "ko": "클라우드 네이티브 애플리케이션 보호 플랫폼",
+  "cat": "보안"
+ },
+ {
+  "abbr": "CICD",
+  "full": "Continuous Integration / Continuous Delivery·Deployment",
+  "ko": "지속적 통합·지속적 제공/배포 (CI/CD)",
+  "cat": "SW공학"
+ },
+ {
+  "abbr": "TX",
+  "full": "Transaction",
+  "ko": "트랜잭션",
+  "cat": "DB·데이터"
  }
 ]
